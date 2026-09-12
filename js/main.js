@@ -86,15 +86,16 @@ document.addEventListener('DOMContentLoaded', () => {
                     body: JSON.stringify(payload)
                 });
 
-                // CONNECTの選択状態を判定してモーダルへ渡す
+                // お問い合わせの種類に「資料が欲しい」が含まれているか判定
+                const inquiryTypeStr = String(payload.inquiry_type || '');
+                const wantsMaterial = inquiryTypeStr.indexOf('資料が欲しい') !== -1;
+
                 const rawInterests = payload.interests || [];
-                const hasConnect = Array.isArray(rawInterests)
-                    ? rawInterests.includes('CONNECT')
-                    : (typeof rawInterests === 'string' && rawInterests.includes('CONNECT'));
+                const interestsList = Array.isArray(rawInterests) ? rawInterests : [rawInterests];
 
                 // 成功時の処理
                 if (window.showContactSuccessModal) {
-                    window.showContactSuccessModal(hasConnect);
+                    window.showContactSuccessModal(wantsMaterial, interestsList);
                 }
                 contactForm.reset();
                 if (window.turnstile) {
@@ -478,16 +479,227 @@ function initSuccessModal() {
     }
 }
 
-// Make globally accessible functions to show the modal from the form submit handler
-window.showContactSuccessModal = function (hasConnect = false) {
+// ヘルパー: 選択されたシステムに応じた資料カードと一括ダウンロードボタンのHTMLを生成
+function generateMaterialCardsHtml(selectedInterests = []) {
+    const interests = Array.isArray(selectedInterests) ? selectedInterests : [selectedInterests];
+    let cardsHtml = '';
+    let downloadableFiles = [];
+
+    // 1. CONNECT
+    if (interests.includes('CONNECT')) {
+        downloadableFiles.push({
+            name: 'CONNECT_Leaflet_A4.pdf',
+            path: 'files/CONNECT_Leaflet_A4.pdf'
+        });
+        cardsHtml += `
+        <div class="bg-teal-50/90 border border-teal-200 rounded-2xl p-4 space-y-3">
+            <div class="flex items-start gap-3">
+                <div class="w-10 h-10 rounded-xl bg-teal-100 text-teal-600 flex items-center justify-center text-xl shrink-0">
+                    <i class="fas fa-file-pdf"></i>
+                </div>
+                <div class="flex-1">
+                    <span class="text-[10px] bg-teal-100 text-teal-800 px-2 py-0.5 rounded font-bold">CONNECT 資料</span>
+                    <h4 class="font-bold text-slate-900 text-xs sm:text-sm mt-0.5">CONNECT サービス紹介（A4リーフレット）</h4>
+                    <p class="text-[11px] text-slate-500 mt-0.5">AI即レス予約・カレンダー連携の機能概要</p>
+                </div>
+            </div>
+            <a href="files/CONNECT_Leaflet_A4.pdf" download="CONNECT_Leaflet_A4.pdf" target="_blank" class="w-full py-2.5 px-4 bg-teal-600 hover:bg-teal-700 text-white font-bold rounded-xl shadow-sm flex items-center justify-center gap-2 text-xs transition-all transform hover:-translate-y-0.5">
+                <i class="fas fa-download"></i>
+                <span>CONNECT 資料（A4）をダウンロード</span>
+            </a>
+        </div>`;
+    }
+
+    // 2. 国家試験管理
+    if (interests.includes('国家試験管理')) {
+        downloadableFiles.push({
+            name: 'EXAM_Leaflet_A4.pdf',
+            path: 'files/EXAM_Leaflet_A4.pdf'
+        });
+        cardsHtml += `
+        <div class="bg-indigo-50/90 border border-indigo-200 rounded-2xl p-4 space-y-3">
+            <div class="flex items-start gap-3">
+                <div class="w-10 h-10 rounded-xl bg-indigo-100 text-indigo-600 flex items-center justify-center text-xl shrink-0">
+                    <i class="fas fa-file-pdf"></i>
+                </div>
+                <div class="flex-1">
+                    <span class="text-[10px] bg-indigo-100 text-indigo-800 px-2 py-0.5 rounded font-bold">国家試験管理 資料</span>
+                    <h4 class="font-bold text-slate-900 text-xs sm:text-sm mt-0.5">国家試験管理システム（A4リーフレット）</h4>
+                    <p class="text-[11px] text-slate-500 mt-0.5">国試対策・過去問分析・成績推移機能の詳細</p>
+                </div>
+            </div>
+            <a href="files/EXAM_Leaflet_A4.pdf" download="EXAM_Leaflet_A4.pdf" target="_blank" class="w-full py-2.5 px-4 bg-indigo-600 hover:bg-indigo-700 text-white font-bold rounded-xl shadow-sm flex items-center justify-center gap-2 text-xs transition-all transform hover:-translate-y-0.5">
+                <i class="fas fa-download"></i>
+                <span>国家試験管理 資料（A4）をダウンロード</span>
+            </a>
+        </div>`;
+    }
+
+    // 3. 学事（教務マネジメントDX）
+    if (interests.includes('学事') || interests.includes('学事・経理') || interests.includes('教務')) {
+        downloadableFiles.push({
+            name: 'KYOMU_Leaflet_A4.pdf',
+            path: 'files/KYOMU_Leaflet_A4.pdf'
+        });
+        cardsHtml += `
+        <div class="bg-blue-50/90 border border-blue-200 rounded-2xl p-4 space-y-3">
+            <div class="flex items-start gap-3">
+                <div class="w-10 h-10 rounded-xl bg-blue-100 text-blue-600 flex items-center justify-center text-xl shrink-0">
+                    <i class="fas fa-file-pdf"></i>
+                </div>
+                <div class="flex-1">
+                    <span class="text-[10px] bg-blue-100 text-blue-800 px-2 py-0.5 rounded font-bold">学事システム 資料</span>
+                    <h4 class="font-bold text-slate-900 text-xs sm:text-sm mt-0.5">教務・学事マネジメントシステム（A4リーフレット）</h4>
+                    <p class="text-[11px] text-slate-500 mt-0.5">カリキュラム設計・履修登録・基本時間割・出欠管理の一元化</p>
+                </div>
+            </div>
+            <a href="files/KYOMU_Leaflet_A4.pdf" download="KYOMU_Leaflet_A4.pdf" target="_blank" class="w-full py-2.5 px-4 bg-blue-600 hover:bg-blue-700 text-white font-bold rounded-xl shadow-sm flex items-center justify-center gap-2 text-xs transition-all transform hover:-translate-y-0.5">
+                <i class="fas fa-download"></i>
+                <span>学事システム 資料（A4）をダウンロード</span>
+            </a>
+        </div>`;
+    }
+
+    // 4. マーケティング / 入試・広報
+    if (interests.includes('マーケティング') || interests.includes('入試・広報') || interests.includes('入試')) {
+        downloadableFiles.push({
+            name: 'NYUSHI_Leaflet_A4.pdf',
+            path: 'files/NYUSHI_Leaflet_A4.pdf'
+        });
+        cardsHtml += `
+        <div class="bg-amber-50/90 border border-amber-200 rounded-2xl p-4 space-y-3">
+            <div class="flex items-start gap-3">
+                <div class="w-10 h-10 rounded-xl bg-amber-100 text-amber-600 flex items-center justify-center text-xl shrink-0">
+                    <i class="fas fa-file-pdf"></i>
+                </div>
+                <div class="flex-1">
+                    <span class="text-[10px] bg-amber-100 text-amber-800 px-2 py-0.5 rounded font-bold">入試・広報 資料</span>
+                    <h4 class="font-bold text-slate-900 text-xs sm:text-sm mt-0.5">入試・広報マネジメントDX（A4リーフレット）</h4>
+                    <p class="text-[11px] text-slate-500 mt-0.5">オープンキャンパス受付・志願者追跡・ワンクリックデータ移行</p>
+                </div>
+            </div>
+            <a href="files/NYUSHI_Leaflet_A4.pdf" download="NYUSHI_Leaflet_A4.pdf" target="_blank" class="w-full py-2.5 px-4 bg-amber-600 hover:bg-amber-700 text-white font-bold rounded-xl shadow-sm flex items-center justify-center gap-2 text-xs transition-all transform hover:-translate-y-0.5">
+                <i class="fas fa-download"></i>
+                <span>入試・広報 資料（A4）をダウンロード</span>
+            </a>
+        </div>`;
+    }
+
+    // 5. INTEVE LINK または 実習管理
+    if (interests.includes('INTEVE LINK') || interests.includes('実習管理')) {
+        downloadableFiles.push({
+            name: 'INTEVE_LINK_Leaflet_A4.pdf',
+            path: 'files/INTEVE_LINK_Leaflet_A4.pdf'
+        });
+        cardsHtml += `
+        <div class="bg-teal-50/90 border border-teal-200 rounded-2xl p-4 space-y-3">
+            <div class="flex items-start gap-3">
+                <div class="w-10 h-10 rounded-xl bg-teal-100 text-teal-600 flex items-center justify-center text-xl shrink-0">
+                    <i class="fas fa-file-pdf"></i>
+                </div>
+                <div class="flex-1">
+                    <span class="text-[10px] bg-teal-100 text-teal-800 px-2 py-0.5 rounded font-bold">臨床実習 Webアプリ 資料</span>
+                    <h4 class="font-bold text-slate-900 text-xs sm:text-sm mt-0.5">臨床実習管理ポータル INTEVE LINK（A4リーフレット）</h4>
+                    <p class="text-[11px] text-slate-500 mt-0.5">実習生・指導者・教員の三者リアルタイム共有（体調・出欠サイン・日誌・チェックリスト）</p>
+                </div>
+            </div>
+            <a href="files/INTEVE_LINK_Leaflet_A4.pdf" download="INTEVE_LINK_Leaflet_A4.pdf" target="_blank" class="w-full py-2.5 px-4 bg-teal-600 hover:bg-teal-700 text-white font-bold rounded-xl shadow-sm flex items-center justify-center gap-2 text-xs transition-all transform hover:-translate-y-0.5">
+                <i class="fas fa-download"></i>
+                <span>INTEVE LINK 資料（A4）をダウンロード</span>
+            </a>
+            <div class="pt-0.5 text-center">
+                <a href="files/INTEVE_LINK_Security.pdf" download="INTEVE_LINK_Security.pdf" target="_blank" class="text-[11px] text-slate-500 hover:text-teal-700 inline-flex items-center gap-1.5 transition-colors">
+                    <i class="fas fa-shield-alt text-slate-400"></i>
+                    <span>セキュリティ仕様書 (PDF) もあわせてダウンロード</span>
+                </a>
+            </div>
+        </div>`;
+    }
+
+    // フォールバック（マッチする資料が何もない場合）
+    if (downloadableFiles.length === 0) {
+        cardsHtml = `
+        <div class="bg-cyan-50/90 border border-cyan-200 rounded-2xl p-4 space-y-3">
+            <div class="flex items-start gap-3">
+                <div class="w-10 h-10 rounded-xl bg-cyan-100 text-cyan-600 flex items-center justify-center text-xl shrink-0">
+                    <i class="fas fa-file-pdf"></i>
+                </div>
+                <div class="flex-1">
+                    <h4 class="font-bold text-slate-900 text-xs sm:text-sm">サービス概要資料</h4>
+                    <p class="text-[11px] text-slate-500 mt-0.5">Creative System Design システム概要リーフレット</p>
+                </div>
+            </div>
+            <a href="files/INTEVE_LINK_Leaflet_A4.pdf" download="INTEVE_LINK_Leaflet_A4.pdf" target="_blank" class="w-full py-2.5 px-4 bg-secondary hover:bg-cyan-600 text-white font-bold rounded-xl shadow-sm flex items-center justify-center gap-2 text-xs transition-all transform hover:-translate-y-0.5">
+                <i class="fas fa-download"></i>
+                <span>資料をダウンロード (PDF)</span>
+            </a>
+        </div>`;
+    }
+
+    // 複数選択されている場合（2つ以上の資料がある場合）、一括ダウンロードボタンを上部に配置
+    let batchDownloadHeader = '';
+    if (downloadableFiles.length >= 2) {
+        batchDownloadHeader = `
+        <div class="mb-4">
+            <button type="button" class="btn-download-all-materials w-full py-3 px-4 bg-gradient-to-r from-accent to-orange-600 hover:from-orange-500 hover:to-orange-600 text-white font-bold rounded-xl shadow-md flex items-center justify-center gap-2 text-xs sm:text-sm transition-all transform hover:-translate-y-0.5">
+                <i class="fas fa-file-archive text-base"></i>
+                <span>選択した資料をすべてまとめてダウンロード (${downloadableFiles.length}点)</span>
+            </button>
+            <p class="text-[10px] text-slate-400 text-center mt-1.5">※ 各資料は下の個別ボタンからも個別にダウンロードいただけます</p>
+        </div>`;
+    }
+
+    return {
+        html: batchDownloadHeader + cardsHtml,
+        files: downloadableFiles
+    };
+}
+
+// 一括ダウンロードボタンのイベント付与ヘルパー
+function bindBatchDownloadEvents(container, files) {
+    const batchBtn = container.querySelector('.btn-download-all-materials');
+    if (batchBtn && files && files.length > 0) {
+        batchBtn.addEventListener('click', () => {
+            files.forEach((file, index) => {
+                setTimeout(() => {
+                    const a = document.createElement('a');
+                    a.href = file.path;
+                    a.download = file.name;
+                    a.target = '_blank';
+                    document.body.appendChild(a);
+                    a.click();
+                    document.body.removeChild(a);
+                }, index * 300);
+            });
+        });
+    }
+}
+
+// お問い合わせフォーム送信完了モーダル（「資料が欲しい」の有無で切り分け）
+window.showContactSuccessModal = function (wantsMaterial = false, selectedInterests = []) {
     const modal = document.getElementById('success-modal');
     if (modal) {
-        const connectCard = document.getElementById('connect-download-card');
-        if (connectCard) {
-            if (hasConnect) {
-                connectCard.classList.remove('hidden');
-            } else {
-                connectCard.classList.add('hidden');
+        const titleEl = document.getElementById('contact-success-title');
+        const descEl = document.getElementById('contact-success-desc');
+        const materialsContainer = document.getElementById('contact-materials-container');
+
+        if (wantsMaterial) {
+            // 「資料が欲しい」にチェックがある場合: 資料ダウンロード画面を表示
+            if (titleEl) titleEl.textContent = 'お申し込み・資料請求完了';
+            if (descEl) descEl.innerHTML = 'お問い合わせ・資料請求を受け付けました。<br>以下のボタンより資料（PDF）をダウンロードいただけます。';
+            if (materialsContainer) {
+                materialsContainer.classList.remove('hidden');
+                const result = generateMaterialCardsHtml(selectedInterests);
+                materialsContainer.innerHTML = result.html;
+                bindBatchDownloadEvents(materialsContainer, result.files);
+            }
+        } else {
+            // 「説明が聞きたい」「見積が欲しい」などの相談のみの場合: ダウンロード画面は出さない
+            if (titleEl) titleEl.textContent = '送信完了！';
+            if (descEl) descEl.innerHTML = 'お問い合わせを受け付けました。<br>担当者より通常2営業日以内にご連絡いたします。';
+            if (materialsContainer) {
+                materialsContainer.classList.add('hidden');
+                materialsContainer.innerHTML = '';
             }
         }
 
@@ -502,203 +714,15 @@ window.showContactSuccessModal = function (hasConnect = false) {
     trackEvent('form_submission', 'Contact Form Success');
 };
 
+// 資料ダウンロード専用フォーム送信完了モーダル
 window.showDownloadSuccessModal = function (selectedInterests = []) {
     const modal = document.getElementById('dl-success-modal');
     if (modal) {
         const container = document.getElementById('dl-materials-container');
         if (container) {
-            container.innerHTML = ''; // クリア
-
-            const interests = Array.isArray(selectedInterests) ? selectedInterests : [selectedInterests];
-            let cardsHtml = '';
-            let downloadableFiles = [];
-
-            // 1. CONNECT
-            if (interests.includes('CONNECT')) {
-                downloadableFiles.push({
-                    name: 'CONNECT_Leaflet_A4.pdf',
-                    path: 'files/CONNECT_Leaflet_A4.pdf'
-                });
-                cardsHtml += `
-                <div class="bg-teal-50/90 border border-teal-200 rounded-2xl p-4 space-y-3">
-                    <div class="flex items-start gap-3">
-                        <div class="w-10 h-10 rounded-xl bg-teal-100 text-teal-600 flex items-center justify-center text-xl shrink-0">
-                            <i class="fas fa-file-pdf"></i>
-                        </div>
-                        <div class="flex-1">
-                            <span class="text-[10px] bg-teal-100 text-teal-800 px-2 py-0.5 rounded font-bold">CONNECT 資料</span>
-                            <h4 class="font-bold text-slate-900 text-xs sm:text-sm mt-0.5">CONNECT サービス紹介（A4リーフレット）</h4>
-                            <p class="text-[11px] text-slate-500 mt-0.5">AI即レス予約・カレンダー連携の機能概要</p>
-                        </div>
-                    </div>
-                    <a href="files/CONNECT_Leaflet_A4.pdf" download="CONNECT_Leaflet_A4.pdf" target="_blank" class="w-full py-2.5 px-4 bg-teal-600 hover:bg-teal-700 text-white font-bold rounded-xl shadow-sm flex items-center justify-center gap-2 text-xs transition-all transform hover:-translate-y-0.5">
-                        <i class="fas fa-download"></i>
-                        <span>CONNECT 資料（A4）をダウンロード</span>
-                    </a>
-                </div>`;
-            }
-
-            // 2. 国家試験管理
-            if (interests.includes('国家試験管理')) {
-                downloadableFiles.push({
-                    name: 'EXAM_Leaflet_A4.pdf',
-                    path: 'files/EXAM_Leaflet_A4.pdf'
-                });
-                cardsHtml += `
-                <div class="bg-indigo-50/90 border border-indigo-200 rounded-2xl p-4 space-y-3">
-                    <div class="flex items-start gap-3">
-                        <div class="w-10 h-10 rounded-xl bg-indigo-100 text-indigo-600 flex items-center justify-center text-xl shrink-0">
-                            <i class="fas fa-file-pdf"></i>
-                        </div>
-                        <div class="flex-1">
-                            <span class="text-[10px] bg-indigo-100 text-indigo-800 px-2 py-0.5 rounded font-bold">国家試験管理 資料</span>
-                            <h4 class="font-bold text-slate-900 text-xs sm:text-sm mt-0.5">国家試験管理システム（A4リーフレット）</h4>
-                            <p class="text-[11px] text-slate-500 mt-0.5">国試対策・過去問分析・成績推移機能の詳細</p>
-                        </div>
-                    </div>
-                    <a href="files/EXAM_Leaflet_A4.pdf" download="EXAM_Leaflet_A4.pdf" target="_blank" class="w-full py-2.5 px-4 bg-indigo-600 hover:bg-indigo-700 text-white font-bold rounded-xl shadow-sm flex items-center justify-center gap-2 text-xs transition-all transform hover:-translate-y-0.5">
-                        <i class="fas fa-download"></i>
-                        <span>国家試験管理 資料（A4）をダウンロード</span>
-                    </a>
-                </div>`;
-            }
-
-            // 3. 学事（教務マネジメントDX）
-            if (interests.includes('学事') || interests.includes('学事・経理') || interests.includes('教務')) {
-                downloadableFiles.push({
-                    name: 'KYOMU_Leaflet_A4.pdf',
-                    path: 'files/KYOMU_Leaflet_A4.pdf'
-                });
-                cardsHtml += `
-                <div class="bg-blue-50/90 border border-blue-200 rounded-2xl p-4 space-y-3">
-                    <div class="flex items-start gap-3">
-                        <div class="w-10 h-10 rounded-xl bg-blue-100 text-blue-600 flex items-center justify-center text-xl shrink-0">
-                            <i class="fas fa-file-pdf"></i>
-                        </div>
-                        <div class="flex-1">
-                            <span class="text-[10px] bg-blue-100 text-blue-800 px-2 py-0.5 rounded font-bold">学事システム 資料</span>
-                            <h4 class="font-bold text-slate-900 text-xs sm:text-sm mt-0.5">教務・学事マネジメントシステム（A4リーフレット）</h4>
-                            <p class="text-[11px] text-slate-500 mt-0.5">カリキュラム設計・履修登録・基本時間割・出欠管理の一元化</p>
-                        </div>
-                    </div>
-                    <a href="files/KYOMU_Leaflet_A4.pdf" download="KYOMU_Leaflet_A4.pdf" target="_blank" class="w-full py-2.5 px-4 bg-blue-600 hover:bg-blue-700 text-white font-bold rounded-xl shadow-sm flex items-center justify-center gap-2 text-xs transition-all transform hover:-translate-y-0.5">
-                        <i class="fas fa-download"></i>
-                        <span>学事システム 資料（A4）をダウンロード</span>
-                    </a>
-                </div>`;
-            }
-
-            // 4. マーケティング / 入試・広報
-            if (interests.includes('マーケティング') || interests.includes('入試・広報') || interests.includes('入試')) {
-                downloadableFiles.push({
-                    name: 'NYUSHI_Leaflet_A4.pdf',
-                    path: 'files/NYUSHI_Leaflet_A4.pdf'
-                });
-                cardsHtml += `
-                <div class="bg-amber-50/90 border border-amber-200 rounded-2xl p-4 space-y-3">
-                    <div class="flex items-start gap-3">
-                        <div class="w-10 h-10 rounded-xl bg-amber-100 text-amber-600 flex items-center justify-center text-xl shrink-0">
-                            <i class="fas fa-file-pdf"></i>
-                        </div>
-                        <div class="flex-1">
-                            <span class="text-[10px] bg-amber-100 text-amber-800 px-2 py-0.5 rounded font-bold">入試・広報 資料</span>
-                            <h4 class="font-bold text-slate-900 text-xs sm:text-sm mt-0.5">入試・広報マネジメントDX（A4リーフレット）</h4>
-                            <p class="text-[11px] text-slate-500 mt-0.5">オープンキャンパス受付・志願者追跡・ワンクリックデータ移行</p>
-                        </div>
-                    </div>
-                    <a href="files/NYUSHI_Leaflet_A4.pdf" download="NYUSHI_Leaflet_A4.pdf" target="_blank" class="w-full py-2.5 px-4 bg-amber-600 hover:bg-amber-700 text-white font-bold rounded-xl shadow-sm flex items-center justify-center gap-2 text-xs transition-all transform hover:-translate-y-0.5">
-                        <i class="fas fa-download"></i>
-                        <span>入試・広報 資料（A4）をダウンロード</span>
-                    </a>
-                </div>`;
-            }
-
-            // 5. INTEVE LINK または 実習管理
-            if (interests.includes('INTEVE LINK') || interests.includes('実習管理')) {
-                downloadableFiles.push({
-                    name: 'INTEVE_LINK_Leaflet_A4.pdf',
-                    path: 'files/INTEVE_LINK_Leaflet_A4.pdf'
-                });
-                cardsHtml += `
-                <div class="bg-teal-50/90 border border-teal-200 rounded-2xl p-4 space-y-3">
-                    <div class="flex items-start gap-3">
-                        <div class="w-10 h-10 rounded-xl bg-teal-100 text-teal-600 flex items-center justify-center text-xl shrink-0">
-                            <i class="fas fa-file-pdf"></i>
-                        </div>
-                        <div class="flex-1">
-                            <span class="text-[10px] bg-teal-100 text-teal-800 px-2 py-0.5 rounded font-bold">臨床実習 Webアプリ 資料</span>
-                            <h4 class="font-bold text-slate-900 text-xs sm:text-sm mt-0.5">臨床実習管理ポータル INTEVE LINK（A4リーフレット）</h4>
-                            <p class="text-[11px] text-slate-500 mt-0.5">実習生・指導者・教員の三者リアルタイム共有（体調・出欠サイン・日誌・チェックリスト）</p>
-                        </div>
-                    </div>
-                    <a href="files/INTEVE_LINK_Leaflet_A4.pdf" download="INTEVE_LINK_Leaflet_A4.pdf" target="_blank" class="w-full py-2.5 px-4 bg-teal-600 hover:bg-teal-700 text-white font-bold rounded-xl shadow-sm flex items-center justify-center gap-2 text-xs transition-all transform hover:-translate-y-0.5">
-                        <i class="fas fa-download"></i>
-                        <span>INTEVE LINK 資料（A4）をダウンロード</span>
-                    </a>
-                    <div class="pt-0.5 text-center">
-                        <a href="files/INTEVE_LINK_Security.pdf" download="INTEVE_LINK_Security.pdf" target="_blank" class="text-[11px] text-slate-500 hover:text-teal-700 inline-flex items-center gap-1.5 transition-colors">
-                            <i class="fas fa-shield-alt text-slate-400"></i>
-                            <span>セキュリティ仕様書 (PDF) もあわせてダウンロード</span>
-                        </a>
-                    </div>
-                </div>`;
-            }
-
-            // フォールバック（マッチする資料が何もない場合）
-            if (downloadableFiles.length === 0) {
-                cardsHtml = `
-                <div class="bg-cyan-50/90 border border-cyan-200 rounded-2xl p-4 space-y-3">
-                    <div class="flex items-start gap-3">
-                        <div class="w-10 h-10 rounded-xl bg-cyan-100 text-cyan-600 flex items-center justify-center text-xl shrink-0">
-                            <i class="fas fa-file-pdf"></i>
-                        </div>
-                        <div class="flex-1">
-                            <h4 class="font-bold text-slate-900 text-xs sm:text-sm">サービス概要資料</h4>
-                            <p class="text-[11px] text-slate-500 mt-0.5">Creative System Design システム概要リーフレット</p>
-                        </div>
-                    </div>
-                    <a href="files/INTEVE_LINK_Leaflet_A4.pdf" download="INTEVE_LINK_Leaflet_A4.pdf" target="_blank" class="w-full py-2.5 px-4 bg-secondary hover:bg-cyan-600 text-white font-bold rounded-xl shadow-sm flex items-center justify-center gap-2 text-xs transition-all transform hover:-translate-y-0.5">
-                        <i class="fas fa-download"></i>
-                        <span>資料をダウンロード (PDF)</span>
-                    </a>
-                </div>`;
-            }
-
-            // 複数選択されている場合（2つ以上の資料がある場合）、一括ダウンロードボタンを上部に配置
-            let batchDownloadHeader = '';
-            if (downloadableFiles.length >= 2) {
-                batchDownloadHeader = `
-                <div class="mb-4">
-                    <button type="button" id="btn-download-all-materials" class="w-full py-3 px-4 bg-gradient-to-r from-accent to-orange-600 hover:from-orange-500 hover:to-orange-600 text-white font-bold rounded-xl shadow-md flex items-center justify-center gap-2 text-xs sm:text-sm transition-all transform hover:-translate-y-0.5">
-                        <i class="fas fa-file-archive text-base"></i>
-                        <span>選択した資料をすべてまとめてダウンロード (${downloadableFiles.length}点)</span>
-                    </button>
-                    <p class="text-[10px] text-slate-400 text-center mt-1.5">※ 各資料は下の個別ボタンからも個別にダウンロードいただけます</p>
-                </div>`;
-            }
-
-            container.innerHTML = batchDownloadHeader + cardsHtml;
-
-            // 一括ダウンロードボタンのイベント付与
-            const batchBtn = document.getElementById('btn-download-all-materials');
-            if (batchBtn) {
-                batchBtn.addEventListener('click', () => {
-                    downloadableFiles.forEach((file, index) => {
-                        setTimeout(() => {
-                            const a = document.createElement('a');
-                            a.href = file.path;
-                            a.download = file.name;
-                            a.target = '_blank';
-                            document.body.appendChild(a);
-                            a.click();
-                            document.body.removeChild(a);
-                        }, index * 300);
-                    });
-                });
-            }
-
-            // 画面上のモーダルからユーザーが明示的にボタンをクリックしてダウンロードする設計のため、
-            // 勝手に即時ダウンロードが始まる自動トリガーは行わない
+            const result = generateMaterialCardsHtml(selectedInterests);
+            container.innerHTML = result.html;
+            bindBatchDownloadEvents(container, result.files);
         }
 
         modal.classList.remove('opacity-0', 'pointer-events-none');
