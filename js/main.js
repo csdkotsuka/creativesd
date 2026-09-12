@@ -25,7 +25,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // --- お問い合わせフォームの送信処理 ---
     const contactForm = document.getElementById('contact-form');
-    const GAS_ENDPOINT = "https://script.google.com/macros/s/AKfycbwdVPDuysHvA1qsn_NYKOgppEpKt05weXjWQF_h0Fa4hmvNoauiVyVGTlktp1l_9JSs/exec";
+    const GAS_ENDPOINT = "https://script.google.com/macros/s/AKfycbwyBdlYrwEmNOsrsIpIg5Qvk-i3B5kLpaLIi25EunSYhQcMUSHdmakJU41k_Yp12v-d/exec";
 
     if (contactForm) {
         contactForm.addEventListener('submit', async (e) => {
