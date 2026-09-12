@@ -4,3 +4,7 @@
         Header set Access-Control-Allow-Origin "*"
     </FilesMatch>
 </IfModule>
+
+# Redirect download.html to contact.html
+Redirect 301 /download.html https://creativesd.net/contact.html
+
