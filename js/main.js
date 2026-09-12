@@ -656,19 +656,8 @@ window.showDownloadSuccessModal = function (selectedInterests = []) {
                 });
             }
 
-            // 1点のみ選択されている場合は、自動ダウンロードも発火
-            if (downloadableFiles.length === 1) {
-                setTimeout(() => {
-                    const singleFile = downloadableFiles[0];
-                    const a = document.createElement('a');
-                    a.href = singleFile.path;
-                    a.download = singleFile.name;
-                    a.target = '_blank';
-                    document.body.appendChild(a);
-                    a.click();
-                    document.body.removeChild(a);
-                }, 500);
-            }
+            // 画面上のモーダルからユーザーが明示的にボタンをクリックしてダウンロードする設計のため、
+            // 勝手に即時ダウンロードが始まる自動トリガーは行わない
         }
 
         modal.classList.remove('opacity-0', 'pointer-events-none');
