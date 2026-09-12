@@ -25,7 +25,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // --- お問い合わせフォームの送信処理 ---
     const contactForm = document.getElementById('contact-form');
-    const GAS_ENDPOINT = "https://script.google.com/macros/s/AKfycbzq6KlOKz_uTEajQANSlIqYZz7OI-zjLbyxWx_OTMgT6xEe19xJdfwUBUQNa4O0sLuz/exec";
+    const GAS_ENDPOINT = "https://script.google.com/macros/s/AKfycbwdVPDuysHvA1qsn_NYKOgppEpKt05weXjWQF_h0Fa4hmvNoauiVyVGTlktp1l_9JSs/exec";
 
     if (contactForm) {
         contactForm.addEventListener('submit', async (e) => {
@@ -35,6 +35,14 @@ document.addEventListener('DOMContentLoaded', () => {
             const inquiryCheckboxes = contactForm.querySelectorAll('input[name="inquiry_type"]:checked');
             if (inquiryCheckboxes.length === 0) {
                 alert("「お問い合わせの種類」を1つ以上選択してください。");
+                return;
+            }
+
+            // Cloudflare Turnstile 検証チェック
+            const turnstileInput = contactForm.querySelector('input[name="cf-turnstile-response"]');
+            const turnstileToken = turnstileInput ? turnstileInput.value : "";
+            if (!turnstileToken) {
+                alert("セキュリティ認証（Cloudflare Turnstile）を完了してください。");
                 return;
             }
 
@@ -48,7 +56,8 @@ document.addEventListener('DOMContentLoaded', () => {
                 // フォームデータの収集
                 const formData = new FormData(contactForm);
                 const payload = {
-                    form_source: "contact"
+                    form_source: "contact",
+                    turnstile_token: turnstileToken
                 };
 
                 formData.forEach((value, key) => {
@@ -62,7 +71,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     }
                 });
 
-                // 配列をカンマ区切り文字列に変換（GASやLark Baseの互換性確保）
+                // 配列をカンマ区切り文字列に変換
                 if (Array.isArray(payload.inquiry_type)) {
                     payload.inquiry_type = payload.inquiry_type.join(', ');
                 }
@@ -88,10 +97,16 @@ document.addEventListener('DOMContentLoaded', () => {
                     window.showContactSuccessModal(hasConnect);
                 }
                 contactForm.reset();
+                if (window.turnstile) {
+                    window.turnstile.reset();
+                }
 
             } catch (error) {
                 console.error('Error:', error);
                 alert("送信中にエラーが発生しました。もう一度お試しください。");
+                if (window.turnstile) {
+                    window.turnstile.reset();
+                }
             } finally {
                 submitBtn.innerHTML = originalBtnContent;
                 submitBtn.disabled = false;
@@ -113,6 +128,14 @@ document.addEventListener('DOMContentLoaded', () => {
                 return;
             }
 
+            // Cloudflare Turnstile 検証チェック
+            const turnstileInput = downloadForm.querySelector('input[name="cf-turnstile-response"]');
+            const turnstileToken = turnstileInput ? turnstileInput.value : "";
+            if (!turnstileToken) {
+                alert("セキュリティ認証（Cloudflare Turnstile）を完了してください。");
+                return;
+            }
+
             const submitBtn = document.getElementById('dl-submit-btn');
             const originalBtnContent = submitBtn.innerHTML;
             submitBtn.innerHTML = '<i class="fas fa-circle-notch fa-spin mr-2"></i> 送信中...';
@@ -124,7 +147,8 @@ document.addEventListener('DOMContentLoaded', () => {
                 const formData = new FormData(downloadForm);
                 const payload = {
                     form_source: "download",
-                    inquiry_type: "資料ダウンロード"
+                    inquiry_type: "資料ダウンロード",
+                    turnstile_token: turnstileToken
                 };
 
                 formData.forEach((value, key) => {
@@ -152,17 +176,21 @@ document.addEventListener('DOMContentLoaded', () => {
                 const rawInterests = payload.interests || [];
                 const interestsList = Array.isArray(rawInterests) ? rawInterests : [rawInterests];
 
-                // 画面上のモーダルにダウンロードボタンが表示されるため、二重ダウンロードを防ぐため自動即時ダウンロードは行わない
-
-                // 成功モーダルの表示（選択項目を渡して動的に資料カードを生成）
+                // 成功モーダルの表示
                 if (window.showDownloadSuccessModal) {
                     window.showDownloadSuccessModal(interestsList);
                 }
                 downloadForm.reset();
+                if (window.turnstile) {
+                    window.turnstile.reset();
+                }
 
             } catch (error) {
                 console.error('Error:', error);
                 alert("送信中にエラーが発生しました。もう一度お試しください。");
+                if (window.turnstile) {
+                    window.turnstile.reset();
+                }
             } finally {
                 submitBtn.innerHTML = originalBtnContent;
                 submitBtn.disabled = false;
@@ -177,6 +205,14 @@ document.addEventListener('DOMContentLoaded', () => {
         ilDownloadForm.addEventListener('submit', async (e) => {
             e.preventDefault();
 
+            // Cloudflare Turnstile 検証チェック
+            const turnstileInput = ilDownloadForm.querySelector('input[name="cf-turnstile-response"]');
+            const turnstileToken = turnstileInput ? turnstileInput.value : "";
+            if (!turnstileToken) {
+                alert("セキュリティ認証（Cloudflare Turnstile）を完了してください。");
+                return;
+            }
+
             const submitBtn = document.getElementById('il-submit-btn');
             const originalBtnContent = submitBtn.innerHTML;
             submitBtn.innerHTML = '<i class="fas fa-circle-notch fa-spin mr-2"></i> 送信中...';
@@ -189,7 +225,8 @@ document.addEventListener('DOMContentLoaded', () => {
                 const payload = {
                     form_source: "download",
                     inquiry_type: "資料ダウンロード",
-                    interests: "INTEVE LINK"
+                    interests: "INTEVE LINK",
+                    turnstile_token: turnstileToken
                 };
 
                 formData.forEach((value, key) => {
@@ -206,17 +243,21 @@ document.addEventListener('DOMContentLoaded', () => {
                     body: JSON.stringify(payload)
                 });
 
-                // 画面上のモーダルからダウンロード可能
-
                 // 成功モーダルの表示
                 if (window.showILDownloadSuccessModal) {
                     window.showILDownloadSuccessModal();
                 }
                 ilDownloadForm.reset();
+                if (window.turnstile) {
+                    window.turnstile.reset();
+                }
 
             } catch (error) {
                 console.error('Error:', error);
                 alert("送信中にエラーが発生しました。もう一度お試しください。");
+                if (window.turnstile) {
+                    window.turnstile.reset();
+                }
             } finally {
                 submitBtn.innerHTML = originalBtnContent;
                 submitBtn.disabled = false;

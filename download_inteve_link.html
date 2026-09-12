@@ -27,6 +27,8 @@
       gtag('config', 'G-P8YSB8RZB2');
     </script>
 
+    <!-- Cloudflare Turnstile -->
+    <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
     <!-- Google Fonts: Inter -->
@@ -161,7 +163,7 @@
                         </div>
 
                         <!-- Policy Agreement -->
-                        <div class="mb-10 text-center">
+                        <div class="mb-8 text-center">
                             <label class="inline-flex relative items-center cursor-pointer group">
                                 <input type="checkbox" name="policy_agreement" required class="peer sr-only">
                                 <div class="w-5 h-5 flex-shrink-0 border-2 border-slate-300 rounded bg-white overflow-hidden transition-all duration-300 peer-checked:border-secondary peer-checked:bg-secondary group-hover:border-secondary flex items-center justify-center">
@@ -171,6 +173,11 @@
                                     <a href="privacy.html" target="_blank" class="text-secondary hover:underline font-medium">プライバシーポリシー</a>に同意する
                                 </span>
                             </label>
+                        </div>
+
+                        <!-- Cloudflare Turnstile -->
+                        <div class="mb-8 flex justify-center">
+                            <div class="cf-turnstile" data-sitekey="0x4AAAAAAExVw7njYglSEcWG" data-theme="light"></div>
                         </div>
 
                         <!-- Submit Button -->
