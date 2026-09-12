@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <!-- <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests"> -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>臨床実習管理システム | INTEVE SCHOOL - 実習事務の負担を大幅に軽減</title>
+    <meta name="description" content="医療系学校の臨床実習・病院実習に関わる膨大な情報を一元管理。実習施設管理、学生の割り当て、必要書類の自動生成、評価入力までをデジタル化。煩雑な事務作業から解放され、学生の教育指導に集中できる環境を提供します。">
+
+    <link rel="icon" href="images/favicon.png" type="image/png" />
+    <link rel="apple-touch-icon" href="images/favicon.png" />
+
+    <!-- OGP Settings -->
+    <meta property="og:title" content="臨床実習管理システム | INTEVE SCHOOL - 実習事務の負担を大幅に軽減" />
+    <meta property="og:description" content="医療系学校の臨床実習・病院実習に関わる膨大な情報を一元管理。学生の教育指導に集中できる環境を提供します。" />
+    <meta property="og:url" content="https://creativesd.net/practice.html" />
+    <meta property="og:image" content="https://creativesd.net/images/ogp.png" />
+    <meta property="og:type" content="article" />
+    <meta name="twitter:card" content="summary_large_image" />
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-P8YSB8RZB2"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-P8YSB8RZB2');
+    </script>
+
+    <!-- Structured Data (JSON-LD) for SEO/AI -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "SoftwareApplication",
+      "name": "INTEVE SCHOOL 臨床実習システム",
+      "operatingSystem": "Web, Windows, macOS, iOS",
+      "applicationCategory": "Educational Business System",
+      "description": "医療系教育機関向け臨床実習管理システム。実習先との連携と評価データの一元管理を実現。",
+      "publisher": {
+        "@type": "Organization",
+        "name": "Creative System Design"
+      }
+    }
+    </script>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts: Inter -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <!-- FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css?v=20260329">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#004080',
+                        secondary: '#00BCD4',
+                        accent: '#FF6600',
+                        glass: 'rgba(255, 255, 255, 0.7)',
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                }
+            }
+        }
+    </script>
+</head>
+<body class="font-sans text-slate-900 overflow-x-hidden bg-slate-50">
+
+    <div id="header-placeholder"></div>
+
+    <!-- Main Content -->
+    <main class="pt-[88px]">
+        
+        <!-- Hero Section -->
+        <section class="relative h-[60vh] min-h-[500px] flex items-center justify-center overflow-hidden">
+            <!-- Background Image -->
+            <div class="absolute inset-0 z-0">
+                <img src="assets/images/practice_hero.png" alt="Practice System Background" class="w-full h-full object-cover">
+                <!-- Overlay Gradient -->
+                <div class="absolute inset-0 bg-gradient-to-r from-primary/95 to-primary/80 mix-blend-multiply"></div>
+            </div>
+
+            <!-- Hero Content -->
+            <div class="container mx-auto px-6 relative z-10 text-center text-white">
+                <span class="inline-block py-1 px-3 rounded-full bg-white/10 border border-white/20 text-sm font-bold tracking-widest mb-6 backdrop-blur-md">PRACTICE NETWORK</span>
+                <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight drop-shadow-lg">
+                    医療系養成校向け 臨床実習管理システム<br>
+                    <span class="text-secondary">「実習施設の見える化」</span>
+                </h1>
+                <p class="text-lg md:text-xl max-w-2xl mx-auto opacity-90 leading-relaxed font-light">
+                    臨床実習に関わる膨大な情報を一元的に管理することで、煩雑な事務作業から解放され、教育本来の目的に注力できる環境を実現します。<br>
+                    病院、学生、卒業生をつなぐ情報プラットフォーム。
+                </p>
+            </div>
+        </section>
+
+        <!-- Core Features Section -->
+        <section class="py-24 bg-slate-50 relative">
+            <div class="container mx-auto px-6">
+                <!-- Section Title -->
+                <div class="text-center mb-16">
+                    <h2 class="text-3xl md:text-4xl font-bold text-primary mb-4">Core Features</h2>
+                    <p class="text-slate-500 max-w-2xl mx-auto">創造的な“こと”に自分と時間を活かすための仕組みづくり</p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                    
+                    <!-- Feature 1 -->
+                    <div class="bg-white rounded-3xl p-8 shadow-sm border border-slate-100 hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 group">
+                        <div class="w-16 h-16 bg-blue-50 text-secondary rounded-2xl flex items-center justify-center text-3xl mb-8 group-hover:scale-110 transition-transform">
+                            <i class="fas fa-hospital"></i>
+                        </div>
+                        <h3 class="text-lg font-bold text-primary mb-4">施設情報と履歴を一元管理</h3>
+                        <p class="text-slate-600 text-sm leading-relaxed mb-6 font-light">
+                            臨床実習施設の基本情報に加え、実習受入、実習生、卒業生の履歴、求人票情報を一箇所で把握し統合管理します。
+                        </p>
+                    </div>
+
+                    <!-- Feature 2 -->
+                    <div class="bg-white rounded-3xl p-8 shadow-sm border border-slate-100 hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 group">
+                        <div class="w-16 h-16 bg-blue-50 text-secondary rounded-2xl flex items-center justify-center text-3xl mb-8 group-hover:scale-110 transition-transform">
+                            <i class="fas fa-tasks"></i>
+                        </div>
+                        <h3 class="text-lg font-bold text-primary mb-4">臨床実習をスムーズに管理</h3>
+                        <p class="text-slate-600 text-sm leading-relaxed mb-6 font-light">
+                            実習受入依頼の文書発送から返信書類の管理、学生の配置、実習成績の入力まで、一連の業務をデジタル化し人的ミスを防ぎます。
+                        </p>
+                    </div>
+
+                    <!-- Feature 3 -->
+                    <div class="bg-white rounded-3xl p-8 shadow-sm border border-slate-100 hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 group">
+                        <div class="w-16 h-16 bg-blue-50 text-secondary rounded-2xl flex items-center justify-center text-3xl mb-8 group-hover:scale-110 transition-transform">
+                            <i class="fas fa-users-cog"></i>
+                        </div>
+                        <h3 class="text-lg font-bold text-primary mb-4">指導者会議運営を円滑に</h3>
+                        <p class="text-slate-600 text-sm leading-relaxed mb-6 font-light">
+                            参加施設抽出に始まり、会議案内の発送、交通費・謝礼金の管理、領収書出力まで煩雑な会議の準備作業を効率化します。
+                        </p>
+                    </div>
+
+                    <!-- Feature 4 -->
+                    <div class="bg-white rounded-3xl p-8 shadow-sm border border-slate-100 hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 group">
+                        <div class="w-16 h-16 bg-blue-50 text-secondary rounded-2xl flex items-center justify-center text-3xl mb-8 group-hover:scale-110 transition-transform">
+                            <i class="fas fa-chalkboard-teacher"></i>
+                        </div>
+                        <h3 class="text-lg font-bold text-primary mb-4">講習会・説明会も効率管理</h3>
+                        <p class="text-slate-600 text-sm leading-relaxed mb-6 font-light">
+                            講習会と就職説明会について、案内発送から出欠確認、名簿作成、事後報告まで一連の業務を連携しスマートに運営します。
+                        </p>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- Deep Dive Section -->
+        <section class="py-24 bg-white relative overflow-hidden">
+            <div class="absolute top-0 right-0 w-96 h-96 bg-primary/5 rounded-full blur-3xl -z-10 -translate-y-1/2 translate-x-1/2"></div>
+            <div class="container mx-auto px-6 max-w-5xl space-y-20">
+                
+                <!-- Row 1 -->
+                <div class="flex flex-col md:flex-row items-center gap-12">
+                    <div class="md:w-1/2 order-2 md:order-1">
+                        <h3 class="text-2xl font-bold text-primary mb-4">施設情報と連携履歴を一元管理</h3>
+                        <p class="text-slate-600 leading-relaxed">
+                            臨床実習施設の基本情報に加え、実習受入、実習生、卒業生の履歴、臨床実習指導者会議・講習会記録、求人票、就職説明会情報まで統合管理。<br><br>
+                            文書送付や施設との連絡履歴も記録できるため、関連情報を一箇所で把握し、効率的な実習運営を実現します。煩雑な情報管理から解放され、施設との連携をより円滑に進めることが可能です。
+                        </p>
+                    </div>
+                    <div class="md:w-1/2 order-1 md:order-2">
+                        <div class="relative py-6 pr-8">
+                            <!-- Base Image: Practice Facility Info -->
+                            <div class="rounded-2xl overflow-hidden shadow-xl border border-slate-100 bg-white">
+                                <img src="images/practice_facility.png" alt="実習施設基本情報画面" class="w-full h-auto">
+                            </div>
+                            <!-- Overlaid Image: Practice History (Top) -->
+                            <div class="absolute -bottom-8 -right-4 w-[83%] rounded-xl overflow-hidden shadow-2xl border-4 border-white transform hover:-translate-y-2 transition-all duration-300">
+                                <img src="images/practice_history.png" alt="実習履歴画面 サンプル" class="w-full h-auto">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Row 2 -->
+                <div class="flex flex-col md:flex-row items-center gap-12">
+                    <div class="md:w-1/2">
+                        <div class="relative py-6 pl-8">
+                            <!-- Base Image: Practice List -->
+                            <div class="rounded-2xl overflow-hidden shadow-xl border border-slate-100 bg-white">
+                                <img src="images/practice_list.png" alt="実習生一覧画面" class="w-full h-auto">
+                            </div>
+                            <!-- Overlaid Image: Practice Document -->
+                            <div class="absolute -bottom-8 -left-4 w-[50%] rounded-xl overflow-hidden shadow-2xl border-4 border-white transform hover:-translate-y-2 transition-all duration-300">
+                                <img src="images/practice_pdf.png" alt="受入承諾書PDF画面" class="w-full h-auto">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="md:w-1/2">
+                        <h3 class="text-2xl font-bold text-primary mb-4">臨床実習をスムーズに管理</h3>
+                        <p class="text-slate-600 leading-relaxed">
+                            実習受入依頼の文書発送から返信書類の管理、実習施設の一覧表示、学生の配置、そして実習成績の入力まで、臨床実習に関わる一連の業務をデジタルに管理します。<br><br>
+                            煩雑な書類作業や情報共有の手間を削減し、人的ミスを防ぎます。さらに、対象施設を簡単に抽出できる機能により、会議の準備も効率化。教員の負担を軽減し、学生への指導に時間を割けるよう支援します。
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Row 3 -->
+                <div class="flex flex-col md:flex-row items-center gap-12">
+                    <div class="md:w-1/2 order-2 md:order-1">
+                        <h3 class="text-2xl font-bold text-primary mb-4">進化する臨床実習を、INTEVE SCHOOLとともに。</h3>
+                        <p class="text-slate-600 leading-relaxed">
+                            INTEVE SCHOOLは、豊富な機能と柔軟なカスタマイズ性で、医療系養成校の臨床実習を強力にサポートします。各施設ならではの評価項目や運用フローに合わせた個別開発で、より効率的で質の高い実習管理体制を構築可能です。<br><br>
+                            FileMakerの柔軟性を活かしたオリジナルアプリが、業務効率化を強力に支援します。過去の経験を未来に活かし、質の高い臨床実習へと導く強力なツールです。
+                        </p>
+                    </div>
+                    <div class="md:w-1/2 order-1 md:order-2">
+                        <div class="relative pt-4 pb-12 pr-12">
+                            <!-- Base Image: Practice Payment -->
+                            <div class="w-[85%] rounded-2xl overflow-hidden shadow-md border border-slate-100 bg-white relative z-0">
+                                <img src="images/practice_payment.png" alt="謝礼金画面" class="w-full h-auto">
+                            </div>
+                            <!-- Overlaid Image: Practice Candidate -->
+                            <div class="absolute -bottom-6 -right-2 w-[70%] rounded-xl overflow-hidden shadow-2xl border-4 border-white transform hover:-translate-y-2 transition-all duration-300 z-10">
+                                <img src="images/practice_candidate.png" alt="実習地候補画面" class="w-full h-auto">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Pricing / CTA -->
+        <section class="py-24 bg-primary text-white text-center relative">
+            <div class="absolute inset-0 opacity-10 bg-[radial-gradient(#fff_1px,transparent_1px)] [background-size:20px_20px]"></div>
+            <div class="container mx-auto px-6 relative z-10">
+                <h2 class="text-3xl md:text-4xl font-bold mb-6">貴校に最適！業務効率化プラン</h2>
+                <p class="text-lg opacity-90 max-w-2xl mx-auto mb-10">
+                    《アプリケーションプラン》と《サポートプラン》を自由に組み合わせて、貴校にぴったりの業務効率化アプリケーションをご検討いただけます。
+                </p>
+                <div class="flex justify-center mb-12">
+                     <a href="plan.html" class="bg-accent text-white px-10 py-4 rounded-full text-lg font-bold hover:bg-orange-600 hover:shadow-xl transition-all shadow-lg inline-flex items-center space-x-2">
+                        <span>プランを見積もる</span>
+                        <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <div id="footer-placeholder"></div>
+
+    <script src="js/main.js?v=20260329" data-root="./"></script>
+</body>
+</html>

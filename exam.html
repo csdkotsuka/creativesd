@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <!-- <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests"> -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>国家試験対策システム | INTEVE SCHOOL - 医療系国家試験の合格率向上を支援</title>
+    <meta name="description" content="医療系教育現場での国家試験対策を効率化。学外模試データの管理、苦手分野の分析、成績推移の可視化により、学生一人ひとりに合わせた最適な指導を実現。最新のFileMaker技術で、合格への道のりをバックアップします。">
+
+    <link rel="icon" href="images/favicon.png" type="image/png" />
+    <link rel="apple-touch-icon" href="images/favicon.png" />
+
+    <!-- OGP Settings -->
+    <meta property="og:title" content="国家試験対策システム | INTEVE SCHOOL - 医療系国家試験の合格率向上を支援" />
+    <meta property="og:description" content="医療系教育現場での国家試験対策を効率化。合格への道のりをバックアップします。" />
+    <meta property="og:url" content="https://creativesd.net/exam.html" />
+    <meta property="og:image" content="https://creativesd.net/images/ogp.png" />
+    <meta property="og:type" content="article" />
+    <meta name="twitter:card" content="summary_large_image" />
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-P8YSB8RZB2"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-P8YSB8RZB2');
+    </script>
+
+    <!-- Structured Data (JSON-LD) for SEO/AI -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "SoftwareApplication",
+      "name": "INTEVE SCHOOL 国家試験対策",
+      "operatingSystem": "Web, Windows, macOS, iOS",
+      "applicationCategory": "Educational Business System",
+      "description": "医療系国家試験対策支援システム。模試結果の可視化と学生別の傾向分析を実現。",
+      "publisher": {
+        "@type": "Organization",
+        "name": "Creative System Design"
+      }
+    }
+    </script>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts: Inter -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <!-- FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css?v=20260329">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#004080',
+                        secondary: '#00BCD4',
+                        accent: '#FF6600',
+                        glass: 'rgba(255, 255, 255, 0.7)',
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                }
+            }
+        }
+    </script>
+</head>
+<body class="font-sans text-slate-900 overflow-x-hidden bg-slate-50">
+
+    <div id="header-placeholder"></div>
+
+    <!-- Main Content -->
+    <main class="pt-[88px]">
+        
+        <!-- Hero Section -->
+        <section class="relative h-[60vh] min-h-[500px] flex items-center justify-center overflow-hidden">
+            <!-- Background Image -->
+            <div class="absolute inset-0 z-0">
+                <img src="assets/images/exam-7.jpg" alt="National Exam Preparation Background" class="w-full h-full object-cover origin-center transform scale-105">
+                <!-- Overlay Gradient -->
+                <div class="absolute inset-0 bg-gradient-to-r from-primary/95 via-primary/80 to-secondary/60 mix-blend-multiply"></div>
+            </div>
+
+            <!-- Hero Content -->
+            <div class="container mx-auto px-6 relative z-10 text-center text-white">
+                <span class="inline-block py-1 px-3 rounded-full bg-white/10 border border-white/20 text-sm font-bold tracking-widest mb-6 backdrop-blur-md uppercase">National Exam Preparation</span>
+                <h1 class="text-4xl md:text-5xl lg:text-5xl font-bold mb-6 leading-tight drop-shadow-lg max-w-4xl mx-auto">
+                    理学療法士国家試験<br class="md:hidden">全員合格を目指すために。<br>
+                    <span class="text-secondary opacity-90 text-3xl md:text-5xl border-b-2 border-accent pb-2 inline-block mt-4">学習を強力にサポートするシステム</span>
+                </h1>
+                <p class="text-lg md:text-xl max-w-3xl mx-auto opacity-90 leading-relaxed font-light mt-8">
+                    「問題整理」「試験作成・出題」「解答分析」 の3つの柱で<br class="hidden md:block">国家試験対策をデジタルで効率的に、そして徹底的に実現します。
+                </p>
+                <div class="mt-8 flex flex-wrap items-center justify-center gap-4">
+                    <a href="exam_leaflet.html" class="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-white/20 hover:bg-white/30 text-white font-bold text-sm backdrop-blur-md border border-white/30 transition-all shadow-lg transform hover:-translate-y-0.5">
+                        <i class="fas fa-file-alt text-secondary"></i>
+                        <span>A4製品リーフレット（印刷・PDF）を見る</span>
+                        <i class="fas fa-arrow-right text-xs"></i>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- 3 Pillars Section -->
+        <section class="py-24 bg-slate-50 relative overflow-hidden">
+            <!-- Decorative Elements -->
+            <div class="absolute top-0 right-0 w-[500px] h-[500px] bg-secondary/5 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2 pointer-events-none"></div>
+            <div class="absolute bottom-0 left-0 w-[400px] h-[400px] bg-primary/5 rounded-full blur-3xl translate-y-1/2 -translate-x-1/2 pointer-events-none"></div>
+
+            <div class="container mx-auto px-6 max-w-6xl relative z-10">
+                
+                <div class="text-center mb-16">
+                    <span class="text-secondary font-bold tracking-widest uppercase text-sm mb-2 block">Core Features</span>
+                    <h2 class="text-3xl md:text-4xl font-bold text-primary mb-4">合格を支える3つの柱</h2>
+                    <p class="text-slate-500 max-w-2xl mx-auto">過去問のデータ化から試験作成、そしてパーソナライズされた解答分析まで、教員の負担を減らし学生の学力を最大化します。</p>
+                </div>
+
+                <!-- Pillar 1: 問題整理 -->
+                <div class="bg-white rounded-3xl p-8 md:p-12 shadow-xl shadow-primary/5 border border-slate-100 mb-12 flex flex-col md:flex-row items-center gap-10 transform transition hover:-translate-y-1">
+                    <div class="md:w-1/2 space-y-6">
+                        <div class="inline-flex items-center justify-center w-14 h-14 bg-blue-50 text-secondary rounded-2xl mb-2 shadow-inner">
+                            <span class="text-2xl font-bold font-sans">01</span>
+                        </div>
+                        <h3 class="text-2xl font-bold text-primary border-l-4 border-secondary pl-4">
+                            問題整理<br>
+                            <span class="text-xl text-slate-500 font-normal mt-2 block">科目×分野×キーワードでピンポイント検索＆新規問題登録</span>
+                        </h3>
+                        <p class="text-slate-600 leading-relaxed">
+                            膨大な過去問データを一元管理し、あなたの学習を強力にサポート。大量の過去問を整理された分野名で分類し、科目やキーワードで素早く検索できる環境を提供します。新規問題のインポートにも対応し、最新の試験傾向に合わせた問題集作りも可能です。
+                        </p>
+                        <ul class="space-y-3 mt-4">
+                            <li class="flex items-start text-sm text-slate-600">
+                                <i class="fas fa-check text-accent mt-1 mr-3"></i><span>大量の過去問を保存し、他専門職の問題にも応用可能</span>
+                            </li>
+                            <li class="flex items-start text-sm text-slate-600">
+                                <i class="fas fa-check text-accent mt-1 mr-3"></i><span>学科・科目、大・中・小項目まで自由自在に分類・一括変換</span>
+                            </li>
+                        </ul>
+                    </div>
+                    <!-- Pillar 1 Image Visual: Overlapping Question Organization Screens -->
+                    <div class="md:w-1/2 w-full relative flex items-center justify-center py-6 min-h-[380px] md:min-h-[440px] overflow-visible">
+                        <!-- Background glow -->
+                        <div class="absolute w-72 h-72 bg-blue-400/20 rounded-full blur-3xl -z-0"></div>
+
+                        <!-- Bottom Image (Background / Right-Top): Question Search & Editing Window -->
+                        <div class="absolute right-0 top-0 w-[82%] sm:w-[85%] z-10 transition-transform duration-500 hover:scale-[1.02]">
+                            <div class="bg-white/90 p-1.5 rounded-2xl shadow-xl shadow-slate-900/15 border border-slate-200/90 backdrop-blur">
+                                <div class="flex items-center justify-between px-2 py-1 mb-1 border-b border-slate-100 text-[10px] sm:text-[11px] font-semibold text-slate-700">
+                                    <span class="flex items-center gap-1 text-primary font-bold truncate">
+                                        <i class="fas fa-edit text-secondary"></i> 問題項目分類・一括編集
+                                    </span>
+                                    <span class="bg-blue-100 text-blue-800 text-[9px] sm:text-[10px] px-1.5 py-0.5 rounded-full font-bold shrink-0">編集・検索</span>
+                                </div>
+                                <img src="images/exam_question_search_edit.png" alt="問題項目分類一括編集画面" class="w-full h-auto rounded-lg shadow-sm border border-slate-100">
+                            </div>
+                        </div>
+
+                        <!-- Top Image (Front / Left-Bottom): Category Classification Screen -->
+                        <div class="absolute left-0 bottom-0 w-[78%] sm:w-[80%] z-20 transform translate-y-3 sm:translate-y-4 transition-transform duration-500 hover:scale-[1.03]">
+                            <div class="bg-white p-1.5 rounded-2xl shadow-2xl shadow-blue-900/30 border border-blue-200">
+                                <div class="flex items-center gap-1.5 px-2 py-1 mb-1 border-b border-slate-100 text-[11px] font-semibold text-slate-600">
+                                    <span class="w-2 h-2 rounded-full bg-red-400"></span>
+                                    <span class="w-2 h-2 rounded-full bg-yellow-400"></span>
+                                    <span class="w-2 h-2 rounded-full bg-green-400"></span>
+                                    <span class="ml-1 text-slate-500 font-mono text-[10px]">国家試験対策・問題分類</span>
+                                </div>
+                                <img src="images/exam_category_classify.png" alt="国家試験問題 分類画面" class="w-full h-auto object-contain rounded-lg shadow-sm border border-slate-100">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Pillar 2: 試験作成・出題 -->
+                <div class="bg-white rounded-3xl p-8 md:p-12 shadow-xl shadow-primary/5 border border-slate-100 mb-12 flex flex-col md:flex-row items-center gap-10 transform transition hover:-translate-y-1">
+                    <!-- Pillar 2 Image Visual: Overlapping Exam Output & Layout Screens -->
+                    <div class="md:w-1/2 order-2 md:order-1 w-full relative flex items-center justify-center py-6 min-h-[380px] md:min-h-[440px] overflow-visible">
+                        <!-- Background glow -->
+                        <div class="absolute w-72 h-72 bg-cyan-400/20 rounded-full blur-3xl -z-0"></div>
+
+                        <!-- Bottom Image (Background / Left-Top offset): Exam Output Settings -->
+                        <div class="absolute left-0 top-0 w-[82%] sm:w-[85%] z-10 transition-transform duration-500 hover:scale-[1.02]">
+                            <div class="bg-white/90 p-1.5 rounded-2xl shadow-xl shadow-slate-900/15 border border-slate-200/90 backdrop-blur">
+                                <div class="flex items-center justify-between px-2 py-1 mb-1 border-b border-slate-100 text-[10px] sm:text-[11px] font-semibold text-slate-700">
+                                    <span class="flex items-center gap-1 text-secondary font-bold truncate">
+                                        <i class="fas fa-print"></i> 各種試験出力設定・印刷プレビュー
+                                    </span>
+                                    <span class="bg-cyan-100 text-cyan-800 text-[9px] sm:text-[10px] px-1.5 py-0.5 rounded-full font-bold shrink-0">出力設定</span>
+                                </div>
+                                <img src="images/exam_output_setting.png" alt="各種試験出力設定・印刷画面" class="w-full h-auto rounded-lg shadow-sm border border-slate-100">
+                            </div>
+                        </div>
+
+                        <!-- Top Image (Front / Right-Bottom offset): PDF Question Paper Preview (Screenshot) -->
+                        <div class="absolute right-0 bottom-0 w-[78%] sm:w-[80%] z-20 transform translate-y-3 sm:translate-y-4 transition-transform duration-500 hover:scale-[1.03]">
+                            <div class="bg-white p-1.5 rounded-2xl shadow-2xl shadow-cyan-900/30 border border-cyan-200">
+                                <div class="flex items-center gap-1.5 px-2 py-1 mb-1 border-b border-slate-100 text-[11px] font-semibold text-slate-600">
+                                    <span class="w-2 h-2 rounded-full bg-red-400"></span>
+                                    <span class="w-2 h-2 rounded-full bg-yellow-400"></span>
+                                    <span class="w-2 h-2 rounded-full bg-green-400"></span>
+                                    <span class="ml-1 text-slate-500 font-mono text-[10px]">問題用紙 PDF出力完了イメージ</span>
+                                </div>
+                                <img src="images/exam_pdf_preview.png" alt="PDF問題用紙出力イメージ" class="w-full h-auto object-contain rounded-lg shadow-sm border border-slate-100">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="md:w-1/2 order-1 md:order-2 space-y-6">
+                        <div class="inline-flex items-center justify-center w-14 h-14 bg-blue-50 text-secondary rounded-2xl mb-2 shadow-inner">
+                            <span class="text-2xl font-bold font-sans">02</span>
+                        </div>
+                        <h3 class="text-2xl font-bold text-primary border-l-4 border-secondary pl-4">
+                            試験作成・出題<br>
+                            <span class="text-xl text-slate-500 font-normal mt-2 block">自在に試験作成！過去問活用で効率UP</span>
+                        </h3>
+                        <p class="text-slate-600 leading-relaxed">
+                            検索して絞り込んだ問題を、レイアウトや図も含めて最適化して出力。分野指定検索から問題用紙出力まで、試験作成のあらゆるニーズに応え、教員の負担を大幅に削減します。
+                        </p>
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-6">
+                            <div class="bg-slate-50 p-4 rounded-xl border border-slate-100">
+                                <h4 class="font-bold text-primary text-sm mb-2"><i class="fas fa-search mr-2 text-secondary"></i>分野指定検索</h4>
+                                <p class="text-xs text-slate-500">科目や分野を絞り込み、必要な過去問をピンポイントに抽出。</p>
+                            </div>
+                            <div class="bg-slate-50 p-4 rounded-xl border border-slate-100">
+                                <h4 class="font-bold text-primary text-sm mb-2"><i class="fas fa-file-pdf mr-2 text-secondary"></i>自由なレイアウト</h4>
+                                <p class="text-xs text-slate-500">縦置き、横段など用途に合わせて問題用紙のレイアウトを自由に設定。</p>
+                            </div>
+                            <div class="bg-slate-50 p-4 rounded-xl border border-slate-100">
+                                <h4 class="font-bold text-primary text-sm mb-2"><i class="fas fa-image mr-2 text-secondary"></i>図のサイズ微調整</h4>
+                                <p class="text-xs text-slate-500">問題用紙に配置する図のサイズを細かく調整可能。</p>
+                            </div>
+                            <div class="bg-slate-50 p-4 rounded-xl border border-slate-100">
+                                <h4 class="font-bold text-primary text-sm mb-2"><i class="fas fa-layer-group mr-2 text-secondary"></i>項目指定</h4>
+                                <p class="text-xs text-slate-500">出題範囲を大・中項目で細かく指定し、弱点克服のテストを作成。</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Pillar 3: 解答分析 -->
+                <div class="bg-white rounded-3xl p-8 md:p-12 shadow-xl shadow-primary/5 border border-slate-100 flex flex-col md:flex-row items-center gap-10 transform transition hover:-translate-y-1">
+                    <div class="md:w-1/2 space-y-6">
+                        <div class="inline-flex items-center justify-center w-14 h-14 bg-blue-50 text-secondary rounded-2xl mb-2 shadow-inner">
+                            <span class="text-2xl font-bold font-sans">03</span>
+                        </div>
+                        <h3 class="text-2xl font-bold text-primary border-l-4 border-secondary pl-4">
+                            解答分析<br>
+                            <span class="text-xl text-slate-500 font-normal mt-2 block">解答分析を深化！エラー分析で課題提示</span>
+                        </h3>
+                        <p class="text-slate-600 leading-relaxed">
+                            オンライン回答やOCR処理された解答をデータ化し、分野別正解率や偏差値などの詳細な分析を可能にします。解答選択肢の一覧表示で個々の傾向を把握し、エラーを自動集計して克服シートを出力します。
+                        </p>
+                        <ul class="space-y-4 mt-6">
+                            <li class="flex flex-col">
+                                <span class="font-bold text-primary text-sm"><i class="fas fa-bolt text-accent mr-2"></i>解答データ分析の効率化</span>
+                                <span class="text-sm text-slate-500 pl-6 mt-1">結果を手間なくデジタル化し、分析への時間を創出。全体の順位や偏差値を自動算出。</span>
+                            </li>
+                            <li class="flex flex-col">
+                                <span class="font-bold text-primary text-sm"><i class="fas fa-chart-line text-accent mr-2"></i>解答傾向の可視化</span>
+                                <span class="text-sm text-slate-500 pl-6 mt-1">誰がどの選択肢を選んだのかが一目でわかり、理解度の低い選択肢を把握。</span>
+                            </li>
+                            <li class="flex flex-col">
+                                <span class="font-bold text-primary text-sm"><i class="fas fa-user-graduate text-accent mr-2"></i>エラー分析と課題提示</span>
+                                <span class="text-sm text-slate-500 pl-6 mt-1">選択肢毎に優位性を設定し、誤答をエラーとして自動カウント。個別課題シートを出力。</span>
+                            </li>
+                        </ul>
+                    </div>
+                    <!-- Pillar 3 Image Visual: 3-Layered Answer Analysis Suite (Neatly Framed) -->
+                    <div class="md:w-1/2 w-full relative flex items-center justify-center py-4 min-h-[360px] md:min-h-[400px] overflow-hidden">
+                        <!-- Background glow -->
+                        <div class="absolute w-72 h-72 bg-orange-400/20 rounded-full blur-3xl -z-0"></div>
+
+                        <!-- Layer 1 (Background / Top-Left): System Result Analysis Control -->
+                        <div class="absolute left-0 top-1 w-[52%] sm:w-[55%] z-10 transition-transform duration-500 hover:scale-[1.02]">
+                            <div class="bg-white/90 p-1.5 rounded-xl shadow-lg shadow-slate-900/10 border border-slate-200/90 backdrop-blur">
+                                <div class="flex items-center justify-between px-1.5 py-0.5 mb-1 border-b border-slate-100 text-[10px] font-semibold text-slate-700">
+                                    <span class="flex items-center gap-1 text-primary font-bold truncate">
+                                        <i class="fas fa-sliders-h text-accent"></i> 集計コントロール
+                                    </span>
+                                </div>
+                                <img src="images/exam_result_analysis.png" alt="試験結果集計コントロール画面" class="w-full max-h-[190px] md:max-h-[220px] object-cover object-top rounded-lg shadow-sm border border-slate-100">
+                            </div>
+                        </div>
+
+                        <!-- Layer 2 (Middle / Right-Top): Overall Test Analysis Chart -->
+                        <div class="absolute right-0 top-3 sm:top-4 w-[50%] sm:w-[52%] z-20 transition-transform duration-500 hover:scale-[1.02]">
+                            <div class="bg-white p-1.5 rounded-xl shadow-xl shadow-orange-900/20 border border-amber-300/90">
+                                <div class="flex items-center justify-between px-1.5 py-0.5 mb-1 border-b border-slate-100 text-[10px] font-semibold text-slate-700">
+                                    <span class="flex items-center gap-1 text-amber-900 font-bold truncate">
+                                        <i class="fas fa-chart-area text-amber-500"></i> 全体分析（箱ひげ/S-P）
+                                    </span>
+                                </div>
+                                <img src="images/exam_overall_analysis_chart.png" alt="全体試験結果分析グラフ・S-P表シート" class="w-full max-h-[210px] md:max-h-[240px] object-cover object-top rounded-lg shadow-sm border border-slate-100">
+                            </div>
+                        </div>
+
+                        <!-- Layer 3 (Front / Bottom-Center): Individual Grade Report -->
+                        <div class="absolute left-1/4 bottom-1 w-[48%] sm:w-[50%] z-30 transition-transform duration-500 hover:scale-[1.03]">
+                            <div class="bg-white p-1.5 rounded-xl shadow-2xl shadow-orange-900/35 border border-orange-200">
+                                <div class="flex items-center justify-between px-1.5 py-0.5 mb-1 border-b border-slate-100 text-[10px] font-semibold text-slate-700">
+                                    <span class="flex items-center gap-1 text-accent font-bold truncate">
+                                        <i class="fas fa-file-user"></i> 個人解答分析
+                                    </span>
+                                </div>
+                                <img src="images/exam_result_report.png" alt="個人解答分析・弱点判定シート" class="w-full max-h-[190px] md:max-h-[220px] object-contain rounded-lg shadow-sm border border-slate-100">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Deep Dive Section (Patented Tech) -->
+        <section class="py-24 bg-slate-50 relative overflow-hidden border-t border-slate-200">
+            <!-- Decorative Elements -->
+            <div class="absolute top-1/4 left-0 w-72 h-72 bg-accent/5 rounded-full blur-3xl -translate-x-1/2 pointer-events-none"></div>
+            <div class="absolute bottom-1/4 right-0 w-96 h-96 bg-secondary/5 rounded-full blur-3xl translate-x-1/3 pointer-events-none"></div>
+
+            <div class="container mx-auto px-6 max-w-6xl relative z-10">
+                
+                <!-- Section Header with Badge -->
+                <div class="text-center mb-20 relative">
+                    <div class="inline-flex items-center justify-center space-x-2 bg-gradient-to-r from-primary to-blue-800 text-white px-6 py-2 rounded-full font-bold text-sm tracking-widest shadow-lg shadow-primary/20 mb-6 transform -translate-y-4 hover:scale-105 transition-transform cursor-default">
+                        <i class="fas fa-certificate text-accent"></i>
+                        <span>特許出願中（特願2025-265873）</span>
+                    </div>
+                    <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold text-primary mb-6 leading-tight">
+                        「点数」では届かない領域へ。<br>
+                        <span class="text-secondary text-2xl md:text-3xl lg:text-4xl mt-4 block">特許技術が解き明かす、学習の『質』と『リスク』。</span>
+                    </h2>
+                </div>
+
+                <!-- Feature 1: 多次元分析マトリクス -->
+                <div class="bg-white rounded-3xl p-8 md:p-12 shadow-xl shadow-primary/5 border border-slate-100 mb-12 flex flex-col md:flex-row items-center gap-10 transform transition hover:-translate-y-1">
+                    <div class="md:w-1/2 w-full order-2 md:order-1 flex justify-center">
+                        <img src="images/S-P.png" alt="多次元分析マトリクス" class="w-full h-auto object-contain rounded-2xl shadow-lg border border-slate-200 transform transition-transform duration-500 hover:scale-[1.02]">
+                    </div>
+                    <div class="md:w-1/2 order-1 md:order-2 space-y-6">
+                        <div class="inline-flex items-center space-x-3 mb-2">
+                            <div class="w-10 h-10 bg-blue-50 text-secondary rounded-xl flex items-center justify-center">
+                                <i class="fas fa-chart-line text-lg"></i>
+                            </div>
+                            <span class="text-secondary font-bold tracking-widest text-sm">特許技術 1</span>
+                        </div>
+                        <h3 class="text-2xl font-bold text-primary border-l-4 border-secondary pl-4">
+                            多次元分析マトリクス<br>
+                            <span class="text-[17px] text-slate-500 font-normal mt-2 block">成績上位でも「禁忌肢」を選ぶリスク層を特定。</span>
+                        </h3>
+                        <p class="text-slate-600 leading-relaxed font-medium">
+                            「合格圏内」に隠れた死角をゼロに。S-P表分析と識別指数を用い、学生の知識の定着度と判断の安全性を可視化します。
+                        </p>
+                        <div class="pt-2 flex justify-start md:justify-end">
+                            <a href="risk-analysis.html" class="inline-flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-secondary to-primary hover:from-primary hover:to-secondary text-white font-bold text-xs md:text-sm rounded-full shadow-md hover:shadow-xl transform hover:-translate-y-0.5 transition-all group">
+                                <i class="fas fa-shield-alt text-yellow-300"></i>
+                                <span>業界初「推奨選択肢リスク分析」を詳しく見る</span>
+                                <i class="fas fa-arrow-right text-xs group-hover:translate-x-1 transition-transform"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Feature 2: LLMパーソナライズ・アドバイス -->
+                <div class="bg-white rounded-3xl p-8 md:p-12 shadow-xl shadow-primary/5 border border-slate-100 mb-12 flex flex-col md:flex-row items-center gap-10 transform transition hover:-translate-y-1">
+                    <div class="md:w-1/2 space-y-6">
+                        <div class="inline-flex items-center space-x-3 mb-2">
+                            <div class="w-10 h-10 bg-cyan-50 text-secondary rounded-xl flex items-center justify-center">
+                                <i class="fas fa-robot text-lg"></i>
+                            </div>
+                            <span class="text-secondary font-bold tracking-widest text-sm">特許技術 2</span>
+                        </div>
+                        <h3 class="text-2xl font-bold text-primary border-l-4 border-secondary pl-4">
+                            LLMパーソナライズ・<br class="hidden lg:block">アドバイス<br>
+                            <span class="text-[17px] text-slate-500 font-normal mt-2 block">「何をすべきか」をAIが具体化。</span>
+                        </h3>
+                        <p class="text-slate-600 leading-relaxed font-medium">
+                            AIが「あなたの思考の癖」を言語化。膨大な統計データから、LLMが一人ひとりに最適化された具体的な復習アクションを提案。学生の自律的な「メタ認知」を促します。
+                        </p>
+                    </div>
+                    <div class="md:w-1/2 w-full flex justify-center py-4">
+                        <img src="images/exam_result.png" alt="LLMパーソナライズ・アドバイス" class="w-64 md:w-80 h-auto object-contain rounded-3xl shadow-2xl border border-slate-100 transform md:rotate-2 hover:rotate-0 transition-transform duration-500">
+                    </div>
+                </div>
+
+                <!-- Feature 3: 指導者向けマネジメント・レポート -->
+                <div class="bg-white rounded-3xl p-8 md:p-12 shadow-xl shadow-primary/5 border border-slate-100 flex flex-col md:flex-row items-center gap-10 transform transition hover:-translate-y-1">
+                    <div class="md:w-1/2 w-full order-2 md:order-1 flex justify-center relative">
+                        <img src="images/teacher_dashboard.png" alt="指導者向けマネジメント・レポート" class="w-full max-w-md h-auto object-contain rounded-xl shadow-2xl border border-slate-200 transform md:-rotate-1 hover:rotate-0 transition-transform duration-500">
+                    </div>
+                    <div class="md:w-1/2 order-1 md:order-2 space-y-6">
+                        <div class="inline-flex items-center space-x-3 mb-2">
+                            <div class="w-10 h-10 bg-orange-50 text-accent rounded-xl flex items-center justify-center">
+                                <i class="fas fa-tachometer-alt text-lg"></i>
+                            </div>
+                            <span class="text-secondary font-bold tracking-widest text-sm">特許技術 3</span>
+                        </div>
+                        <h3 class="text-2xl font-bold text-primary border-l-4 border-secondary pl-4">
+                            指導者向け<br class="hidden lg:block">マネジメント・レポート<br>
+                            <span class="text-[17px] text-slate-500 font-normal mt-2 block">分析はAIに任せ、先生は「指導」に集中する。</span>
+                        </h3>
+                        <p class="text-slate-600 leading-relaxed font-medium">
+                            採点と同時に、クラス全体の概念誤解や「悪問」の可能性を自動特定。指導が必要な学生を優先順位付きでリストアップし、次回の授業案までサポートします。
+                        </p>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- INTEVE SCHOOL / FileMaker Info Section -->
+        <section class="py-24 bg-white relative">
+            <div class="container mx-auto px-6 max-w-5xl text-center">
+                <i class="fas fa-award text-5xl text-accent mb-6"></i>
+                <h2 class="text-3xl md:text-4xl font-bold text-primary mb-8 leading-tight">
+                    「合格」への最短距離を、あなただけのオーダーメイドで。<br>
+                    <span class="text-secondary">INTEVE SCHOOL®</span> で実現する、真の個別最適化。
+                </h2>
+                <div class="bg-blue-50 rounded-3xl p-8 md:p-12 mb-16 shadow-inner text-left">
+                    <h3 class="text-xl font-bold text-primary mb-4 border-b pb-4 border-blue-200">FileMakerで変わる教育現場のDX</h3>
+                    <p class="text-slate-600 leading-relaxed mb-4">
+                        このFileMakerデータベースアプリは、学習状況に合わせてカスタマイズ可能。「あなただけの」国家試験対策ツールとして、合格への道のりを力強くサポートします。国家試験対策、臨床実習、マーケティングに必要な情報を一元管理。
+                    </p>
+                    <p class="text-slate-600 leading-relaxed">
+                        FileMakerの柔軟性を活かしたオリジナルアプリが、問題作成・分析の効率化、実習管理の円滑化、学生データの統合、高校情報連携による広報活動といった業務効率化を強力に支援します。
+                    </p>
+                    <div class="mt-8 flex flex-wrap gap-4 justify-center md:justify-start">
+                        <a href="#" class="inline-flex items-center text-secondary font-bold hover:text-primary transition-colors">
+                            <i class="fas fa-chevron-right text-xs mr-2"></i>臨床実習について詳しく
+                        </a>
+                        <a href="#" class="inline-flex items-center text-secondary font-bold hover:text-primary transition-colors">
+                            <i class="fas fa-chevron-right text-xs mr-2"></i>マーケティングについて詳しく
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Pricing / CTA -->
+        <section class="py-24 bg-primary text-white text-center relative">
+            <div class="absolute inset-0 opacity-10 bg-[radial-gradient(#fff_1px,transparent_1px)] [background-size:20px_20px]"></div>
+            <div class="container mx-auto px-6 relative z-10">
+                <h2 class="text-3xl md:text-4xl font-bold mb-6">貴校に最適！業務効率化プラン</h2>
+                <p class="text-lg opacity-90 max-w-2xl mx-auto mb-10">
+                    《アプリケーションプラン》と《サポートプラン》を自由に組み合わせて、貴校にぴったりの業務効率化アプリケーションをご検討いただけます。
+                </p>
+                <div class="flex justify-center mb-12">
+                     <a href="plan.html" data-ga-click="Exam: Estimate Plan" class="bg-accent text-white px-10 py-4 rounded-full text-lg font-bold hover:bg-orange-600 hover:shadow-xl transition-all shadow-lg inline-flex items-center space-x-2">
+                        <span>プランを見積もる</span>
+                        <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <div id="footer-placeholder"></div>
+
+    <script src="js/main.js?v=20260329" data-root="./"></script>
+</body>
+</html>

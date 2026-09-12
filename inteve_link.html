@@ -1,0 +1,1329 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>臨床実習管理ポータル INTEVE LINK | Creative System Design</title>
+    <meta name="description" content="INTEVE LINK（インテブ リンク）は、実習生・臨床指導者・学校教員の三者をリアルタイムでつなぐ臨床実習管理ポータルです。紙媒体のやり取りを完全デジタル化し、安心のクラウド環境で実習指導を強力にサポートします。">
+
+    <link rel="icon" href="images/favicon.png" type="image/png" />
+    <link rel="apple-touch-icon" href="images/favicon.png" />
+
+    <!-- OGP Settings -->
+    <meta property="og:title" content="臨床実習管理ポータル INTEVE LINK | Creative System Design" />
+    <meta property="og:description" content="実習生・臨床指導者・学校教員の三者をリアルタイムでつなぐ臨床実習管理ポータル。教員22年の現場知から生まれた臨床実習DXソリューション。" />
+    <meta property="og:url" content="https://creativesd.net/inteve_link.html" />
+    <meta property="og:image" content="https://creativesd.net/images/ogp.png" />
+    <meta property="og:type" content="article" />
+    <meta name="twitter:card" content="summary_large_image" />
+
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts: Inter -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css?v=20260329">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: {
+                            DEFAULT: '#0F172A',
+                            light: '#1E293B',
+                            dark: '#020617',
+                        },
+                        secondary: {
+                            DEFAULT: '#0EA5E9',
+                            light: '#38BDF8',
+                            dark: '#0284C7',
+                        },
+                        accent: {
+                            DEFAULT: '#F97316',
+                            light: '#FB923C',
+                            dark: '#EA580C',
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="font-sans antialiased text-slate-800 bg-slate-50 selection:bg-cyan-500 selection:text-white">
+
+    <div id="header-placeholder"></div>
+
+    <main class="pt-20">
+        <!-- Hero Section -->
+        <section class="bg-gradient-to-br from-slate-900 via-blue-950 to-slate-900 text-white relative overflow-hidden py-20 lg:py-28">
+            <!-- Background Glow & Decorative Elements -->
+            <div class="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[700px] bg-cyan-500/15 rounded-full blur-[150px] pointer-events-none"></div>
+            <div class="absolute bottom-0 right-0 w-[500px] h-[500px] bg-blue-600/15 rounded-full blur-[120px] pointer-events-none"></div>
+
+            <div class="container mx-auto px-6 relative z-10">
+                <div class="text-center max-w-4xl mx-auto space-y-6">
+                    <div class="inline-flex flex-wrap items-center justify-center gap-2 px-4 py-2 rounded-full bg-cyan-500/10 border border-cyan-400/30 text-cyan-300 font-bold text-xs md:text-sm shadow-sm backdrop-blur-md">
+                        <span class="flex items-center gap-1.5"><i class="fas fa-sparkles text-cyan-400"></i> 臨床実習統合DXポータル</span>
+                        <span class="text-slate-500">|</span>
+                        <span class="bg-cyan-400/20 text-cyan-200 px-2 py-0.5 rounded-md text-[11px] font-extrabold tracking-wide">新機能「INTEVE LINK ドキュメント」登場</span>
+                    </div>
+
+                    <h1 class="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-extrabold tracking-tight text-white leading-tight">
+                        臨床実習を支える「2つの基幹ポータル」<br>
+                        <div class="mt-2 text-xl sm:text-3xl md:text-4xl flex flex-wrap items-center justify-center gap-x-3 gap-y-1">
+                            <span class="bg-clip-text text-transparent bg-gradient-to-r from-cyan-400 via-teal-300 to-blue-400">『INTEVE LINK』</span>
+                            <span class="text-slate-400 text-lg sm:text-2xl font-light">＆</span>
+                            <span class="bg-clip-text text-transparent bg-gradient-to-r from-teal-300 via-cyan-300 to-blue-400">『INTEVE LINK ドキュメント』</span>
+                        </div>
+                    </h1>
+
+                    <p class="text-slate-300 text-base md:text-lg leading-relaxed max-w-3xl mx-auto pt-2">
+                        実習中の日誌・出欠・評価をつなぐ「実習指導」と、施設への依頼書・承諾書授受を完全オンライン化する「書類管理」。<br class="hidden sm:block">
+                        教員22年の現場知に基づき、教員の発送業務をゼロにし、安心のクラウド環境で実習運営をフルサポートします。
+                    </p>
+
+                    <!-- Two Major Pillars Nav Cards (Click to Jump to Anchor) -->
+                    <div class="pt-6 grid grid-cols-1 md:grid-cols-2 gap-5 max-w-3xl mx-auto text-left">
+                        <!-- Pillar 1: INTEVE LINK -->
+                        <a href="#features-list" class="group bg-slate-800/80 hover:bg-slate-800 border-2 border-slate-700/80 hover:border-cyan-400 p-6 rounded-3xl transition-all duration-300 shadow-xl hover:-translate-y-1 relative overflow-hidden flex flex-col justify-between backdrop-blur-sm">
+                            <div class="flex items-start justify-between gap-3 mb-4">
+                                <div class="w-12 h-12 rounded-2xl bg-cyan-500/20 text-cyan-400 border border-cyan-400/30 flex items-center justify-center text-xl shrink-0 group-hover:scale-110 transition-transform">
+                                    <i class="fas fa-user-graduate"></i>
+                                </div>
+                                <span class="px-2.5 py-1 rounded-full bg-slate-700/80 text-cyan-300 text-[11px] font-bold border border-slate-600">
+                                    実習中のやり取り
+                                </span>
+                            </div>
+                            <div>
+                                <h3 class="text-xl sm:text-2xl font-black text-white group-hover:text-cyan-300 transition-colors mb-2">
+                                    INTEVE LINK
+                                </h3>
+                                <p class="text-xs sm:text-sm text-slate-300 leading-relaxed mb-4">
+                                    実習生・臨床指導者・学校教員の三者をリアルタイムでつなぐ。出欠記録・日誌・チェックリスト・症例記録を完全ペーパーレス化。
+                                </p>
+                            </div>
+                            <div class="inline-flex items-center gap-2 text-xs sm:text-sm font-bold text-cyan-400 group-hover:text-cyan-300 pt-2 border-t border-slate-700/60">
+                                <span>実習指導機能を見る</span>
+                                <i class="fas fa-arrow-down transform group-hover:translate-y-1 transition-transform"></i>
+                            </div>
+                        </a>
+
+                        <!-- Pillar 2: INTEVE LINK ドキュメント -->
+                        <a href="#inteve-link-documents" class="group bg-gradient-to-br from-blue-950/90 to-slate-900/90 hover:from-blue-900/90 hover:to-slate-800/90 border-2 border-cyan-500/50 hover:border-cyan-400 p-6 rounded-3xl transition-all duration-300 shadow-2xl hover:-translate-y-1 relative overflow-hidden flex flex-col justify-between ring-1 ring-cyan-400/30 backdrop-blur-sm">
+                            <div class="flex items-start justify-between gap-3 mb-4">
+                                <div class="w-12 h-12 rounded-2xl bg-gradient-to-br from-cyan-500 to-blue-600 text-white flex items-center justify-center text-xl shrink-0 shadow-lg group-hover:scale-110 transition-transform">
+                                    <i class="fas fa-file-invoice"></i>
+                                </div>
+                                <span class="px-2.5 py-1 rounded-full bg-gradient-to-r from-accent to-orange-500 text-white text-[11px] font-extrabold shadow-md animate-pulse">
+                                    大型新機能｜郵送料0円
+                                </span>
+                            </div>
+                            <div>
+                                <h3 class="text-xl sm:text-2xl font-black text-white group-hover:text-cyan-300 transition-colors mb-2">
+                                    INTEVE LINK ドキュメント
+                                </h3>
+                                <p class="text-xs sm:text-sm text-slate-300 leading-relaxed mb-4">
+                                    学校 ↔ 施設間の依頼書・承諾書・各種文書を完全オンライン化。教員の発送作業ゼロ、施設アカウント数無制限。
+                                </p>
+                            </div>
+                            <div class="inline-flex items-center gap-2 text-xs sm:text-sm font-bold text-cyan-300 group-hover:text-white pt-2 border-t border-blue-800/60">
+                                <span>ドキュメント機能を見る</span>
+                                <i class="fas fa-arrow-down transform group-hover:translate-y-1 transition-transform"></i>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Overlapping Visual Showcase (Offset for Maximum Visibility) -->
+                <div class="mt-16 relative flex justify-center items-center">
+                    <div class="relative w-full max-w-4xl min-h-[340px] sm:min-h-[460px] flex items-center justify-center">
+                        <div class="absolute w-[80%] -left-2 sm:-left-6 -top-4 sm:-top-8 transform -rotate-6 hover:rotate-0 transition-transform duration-500 rounded-3xl shadow-2xl border-4 border-slate-700/80 overflow-hidden bg-slate-900">
+                            <img src="assets/images/inteve-link-daily-note.png" alt="INTEVE LINK デイリーノート画面" class="w-full h-auto object-cover rounded-2xl">
+                            <div class="absolute bottom-3 left-3 bg-slate-900/90 backdrop-blur text-white text-xs md:text-sm px-3.5 py-1 rounded-full border border-slate-700 font-bold flex items-center gap-2">
+                                <i class="fas fa-book-open text-amber-400"></i> デイリーノート（実習指導・記録）
+                            </div>
+                        </div>
+
+                        <div class="absolute z-20 w-[80%] -right-2 sm:-right-6 -bottom-4 sm:-bottom-8 transform rotate-3 hover:rotate-0 transition-all duration-500 rounded-3xl shadow-2xl border-4 border-cyan-400/60 overflow-hidden bg-slate-900">
+                            <img src="assets/images/inteve-link-doc-dashboard.png" alt="INTEVE LINK ドキュメント画面" class="w-full h-auto object-cover rounded-2xl">
+                            <div class="absolute bottom-3 left-3 bg-slate-900/95 backdrop-blur text-white text-xs md:text-sm px-3.5 py-1 rounded-full border border-cyan-400/50 font-bold flex items-center gap-2 shadow-lg">
+                                <i class="fas fa-file-contract text-cyan-400"></i> INTEVE LINK ドキュメント
+                            </div>
+                            <div class="absolute -top-3 -right-3 bg-gradient-to-r from-accent to-orange-500 text-white font-bold text-xs px-4 py-2 rounded-full shadow-xl border border-white/20 animate-pulse hidden sm:flex items-center gap-1.5">
+                                <i class="fas fa-paper-plane"></i> 郵送料0円・押印返信対応
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Concept Narrative Section -->
+        <section class="py-20 bg-white">
+            <div class="container mx-auto px-6">
+                <div class="max-w-4xl mx-auto text-center space-y-4 mb-16">
+                    <span class="text-secondary font-bold text-sm tracking-widest uppercase">Concept & Two Pillars</span>
+                    <h2 class="text-3xl md:text-4xl font-bold text-primary">
+                        現場の「困った」を根本解決。<br>
+                        臨床実習を支える「2つの巨大な柱」
+                    </h2>
+                    <p class="text-slate-600 leading-relaxed text-base md:text-lg pt-2">
+                        実習中の「日誌・評価・連絡のタイムロス」だけでなく、毎年学校を悩ませてきた「数百施設への文書郵送・印刷封入作業」……。<br class="hidden sm:block">
+                        INTEVE LINKは、日々の実習指導と施設間ドキュメント管理の双方を完全デジタル化し、持続可能で高効率な実習運営を実現します。
+                    </p>
+                </div>
+
+                <!-- 3 Pillars Grid -->
+                <div class="grid md:grid-cols-3 gap-8">
+                    <div class="bg-slate-50 p-8 rounded-3xl border border-slate-100 shadow-sm hover:shadow-md transition-shadow">
+                        <div class="w-14 h-14 bg-cyan-100 text-secondary rounded-2xl flex items-center justify-center text-2xl mb-6">
+                            <i class="fas fa-users flex"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-slate-800 mb-3">三者リアルタイム共有</h3>
+                        <p class="text-slate-600 text-sm leading-relaxed">
+                            実習生、臨床指導者、学校教員が同じWebポータル上で即座に情報を共有。出欠・日誌・症例記録のタイムラグを根本から解消します。
+                        </p>
+                    </div>
+
+                    <div class="bg-slate-50 p-8 rounded-3xl border border-slate-100 shadow-sm hover:shadow-md transition-shadow ring-2 ring-cyan-500/20 bg-gradient-to-b from-cyan-50/40 to-slate-50">
+                        <div class="w-14 h-14 bg-blue-100 text-blue-600 rounded-2xl flex items-center justify-center text-2xl mb-6">
+                            <i class="fas fa-envelope-open-text"></i>
+                        </div>
+                        <div class="flex items-center gap-2 mb-2">
+                            <h3 class="text-xl font-bold text-slate-800">INTEVE LINK ドキュメント</h3>
+                            <span class="text-[10px] font-extrabold bg-blue-600 text-white px-2 py-0.5 rounded-full">新機能</span>
+                        </div>
+                        <p class="text-slate-600 text-sm leading-relaxed">
+                            施設への依頼書・承諾書を完全オンライン送受信。郵送料ゼロ、印刷・封入の手間をゼロにし、押印書類もPDF再提出で完結します。
+                        </p>
+                    </div>
+
+                    <div class="bg-slate-50 p-8 rounded-3xl border border-slate-100 shadow-sm hover:shadow-md transition-shadow">
+                        <div class="w-14 h-14 bg-pink-100 text-pink-500 rounded-2xl flex items-center justify-center text-2xl mb-6">
+                            <i class="fas fa-shield-heart"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-slate-800 mb-3">教員専用の安心安全機能</h3>
+                        <p class="text-slate-600 text-sm leading-relaxed">
+                            実習生の心理的負担に配慮したコンディション情報、指導者非開示の教員専用ヘルスケアログ、全施設・実習生の一括進捗管理に対応。
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- INTEVE LINK Documents (Official Documents DX) Mega Section -->
+        <section id="inteve-link-documents" class="py-24 bg-gradient-to-b from-slate-900 via-slate-900 to-blue-950 text-white relative overflow-hidden border-t border-slate-800">
+            <!-- Ambient Glows -->
+            <div class="absolute top-0 right-1/4 w-[600px] h-[600px] bg-cyan-500/10 rounded-full blur-[160px] pointer-events-none"></div>
+            <div class="absolute bottom-10 left-10 w-[500px] h-[500px] bg-blue-600/10 rounded-full blur-[140px] pointer-events-none"></div>
+
+            <div class="container mx-auto px-6 relative z-10">
+                <!-- Section Header -->
+                <div class="text-center max-w-4xl mx-auto space-y-5 mb-16">
+                    <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-cyan-500/20 text-cyan-300 border border-cyan-400/30 text-xs md:text-sm font-bold shadow-sm backdrop-blur-md">
+                        <i class="fas fa-file-invoice text-cyan-400"></i>
+                        <span>大型新機能｜施設間ドキュメント・書類管理</span>
+                    </div>
+
+                    <h2 class="text-3xl sm:text-4xl md:text-5xl font-extrabold text-white leading-tight tracking-tight">
+                        郵送料0円・教員の発送作業ゼロへ。<br>
+                        学校と実習施設をつなぐ新基準<br>
+                        <span class="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 via-teal-300 to-blue-400">『INTEVE LINK ドキュメント』</span>
+                    </h2>
+
+                    <p class="text-slate-300 text-base md:text-lg leading-relaxed max-w-3xl mx-auto pt-2">
+                        実習指導の電子化に加え、毎年学校や教員を圧迫していた「何百もの施設への依頼文書の印刷・封入・郵送・回収作業」を根本から変革。<br class="hidden sm:block">
+                        INTEVE SCHOOL®とシームレスに連動し、文書配信から受取確認、回答入力、院長・理事長印の押印回収まで、すべてをオンラインで完結させます。
+                    </p>
+                </div>
+
+                <!-- 3 Major Value Cards (Adoption Standards for Schools) -->
+                <div class="grid md:grid-cols-3 gap-6 lg:gap-8 mb-20">
+                    <!-- Value 1: Zero Postal Cost -->
+                    <div class="bg-slate-800/80 backdrop-blur-md rounded-3xl p-8 border border-cyan-500/30 shadow-2xl relative overflow-hidden group hover:border-cyan-400/60 transition-all duration-300">
+                        <div class="absolute -top-10 -right-10 w-32 h-32 bg-cyan-500/10 rounded-full blur-2xl group-hover:bg-cyan-500/20 transition-all"></div>
+                        <div class="w-14 h-14 rounded-2xl bg-gradient-to-br from-cyan-500/20 to-blue-600/20 text-cyan-400 border border-cyan-400/30 flex items-center justify-center text-2xl mb-6 shadow-inner">
+                            <i class="fas fa-coins"></i>
+                        </div>
+                        <div class="inline-block px-3 py-1 rounded-full bg-cyan-400/10 text-cyan-300 font-bold text-xs mb-3">
+                            コスト削減の決定打
+                        </div>
+                        <h3 class="text-2xl font-bold text-white mb-3">
+                            郵送料が完全 <span class="text-cyan-400 font-extrabold">0円</span>
+                        </h3>
+                        <p class="text-slate-300 text-sm leading-relaxed">
+                            毎年、数十〜数百施設へ発送していた実習依頼文書、要項、承諾書、返信用封筒、切手代などの郵送コストが完全ゼロに。学校運営の経費を劇的に削減し、採用の強力な決め手となります。
+                        </p>
+                    </div>
+
+                    <!-- Value 2: Zero Shipping Tasks -->
+                    <div class="bg-slate-800/80 backdrop-blur-md rounded-3xl p-8 border border-blue-500/30 shadow-2xl relative overflow-hidden group hover:border-blue-400/60 transition-all duration-300">
+                        <div class="absolute -top-10 -right-10 w-32 h-32 bg-blue-500/10 rounded-full blur-2xl group-hover:bg-blue-500/20 transition-all"></div>
+                        <div class="w-14 h-14 rounded-2xl bg-gradient-to-br from-blue-500/20 to-indigo-600/20 text-blue-400 border border-blue-400/30 flex items-center justify-center text-2xl mb-6 shadow-inner">
+                            <i class="fas fa-box-archive"></i>
+                        </div>
+                        <div class="inline-block px-3 py-1 rounded-full bg-blue-400/10 text-blue-300 font-bold text-xs mb-3">
+                            教員の働き方改革
+                        </div>
+                        <h3 class="text-2xl font-bold text-white mb-3">
+                            教員の発送作業を <span class="text-blue-400 font-extrabold">ほぼゼロ</span> に
+                        </h3>
+                        <p class="text-slate-300 text-sm leading-relaxed">
+                            膨大な枚数の印刷・丁合、封入、宛名ラベル貼り、郵便局持ち込み、未返送施設への電話確認など、教員を長年疲弊させていた手作業を全廃。本来注力すべき学生指導や研究に時間を充当できます。
+                        </p>
+                    </div>
+
+                    <!-- Value 3: Unlimited Accounts & Infinite Cost-Performance -->
+                    <div class="bg-slate-800/80 backdrop-blur-md rounded-3xl p-8 border border-emerald-500/30 shadow-2xl relative overflow-hidden group hover:border-emerald-400/60 transition-all duration-300">
+                        <div class="absolute -top-10 -right-10 w-32 h-32 bg-emerald-500/10 rounded-full blur-2xl group-hover:bg-emerald-500/20 transition-all"></div>
+                        <div class="w-14 h-14 rounded-2xl bg-gradient-to-br from-emerald-500/20 to-teal-600/20 text-emerald-400 border border-emerald-400/30 flex items-center justify-center text-2xl mb-6 shadow-inner">
+                            <i class="fas fa-infinity"></i>
+                        </div>
+                        <div class="inline-block px-3 py-1 rounded-full bg-emerald-400/10 text-emerald-300 font-bold text-xs mb-3">
+                            業界標準の高コスパ
+                        </div>
+                        <h3 class="text-2xl font-bold text-white mb-3">
+                            施設アカウント <span class="text-emerald-400 font-extrabold">無制限</span>
+                        </h3>
+                        <p class="text-slate-300 text-sm leading-relaxed">
+                            提携する施設アカウントがどれだけ増えても追加料金は一切加算されません。定額・永続的に使い続けられる圧倒的な高効率・高コスパアプリとして、これからの業界標準を確立します。
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Workflow Steps Section (Step 1 to Step 6) -->
+                <div class="bg-slate-800/50 backdrop-blur-md rounded-3xl p-8 lg:p-12 border border-slate-700/80 mb-20">
+                    <div class="text-center max-w-2xl mx-auto mb-12">
+                        <span class="text-cyan-400 font-bold text-xs uppercase tracking-widest">Workflow Architecture</span>
+                        <h3 class="text-2xl md:text-3xl font-bold text-white mt-1">
+                            初回案内から捺印回収・データ活用までのスムーズな流れ
+                        </h3>
+                        <p class="text-slate-300 text-xs md:text-sm mt-2">
+                            施設側・学校側ともに迷わないシンプルな導線。紙の郵送よりも圧倒的に早く・安全に完結します。
+                        </p>
+                    </div>
+
+                    <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                        <!-- Step 1 -->
+                        <div class="bg-slate-900/80 rounded-2xl p-6 border border-slate-700 relative">
+                            <div class="flex items-center justify-between mb-4">
+                                <span class="px-3 py-1 rounded-lg bg-cyan-500/20 text-cyan-300 text-xs font-extrabold border border-cyan-400/30">STEP 1</span>
+                                <span class="text-[11px] text-slate-400 font-semibold"><i class="fas fa-bell text-amber-400 mr-1"></i>初回のみ</span>
+                            </div>
+                            <h4 class="font-bold text-white text-base mb-2">「登録のご案内」文書を送付</h4>
+                            <p class="text-xs text-slate-300 leading-relaxed">
+                                INTEVE SCHOOL®のシステムから初回のみ「INTEVE LINK登録のご案内」文書を施設へ送信し、施設担当者様のメールアドレスを取得します。
+                            </p>
+                        </div>
+
+                        <!-- Step 2 -->
+                        <div class="bg-slate-900/80 rounded-2xl p-6 border border-slate-700 relative">
+                            <div class="flex items-center justify-between mb-4">
+                                <span class="px-3 py-1 rounded-lg bg-cyan-500/20 text-cyan-300 text-xs font-extrabold border border-cyan-400/30">STEP 2</span>
+                                <span class="text-[11px] text-slate-400 font-semibold"><i class="fas fa-key text-cyan-400 mr-1"></i>施設側操作</span>
+                            </div>
+                            <h4 class="font-bold text-white text-base mb-2">施設ポータルアカウント開設</h4>
+                            <p class="text-xs text-slate-300 leading-relaxed">
+                                取得したメールアドレスを使用して、施設専用の「INTEVE LINK 施設ポータル」アカウントを開設。安全なログイン基盤を確立します。
+                            </p>
+                        </div>
+
+                        <!-- Step 3 -->
+                        <div class="bg-slate-900/80 rounded-2xl p-6 border border-slate-700 relative">
+                            <div class="flex items-center justify-between mb-4">
+                                <span class="px-3 py-1 rounded-lg bg-cyan-500/20 text-cyan-300 text-xs font-extrabold border border-cyan-400/30">STEP 3</span>
+                                <span class="text-[11px] text-slate-400 font-semibold"><i class="fas fa-fingerprint text-emerald-400 mr-1"></i>UUID連動</span>
+                            </div>
+                            <h4 class="font-bold text-white text-base mb-2">施設のUUIDと紐づけて文書配信</h4>
+                            <p class="text-xs text-slate-300 leading-relaxed">
+                                INTEVE SCHOOL®から送付した各種文書・書類は、施設の個別UUID（一意識別子）と自動連動。対象施設だけに確実に表示され、誤送信の心配がありません。
+                            </p>
+                        </div>
+
+                        <!-- Step 4 -->
+                        <div class="bg-slate-900/80 rounded-2xl p-6 border border-slate-700 relative">
+                            <div class="flex items-center justify-between mb-4">
+                                <span class="px-3 py-1 rounded-lg bg-cyan-500/20 text-cyan-300 text-xs font-extrabold border border-cyan-400/30">STEP 4</span>
+                                <span class="text-[11px] text-slate-400 font-semibold"><i class="fas fa-check-double text-blue-400 mr-1"></i>双方向確認</span>
+                            </div>
+                            <h4 class="font-bold text-white text-base mb-2">文書確認 ＆「見た」チェック・回答</h4>
+                            <p class="text-xs text-slate-300 leading-relaxed">
+                                施設側はポータル上で文書を確認し、「確認（見た）」のチェックを入れるほか、受入条件や備考などの回答を入力してワンクリック送信できます。
+                            </p>
+                        </div>
+
+                        <!-- Step 5 -->
+                        <div class="bg-slate-900/80 rounded-2xl p-6 border border-slate-700 relative">
+                            <div class="flex items-center justify-between mb-4">
+                                <span class="px-3 py-1 rounded-lg bg-accent/20 text-orange-300 text-xs font-extrabold border border-accent/30">STEP 5</span>
+                                <span class="text-[11px] text-orange-300 font-semibold"><i class="fas fa-stamp text-accent mr-1"></i>公印・押印対応</span>
+                            </div>
+                            <h4 class="font-bold text-white text-base mb-2">院長・理事長印も再UPで完結</h4>
+                            <p class="text-xs text-slate-300 leading-relaxed">
+                                公印・印鑑の押印が必要な文書は、一度PDF出力して捺印後、スキャンまたは撮影したPDF/画像を再アップロードして送信するだけで完了します。
+                            </p>
+                        </div>
+
+                        <!-- Step 6 -->
+                        <div class="bg-slate-900/80 rounded-2xl p-6 border border-slate-700 relative">
+                            <div class="flex items-center justify-between mb-4">
+                                <span class="px-3 py-1 rounded-lg bg-emerald-500/20 text-emerald-300 text-xs font-extrabold border border-emerald-400/30">STEP 6</span>
+                                <span class="text-[11px] text-slate-400 font-semibold"><i class="fas fa-database text-cyan-400 mr-1"></i>学校側DB格納</span>
+                            </div>
+                            <h4 class="font-bold text-white text-base mb-2">INTEVE SCHOOL®格納 ＆ データ活用</h4>
+                            <p class="text-xs text-slate-300 leading-relaxed">
+                                回収文書は学校側ポータルから一括ダウンロード。INTEVE SCHOOL®本体へ自動格納され、配属履歴や施設情報データとしてフル活用できます。
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Showcase of 4 Actual System Screens -->
+                <div class="space-y-12">
+                    <div class="text-center max-w-2xl mx-auto">
+                        <span class="text-cyan-400 font-bold text-xs uppercase tracking-widest">Actual System Screens</span>
+                        <h3 class="text-2xl md:text-3xl font-bold text-white mt-1">
+                            実際のシステム画面で見る「INTEVE LINK ドキュメント」
+                        </h3>
+                        <p class="text-slate-300 text-xs md:text-sm mt-2">
+                            学校側ダッシュボードと施設側ポータルの直感的なUI。画像をクリックすると拡大してご覧いただけます。
+                        </p>
+                    </div>
+
+                    <!-- Grid of 4 Screens (2x2) -->
+                    <div class="grid lg:grid-cols-2 gap-8">
+                        <!-- Screen 1: School Doc Progress Dashboard -->
+                        <div class="bg-slate-800/70 rounded-3xl p-6 border border-slate-700/80 space-y-4 hover:border-cyan-500/40 transition-colors">
+                            <div class="flex items-center justify-between">
+                                <div class="flex items-center gap-2">
+                                    <span class="px-3 py-1 rounded-full bg-blue-500/20 text-blue-300 text-xs font-bold border border-blue-400/30">学校側ポータル</span>
+                                    <h4 class="text-lg font-bold text-white">文書案件進捗ダッシュボード</h4>
+                                </div>
+                                <span class="text-xs text-slate-400 font-medium"><i class="fas fa-chart-pie text-cyan-400 mr-1"></i>リアルタイム進捗</span>
+                            </div>
+                            <p class="text-xs text-slate-300 leading-relaxed">
+                                全対象施設（例：全109施設）に対する文書配信状況を一目で把握。「回答・署名完了率」「完了・閲覧中・未対応」がリアルタイムに集計され、未対応施設へのフォローも迅速に行えます。
+                            </p>
+                            <div class="rounded-2xl overflow-hidden shadow-2xl border border-slate-700 bg-slate-950 group cursor-zoom-in relative">
+                                <img src="assets/images/inteve-link-doc-dashboard.png" alt="学校側ポータル 文書案件進捗ダッシュボード画面" class="w-full h-auto object-cover group-hover:scale-[1.02] transition-transform duration-300 zoomable-image">
+                                <div class="absolute bottom-3 right-3 px-3 py-1 rounded-full bg-slate-900/80 text-white text-xs opacity-0 group-hover:opacity-100 transition-opacity duration-200 flex items-center gap-1.5 shadow pointer-events-none backdrop-blur-xs border border-white/10">
+                                    <i class="fas fa-search-plus"></i>
+                                    <span>クリックで拡大</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Screen 2: Facility Confirmation & Reply -->
+                        <div class="bg-slate-800/70 rounded-3xl p-6 border border-slate-700/80 space-y-4 hover:border-cyan-500/40 transition-colors">
+                            <div class="flex items-center justify-between">
+                                <div class="flex items-center gap-2">
+                                    <span class="px-3 py-1 rounded-full bg-emerald-500/20 text-emerald-300 text-xs font-bold border border-emerald-400/30">施設側ポータル</span>
+                                    <h4 class="text-lg font-bold text-white">文書閲覧・回答 ＆ 捺印ファイル返送</h4>
+                                </div>
+                                <span class="text-xs text-slate-400 font-medium"><i class="fas fa-paper-plane text-emerald-400 mr-1"></i>簡単操作</span>
+                            </div>
+                            <p class="text-xs text-slate-300 leading-relaxed">
+                                学校からの配布ファイル（PDF）をワンクリックで確認・ダウンロード。返答コメントや受入条件の入力、押印済み公印書類の再アップロード返信もすべてこの画面で完結します。
+                            </p>
+                            <div class="rounded-2xl overflow-hidden shadow-2xl border border-slate-700 bg-slate-950 group cursor-zoom-in relative">
+                                <img src="assets/images/inteve-link-doc-facility-reply.png" alt="施設側ポータル 文書閲覧・回答・押印書類返送画面" class="w-full h-auto object-cover group-hover:scale-[1.02] transition-transform duration-300 zoomable-image">
+                                <div class="absolute bottom-3 right-3 px-3 py-1 rounded-full bg-slate-900/80 text-white text-xs opacity-0 group-hover:opacity-100 transition-opacity duration-200 flex items-center gap-1.5 shadow pointer-events-none backdrop-blur-xs border border-white/10">
+                                    <i class="fas fa-search-plus"></i>
+                                    <span>クリックで拡大</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Screen 3: Facilities List & Trainee Assignment -->
+                        <div class="bg-slate-800/70 rounded-3xl p-6 border border-slate-700/80 space-y-4 hover:border-cyan-500/40 transition-colors">
+                            <div class="flex items-center justify-between">
+                                <div class="flex items-center gap-2">
+                                    <span class="px-3 py-1 rounded-full bg-blue-500/20 text-blue-300 text-xs font-bold border border-blue-400/30">学校側ポータル</span>
+                                    <h4 class="text-lg font-bold text-white">登録施設一覧 ＆ 配属実習生連携</h4>
+                                </div>
+                                <span class="text-xs text-slate-400 font-medium"><i class="fas fa-hospital-user text-cyan-400 mr-1"></i>UUID個別発行</span>
+                            </div>
+                            <p class="text-xs text-slate-300 leading-relaxed">
+                                登録施設（例：71施設）と各施設への配属実習生（学籍番号・年度）を一元連携。施設ポータルへの専用URLコピーや個別画面の直接アクセスにも対応しています。
+                            </p>
+                            <div class="rounded-2xl overflow-hidden shadow-2xl border border-slate-700 bg-slate-950 group cursor-zoom-in relative">
+                                <img src="assets/images/inteve-link-doc-facilities-list.png" alt="学校側ポータル 登録施設一覧・配属実習生画面" class="w-full h-auto object-cover group-hover:scale-[1.02] transition-transform duration-300 zoomable-image">
+                                <div class="absolute bottom-3 right-3 px-3 py-1 rounded-full bg-slate-900/80 text-white text-xs opacity-0 group-hover:opacity-100 transition-opacity duration-200 flex items-center gap-1.5 shadow pointer-events-none backdrop-blur-xs border border-white/10">
+                                    <i class="fas fa-search-plus"></i>
+                                    <span>クリックで拡大</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Screen 4: Target Clinical Programs -->
+                        <div class="bg-slate-800/70 rounded-3xl p-6 border border-slate-700/80 space-y-4 hover:border-cyan-500/40 transition-colors">
+                            <div class="flex items-center justify-between">
+                                <div class="flex items-center gap-2">
+                                    <span class="px-3 py-1 rounded-full bg-blue-500/20 text-blue-300 text-xs font-bold border border-blue-400/30">学校側ポータル</span>
+                                    <h4 class="text-lg font-bold text-white">対象実習プログラム管理</h4>
+                                </div>
+                                <span class="text-xs text-slate-400 font-medium"><i class="fas fa-graduation-cap text-cyan-400 mr-1"></i>実習期別管理</span>
+                            </div>
+                            <p class="text-xs text-slate-300 leading-relaxed">
+                                「臨床実習I」「臨床実習II」「評価実習」など、各期の実習プログラムごとに受入施設数（36施設、38施設など）や実習生総数、日誌・出欠記録の連動ステータスを網羅管理できます。
+                            </p>
+                            <div class="rounded-2xl overflow-hidden shadow-2xl border border-slate-700 bg-slate-950 group cursor-zoom-in relative">
+                                <img src="assets/images/inteve-link-doc-programs.png" alt="学校側ポータル 対象実習プログラム管理画面" class="w-full h-auto object-cover group-hover:scale-[1.02] transition-transform duration-300 zoomable-image">
+                                <div class="absolute bottom-3 right-3 px-3 py-1 rounded-full bg-slate-900/80 text-white text-xs opacity-0 group-hover:opacity-100 transition-opacity duration-200 flex items-center gap-1.5 shadow pointer-events-none backdrop-blur-xs border border-white/10">
+                                    <i class="fas fa-search-plus"></i>
+                                    <span>クリックで拡大</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Security Spec Anchor Card -->
+                    <div class="bg-gradient-to-r from-blue-900/60 via-slate-800/80 to-slate-900/90 rounded-2xl p-6 border border-cyan-500/30 flex flex-col sm:flex-row items-center justify-between gap-4">
+                        <div class="flex items-center gap-4 text-left">
+                            <div class="w-12 h-12 rounded-xl bg-cyan-500/20 text-cyan-400 flex items-center justify-center text-xl shrink-0">
+                                <i class="fas fa-shield-alt"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-white font-bold text-sm md:text-base">4重の暗号化・行レベルセキュリティ（RLS）による安全設計</h4>
+                                <p class="text-slate-300 text-xs mt-0.5">個人情報保護や公印文書の不正閲覧防止など、安全な文書共有フローの技術仕様書をご用意しています。</p>
+                            </div>
+                        </div>
+                        <a href="#security" class="shrink-0 px-6 py-3 bg-white/10 hover:bg-white/20 text-cyan-300 hover:text-white rounded-xl border border-cyan-400/40 text-xs md:text-sm font-bold transition-all flex items-center gap-2">
+                            <span>セキュリティ仕様を見る</span>
+                            <i class="fas fa-arrow-down text-xs"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Detailed Functions Section -->
+        <section id="features-list" class="py-24 bg-slate-100 relative">
+            <div class="container mx-auto px-6">
+                <div class="text-center max-w-3xl mx-auto mb-20 space-y-3">
+                    <span class="text-cyan-600 font-bold text-sm tracking-widest uppercase">Features Breakdown</span>
+                    <h2 class="text-3xl md:text-4xl font-bold text-primary">
+                        日々の指導をフルカバーする 7つの実習指導コア機能
+                    </h2>
+                    <p class="text-slate-600 text-base">
+                        実習生・臨床指導者・学校教員の三者をつなぐ直感的なUI。PCはもちろんスマートフォンやタブレットから快適に利用できます。
+                    </p>
+                </div>
+
+                <div class="space-y-24">
+
+                    <!-- Feature 1: Condition -->
+                    <div class="bg-white rounded-3xl p-8 lg:p-12 shadow-xl border border-slate-200 grid lg:grid-cols-12 gap-10 items-center">
+                        <div class="lg:col-span-6 space-y-5">
+                            <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-pink-100 text-pink-700 font-bold text-xs">
+                                <i class="fas fa-heartbeat"></i> 機能 1
+                            </div>
+                            <h3 class="text-2xl md:text-3xl font-bold text-slate-900 leading-tight">
+                                本日のコンディショニング<br>
+                                <span class="text-pink-600 text-lg md:text-xl">（メンタル＆ヘルスケア管理）</span>
+                            </h3>
+                            <p class="text-slate-600 leading-relaxed text-sm md:text-base">
+                                毎日のコンディション（体調・学び・充実度・リフレッシュ度）を5段階でサクッと簡単入力。
+                            </p>
+                            <ul class="space-y-3 text-sm text-slate-700">
+                                <li class="flex items-start gap-3">
+                                    <i class="fas fa-chart-line text-pink-500 mt-1 shrink-0"></i>
+                                    <span><strong>安心の履歴＆グラフ表示:</strong> 折れ線グラフは「直近1週間」と「それ以前の平均」のみ表示し、実習生の心理的負荷に配慮した設計です。</span>
+                                </li>
+                                <li class="flex items-start gap-3">
+                                    <i class="fas fa-user-shield text-pink-500 mt-1 shrink-0"></i>
+                                    <span><strong>教員専用の安全情報（指導者非開示）:</strong> この情報は指導者には共有されず、教員側のみが確認可能。早期のストレス察知や離脱防止、個別の丁寧なフォローに効果的です。</span>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="lg:col-span-6">
+                            <div class="rounded-2xl overflow-hidden shadow-lg border border-slate-200 bg-slate-900 group cursor-zoom-in relative">
+                                <img src="assets/images/inteve-link-condition.png" alt="コンディショニング機能画面" class="w-full h-auto object-cover group-hover:scale-[1.02] transition-transform duration-300 zoomable-image">
+                                <div class="absolute bottom-3 right-3 px-3 py-1 rounded-full bg-slate-900/80 text-white text-xs opacity-0 group-hover:opacity-100 transition-opacity duration-200 flex items-center gap-1.5 shadow pointer-events-none backdrop-blur-xs border border-white/10">
+                                    <i class="fas fa-search-plus"></i>
+                                    <span>クリックで拡大</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Feature 2: Attendance -->
+                    <div class="bg-white rounded-3xl p-8 lg:p-12 shadow-xl border border-slate-200 grid lg:grid-cols-12 gap-10 items-center">
+                        <div class="lg:col-span-6 lg:order-2 space-y-5">
+                            <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-100 text-blue-700 font-bold text-xs">
+                                <i class="fas fa-calendar-check"></i> 機能 2
+                            </div>
+                            <h3 class="text-2xl md:text-3xl font-bold text-slate-900 leading-tight">
+                                出席管理<br>
+                                <span class="text-blue-600 text-lg md:text-xl">（時間算出 ＆ 手書きサイン承認）</span>
+                            </h3>
+                            <p class="text-slate-600 leading-relaxed text-sm md:text-base">
+                                出欠区分だけでなく、開始・終了時間の詳細入力に対応。累計の「総実習時間」も自動算出されます。
+                            </p>
+                            <ul class="space-y-3 text-sm text-slate-700">
+                                <li class="flex items-start gap-3">
+                                    <i class="fas fa-clock text-blue-500 mt-1 shrink-0"></i>
+                                    <span><strong>時間ベースの正確な管理:</strong> 複雑な実習時間や遅刻・早退などの算出の手間を全自動化します。</span>
+                                </li>
+                                <li class="flex items-start gap-3">
+                                    <i class="fas fa-signature text-blue-500 mt-1 shrink-0"></i>
+                                    <span><strong>指導者手書きサイン ＆ PDF保管:</strong> 実習最終日以降、指導者画面に「手書きサインボタン」が出現。電子サイン受領後にPDF出力し、正式文書として保管可能です。</span>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="lg:col-span-6 lg:order-1">
+                            <div class="rounded-2xl overflow-hidden shadow-lg border border-slate-200 bg-slate-900 group cursor-zoom-in relative">
+                                <img src="assets/images/inteve-link-attendance.png" alt="出席管理機能画面" class="w-full h-auto object-cover group-hover:scale-[1.02] transition-transform duration-300 zoomable-image">
+                                <div class="absolute bottom-3 right-3 px-3 py-1 rounded-full bg-slate-900/80 text-white text-xs opacity-0 group-hover:opacity-100 transition-opacity duration-200 flex items-center gap-1.5 shadow pointer-events-none backdrop-blur-xs border border-white/10">
+                                    <i class="fas fa-search-plus"></i>
+                                    <span>クリックで拡大</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Feature 3: Checklist -->
+                    <div class="bg-white rounded-3xl p-8 lg:p-12 shadow-xl border border-slate-200 grid lg:grid-cols-12 gap-10 items-center">
+                        <div class="lg:col-span-6 space-y-5">
+                            <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-100 text-emerald-700 font-bold text-xs">
+                                <i class="fas fa-tasks"></i> 機能 3
+                            </div>
+                            <h3 class="text-2xl md:text-3xl font-bold text-slate-900 leading-tight">
+                                チェックリスト<br>
+                                <span class="text-emerald-600 text-lg md:text-xl">（評価項目の可視化 ＆ 承認）</span>
+                            </h3>
+                            <p class="text-slate-600 leading-relaxed text-sm md:text-base">
+                                学校で現在使用しているチェックリストをそのまま登録・運用可能です。
+                            </p>
+                            <ul class="space-y-3 text-sm text-slate-700">
+                                <li class="flex items-start gap-3">
+                                    <i class="fas fa-search text-emerald-500 mt-1 shrink-0"></i>
+                                    <span><strong>自校仕様完全対応 ＆ キーワード検索:</strong> 自校固有の項目を登録でき、検索バーから素早く対象項目を絞り込めます。</span>
+                                </li>
+                                <li class="flex items-start gap-3">
+                                    <i class="fas fa-shoe-prints text-emerald-500 mt-1 shrink-0"></i>
+                                    <span><strong>ステップ管理 ＆ PDF提出書類化:</strong> 「見学・模倣・実施」などの体験ステップを記録し指導者が即承認。最終日に電子サイン付与後に一括PDF化できます。</span>
+                                </li>
+                                <li class="flex items-start gap-3">
+                                    <i class="fas fa-check-double text-emerald-500 mt-1 shrink-0"></i>
+                                    <div class="w-full">
+                                        <span><strong>選べる申請・承認フロー（両方に対応）:</strong> 現場の指導方針や運用スタイルに合わせて、2つの登録・承認パターンに対応しています。</span>
+                                        <div class="mt-2.5 grid grid-cols-1 sm:grid-cols-2 gap-2 text-xs">
+                                            <div class="bg-emerald-50/80 border border-emerald-200/80 rounded-xl p-2.5 flex items-start gap-2.5 text-slate-700">
+                                                <i class="fas fa-user-graduate text-emerald-600 mt-0.5 shrink-0 text-sm"></i>
+                                                <div>
+                                                    <span class="text-[10px] font-bold text-emerald-700 block mb-0.5">パターン 1</span>
+                                                    <span class="font-medium text-slate-800">実習生モードで申請<br><strong class="text-emerald-700">→ 指導者モードで承認</strong></span>
+                                                </div>
+                                            </div>
+                                            <div class="bg-emerald-50/80 border border-emerald-200/80 rounded-xl p-2.5 flex items-start gap-2.5 text-slate-700">
+                                                <i class="fas fa-user-tie text-emerald-600 mt-0.5 shrink-0 text-sm"></i>
+                                                <div>
+                                                    <span class="text-[10px] font-bold text-emerald-700 block mb-0.5">パターン 2</span>
+                                                    <span class="font-medium text-slate-800">指導者モードで<br><strong class="text-emerald-700">追加 and 承認</strong></span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="lg:col-span-6">
+                            <div class="rounded-2xl overflow-hidden shadow-lg border border-slate-200 bg-slate-900 group cursor-zoom-in relative">
+                                <img src="assets/images/inteve-link-checklist.png" alt="チェックリスト機能画面" class="w-full h-auto object-cover group-hover:scale-[1.02] transition-transform duration-300 zoomable-image">
+                                <div class="absolute bottom-3 right-3 px-3 py-1 rounded-full bg-slate-900/80 text-white text-xs opacity-0 group-hover:opacity-100 transition-opacity duration-200 flex items-center gap-1.5 shadow pointer-events-none backdrop-blur-xs border border-white/10">
+                                    <i class="fas fa-search-plus"></i>
+                                    <span>クリックで拡大</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Feature 4: Daily Note -->
+                    <div class="bg-white rounded-3xl p-8 lg:p-12 shadow-xl border border-slate-200 grid lg:grid-cols-12 gap-10 items-center">
+                        <div class="lg:col-span-6 lg:order-2 space-y-5">
+                            <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-amber-100 text-amber-700 font-bold text-xs">
+                                <i class="fas fa-book"></i> 機能 4
+                            </div>
+                            <h3 class="text-2xl md:text-3xl font-bold text-slate-900 leading-tight">
+                                デイリーノート<br>
+                                <span class="text-amber-600 text-lg md:text-xl">（日誌・デジタル＆手書き両対応）</span>
+                            </h3>
+                            <p class="text-slate-600 leading-relaxed text-sm md:text-base">
+                                日々の実習日誌をWeb上で完結。テキスト入力だけでなく手書き派のニーズにも完全対応しています。
+                            </p>
+                            <ul class="space-y-3 text-sm text-slate-700">
+                                <li class="flex items-start gap-3">
+                                    <i class="fas fa-camera text-amber-500 mt-1 shrink-0"></i>
+                                    <span><strong>選べる入力スタイル:</strong> フォーム入力のほか、紙に書いたノートをスマホで撮影して画像/PDFアップロードも可能です。</span>
+                                </li>
+                                <li class="flex items-start gap-3">
+                                    <i class="fas fa-paint-brush text-amber-500 mt-1 shrink-0"></i>
+                                    <span><strong>指導者の赤入れ・評価 ＆ PDF出力:</strong> 指導者画面で赤入れ画像やフィードバックコメント、承認印を送信可能。いつでもワンクリックでキレイなレイアウトのPDFを出力できます。</span>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="lg:col-span-6 lg:order-1">
+                            <div class="rounded-2xl overflow-hidden shadow-lg border border-slate-200 bg-slate-900 group cursor-zoom-in relative">
+                                <img src="assets/images/inteve-link-daily-note.png" alt="デイリーノート機能画面" class="w-full h-auto object-cover group-hover:scale-[1.02] transition-transform duration-300 zoomable-image">
+                                <div class="absolute bottom-3 right-3 px-3 py-1 rounded-full bg-slate-900/80 text-white text-xs opacity-0 group-hover:opacity-100 transition-opacity duration-200 flex items-center gap-1.5 shadow pointer-events-none backdrop-blur-xs border border-white/10">
+                                    <i class="fas fa-search-plus"></i>
+                                    <span>クリックで拡大</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Feature 5: Case Note -->
+                    <div class="bg-white rounded-3xl p-8 lg:p-12 shadow-xl border border-slate-200 grid lg:grid-cols-12 gap-10 items-center">
+                        <div class="lg:col-span-6 space-y-5">
+                            <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-fuchsia-100 text-fuchsia-700 font-bold text-xs">
+                                <i class="fas fa-notes-medical"></i> 機能 5
+                            </div>
+                            <h3 class="text-2xl md:text-3xl font-bold text-slate-900 leading-tight">
+                                ケースノート<br>
+                                <span class="text-fuchsia-600 text-lg md:text-xl">（症例記録・パート別指導 ＆ ファイル添付対応）</span>
+                            </h3>
+                            <p class="text-slate-600 leading-relaxed text-sm md:text-base">
+                                実習中に担当した症例のカルテ的記録を作成し、指導者との間で細やかな指導・フィードバックのやり取りを行えます。
+                            </p>
+                            <ul class="space-y-3 text-sm text-slate-700">
+                                <li class="flex items-start gap-3">
+                                    <i class="fas fa-clipboard-list text-fuchsia-500 mt-1 shrink-0"></i>
+                                    <span><strong>パート別・段階的な症例指導:</strong> 症例番号・タイトルごとに評価・分析・考察を記録。レポート全体を一括で作成するだけでなく、パートごとの進捗に応じたきめ細やかな指導・アドバイスに対応します。</span>
+                                </li>
+                                <li class="flex items-start gap-3">
+                                    <i class="fas fa-paperclip text-fuchsia-500 mt-1 shrink-0"></i>
+                                    <span><strong>テキスト ＆ 添付ファイルに両対応:</strong> 学生からの提出、指導者からの返信ともにテキスト入力はもちろん、Office文書・PDF・画像・動画（20MB以下）などの添付が可能。現場の指導スタイルに柔軟に寄り添います。</span>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="lg:col-span-6">
+                            <div class="rounded-2xl overflow-hidden shadow-lg border border-slate-200 bg-slate-900 group cursor-zoom-in relative">
+                                <img src="assets/images/inteve-link-case-note.png" alt="ケースノート機能画面" class="w-full h-auto object-cover group-hover:scale-[1.02] transition-transform duration-300 zoomable-image">
+                                <div class="absolute bottom-3 right-3 px-3 py-1 rounded-full bg-slate-900/80 text-white text-xs opacity-0 group-hover:opacity-100 transition-opacity duration-200 flex items-center gap-1.5 shadow pointer-events-none backdrop-blur-xs border border-white/10">
+                                    <i class="fas fa-search-plus"></i>
+                                    <span>クリックで拡大</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Feature 6: Portfolio -->
+                    <div class="bg-white rounded-3xl p-8 lg:p-12 shadow-xl border border-slate-200 grid lg:grid-cols-12 gap-10 items-center">
+                        <div class="lg:col-span-6 lg:order-2 space-y-5">
+                            <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-purple-100 text-purple-700 font-bold text-xs">
+                                <i class="fas fa-folder-open"></i> 機能 6
+                            </div>
+                            <h3 class="text-2xl md:text-3xl font-bold text-slate-900 leading-tight">
+                                ポートフォリオ<br>
+                                <span class="text-purple-600 text-lg md:text-xl">（成果物・ケースレポート管理）</span>
+                            </h3>
+                            <p class="text-slate-600 leading-relaxed text-sm md:text-base">
+                                実習中の研究発表資料、ケースレポート、課題などの提出物をオンライン上で一元管理・共有。
+                            </p>
+                            <ul class="space-y-3 text-sm text-slate-700">
+                                <li class="flex items-start gap-3">
+                                    <i class="fas fa-file-alt text-purple-500 mt-1 shrink-0"></i>
+                                    <span><strong>多角的な資料提出:</strong> 文献の引用、参照WebページのURL登録、スマホで撮影したレポート画像やPDFファイルを簡単に提出・共有できます。</span>
+                                </li>
+                                <li class="flex items-start gap-3">
+                                    <i class="fas fa-comments text-purple-500 mt-1 shrink-0"></i>
+                                    <span><strong>指導者からのアドバイス蓄積:</strong> 提出された成果物に対して、指導者からの具体指導や建設的なアドバイスを資産として蓄積できます。</span>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="lg:col-span-6 lg:order-1">
+                            <div class="rounded-2xl overflow-hidden shadow-lg border border-slate-200 bg-slate-900 group cursor-zoom-in relative">
+                                <img src="assets/images/inteve-link-portfolio.png" alt="ポートフォリオ機能画面" class="w-full h-auto object-cover group-hover:scale-[1.02] transition-transform duration-300 zoomable-image">
+                                <div class="absolute bottom-3 right-3 px-3 py-1 rounded-full bg-slate-900/80 text-white text-xs opacity-0 group-hover:opacity-100 transition-opacity duration-200 flex items-center gap-1.5 shadow pointer-events-none backdrop-blur-xs border border-white/10">
+                                    <i class="fas fa-search-plus"></i>
+                                    <span>クリックで拡大</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Feature 7: Chat -->
+                    <div class="bg-white rounded-3xl p-8 lg:p-12 shadow-xl border border-slate-200 grid lg:grid-cols-12 gap-10 items-center">
+                        <div class="lg:col-span-6 space-y-5">
+                            <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-cyan-100 text-cyan-700 font-bold text-xs">
+                                <i class="fas fa-comments"></i> 機能 7
+                            </div>
+                            <h3 class="text-2xl md:text-3xl font-bold text-slate-900 leading-tight">
+                                チャット連絡<br>
+                                <span class="text-cyan-600 text-lg md:text-xl">（三者間コミュニケーション ＋ メール通知）</span>
+                            </h3>
+                            <p class="text-slate-600 leading-relaxed text-sm md:text-base">
+                                「実習生 ↔ 指導者」「実習生・指導者 ↔ 担当教員」など、必要な相手へ即座にチャットメッセージを送信できます。
+                            </p>
+                            <ul class="space-y-3 text-sm text-slate-700">
+                                <li class="flex items-start gap-3">
+                                    <i class="fas fa-hands-helping text-cyan-500 mt-1 shrink-0"></i>
+                                    <span><strong>スムーズな連絡基盤:</strong> 電話連絡の行き違いやメール作成の手間を大幅に削減し、やり取りのスピードを劇的に向上させます。</span>
+                                </li>
+                                <li class="flex items-start gap-3">
+                                    <i class="fas fa-envelope-open-text text-cyan-500 mt-1 shrink-0"></i>
+                                    <span><strong>メール自動通知機能:</strong> メッセージ送受信時、受け取り側の登録メールアドレスへ新着通知を自動配信！ポータルを常に開いていなくても大切な連絡にすぐ気付けます。</span>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="lg:col-span-6">
+                            <div class="rounded-2xl overflow-hidden shadow-lg border border-slate-200 bg-slate-900 group cursor-zoom-in relative">
+                                <img src="assets/images/inteve-link-chat.png" alt="チャット連絡機能画面" class="w-full h-auto object-cover group-hover:scale-[1.02] transition-transform duration-300 zoomable-image">
+                                <div class="absolute bottom-3 right-3 px-3 py-1 rounded-full bg-slate-900/80 text-white text-xs opacity-0 group-hover:opacity-100 transition-opacity duration-200 flex items-center gap-1.5 shadow pointer-events-none backdrop-blur-xs border border-white/10">
+                                    <i class="fas fa-search-plus"></i>
+                                    <span>クリックで拡大</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- Teacher Dedicated Dashboard Section -->
+        <section class="py-24 bg-gradient-to-b from-slate-900 to-blue-950 text-white relative">
+            <div class="container mx-auto px-6">
+                <div class="grid lg:grid-cols-12 gap-12 items-center">
+                    <div class="lg:col-span-5 space-y-6">
+                        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-500/20 text-cyan-300 text-xs font-bold border border-blue-400/30">
+                            <i class="fas fa-user-graduate"></i> 教員専用機能
+                        </div>
+                        <h2 class="text-3xl md:text-4xl font-bold text-white leading-tight">
+                            全実習生の状況を一画面で把握。<br>
+                            「実習生一覧ポータル」
+                        </h2>
+                        <p class="text-slate-300 text-sm md:text-base leading-relaxed">
+                            教員専用のサマリーページから、担当する全実習生の状況を一目で把握。気になる学生のページへワンクリックでアクセスできます。
+                        </p>
+
+                        <div class="space-y-4 pt-2">
+                            <div class="bg-slate-800/80 p-5 rounded-2xl border border-slate-700/80 flex items-start gap-4">
+                                <div class="w-10 h-10 rounded-xl bg-cyan-500/20 text-cyan-400 flex items-center justify-center text-lg shrink-0 mt-1">
+                                    <i class="fas fa-chart-bar"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-white text-base mb-1">概要ダッシュボード表示</h4>
+                                    <p class="text-xs text-slate-300 leading-relaxed">各実習生の「コンディション平均」「出席日数」「日誌提出件数」「チェックリスト達成度」を一覧表示。</p>
+                                </div>
+                            </div>
+
+                            <div class="bg-slate-800/80 p-5 rounded-2xl border border-slate-700/80 flex items-start gap-4">
+                                <div class="w-10 h-10 rounded-xl bg-amber-500/20 text-amber-400 flex items-center justify-center text-lg shrink-0 mt-1">
+                                    <i class="fas fa-exclamation-triangle"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-white text-base mb-1">アラート ＆ 未読通知</h4>
+                                    <p class="text-xs text-slate-300 leading-relaxed">コンディション低下や日誌提出の遅れをアラート表示。未読チャットがある場合は強調表示し対応漏れを防ぎます。</p>
+                                </div>
+                            </div>
+
+                            <div class="bg-slate-800/80 p-5 rounded-2xl border border-slate-700/80 flex items-start gap-4">
+                                <div class="w-10 h-10 rounded-xl bg-purple-500/20 text-purple-400 flex items-center justify-center text-lg shrink-0 mt-1">
+                                    <i class="fas fa-bell"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-white text-base mb-1">実習生プッシュ通知設定</h4>
+                                    <p class="text-xs text-slate-300 leading-relaxed">日誌や体調の入力忘れを防ぐため、実習生スマホへの自動リマインド通知を設定可能。配信時刻や土日除外、文面を柔軟にカスタマイズできます。</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="lg:col-span-7">
+                        <div class="rounded-3xl overflow-hidden border-4 border-slate-700 shadow-2xl bg-slate-900 group cursor-zoom-in relative">
+                            <img src="assets/images/inteve-link-trainees-list.png" alt="教員専用 実習生一覧ポータル画面" class="w-full h-auto object-cover group-hover:scale-[1.02] transition-transform duration-300 zoomable-image">
+                            <div class="absolute bottom-4 right-4 px-3 py-1.5 rounded-full bg-slate-900/80 text-white text-xs opacity-0 group-hover:opacity-100 transition-opacity duration-200 flex items-center gap-1.5 shadow pointer-events-none backdrop-blur-xs border border-white/10">
+                                <i class="fas fa-search-plus"></i>
+                                <span>クリックで拡大</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Push Notification Feature Spotlight -->
+                <div class="mt-16 pt-12 border-t border-slate-800/80">
+                    <div class="grid lg:grid-cols-12 gap-10 items-center">
+                        <div class="lg:col-span-5 space-y-5">
+                            <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-purple-500/20 text-purple-300 text-xs font-bold border border-purple-400/30">
+                                <i class="fas fa-bell"></i> リマインド自動化・新機能
+                            </div>
+                            <h3 class="text-2xl md:text-3xl font-bold text-white leading-tight">
+                                日誌・体調の未入力をゼロに。<br>
+                                「実習生プッシュ通知設定」
+                            </h3>
+                            <p class="text-slate-300 text-sm md:text-base leading-relaxed">
+                                教員ポータルから、担当実習生への定期リマインド通知を一元設定。学生のスマートフォン（PWA）へ直接プッシュ通知を届け、日誌やコンディションの確実な提出を強力にサポートします。
+                            </p>
+                            <div class="space-y-3 pt-1">
+                                <div class="bg-slate-800/80 p-4 rounded-xl border border-slate-700/80 flex items-start gap-3.5">
+                                    <div class="w-8 h-8 rounded-lg bg-purple-500/20 text-purple-400 flex items-center justify-center text-sm shrink-0 mt-0.5">
+                                        <i class="fas fa-clock"></i>
+                                    </div>
+                                    <div>
+                                        <h4 class="font-bold text-white text-sm">配信時刻 ＆ 土日配信の除外設定</h4>
+                                        <p class="text-xs text-slate-300 mt-0.5">毎日18:00などの定刻に自動配信。「平日のみ送信し土日は除外」といった学校方針に応じた柔軟な配信制御が可能です。</p>
+                                    </div>
+                                </div>
+
+                                <div class="bg-slate-800/80 p-4 rounded-xl border border-slate-700/80 flex items-start gap-3.5">
+                                    <div class="w-8 h-8 rounded-lg bg-cyan-500/20 text-cyan-400 flex items-center justify-center text-sm shrink-0 mt-0.5">
+                                        <i class="fas fa-comment-dots"></i>
+                                    </div>
+                                    <div>
+                                        <h4 class="font-bold text-white text-sm">通知メッセージの文面カスタマイズ</h4>
+                                        <p class="text-xs text-slate-300 mt-0.5">スマホのロック画面に届くリマインド文面を自由に変更可能。実習時期や指導段階に応じた的確なメッセージを届けられます。</p>
+                                    </div>
+                                </div>
+
+                                <div class="bg-slate-800/80 p-4 rounded-xl border border-slate-700/80 flex items-start gap-3.5">
+                                    <div class="w-8 h-8 rounded-lg bg-emerald-500/20 text-emerald-400 flex items-center justify-center text-sm shrink-0 mt-0.5">
+                                        <i class="fas fa-mobile-alt"></i>
+                                    </div>
+                                    <div>
+                                        <h4 class="font-bold text-white text-sm">実習期間連動 ＆ PWA登録状況の可視化</h4>
+                                        <p class="text-xs text-slate-300 mt-0.5">実習日程と完全連動し、実習期間外は自動で配信停止。学生のスマホ通知登録台数（iOS / Android別）も一目で把握できます。</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Hospital Communication Restriction Consideration -->
+                            <div class="p-3.5 rounded-2xl bg-blue-950/60 border border-blue-800/40 flex items-start gap-3">
+                                <div class="w-7 h-7 rounded-lg bg-emerald-500/20 text-emerald-400 flex items-center justify-center text-xs shrink-0 mt-0.5">
+                                    <i class="fas fa-hospital-user"></i>
+                                </div>
+                                <div class="text-xs text-slate-300 leading-relaxed">
+                                    <strong class="text-emerald-300 font-semibold">【院内のスマホ・通信制限にも配慮】</strong><br>
+                                    病棟などで常時通信ができない環境でも、ホーム画面に追加したPWAからサッと入力可能。休憩時間や施設外への移動時など、電波の届く隙間時間にアプリを開くだけで自動通信・同期が行われます。
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="lg:col-span-7">
+                            <div class="rounded-3xl overflow-hidden border-4 border-slate-700 shadow-2xl bg-slate-900 group cursor-zoom-in relative">
+                                <img src="assets/images/inteve-link-push-notification.png" alt="教員専用 実習生プッシュ通知設定画面" class="w-full h-auto object-cover group-hover:scale-[1.02] transition-transform duration-300 zoomable-image">
+                                <div class="absolute bottom-4 right-4 px-3 py-1.5 rounded-full bg-slate-900/80 text-white text-xs opacity-0 group-hover:opacity-100 transition-opacity duration-200 flex items-center gap-1.5 shadow pointer-events-none backdrop-blur-xs border border-white/10">
+                                    <i class="fas fa-search-plus"></i>
+                                    <span>クリックで拡大</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- System Architecture & Trust Section -->
+        <section class="py-24 bg-white">
+            <div class="container mx-auto px-6">
+                <div class="text-center max-w-3xl mx-auto mb-16 space-y-3">
+                    <span class="text-secondary font-bold text-sm tracking-widest uppercase">Security & Compatibility</span>
+                    <h2 class="text-3xl md:text-4xl font-bold text-primary">
+                        システムの特長・運用のしやすさ
+                    </h2>
+                    <p class="text-slate-600 text-base">
+                        セキュリティ、接続の容易さ、デバイス対応、柔軟なカスタマイズ性で安心してご利用いただけます。
+                    </p>
+                </div>
+
+                <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                    <!-- Point 1 -->
+                    <div class="bg-slate-50 p-8 rounded-3xl border border-slate-100 text-center space-y-4 hover:-translate-y-1 transition-transform">
+                        <div class="w-14 h-14 bg-blue-100 text-primary rounded-2xl flex items-center justify-center text-2xl mx-auto">
+                            <i class="fas fa-shield-alt"></i>
+                        </div>
+                        <h3 class="text-lg font-bold text-slate-800">安全な AWS クラウド基盤</h3>
+                        <p class="text-slate-600 text-xs leading-relaxed">
+                            世界基準の AWS（Amazon Web Services）を採用。大切な個人情報や実習データを堅牢に防護します。
+                        </p>
+                    </div>
+
+                    <!-- Point 2 -->
+                    <div class="bg-slate-50 p-8 rounded-3xl border border-slate-100 text-center space-y-4 hover:-translate-y-1 transition-transform">
+                        <div class="w-14 h-14 bg-cyan-100 text-secondary rounded-2xl flex items-center justify-center text-2xl mx-auto">
+                            <i class="fas fa-link"></i>
+                        </div>
+                        <h3 class="text-lg font-bold text-slate-800">ワンクリックアクセス</h3>
+                        <p class="text-slate-600 text-xs leading-relaxed">
+                            アクセス用リンクは「INTEVE SCHOOL」本体から自動生成。複雑なパスワード管理不要で安全に一発接続できます。
+                        </p>
+                    </div>
+
+                    <!-- Point 3 -->
+                    <div class="bg-slate-50 p-8 rounded-3xl border border-slate-100 text-center space-y-4 hover:-translate-y-1 transition-transform">
+                        <div class="w-14 h-14 bg-emerald-100 text-emerald-600 rounded-2xl flex items-center justify-center text-2xl mx-auto">
+                            <i class="fas fa-mobile-alt"></i>
+                        </div>
+                        <h3 class="text-lg font-bold text-slate-800">スマホPWA ＆ マルチ端末対応</h3>
+                        <p class="text-slate-600 text-xs leading-relaxed">
+                            PCはもちろんスマホPWAに対応。院内での通信制限がある現場でも、休憩時や施設外などの隙間時間にアプリを開くだけで素早く自動同期が完了します。
+                        </p>
+                    </div>
+
+                    <!-- Point 4 -->
+                    <div class="bg-slate-50 p-8 rounded-3xl border border-slate-100 text-center space-y-4 hover:-translate-y-1 transition-transform">
+                        <div class="w-14 h-14 bg-amber-100 text-amber-600 rounded-2xl flex items-center justify-center text-2xl mx-auto">
+                            <i class="fas fa-user-md"></i>
+                        </div>
+                        <h3 class="text-lg font-bold text-slate-800">幅広い医療系養成校に対応</h3>
+                        <p class="text-slate-600 text-xs leading-relaxed">
+                            理学療法（PT）・作業療法（OT）・言語聴覚士（ST）をはじめ、各種コメディカルや看護など幅広く対応。自校独自の運用へのカスタマイズも柔軟に対応いたします。
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Next Roadmap (Future Expansion) Section -->
+        <section class="py-16 bg-gradient-to-b from-white to-slate-100 border-t border-slate-200">
+            <div class="container mx-auto px-6">
+                <div class="max-w-4xl mx-auto bg-white rounded-3xl p-8 md:p-10 border border-slate-200 shadow-lg relative overflow-hidden">
+                    <div class="absolute -right-16 -top-16 w-48 h-48 bg-gradient-to-br from-cyan-400/10 to-blue-500/10 rounded-full blur-2xl pointer-events-none"></div>
+
+                    <div class="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-6">
+                        <div class="space-y-1">
+                            <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-cyan-100 text-cyan-800 text-xs font-bold">
+                                <i class="fas fa-compass text-secondary"></i>
+                                <span>Future Roadmap｜今後の機能拡張構想</span>
+                            </div>
+                            <h3 class="text-xl md:text-2xl font-bold text-slate-900">
+                                セキュアな基盤を拡張し、「学生・教員マイページ」へ
+                            </h3>
+                        </div>
+                        <span class="text-xs font-semibold text-slate-500 bg-slate-100 px-3 py-1.5 rounded-full self-start md:self-auto shrink-0 border border-slate-200">
+                            順次展開予定
+                        </span>
+                    </div>
+
+                    <p class="text-xs md:text-sm text-slate-600 leading-relaxed mb-6">
+                        実習中のやりとりを支える「INTEVE LINK」をベースに、今回追加された「INTEVE LINK ドキュメント」を皮切りとして、今後さまざまな領域へと機能を拡張。「学生マイページ」や「教員マイページ」をはじめ、入学から臨床実習、国家試験対策、就職までをひとつのセキュアな環境でシームレスにつなぐシリーズ展開を計画しています。
+                    </p>
+
+                    <div class="grid sm:grid-cols-2 gap-4">
+                        <div class="p-4 rounded-2xl bg-slate-50 border border-slate-200 flex items-start gap-3.5">
+                            <div class="w-10 h-10 rounded-xl bg-cyan-50 text-cyan-600 border border-cyan-100 flex items-center justify-center text-lg shrink-0 mt-0.5">
+                                <i class="fas fa-user-graduate"></i>
+                            </div>
+                            <div>
+                                <div class="flex items-center gap-2">
+                                    <h4 class="text-sm font-bold text-slate-800">学生マイページ構想</h4>
+                                    <span class="text-[10px] bg-cyan-100 text-cyan-700 px-1.5 py-0.5 rounded font-bold">開発予定</span>
+                                </div>
+                                <p class="text-xs text-slate-600 mt-1 leading-relaxed">
+                                    実習の出欠・日誌記録はもちろん、配属先情報や学内連絡、成績や自己学習のログを学生自身が一元確認できる個別ポータル。
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="p-4 rounded-2xl bg-slate-50 border border-slate-200 flex items-start gap-3.5">
+                            <div class="w-10 h-10 rounded-xl bg-blue-50 text-blue-600 border border-blue-100 flex items-center justify-center text-lg shrink-0 mt-0.5">
+                                <i class="fas fa-chalkboard-teacher"></i>
+                            </div>
+                            <div>
+                                <div class="flex items-center gap-2">
+                                    <h4 class="text-sm font-bold text-slate-800">教員マイページ構想</h4>
+                                    <span class="text-[10px] bg-blue-100 text-blue-700 px-1.5 py-0.5 rounded font-bold">開発予定</span>
+                                </div>
+                                <p class="text-xs text-slate-600 mt-1 leading-relaxed">
+                                    担当クラスや受け持ち実習生ごとの状況、巡回指導予定、施設とのやり取り履歴を教員ごとにカスタマイズして一元集約。
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Security & Document Specifications Section -->
+        <section id="security" class="py-20 bg-slate-50 border-t border-slate-200">
+            <div class="container mx-auto px-6">
+                <div class="max-w-4xl mx-auto text-center space-y-4 mb-14">
+                    <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-blue-100 text-blue-800 font-bold text-xs">
+                        <i class="fas fa-shield-alt text-blue-600"></i>
+                        <span>INTEVE LINK ドキュメント｜Security & Compliance</span>
+                    </div>
+                    <h2 class="text-3xl md:text-4xl font-bold text-primary">
+                        文書（PDF）共有・回収の仕組みとセキュリティ仕様
+                    </h2>
+                    <p class="text-slate-600 leading-relaxed text-sm md:text-base">
+                        実習生や実習先施設の個人情報、理事長・院長の公印付き重要書類を安全に取り扱うため、<br class="hidden sm:block">
+                        4重の安全対策と厳格なアクセス制御（RLS）で情報漏洩・誤送信・不正閲覧リスクを徹底排除しています。
+                    </p>
+                </div>
+
+                <div class="grid lg:grid-cols-12 gap-8 items-start max-w-6xl mx-auto">
+                    <!-- Left: Security Architecture & Points (7 cols) -->
+                    <div class="lg:col-span-7 space-y-6">
+                        <!-- Basic Flow Summary -->
+                        <div class="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm">
+                            <h3 class="text-base font-bold text-slate-800 mb-3 flex items-center gap-2">
+                                <i class="fas fa-sync-alt text-secondary"></i>
+                                <span>安全な重要書類（PDF）の授受フロー</span>
+                            </h3>
+                            <p class="text-xs text-slate-600 leading-relaxed mb-3">
+                                郵送やFAXに代わり、クラウド上で安全・迅速に公印書類の授受・回収を完結します。
+                            </p>
+                            <div class="grid grid-cols-2 sm:grid-cols-4 gap-2 text-center text-xs font-semibold text-slate-700">
+                                <div class="bg-slate-50 p-2.5 rounded-xl border border-slate-100">
+                                    <span class="block text-secondary text-[10px] font-bold">STEP 1</span>
+                                    学校から提示<br><span class="text-[10px] text-slate-500 font-normal">(クラウドへUP)</span>
+                                </div>
+                                <div class="bg-slate-50 p-2.5 rounded-xl border border-slate-100">
+                                    <span class="block text-secondary text-[10px] font-bold">STEP 2</span>
+                                    施設で確認・押印<br><span class="text-[10px] text-slate-500 font-normal">(認証後DL・ご捺印)</span>
+                                </div>
+                                <div class="bg-slate-50 p-2.5 rounded-xl border border-slate-100">
+                                    <span class="block text-secondary text-[10px] font-bold">STEP 3</span>
+                                    施設から返送<br><span class="text-[10px] text-slate-500 font-normal">(押印PDFを再UP)</span>
+                                </div>
+                                <div class="bg-slate-50 p-2.5 rounded-xl border border-slate-100">
+                                    <span class="block text-secondary text-[10px] font-bold">STEP 4</span>
+                                    学校で受理<br><span class="text-[10px] text-slate-500 font-normal">(完了回収)</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- 4 Pillars Grid -->
+                        <div class="grid sm:grid-cols-2 gap-4">
+                            <!-- 1 -->
+                            <div class="bg-white p-5 rounded-2xl border border-slate-200 shadow-sm space-y-2">
+                                <div class="flex items-center gap-2.5">
+                                    <div class="w-8 h-8 rounded-lg bg-blue-100 text-blue-600 flex items-center justify-center text-sm shrink-0">
+                                        <i class="fas fa-lock"></i>
+                                    </div>
+                                    <h4 class="font-bold text-slate-800 text-sm">通信・保管の完全暗号化</h4>
+                                </div>
+                                <p class="text-xs text-slate-600 leading-relaxed">
+                                    通信時はTLS/SSLで盗聴・改ざんを防止。保管データもサーバー上で暗号化（At-Rest Encryption）して厳重管理します。
+                                </p>
+                            </div>
+
+                            <!-- 2 -->
+                            <div class="bg-white p-5 rounded-2xl border border-slate-200 shadow-sm space-y-2">
+                                <div class="flex items-center gap-2.5">
+                                    <div class="w-8 h-8 rounded-lg bg-cyan-100 text-cyan-600 flex items-center justify-center text-sm shrink-0">
+                                        <i class="fas fa-user-shield"></i>
+                                    </div>
+                                    <h4 class="font-bold text-slate-800 text-sm">厳格なアクセス権限（RLS）</h4>
+                                </div>
+                                <p class="text-xs text-slate-600 leading-relaxed">
+                                    行レベルセキュリティ（RLS）により、指定担当者・正規アカウントのみにアクセス制限。検索エンジンや第三者への公開を遮断します。
+                                </p>
+                            </div>
+
+                            <!-- 3 -->
+                            <div class="bg-white p-5 rounded-2xl border border-slate-200 shadow-sm space-y-2">
+                                <div class="flex items-center gap-2.5">
+                                    <div class="w-8 h-8 rounded-lg bg-emerald-100 text-emerald-600 flex items-center justify-center text-sm shrink-0">
+                                        <i class="fas fa-file-contract"></i>
+                                    </div>
+                                    <h4 class="font-bold text-slate-800 text-sm">ファイル自体の保護（PDF暗号化）</h4>
+                                </div>
+                                <p class="text-xs text-slate-600 leading-relaxed">
+                                    AES-128/AES-256暗号化に対応。必要に応じて閲覧パスワードや、印刷・テキストコピー・編集制限を設定可能です。
+                                </p>
+                            </div>
+
+                            <!-- 4 -->
+                            <div class="bg-white p-5 rounded-2xl border border-slate-200 shadow-sm space-y-2">
+                                <div class="flex items-center gap-2.5">
+                                    <div class="w-8 h-8 rounded-lg bg-amber-100 text-amber-600 flex items-center justify-center text-sm shrink-0">
+                                        <i class="fas fa-history"></i>
+                                    </div>
+                                    <h4 class="font-bold text-slate-800 text-sm">操作ログとトレーサビリティ</h4>
+                                </div>
+                                <p class="text-xs text-slate-600 leading-relaxed">
+                                    「いつ・誰が」閲覧・DL・ULしたかの全履歴をサーバーに記録。紙やFAXのような追跡不能な漏洩リスクを排除します。
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- Benefits List -->
+                        <div class="bg-blue-50/60 border border-blue-100 rounded-2xl p-4">
+                            <div class="flex items-start gap-3">
+                                <i class="fas fa-check-circle text-blue-600 mt-1 shrink-0"></i>
+                                <div class="text-xs text-slate-700 leading-relaxed">
+                                    <strong>医療・福祉施設様との合意形成もスムーズ:</strong>
+                                    郵送事故・FAX誤送信リスクの根本的排除、授受履歴の確実な記録によるコンプライアンス（内部統制）強化、印刷・封かん・投函業務の大幅削減を両立します。
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Right: PDF Download Card (5 cols) -->
+                    <div class="lg:col-span-5">
+                        <div class="bg-gradient-to-b from-white to-slate-50 rounded-3xl p-6 md:p-8 border-2 border-cyan-400/40 shadow-xl relative overflow-hidden space-y-6">
+                            <!-- Background Decoration -->
+                            <div class="absolute -top-12 -right-12 w-36 h-36 bg-cyan-400/10 rounded-full blur-2xl pointer-events-none"></div>
+
+                            <div class="flex items-start justify-between gap-4">
+                                <div class="w-14 h-14 rounded-2xl bg-red-50 text-red-500 border border-red-100 flex items-center justify-center text-3xl shrink-0 shadow-sm">
+                                    <i class="fas fa-file-pdf"></i>
+                                </div>
+                                <span class="px-3 py-1 bg-cyan-100 text-cyan-800 rounded-full text-xs font-bold shrink-0">
+                                    PDF資料 (約250KB)
+                                </span>
+                            </div>
+
+                            <div>
+                                <span class="text-xs font-bold text-secondary uppercase tracking-wider">Official Document</span>
+                                <h3 class="text-lg md:text-xl font-bold text-slate-900 leading-snug mt-1">
+                                    文書（PDF）共有・回収の仕組みとセキュリティ仕様書
+                                </h3>
+                                <p class="text-xs text-slate-600 leading-relaxed mt-2">
+                                    システムの基本フロー、4重のセキュリティ構造、導入メリットを詳しくまとめた公式仕様書（PDF形式）です。
+                                </p>
+                            </div>
+
+                            <div class="bg-slate-100/80 rounded-xl p-3.5 space-y-1.5 text-xs text-slate-600 border border-slate-200">
+                                <div class="flex items-center gap-2">
+                                    <i class="fas fa-check text-emerald-500"></i>
+                                    <span>学内のセキュリティ審査・稟議資料に</span>
+                                </div>
+                                <div class="flex items-center gap-2">
+                                    <i class="fas fa-check text-emerald-500"></i>
+                                    <span>実習先施設様への説明・提示資料に</span>
+                                </div>
+                                <div class="flex items-center gap-2">
+                                    <i class="fas fa-check text-emerald-500"></i>
+                                    <span>メール添付・事前配布用として活用可能</span>
+                                </div>
+                            </div>
+
+                            <div class="space-y-3 pt-1">
+                                <a href="files/INTEVE_LINK_Security.pdf" download="INTEVE_LINK_Security.pdf" data-ga-click="INTEVE LINK Security: Download PDF" class="w-full py-4 px-6 bg-gradient-to-r from-cyan-600 to-blue-600 hover:from-cyan-500 hover:to-blue-500 text-white font-bold rounded-2xl shadow-lg shadow-cyan-900/20 flex items-center justify-center gap-3 transition-all transform hover:-translate-y-0.5 active:translate-y-0 text-center">
+                                    <i class="fas fa-download text-lg"></i>
+                                    <span class="text-base">資料をダウンロード (PDF)</span>
+                                </a>
+
+                                <a href="files/INTEVE_LINK_Security.pdf" target="_blank" rel="noopener noreferrer" class="w-full py-2 text-xs font-semibold text-slate-500 hover:text-secondary flex items-center justify-center gap-1.5 transition-colors">
+                                    <i class="fas fa-arrow-up-right-from-square"></i>
+                                    <span>ブラウザでプレビュー表示する</span>
+                                </a>
+                            </div>
+
+                            <p class="text-[11px] text-slate-400 text-center leading-normal">
+                                ※ 登録不要ですぐにダウンロード・閲覧いただけます。
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Final CTA Banner -->
+        <section class="bg-gradient-to-r from-primary via-blue-900 to-slate-900 text-white py-20">
+            <div class="container mx-auto px-6 text-center max-w-3xl space-y-6">
+                <h2 class="text-3xl md:text-4xl font-bold">
+                    臨床実習の管理業務を、<br>もっとスマートで安心なものに。
+                </h2>
+                <p class="text-slate-300 text-base md:text-lg leading-relaxed">
+                    システム概要資料（PDF）のダウンロードや、自校の運用に合わせたご相談、<br class="hidden sm:block">
+                    実際にお試しいただける<strong class="text-cyan-300 font-bold">「デモ画面用URL」</strong>のご案内も可能です。
+                </p>
+                <div class="pt-4 space-y-3">
+                    <a href="download_inteve_link.html" data-ga-click="INTEVE LINK Bottom CTA: Download" class="inline-flex items-center gap-3 px-12 py-5 bg-accent hover:bg-orange-600 text-white rounded-full font-extrabold text-xl shadow-2xl shadow-orange-950/50 transform hover:scale-105 active:scale-95 transition-all">
+                        <i class="fas fa-file-download text-2xl"></i>
+                        <span>資料ダウンロード</span>
+                    </a>
+                    <p class="text-xs text-slate-400">※ 概要資料（PDF）のダウンロード画面へ移動します。お気軽にお申し込みください。</p>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <div id="footer-placeholder"></div>
+
+    <!-- Image Lightbox Modal -->
+    <div id="image-lightbox-modal" class="fixed inset-0 z-[100] flex items-center justify-center bg-black/85 backdrop-blur-md opacity-0 pointer-events-none transition-all duration-300 p-4 md:p-8" role="dialog" aria-modal="true" aria-label="画面拡大プレビュー">
+        <!-- Close Button (Top-Right) -->
+        <button id="lightbox-close-btn" type="button" class="absolute top-4 right-4 md:top-6 md:right-8 w-12 h-12 rounded-full bg-slate-800/90 hover:bg-slate-700 text-white flex items-center justify-center text-xl transition-all shadow-2xl hover:scale-110 focus:outline-none focus:ring-2 focus:ring-cyan-400 z-30 cursor-pointer" aria-label="閉じる (Esc)">
+            <i class="fas fa-times"></i>
+        </button>
+
+        <!-- Content Box -->
+        <div id="lightbox-content-box" class="relative max-w-6xl w-full flex flex-col items-center justify-center pointer-events-auto">
+            <div class="relative overflow-hidden rounded-2xl shadow-2xl border border-slate-700/80 bg-slate-950 flex items-center justify-center w-full">
+                <img id="lightbox-modal-img" src="" alt="" class="max-w-full max-h-[80vh] w-auto h-auto object-contain transform scale-95 transition-transform duration-300">
+            </div>
+            <!-- Caption & Esc tip -->
+            <div class="flex flex-col sm:flex-row items-center gap-2 mt-4 text-center">
+                <span id="lightbox-caption" class="text-white text-sm md:text-base font-bold px-5 py-1.5 rounded-full bg-slate-900/90 border border-slate-700/70 shadow-lg"></span>
+                <span class="text-slate-400 text-xs bg-slate-800/60 px-3 py-1 rounded-full border border-slate-700/40">
+                    <kbd class="font-mono bg-slate-700/80 px-1.5 py-0.5 rounded text-[11px] text-slate-200">Esc</kbd> キーまたは背景クリックで閉じる
+                </span>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/main.js?v=20260824_v2" data-root="./"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const modal = document.getElementById('image-lightbox-modal');
+            const modalImg = document.getElementById('lightbox-modal-img');
+            const modalCaption = document.getElementById('lightbox-caption');
+            const closeBtn = document.getElementById('lightbox-close-btn');
+            const contentBox = document.getElementById('lightbox-content-box');
+
+            if (!modal || !modalImg) return;
+
+            function openModal(src, alt) {
+                modalImg.src = src;
+                modalImg.alt = alt || '';
+                modalCaption.textContent = alt || '画面プレビュー';
+                modal.classList.remove('opacity-0', 'pointer-events-none');
+                modal.classList.add('opacity-100', 'pointer-events-auto');
+                setTimeout(() => {
+                    modalImg.classList.replace('scale-95', 'scale-100');
+                }, 20);
+                document.body.style.overflow = 'hidden';
+            }
+
+            function closeModal() {
+                modalImg.classList.replace('scale-100', 'scale-95');
+                modal.classList.remove('opacity-100', 'pointer-events-auto');
+                modal.classList.add('opacity-0', 'pointer-events-none');
+                document.body.style.overflow = '';
+            }
+
+            // Bind click to all zoomable images and their containers
+            document.querySelectorAll('.zoomable-image').forEach(img => {
+                const container = img.closest('.cursor-zoom-in');
+                if (container) {
+                    container.addEventListener('click', (e) => {
+                        openModal(img.src, img.alt);
+                    });
+                } else {
+                    img.addEventListener('click', () => {
+                        openModal(img.src, img.alt);
+                    });
+                }
+            });
+
+            // Close button click
+            closeBtn?.addEventListener('click', closeModal);
+
+            // Click outside content to close (click on dark background)
+            modal.addEventListener('click', (e) => {
+                if (!contentBox.contains(e.target) || e.target === contentBox) {
+                    closeModal();
+                }
+            });
+
+            // Esc key to close
+            document.addEventListener('keydown', (e) => {
+                if (e.key === 'Escape' && !modal.classList.contains('pointer-events-none')) {
+                    closeModal();
+                }
+            });
+        });
+    </script>
+</body>
+</html>

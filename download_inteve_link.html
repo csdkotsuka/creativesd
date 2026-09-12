@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <!-- <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests"> -->
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>INTEVE LINK 資料ダウンロード | 臨床実習ポータル - Creative System Design</title>
+    <meta name="description" content="臨床実習ポータル「INTEVE LINK」の概要紹介資料（PDF）をダウンロードいただけます。実習施設マッチング、学生の巡回・指導記録、公印書類の授受・回収DXの全貌をご確認いただけます。">
+
+    <link rel="icon" href="images/favicon.png" type="image/png" />
+    <link rel="apple-touch-icon" href="images/favicon.png" />
+
+    <!-- OGP Settings -->
+    <meta property="og:title" content="INTEVE LINK 資料ダウンロード | 臨床実習ポータル" />
+    <meta property="og:description" content="臨床実習ポータル「INTEVE LINK」の概要資料（PDF）をダウンロードいただけます。" />
+    <meta property="og:url" content="https://creativesd.net/download_inteve_link.html" />
+    <meta property="og:image" content="https://creativesd.net/images/ogp.png" />
+    <meta property="og:type" content="article" />
+    <meta name="twitter:card" content="summary_large_image" />
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-P8YSB8RZB2"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-P8YSB8RZB2');
+    </script>
+
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts: Inter -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet"/>
+    <!-- FontAwesome for Icons -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet"/>
+    <link rel="stylesheet" href="css/style.css?v=20260329">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#004080',
+                        secondary: '#00BCD4',
+                        accent: '#FF6600',
+                        glass: 'rgba(255, 255, 255, 0.7)',
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                }
+            }
+        }
+    </script>
+</head>
+<body class="font-sans text-slate-900 overflow-x-hidden bg-slate-50">
+
+    <div id="header-placeholder"></div>
+
+    <main class="pt-[88px]">
+        <!-- Hero Section -->
+        <section class="relative pt-24 pb-20 overflow-hidden bg-gradient-to-r from-primary via-blue-900 to-slate-900">
+            <div class="absolute inset-0 z-0">
+                <div class="absolute inset-0 bg-slate-900/60 mix-blend-multiply"></div>
+                <!-- Abstract blobs -->
+                <div class="absolute top-0 right-0 w-[500px] h-[500px] bg-secondary/20 rounded-full blur-3xl -translate-y-1/2 translate-x-1/3"></div>
+                <div class="absolute bottom-0 left-0 w-[400px] h-[400px] bg-cyan-500/20 rounded-full blur-3xl translate-y-1/2 -translate-x-1/3"></div>
+            </div>
+            <div class="container mx-auto px-6 relative z-10 text-center">
+                <span class="inline-block py-1 px-3 rounded-full bg-cyan-500/30 text-cyan-100 text-sm font-semibold tracking-wider mb-4 border border-cyan-400/30 backdrop-blur-sm uppercase">INTEVE LINK Document</span>
+                <h1 class="text-3xl md:text-5xl font-bold text-white mb-6 leading-tight">INTEVE LINK 資料ダウンロード</h1>
+                <p class="text-base md:text-lg text-blue-100 max-w-3xl mx-auto mb-4 leading-relaxed">
+                    臨床実習ポータル「<strong class="text-cyan-300">INTEVE LINK</strong>」の概要資料（PDF）をお手元でご覧いただけます。<br class="hidden md:block">
+                    学内でのご検討や関係部署・教員間の情報共有にぜひお役立てください。
+                </p>
+            </div>
+        </section>
+
+        <!-- Form Section -->
+        <section class="py-20 relative z-10">
+            <div class="container mx-auto px-6 max-w-4xl relative -mt-32">
+                <!-- Page Switcher Tabs -->
+                <div class="flex border-b border-slate-200 bg-slate-100 rounded-t-3xl overflow-hidden">
+                    <a href="inteve_link.html" class="flex-1 py-4 px-4 sm:px-6 text-center font-semibold text-xs sm:text-sm md:text-base text-slate-500 hover:text-primary hover:bg-slate-50 transition-colors flex items-center justify-center gap-2">
+                        <i class="fas fa-arrow-left text-slate-400"></i>
+                        <span>INTEVE LINK 紹介へ戻る</span>
+                    </a>
+                    <div class="flex-1 py-4 px-4 sm:px-6 text-center font-bold text-xs sm:text-sm md:text-base bg-white text-primary border-t-4 border-secondary shadow-sm flex items-center justify-center gap-2">
+                        <i class="fas fa-file-download text-secondary"></i>
+                        <span>概要資料ダウンロード</span>
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-b-3xl shadow-xl overflow-hidden border border-t-0 border-slate-100">
+                    
+                    <form id="inteve-link-download-form" class="p-8 md:p-12 lg:p-16">
+                        
+                        <!-- Alert Box (Hidden by default) -->
+                        <div id="form-message" class="hidden mb-8 p-4 rounded-xl text-center font-medium transition-all duration-300"></div>
+
+                        <!-- Target Document Preview Card -->
+                        <div class="mb-10 p-6 rounded-2xl bg-gradient-to-r from-blue-50/90 via-cyan-50/50 to-slate-50 border border-cyan-200/80 flex flex-col md:flex-row items-start md:items-center justify-between gap-5">
+                            <div class="flex items-center gap-4">
+                                <div class="w-14 h-14 rounded-2xl bg-red-100 text-red-500 flex items-center justify-center text-3xl shrink-0 shadow-sm">
+                                    <i class="fas fa-file-pdf"></i>
+                                </div>
+                                <div>
+                                    <div class="flex items-center gap-2 flex-wrap">
+                                        <span class="text-[11px] bg-cyan-100 text-cyan-800 px-2.5 py-0.5 rounded-full font-bold">PDF概要資料</span>
+                                        <span class="text-xs text-slate-500 font-medium">ファイルサイズ: 約4.3MB</span>
+                                    </div>
+                                    <h2 class="text-base md:text-lg font-bold text-slate-900 mt-1">
+                                        臨床実習ポータル「INTEVE LINK」概要資料
+                                    </h2>
+                                    <p class="text-xs text-slate-600 mt-1">
+                                        施設マッチング・学生日誌＆評価・公印書類授受DXの全体像をわかりやすく解説。
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="shrink-0 flex items-center gap-2 text-xs text-secondary font-bold">
+                                <i class="fas fa-check-circle text-emerald-500"></i>
+                                <span>送信後すぐにご入手いただけます</span>
+                            </div>
+                        </div>
+
+                        <!-- Basic Information -->
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
+                            <!-- Company -->
+                            <div class="form-group">
+                                <label for="il-company" class="block text-sm font-bold text-primary mb-2">法人名・学校名・施設名 <span class="text-accent text-xs ml-1">*</span></label>
+                                <input type="text" id="il-company" name="company" required placeholder="例）○○専門学校 / ○○大学" 
+                                    class="w-full px-5 py-3 rounded-xl bg-slate-50 border border-slate-200 text-slate-700 outline-none transition-all duration-300 focus:bg-white focus:border-secondary focus:ring-4 focus:ring-secondary/10 shadow-sm hover:border-slate-300">
+                            </div>
+
+                            <!-- Name -->
+                            <div class="form-group">
+                                <label for="il-name" class="block text-sm font-bold text-primary mb-2">お名前 <span class="text-accent text-xs ml-1">*</span></label>
+                                <input type="text" id="il-name" name="name" required placeholder="例）愛媛　太郎" 
+                                    class="w-full px-5 py-3 rounded-xl bg-slate-50 border border-slate-200 text-slate-700 outline-none transition-all duration-300 focus:bg-white focus:border-secondary focus:ring-4 focus:ring-secondary/10 shadow-sm hover:border-slate-300">
+                            </div>
+                            
+                            <!-- Department -->
+                            <div class="form-group">
+                                <label for="il-department" class="block text-sm font-bold text-primary mb-2">学科名・部署名・役職名</label>
+                                <input type="text" id="il-department" name="department" placeholder="例）理学療法学科 / 実習委員会 / 教務部" 
+                                    class="w-full px-5 py-3 rounded-xl bg-slate-50 border border-slate-200 text-slate-700 outline-none transition-all duration-300 focus:bg-white focus:border-secondary focus:ring-4 focus:ring-secondary/10 shadow-sm hover:border-slate-300">
+                            </div>
+
+                            <!-- Contact Info -->
+                            <div class="form-group">
+                                <label for="il-contact" class="block text-sm font-bold text-primary mb-2">メールアドレス <span class="text-accent text-xs ml-1">*</span></label>
+                                <input type="email" id="il-contact" name="contact" required placeholder="例）sample@example.com" 
+                                    class="w-full px-5 py-3 rounded-xl bg-slate-50 border border-slate-200 text-slate-700 outline-none transition-all duration-300 focus:bg-white focus:border-secondary focus:ring-4 focus:ring-secondary/10 shadow-sm hover:border-slate-300">
+                            </div>
+                        </div>
+
+                        <!-- Details / Notes (Optional Textarea) -->
+                        <div class="mb-10 form-group">
+                            <label for="il-details" class="block text-sm font-bold text-primary mb-2">ご質問・検討中の実習課題など <span class="text-slate-400 text-xs font-normal ml-1">（任意）</span></label>
+                            <textarea id="il-details" name="details" rows="3" placeholder="「自校の評価シートに対応できるか」「デモ画面を見てみたい」など、気になる点がございましたらご自由にご記入ください..." 
+                                class="w-full px-5 py-4 rounded-xl bg-slate-50 border border-slate-200 text-slate-700 outline-none transition-all duration-300 focus:bg-white focus:border-secondary focus:ring-4 focus:ring-secondary/10 shadow-sm hover:border-slate-300 resize-y"></textarea>
+                        </div>
+
+                        <!-- Policy Agreement -->
+                        <div class="mb-10 text-center">
+                            <label class="inline-flex relative items-center cursor-pointer group">
+                                <input type="checkbox" name="policy_agreement" required class="peer sr-only">
+                                <div class="w-5 h-5 flex-shrink-0 border-2 border-slate-300 rounded bg-white overflow-hidden transition-all duration-300 peer-checked:border-secondary peer-checked:bg-secondary group-hover:border-secondary flex items-center justify-center">
+                                    <i class="fas fa-check text-white text-xs opacity-0 peer-checked:opacity-100 transform scale-50 peer-checked:scale-100 transition-transform"></i>
+                                </div>
+                                <span class="ml-3 text-sm text-slate-600">
+                                    <a href="privacy.html" target="_blank" class="text-secondary hover:underline font-medium">プライバシーポリシー</a>に同意する
+                                </span>
+                            </label>
+                        </div>
+
+                        <!-- Submit Button -->
+                        <div class="text-center">
+                            <button type="submit" id="il-submit-btn" data-ga-click="INTEVE LINK Download: Submit Form" class="inline-flex items-center justify-center px-10 py-4 bg-gradient-to-r from-accent to-orange-600 hover:from-orange-500 hover:to-orange-600 text-white font-bold rounded-full text-lg shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all w-full md:w-auto min-w-[320px]">
+                                <i class="fas fa-file-download mr-3 text-xl"></i>
+                                <span>INTEVE LINK 資料をダウンロード</span>
+                            </button>
+                            <p class="text-xs text-slate-400 mt-3">※ 送信後、ダウンロード画面が表示されます。</p>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+        <!-- Success & Download Modal -->
+        <div id="il-success-modal" class="fixed inset-0 z-[100] flex items-center justify-center opacity-0 pointer-events-none transition-opacity duration-300">
+            <!-- Backdrop -->
+            <div id="il-success-modal-backdrop" class="absolute inset-0 bg-slate-900/70 backdrop-blur-sm cursor-pointer"></div>
+            <!-- Modal Content -->
+            <div id="il-success-modal-content" class="relative bg-white rounded-3xl shadow-2xl p-8 md:p-10 max-w-lg w-full mx-4 transform scale-95 transition-transform duration-300 text-center">
+                <div class="w-16 h-16 bg-emerald-100 rounded-full flex items-center justify-center mx-auto mb-5 text-emerald-600 text-3xl shadow-sm">
+                    <i class="fas fa-check"></i>
+                </div>
+                <h3 class="text-2xl font-bold text-slate-800 mb-2">お申し込み完了</h3>
+                <p class="text-slate-600 mb-6 leading-relaxed text-sm">
+                    資料のご請求ありがとうございます。<br>
+                    <strong class="text-secondary font-bold">PDFのダウンロードを自動的に開始しました。</strong><br>
+                    <span class="text-xs text-slate-400">※ ダウンロードが始まらない場合は、下のボタンをクリックしてください。</span>
+                </p>
+
+                <!-- Download Material Card -->
+                <div class="bg-slate-50 border border-slate-200 rounded-2xl p-5 mb-6 text-left space-y-4">
+                    <div class="flex items-start gap-4">
+                        <div class="w-12 h-12 rounded-xl bg-cyan-100 text-cyan-600 flex items-center justify-center text-2xl shrink-0">
+                            <i class="fas fa-file-pdf"></i>
+                        </div>
+                        <div>
+                            <span class="text-[10px] bg-cyan-100 text-cyan-800 px-2 py-0.5 rounded font-bold">A4リーフレット</span>
+                            <h4 class="font-bold text-slate-900 text-sm mt-0.5">臨床実習管理ポータル INTEVE LINK（A4リーフレット）</h4>
+                            <p class="text-xs text-slate-500 mt-0.5">実習生・指導者・教員の三者リアルタイム共有（A4 4ページ）</p>
+                        </div>
+                    </div>
+
+                    <div class="space-y-2">
+                        <a href="files/INTEVE_LINK_Leaflet_A4.pdf" download="INTEVE_LINK_Leaflet_A4.pdf" data-ga-click="INTEVE LINK Download Modal: Leaflet PDF" class="w-full py-3.5 px-4 bg-gradient-to-r from-blue-600 to-cyan-600 hover:from-blue-700 hover:to-cyan-700 text-white font-bold rounded-xl shadow-md flex items-center justify-center gap-2 text-sm transition-all transform hover:-translate-y-0.5 text-center">
+                            <i class="fas fa-download"></i>
+                            <span>リーフレット（A4）を直接ダウンロード</span>
+                        </a>
+                        <a href="files/INTEVE_LINK_Leaflet_A4.pdf" target="_blank" rel="noopener noreferrer" class="w-full py-2 text-xs font-semibold text-slate-500 hover:text-secondary flex items-center justify-center gap-1.5 transition-colors">
+                            <i class="fas fa-external-link-alt"></i>
+                            <span>ブラウザで開いてプレビュー表示する</span>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="text-xs text-slate-500 mb-6 bg-blue-50/60 p-3 rounded-xl border border-blue-100">
+                    ※ デモ画面のご案内や機能についてのご相談もお気軽にお問い合わせください。
+                </div>
+
+                <div class="flex gap-3">
+                    <a href="inteve_link.html" class="flex-1 bg-slate-100 text-slate-700 font-bold py-3.5 rounded-xl hover:bg-slate-200 transition-colors shadow-sm text-xs sm:text-sm text-center flex items-center justify-center">
+                        紹介ページへ戻る
+                    </a>
+                    <button type="button" id="close-il-success-modal" class="flex-1 bg-slate-800 text-white font-bold py-3.5 rounded-xl hover:bg-slate-700 transition-colors shadow-sm text-xs sm:text-sm">
+                        閉じる
+                    </button>
+                </div>
+            </div>
+        </div>
+
+    </main>
+
+    <div id="footer-placeholder"></div>
+
+    <script src="js/main.js?v=20260824_v2" data-root="./"></script>
+</body>
+</html>

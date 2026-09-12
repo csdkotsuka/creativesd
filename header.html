@@ -1,0 +1,143 @@
+<!-- Global Header Component -->
+<header class="fixed top-0 w-full z-50 glass-header">
+    <!-- <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests"> -->
+    <div class="max-w-[1440px] mx-auto px-4 sm:px-6 py-2.5 md:py-3 flex items-center justify-between gap-2 xl:gap-4 transition-all duration-300">
+        <!-- Logo -->
+        <a href="[[ROOT]]index.html" data-ga-click="Header: Logo" class="flex items-center hover:opacity-80 transition-opacity flex-shrink-0">
+            <img src="[[ROOT]]assets/images/logo.png" alt="Creative System Design" class="h-10 sm:h-11 w-auto">
+        </a>
+
+        <!-- Desktop Navigation (lg+) -->
+        <nav class="hidden lg:flex items-center justify-end gap-x-2 xl:gap-x-3.5 ml-auto transition-all duration-300">
+            <a href="[[ROOT]]index.html" data-ga-click="Nav: Top" class="whitespace-nowrap text-xs xl:text-sm font-semibold text-slate-200 hover:text-secondary border-b-2 border-transparent hover:border-secondary pb-1 transition-colors nav-link" data-path="index.html">トップ</a>
+            <a href="[[ROOT]]atfirst.html" data-ga-click="Nav: At First" class="whitespace-nowrap text-xs xl:text-sm font-semibold text-slate-200 hover:text-secondary border-b-2 border-transparent hover:border-secondary pb-1 transition-colors nav-link" data-path="atfirst.html">はじめに</a>
+            <a href="[[ROOT]]update.html" data-ga-click="Nav: Update" class="relative whitespace-nowrap text-xs xl:text-sm font-bold text-slate-200 hover:text-accent border-b-2 border-transparent hover:border-accent pb-1 transition-colors nav-link flex items-center pr-2" data-path="update.html">
+                News
+                <span class="absolute top-0 right-0 flex h-2 w-2">
+                    <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-accent opacity-75"></span>
+                    <span class="relative inline-flex rounded-full h-2 w-2 bg-accent"></span>
+                </span>
+            </a>
+            
+            <!-- Systems Dropdown -->
+            <div class="relative group">
+                <a href="[[ROOT]]system.html" id="systems-dropdown-btn" data-ga-click="Nav: Systems" class="whitespace-nowrap text-xs xl:text-sm font-semibold text-slate-200 hover:text-secondary border-b-2 border-transparent hover:border-secondary pb-1 transition-colors flex items-center space-x-1 outline-none nav-link" data-path="system.html">
+                    <span>システム紹介</span>
+                    <i class="fas fa-chevron-down text-[10px] transition-transform group-hover:rotate-180"></i>
+                </a>
+                <!-- Dropdown Menu -->
+                <div id="systems-dropdown-menu" class="absolute left-0 mt-4 w-64 bg-white rounded-xl shadow-2xl border border-slate-100 py-3 dropdown-content">
+                    <a href="https://connect.creativesd.net/" data-ga-click="Nav: ConnectDropdown" class="block px-6 py-2.5 text-sm font-bold text-teal-600 hover:bg-teal-50 transition-colors flex items-center justify-between group/link border-b border-slate-100">
+                        <span class="flex items-center gap-1.5">
+                            <i class="fas fa-sparkles text-teal-500 text-xs"></i>
+                            CONNECT (AI予約＆顧客管理)
+                        </span>
+                        <span class="text-[10px] bg-teal-100 text-teal-800 px-1.5 py-0.5 rounded font-bold">NEW</span>
+                    </a>
+                    <a href="[[ROOT]]inteve_link.html" data-ga-click="Nav: InteveLink" class="block px-6 py-2.5 text-sm font-bold text-cyan-600 hover:bg-cyan-50 transition-colors flex items-center justify-between group/link border-b border-slate-100">
+                        <span class="flex items-center gap-1.5">
+                            <i class="fas fa-sparkles text-cyan-500 text-xs"></i>
+                            INTEVE LINK
+                        </span>
+                        <span class="text-[10px] bg-cyan-100 text-cyan-700 px-1.5 py-0.5 rounded font-bold">NEW</span>
+                    </a>
+                    <a href="[[ROOT]]academic.html" data-ga-click="Nav: Academic" class="block px-6 py-2.5 text-sm text-slate-600 hover:bg-slate-50 hover:text-primary transition-colors">学事システム</a>
+                    <a href="[[ROOT]]accounting.html" data-ga-click="Nav: Accounting" class="block px-6 py-2.5 text-sm text-slate-600 hover:bg-slate-50 hover:text-primary transition-colors">経理システム</a>
+                    <a href="[[ROOT]]exam.html" data-ga-click="Nav: Exam" class="block px-6 py-2.5 text-sm text-slate-600 hover:bg-slate-50 hover:text-primary transition-colors">国家試験対策</a>
+                    <a href="[[ROOT]]practice.html" data-ga-click="Nav: Practice" class="block px-6 py-2.5 text-sm text-slate-600 hover:bg-slate-50 hover:text-primary transition-colors">臨床実習</a>
+                    <a href="[[ROOT]]marketing.html" data-ga-click="Nav: Marketing" class="block px-6 py-2.5 text-sm text-slate-600 hover:bg-slate-50 hover:text-primary transition-colors">マーケティング</a>
+                    <a href="[[ROOT]]efficiency.html" data-ga-click="Nav: Efficiency" class="block px-6 py-2.5 text-sm text-slate-600 hover:bg-slate-50 hover:text-primary transition-colors">業務効率化</a>
+                    <a href="[[ROOT]]other.html" data-ga-click="Nav: Other" class="block px-6 py-2.5 text-sm text-slate-600 hover:bg-slate-50 hover:text-primary transition-colors">その他</a>
+                </div>
+            </div>
+
+            <a href="[[ROOT]]plan.html" data-ga-click="Nav: Plan" class="whitespace-nowrap text-xs xl:text-sm font-semibold text-slate-200 hover:text-secondary border-b-2 border-transparent hover:border-secondary pb-1 transition-colors nav-link" data-path="plan.html">プラン選択</a>
+            <a href="[[ROOT]]column.html" data-ga-click="Nav: Column" class="whitespace-nowrap text-xs xl:text-sm font-semibold text-slate-200 hover:text-secondary border-b-2 border-transparent hover:border-secondary pb-1 transition-colors nav-link" data-path="column.html">コラム</a>
+            <a href="https://connect.creativesd.net/" data-ga-click="Nav: Connect" class="whitespace-nowrap text-[11px] xl:text-xs font-bold text-white bg-gradient-to-r from-teal-400 to-emerald-500 hover:from-teal-500 hover:to-emerald-600 px-3 py-1.5 rounded-full shadow-md shadow-teal-900/30 hover:shadow-teal-500/40 hover:scale-105 transition-all ml-0.5 mr-0.5 inline-flex items-center gap-1.5 border border-teal-300/40" data-path="connect">
+                <i class="fas fa-sparkles text-amber-300 text-[10px]"></i>
+                <span>CONNECT <span class="bg-white/20 text-white text-[9px] px-1.5 py-0.2 rounded-full font-extrabold ml-0.5">NEW</span></span>
+            </a>
+            <a href="https://manual.creativesd.net/" target="_blank" rel="noopener noreferrer" data-ga-click="Nav: Manual" class="whitespace-nowrap text-xs xl:text-sm font-semibold text-secondary border border-secondary/60 hover:bg-secondary hover:text-primary px-3 py-1 rounded-full transition-all ml-0.5 mr-0.5 inline-flex items-center gap-1" data-path="manual">
+                <span>マニュアル</span>
+                <i class="fas fa-external-link-alt text-[10px]"></i>
+            </a>
+            <a href="[[ROOT]]privacy.html" data-ga-click="Nav: Privacy" class="whitespace-nowrap text-xs xl:text-sm font-semibold text-slate-200 hover:text-secondary border-b-2 border-transparent hover:border-secondary pb-1 transition-colors nav-link" data-path="privacy.html">プライバシーポリシー</a>
+        </nav>
+
+        <!-- Right Section: Search + Contact (desktop) + Hamburger (mobile) -->
+        <div class="flex items-center gap-3 flex-shrink-0 ml-4 lg:ml-6 mt-1.5 transition-all duration-300">
+
+            <!-- Search: icon-only button (all screen widths), expands inline on click -->
+            <div class="relative flex items-center" id="search-wrapper">
+                <!-- Collapsed: just the magnifying glass icon -->
+                <button id="search-toggle" data-ga-click="Header: Search Toggle" class="flex items-center justify-center w-9 h-9 rounded-full text-slate-200 hover:bg-white/10 transition-colors" aria-label="検索">
+                    <i class="fas fa-search text-base"></i>
+                </button>
+                <!-- Expanded search bar (hidden by default) -->
+                <div id="search-bar" class="hidden absolute right-0 top-1/2 -translate-y-1/2 flex items-center bg-white rounded-full shadow-lg px-4 py-2 gap-2 w-56 z-50">
+                    <i class="fas fa-search text-slate-400 text-sm flex-shrink-0"></i>
+                    <input id="search-input" type="text" placeholder="キーワード検索" class="bg-transparent border-none focus:ring-0 text-sm text-slate-700 w-full outline-none">
+                    <button id="search-close" class="text-slate-400 hover:text-slate-600 transition-colors flex-shrink-0" aria-label="検索を閉じる">
+                        <i class="fas fa-times text-sm"></i>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Contact CTA: visible on lg+ only (md shows it inside drawer) -->
+            <a href="[[ROOT]]contact.html" id="header-contact-btn" data-ga-click="Header: Contact" class="hidden lg:block bg-accent text-white px-5 py-2 rounded-full text-sm font-bold hover:bg-orange-600 hover:shadow-lg transition-all whitespace-nowrap">お問い合わせ</a>
+
+            <!-- Hamburger: visible below lg -->
+            <button id="mobile-menu-toggle" data-ga-click="Header: Mobile Menu Toggle" class="lg:hidden flex items-center justify-center w-9 h-9 text-slate-200 hover:bg-white/10 rounded-full transition-colors focus:outline-none">
+                <i class="fas fa-bars text-xl"></i>
+            </button>
+        </div>
+    </div>
+
+    <!-- Mobile / Medium Drawer (below lg) -->
+    <div id="mobile-menu" class="lg:hidden bg-white border-t border-slate-100 overflow-hidden max-h-0 transition-all duration-500 ease-in-out">
+        <div class="p-6 space-y-4">
+            <a href="[[ROOT]]index.html" data-ga-click="Mobile: Top" class="block text-base font-semibold text-secondary">トップ</a>
+            <a href="[[ROOT]]atfirst.html" data-ga-click="Mobile: At First" class="block text-base font-semibold text-primary">はじめに</a>
+            <a href="[[ROOT]]update.html" data-ga-click="Mobile: Update" class="flex items-center w-fit text-base font-bold text-primary hover:text-accent group relative pr-2">
+                News
+                <span class="absolute top-1 right-0 flex h-2 w-2">
+                    <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-accent opacity-75"></span>
+                    <span class="relative inline-flex rounded-full h-2 w-2 bg-accent"></span>
+                </span>
+            </a>
+            <div class="space-y-2">
+                <a href="[[ROOT]]system.html" data-ga-click="Mobile: Systems" class="block text-base font-semibold text-primary hover:text-secondary">システム紹介</a>
+                <div class="grid grid-cols-2 gap-2 pl-4 border-l-2 border-slate-100 pt-2">
+                    <a href="https://connect.creativesd.net/" data-ga-click="Mobile: Connect" class="text-sm font-bold text-teal-600 col-span-2 flex items-center gap-1.5 pb-1 border-b border-slate-100">
+                        <i class="fas fa-sparkles text-xs text-teal-500"></i>
+                        CONNECT (24h AI予約＆顧客管理)
+                        <span class="text-[10px] bg-teal-100 text-teal-700 px-1.5 py-0.2 rounded font-bold">NEW</span>
+                    </a>
+                    <a href="[[ROOT]]inteve_link.html" data-ga-click="Mobile: InteveLink" class="text-sm font-bold text-cyan-600 col-span-2 flex items-center gap-1.5">
+                        <i class="fas fa-sparkles text-xs"></i>
+                        INTEVE LINK (臨床実習)
+                        <span class="text-[10px] bg-cyan-100 text-cyan-700 px-1.5 py-0.2 rounded font-bold">NEW</span>
+                    </a>
+                    <a href="[[ROOT]]academic.html" data-ga-click="Mobile: Academic" class="text-sm text-slate-600 hover:text-secondary">学事システム</a>
+                    <a href="[[ROOT]]accounting.html" data-ga-click="Mobile: Accounting" class="text-sm text-slate-600 hover:text-secondary">経理システム</a>
+                    <a href="[[ROOT]]exam.html" data-ga-click="Mobile: Exam" class="text-sm text-slate-600 hover:text-secondary">国家試験対策</a>
+                    <a href="[[ROOT]]practice.html" data-ga-click="Mobile: Practice" class="text-sm text-slate-600 hover:text-secondary">臨床実習</a>
+                    <a href="[[ROOT]]marketing.html" data-ga-click="Mobile: Marketing" class="text-sm text-slate-600 hover:text-secondary">マーケティング</a>
+                    <a href="[[ROOT]]efficiency.html" data-ga-click="Mobile: Efficiency" class="text-sm text-slate-600 hover:text-secondary">業務効率化</a>
+                    <a href="[[ROOT]]other.html" data-ga-click="Mobile: Other" class="text-sm text-slate-600 hover:text-secondary">その他</a>
+                </div>
+            </div>
+            <a href="[[ROOT]]plan.html" data-ga-click="Mobile: Plan" class="block text-base font-semibold text-primary">プラン選択</a>
+            <a href="[[ROOT]]column.html" data-ga-click="Mobile: Column" class="block text-base font-semibold text-primary">コラム</a>
+            <div class="py-1">
+                <a href="https://manual.creativesd.net/" target="_blank" rel="noopener noreferrer" data-ga-click="Mobile: Manual" class="inline-flex items-center gap-1.5 text-base font-semibold text-secondary border border-secondary/60 bg-secondary/5 px-3.5 py-1.5 rounded-full transition-all" data-path="manual">
+                    <span>マニュアル</span>
+                    <i class="fas fa-external-link-alt text-xs"></i>
+                </a>
+            </div>
+            <a href="[[ROOT]]privacy.html" data-ga-click="Mobile: Privacy" class="block text-base font-semibold text-primary">プライバシーポリシー</a>
+            <!-- Contact button always at bottom of drawer -->
+            <a href="[[ROOT]]contact.html" data-ga-click="Mobile: Contact" class="block text-center bg-accent text-white py-3 rounded-full font-bold mt-2">お問い合わせ</a>
+        </div>
+    </div>
+</header>

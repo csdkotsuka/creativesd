@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>推奨選択肢リスク分析 | INTEVE SCHOOL</title>
+    <meta name="description" content="国家試験対策機能の補足解説。正解・不正解の点数だけでは見抜けない、学生の解き方のリスクや教え方のズレを可視化する推奨選択肢リスク分析についてご紹介します。">
+
+    <link rel="icon" href="images/favicon.png" type="image/png" />
+    <link rel="apple-touch-icon" href="images/favicon.png" />
+
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts: Inter -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    <!-- FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css?v=20260329">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#004080',
+                        secondary: '#00BCD4',
+                        accent: '#FF6600',
+                        glass: 'rgba(255, 255, 255, 0.7)',
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                }
+            }
+        }
+    </script>
+</head>
+<body class="font-sans text-slate-900 overflow-x-hidden bg-slate-50">
+
+    <div id="header-placeholder"></div>
+
+    <main class="pt-[88px]">
+        <!-- Page Top Header Banner (Matching exam.html style) -->
+        <section class="bg-primary text-white py-12 md:py-16 relative overflow-hidden">
+            <div class="absolute inset-0 bg-gradient-to-r from-primary via-primary/90 to-blue-900 opacity-90"></div>
+            <div class="container mx-auto px-6 max-w-6xl relative z-10">
+                <!-- Breadcrumbs -->
+                <nav class="flex items-center space-x-2 text-xs md:text-sm text-cyan-200 mb-4">
+                    <a href="index.html" class="hover:text-white transition-colors">ホーム</a>
+                    <span>&gt;</span>
+                    <a href="exam.html" class="hover:text-white transition-colors">国家試験対策</a>
+                    <span>&gt;</span>
+                    <span class="text-white font-medium">推奨選択肢リスク分析</span>
+                </nav>
+
+                <div class="flex flex-col md:flex-row md:items-center justify-between gap-6">
+                    <div>
+                        <div class="inline-flex items-center space-x-2 bg-white/10 text-cyan-300 text-xs px-3 py-1 rounded-full font-bold mb-3 border border-cyan-400/30">
+                            <i class="fas fa-certificate text-yellow-300"></i>
+                            <span>特許出願中（特願2025-265873）独自機能</span>
+                        </div>
+                        <h1 class="text-3xl md:text-4xl font-bold leading-tight mb-2">
+                            推奨選択肢リスク分析
+                        </h1>
+                        <p class="text-cyan-100 text-sm md:text-base max-w-2xl font-light">
+                            「点数」には表れない、解き方の危険を事前検知。<br>
+                            出題者の意図と学生の解釈のズレを可視化し、個別指導の質を引き上げます。
+                        </p>
+                    </div>
+                    <div class="shrink-0">
+                        <a href="exam.html#deep-dive" class="inline-flex items-center gap-2 px-5 py-2.5 bg-white/10 hover:bg-white/20 border border-white/30 text-white rounded-xl text-sm font-semibold transition-all">
+                            <i class="fas fa-arrow-left"></i>
+                            <span>国家試験対策へ戻る</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Main Content Area -->
+        <section class="py-16 bg-slate-50">
+            <div class="container mx-auto px-6 max-w-5xl space-y-16">
+
+                <!-- 1. Background / Problem Statement -->
+                <div class="bg-white rounded-2xl p-8 md:p-10 shadow-sm border border-slate-200/80">
+                    <div class="flex items-center space-x-3 mb-6 border-b border-slate-100 pb-4">
+                        <div class="w-9 h-9 bg-rose-50 text-rose-600 rounded-lg flex items-center justify-center font-bold">
+                            <i class="fas fa-exclamation-triangle"></i>
+                        </div>
+                        <div>
+                            <h2 class="text-xl md:text-2xl font-bold text-primary">なぜ従来の「〇×採点（点数）」だけでは危険なのか？</h2>
+                            <p class="text-xs text-slate-500">点数だけでは見落とされがちな3つの潜在リスク</p>
+                        </div>
+                    </div>
+
+                    <p class="text-slate-600 text-sm md:text-base leading-relaxed mb-6">
+                        国家試験対策において、模擬試験や過去問演習の正答率（点数）だけを指標にしていると、本番直前になって予想外の不合格リスクが表面化することがあります。従来の〇×採点では、以下の重要な要素が隠れてしまうためです。
+                    </p>
+
+                    <div class="grid md:grid-cols-3 gap-6">
+                        <div class="bg-slate-50 p-5 rounded-xl border border-slate-200 space-y-2">
+                            <span class="text-xs font-bold text-rose-600 bg-rose-100 px-2 py-0.5 rounded">リスク 01</span>
+                            <h3 class="font-bold text-slate-800 text-sm">たまたま正解した学生の見落とし</h3>
+                            <p class="text-xs text-slate-600 leading-relaxed">
+                                根拠なく消去法や勘で正解した学生は、「理解している」と判定されて補習対象から外れてしまいます。
+                            </p>
+                        </div>
+                        <div class="bg-slate-50 p-5 rounded-xl border border-slate-200 space-y-2">
+                            <span class="text-xs font-bold text-rose-600 bg-rose-100 px-2 py-0.5 rounded">リスク 02</span>
+                            <h3 class="font-bold text-slate-800 text-sm">禁忌肢・地雷選択肢の選択</h3>
+                            <p class="text-xs text-slate-600 leading-relaxed">
+                                臨床現場で重大事故に繋がるような危険な選択肢をあえて選んでいる危険な思考パターンを検出できません。
+                            </p>
+                        </div>
+                        <div class="bg-slate-50 p-5 rounded-xl border border-slate-200 space-y-2">
+                            <span class="text-xs font-bold text-rose-600 bg-rose-100 px-2 py-0.5 rounded">リスク 03</span>
+                            <h3 class="font-bold text-slate-800 text-sm">「教え方」と「理解」のズレ</h3>
+                            <p class="text-xs text-slate-600 leading-relaxed">
+                                教員が出題で意図した狙いと、学生が受け取った解釈のズレを客観的に比較・検証する手段がありません。
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 2. Feature Details (What is Recommended Option Risk Analysis?) -->
+                <div class="bg-white rounded-2xl p-8 md:p-10 shadow-sm border border-slate-200/80 space-y-16">
+                    <div class="flex items-center space-x-3 border-b border-slate-100 pb-4">
+                        <div class="w-9 h-9 bg-blue-50 text-secondary rounded-lg flex items-center justify-center font-bold">
+                            <i class="fas fa-layer-group"></i>
+                        </div>
+                        <div>
+                            <h2 class="text-xl md:text-2xl font-bold text-primary">推奨選択肢リスク分析とは？</h2>
+                            <p class="text-xs text-slate-500">教員の意図と学生の思考プロセスのギャップを構造化する特許技術</p>
+                        </div>
+                    </div>
+
+                    <div class="bg-slate-50 p-6 rounded-xl border border-slate-200 text-sm text-slate-700 leading-relaxed">
+                        各問題に対して、あらかじめ<span class="font-bold text-primary">「選ぶべき推奨選択肢」</span>と<span class="font-bold text-rose-600">「除外・回避すべき選択肢」</span>を設定して試験を行うことで、単なる正誤を超えた詳細な理解度と解き方の安全性を客観数値化する機能です。
+                    </div>
+
+                    <!-- Feature Block 1: Setting & AI Generation -->
+                    <div class="grid md:grid-cols-12 gap-8 items-center">
+                        <div class="md:col-span-6 space-y-4">
+                            <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-cyan-100 text-cyan-800 font-bold text-xs">
+                                <i class="fas fa-magic"></i> 簡単設定 & AI自動アシスト
+                            </div>
+                            <h3 class="text-xl font-bold text-primary leading-tight">
+                                1問ずつの個別設定も、AIによる一括自動生成も自由自在。
+                            </h3>
+                            <p class="text-xs md:text-sm text-slate-600 leading-relaxed">
+                                手動で1問ずつ推奨選択肢を登録できるのはもちろん、AI（Gemini API連動）が問題文と解説を解析し、「選ぶべき理由」と「除外すべき理由」の叩き台を一括自動生成。大量の試験問題でも事前の登録手間がかかりません。
+                            </p>
+                            <ul class="space-y-2 text-xs text-slate-700 pt-1">
+                                <li class="flex items-center gap-2">
+                                    <i class="fas fa-check text-secondary"></i>
+                                    <span>問題検索・一覧画面で全問題の必須・除外フラグが一目瞭然</span>
+                                </li>
+                                <li class="flex items-center gap-2">
+                                    <i class="fas fa-check text-secondary"></i>
+                                    <span>AIが生成した解説・根拠を教員がワンクリックで確認・微調整可能</span>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="md:col-span-6 relative flex items-center justify-center py-6 min-h-[300px] md:min-h-[340px]">
+                            <!-- Glow -->
+                            <div class="absolute w-64 h-64 bg-cyan-400/15 rounded-full blur-2xl -z-0"></div>
+
+                            <!-- 奥 (Back / z-10): Screenshot 2026-08-01 at 11.37.10 (images/screenshot_113710.png) -->
+                            <div class="absolute left-0 top-0 w-[82%] sm:w-[85%] z-10 transition-transform duration-500 hover:scale-[1.02]">
+                                <div class="bg-white/95 p-1 rounded-xl shadow-lg border border-slate-200">
+                                    <div class="px-2 py-0.5 mb-1 border-b border-slate-100 text-[10px] font-bold text-slate-600 truncate">
+                                        Screenshot 2026-08-01 at 11.37.10（問題一覧・推奨選択肢設定）
+                                    </div>
+                                    <img src="images/screenshot_113710.png" alt="Screenshot 2026-08-01 at 11.37.10 全問題一覧画面" class="w-full h-auto rounded shadow-sm border border-slate-100">
+                                </div>
+                            </div>
+
+                            <!-- 手前 (Front / z-20 & 80% 縮小・下ずらし): Screenshot 2026-08-01 at 11.36.29 (images/screenshot_113629.png) -->
+                            <div class="absolute right-0 bottom-0 w-[58%] sm:w-[60%] z-20 transform translate-x-2 translate-y-6 sm:translate-y-8 transition-transform duration-500 hover:scale-[1.03]">
+                                <div class="bg-white p-1 rounded-xl shadow-2xl shadow-cyan-900/30 border border-cyan-300">
+                                    <div class="px-2 py-0.5 mb-1 border-b border-slate-100 text-[10px] font-bold text-accent truncate">
+                                        <i class="fas fa-robot mr-1"></i> Screenshot 2026-08-01 at 11.36.29
+                                    </div>
+                                    <img src="images/screenshot_113629.png" alt="Screenshot 2026-08-01 at 11.36.29 AI自動生成画面" class="w-full h-auto rounded shadow-sm border border-slate-100">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Feature Block 2: Visual Chart & Report Feedback -->
+                    <div class="grid md:grid-cols-12 gap-8 items-center pt-8 border-t border-slate-100">
+                        <div class="md:col-span-6 space-y-4">
+                            <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-100 text-primary font-bold text-xs">
+                                <i class="fas fa-chart-pie"></i> 可視化 & 成績表自動フィードバック
+                            </div>
+                            <h3 class="text-xl font-bold text-primary leading-tight">
+                                クラス全体のリスクをグラフ表示。<br>個人成績表へ指導アドバイスを自動反映。
+                            </h3>
+                            <p class="text-xs md:text-sm text-slate-600 leading-relaxed">
+                                クラス全体の正答率と解き方のリスクを散布図・バーグラフで直感的に可視化。分析結果は学生ごとの個人成績表にそのまま印字され、具体的な指導アクションに直結します。
+                            </p>
+                            <ul class="space-y-2 text-xs text-slate-700 pt-1">
+                                <li class="flex items-center gap-2">
+                                    <i class="fas fa-check text-primary"></i>
+                                    <span>問題別・分野別のリスク発生率を多次元グラフで俯瞰</span>
+                                </li>
+                                <li class="flex items-center gap-2">
+                                    <i class="fas fa-check text-primary"></i>
+                                    <span>個人成績表にミス傾向と克服アドバイス文章を自動生成</span>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="md:col-span-6 relative flex items-center justify-center py-6 min-h-[300px] md:min-h-[340px]">
+                            <!-- Glow -->
+                            <div class="absolute w-64 h-64 bg-orange-400/15 rounded-full blur-2xl -z-0"></div>
+
+                            <!-- 奥 (Back / z-10): Screenshot 2026-08-01 at 11.39.54 (images/screenshot_113954.png) -->
+                            <div class="absolute left-0 top-0 w-[82%] sm:w-[85%] z-10 transition-transform duration-500 hover:scale-[1.02]">
+                                <div class="bg-white/95 p-1 rounded-xl shadow-lg border border-slate-200">
+                                    <div class="px-2 py-0.5 mb-1 border-b border-slate-100 text-[10px] font-bold text-slate-600 truncate">
+                                        Screenshot 2026-08-01 at 11.39.54（個人成績表）
+                                    </div>
+                                    <img src="images/screenshot_113954.png" alt="Screenshot 2026-08-01 at 11.39.54 個人成績表" class="w-full h-auto rounded shadow-sm border border-slate-100">
+                                </div>
+                            </div>
+
+                            <!-- 手前 (Front / z-20 & 80% 縮小・下ずらし): Screenshot 2026-08-01 at 11.39.34 (images/screenshot_113934.png) -->
+                            <div class="absolute right-0 bottom-0 w-[58%] sm:w-[60%] z-20 transform translate-x-2 translate-y-6 sm:translate-y-8 transition-transform duration-500 hover:scale-[1.03]">
+                                <div class="bg-white p-1 rounded-xl shadow-2xl shadow-orange-900/30 border border-orange-200">
+                                    <div class="px-2 py-0.5 mb-1 border-b border-slate-100 text-[10px] font-bold text-accent truncate">
+                                        <i class="fas fa-chart-area mr-1"></i> Screenshot 2026-08-01 at 11.39.34
+                                    </div>
+                                    <img src="images/screenshot_113934.png" alt="Screenshot 2026-08-01 at 11.39.34 全体試験結果グラフ" class="w-full h-auto rounded shadow-sm border border-slate-100">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 3. Teacher Benefits -->
+                <div class="bg-white rounded-2xl p-8 md:p-10 shadow-sm border border-slate-200/80">
+                    <div class="flex items-center space-x-3 mb-6 border-b border-slate-100 pb-4">
+                        <div class="w-9 h-9 bg-emerald-50 text-emerald-600 rounded-lg flex items-center justify-center font-bold">
+                            <i class="fas fa-check-circle"></i>
+                        </div>
+                        <div>
+                            <h2 class="text-xl md:text-2xl font-bold text-primary">教員・学科が得られるメリット</h2>
+                            <p class="text-xs text-slate-500">国家試験対策と個別指導の精度を大幅向上</p>
+                        </div>
+                    </div>
+
+                    <div class="grid md:grid-cols-3 gap-6">
+                        <div class="p-5 rounded-xl border border-slate-200 bg-slate-50/50 space-y-2">
+                            <div class="text-primary font-bold text-sm flex items-center gap-2">
+                                <i class="fas fa-shield-alt text-secondary"></i>
+                                <span>国試本番での失点防止</span>
+                            </div>
+                            <p class="text-xs text-slate-600 leading-relaxed">
+                                「ケアレスミス」や「曖昧な誤解」による本番での思わぬ不合格を、模擬試験の段階で未然に防ぎます。
+                            </p>
+                        </div>
+                        <div class="p-5 rounded-xl border border-slate-200 bg-slate-50/50 space-y-2">
+                            <div class="text-primary font-bold text-sm flex items-center gap-2">
+                                <i class="fas fa-user-friends text-secondary"></i>
+                                <span>補習・指導の質を統一</span>
+                            </div>
+                            <p class="text-xs text-slate-600 leading-relaxed">
+                                客観データに基づいた指導ができるため、教員間での指導方針のバラつきを抑え、ペアワーク等の効果を高めます。
+                            </p>
+                        </div>
+                        <div class="p-5 rounded-xl border border-slate-200 bg-slate-50/50 space-y-2">
+                            <div class="text-primary font-bold text-sm flex items-center gap-2">
+                                <i class="fas fa-chalkboard-teacher text-secondary"></i>
+                                <span>教え方のズレを修正</span>
+                            </div>
+                            <p class="text-xs text-slate-600 leading-relaxed">
+                                教員が伝えたつもりの内容と、学生が理解している内容のギャップを把握し、今後の講義方法の改善に活かせます。
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 4. Single Unified Contact Box -->
+                <div class="bg-primary text-white rounded-2xl p-8 text-center space-y-6 shadow-md">
+                    <h3 class="text-xl md:text-2xl font-bold">推奨選択肢リスク分析に関するお問い合わせ・ご相談</h3>
+                    <p class="text-xs md:text-sm text-cyan-100 max-w-2xl mx-auto leading-relaxed">
+                        貴校でご使用中の過去問や模擬試験データを利用したデモ体験・資料請求・仕様に関するご質問はこちらからお気軽にお問い合わせください。
+                    </p>
+                    <div class="pt-2">
+                        <a href="contact.html?subject=risk_analysis" class="inline-flex items-center gap-2 px-8 py-3.5 bg-accent hover:bg-orange-600 text-white rounded-xl font-bold text-base shadow-lg transition-all">
+                            <i class="fas fa-paper-plane"></i>
+                            <span>お問い合わせ・資料請求・デモ体験はこちら</span>
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+    </main>
+
+    <div id="footer-placeholder"></div>
+
+    <script src="js/main.js?v=20260329" data-root="./"></script>
+</body>
+</html>

@@ -1,0 +1,727 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>教育現場のお役立ちコラム・ICT情報 | Creative System Design</title>
+    <meta name="description" content="医療系養成校（PT・OT・ST・看護・コメディカル等）の教員業務効率化、授業・臨床実習支援、国家試験対策、ICT導入のノウハウをお届けする公式コラムです。">
+
+    <link rel="icon" href="images/favicon.png" type="image/png" />
+    <link rel="apple-touch-icon" href="images/favicon.png" />
+
+    <!-- OGP Settings -->
+    <meta property="og:title" content="教育現場のお役立ちコラム・ICT情報 | Creative System Design" />
+    <meta property="og:description" content="教員業務効率化、授業・臨床実習支援、国家試験対策のノウハウをお届けする公式コラム。" />
+    <meta property="og:url" content="https://creativesd.net/column.html" />
+    <meta property="og:image" content="https://creativesd.net/images/ogp.png" />
+    <meta property="og:type" content="article" />
+    <meta name="twitter:card" content="summary_large_image" />
+
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts: Inter -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css?v=20260823">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: {
+                            DEFAULT: '#0F172A',
+                            light: '#1E293B',
+                            dark: '#020617',
+                        },
+                        secondary: {
+                            DEFAULT: '#0EA5E9',
+                            light: '#38BDF8',
+                            dark: '#0284C7',
+                        },
+                        accent: {
+                            DEFAULT: '#F97316',
+                            light: '#FB923C',
+                            dark: '#EA580C',
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        /* WordPress 本文用のタイポグラフィ・リッチレイアウト調整 */
+        .wp-content-body {
+            color: #1e293b;
+            font-size: 1.05rem;
+            line-height: 1.9;
+        }
+        .wp-content-body h2 {
+            font-size: 1.55rem;
+            font-weight: 800;
+            color: #0f172a;
+            margin-top: 2.75rem;
+            margin-bottom: 1.25rem;
+            padding-bottom: 0.6rem;
+            border-bottom: 2px solid #e2e8f0;
+            position: relative;
+            letter-spacing: -0.01em;
+        }
+        .wp-content-body h2::after {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            width: 64px;
+            height: 2px;
+            background: #0ea5e9;
+        }
+        .wp-content-body h3 {
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: #0f172a;
+            margin-top: 2rem;
+            margin-bottom: 1rem;
+            padding: 0.4rem 0.75rem;
+            background: #f8fafc;
+            border-left: 4px solid #0ea5e9;
+            border-radius: 0 8px 8px 0;
+        }
+        .wp-content-body h4 {
+            font-size: 1.15rem;
+            font-weight: 700;
+            color: #1e293b;
+            margin-top: 1.5rem;
+            margin-bottom: 0.75rem;
+        }
+        .wp-content-body p {
+            margin-bottom: 1.5rem;
+            color: #334155;
+        }
+        .wp-content-body ul, .wp-content-body ol {
+            margin-bottom: 1.75rem;
+            padding-left: 1.5rem;
+            color: #334155;
+        }
+        .wp-content-body ul {
+            list-style-type: disc;
+        }
+        .wp-content-body ol {
+            list-style-type: decimal;
+        }
+        .wp-content-body li {
+            margin-bottom: 0.6rem;
+            line-height: 1.8;
+        }
+        .wp-content-body li strong {
+            color: #0f172a;
+        }
+        .wp-content-body blockquote {
+            border-left: 4px solid #0ea5e9;
+            padding: 1.25rem 1.5rem;
+            background-color: #f8fafc;
+            border-radius: 0 12px 12px 0;
+            margin: 1.75rem 0;
+            color: #475569;
+            font-style: italic;
+        }
+        .wp-content-body img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 1rem;
+            margin: 2rem auto;
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
+        }
+        .wp-content-body a {
+            color: #0284c7;
+            font-weight: 600;
+            text-decoration: underline;
+            text-underline-offset: 4px;
+            transition: color 0.2s;
+        }
+        .wp-content-body a:hover {
+            color: #0369a1;
+        }
+        .wp-content-body strong {
+            color: #0f172a;
+            font-weight: 700;
+        }
+        .wp-content-body table {
+            width: 100%;
+            border-collapse: separate;
+            border-spacing: 0;
+            margin: 2rem 0;
+            border-radius: 12px;
+            overflow: hidden;
+            border: 1px solid #cbd5e1;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.03);
+        }
+        .wp-content-body th, .wp-content-body td {
+            border-bottom: 1px solid #e2e8f0;
+            padding: 0.85rem 1.1rem;
+            text-align: left;
+            font-size: 0.95rem;
+        }
+        .wp-content-body th {
+            background-color: #0f172a;
+            color: #ffffff;
+            font-weight: 700;
+        }
+        .wp-content-body tr:last-child td {
+            border-bottom: none;
+        }
+        .wp-content-body tr:nth-child(even) td {
+            background-color: #f8fafc;
+        }
+        .wp-content-body tr:nth-child(odd) td {
+            background-color: #ffffff;
+        }
+        
+        /* CSD 特別装飾ボックス & 視認性修正 */
+        .csd-lead-box {
+            background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%) !important;
+            border: 2px solid #334155 !important;
+            border-radius: 18px !important;
+            padding: 24px 28px !important;
+            margin-bottom: 36px !important;
+            box-shadow: 0 8px 24px rgba(15, 23, 42, 0.15) !important;
+        }
+        .csd-lead-box p, .csd-lead-box * {
+            color: #f8fafc !important;
+            font-size: 1.05rem !important;
+            line-height: 1.85 !important;
+            margin: 0 !important;
+        }
+        
+        /* ガジェットボックス：くっきり読みやすいダークプレミアム仕様 */
+        .csd-gadget-box {
+            background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%) !important;
+            border: 2px solid #0ea5e9 !important;
+            border-radius: 20px !important;
+            padding: 26px 28px !important;
+            margin: 36px 0 !important;
+            box-shadow: 0 10px 30px rgba(14, 165, 233, 0.15) !important;
+        }
+        .csd-gadget-badge {
+            display: inline-flex !important;
+            align-items: center !important;
+            gap: 6px !important;
+            background: #0ea5e9 !important;
+            color: #ffffff !important;
+            font-size: 0.78rem !important;
+            font-weight: 700 !important;
+            padding: 5px 14px !important;
+            border-radius: 9999px !important;
+            margin-bottom: 14px !important;
+            letter-spacing: 0.05em !important;
+        }
+        .csd-gadget-box h3 {
+            color: #ffffff !important;
+            background: transparent !important;
+            border: none !important;
+            padding: 0 !important;
+            margin: 0 0 10px 0 !important;
+            font-size: 1.35rem !important;
+            font-weight: 800 !important;
+        }
+        .csd-gadget-role {
+            color: #38bdf8 !important;
+            font-size: 0.98rem !important;
+            font-weight: 700 !important;
+            margin: 0 0 14px 0 !important;
+        }
+        .csd-gadget-desc {
+            color: #e2e8f0 !important;
+            font-size: 0.95rem !important;
+            line-height: 1.8 !important;
+            margin: 0 !important;
+        }
+        .csd-gadget-box ul, .csd-gadget-box ol {
+            margin: 12px 0 0 0 !important;
+            padding-left: 20px !important;
+        }
+        .csd-gadget-box li {
+            color: #e2e8f0 !important;
+            font-size: 0.95rem !important;
+            line-height: 1.8 !important;
+            margin-bottom: 0.6rem !important;
+        }
+        .csd-gadget-box li strong {
+            color: #38bdf8 !important;
+            font-weight: 700 !important;
+        }
+        
+        /* Amazonアフィリエイトボタン */
+        .csd-amazon-wrapper {
+            margin-top: 20px !important;
+            display: flex !important;
+            align-items: center !important;
+            flex-wrap: wrap !important;
+            gap: 12px !important;
+        }
+        .csd-amazon-btn {
+            display: inline-flex !important;
+            align-items: center !important;
+            gap: 8px !important;
+            background: linear-gradient(135deg, #ff9900 0%, #ff8800 100%) !important;
+            color: #111827 !important;
+            font-size: 0.92rem !important;
+            font-weight: 800 !important;
+            padding: 10px 22px !important;
+            border-radius: 9999px !important;
+            text-decoration: none !important;
+            box-shadow: 0 4px 14px rgba(255, 153, 0, 0.4) !important;
+            transition: all 0.25s ease !important;
+        }
+        .csd-amazon-btn:hover {
+            background: linear-gradient(135deg, #ffa726 0%, #ff9800 100%) !important;
+            color: #000000 !important;
+            transform: translateY(-2px) !important;
+            box-shadow: 0 6px 20px rgba(255, 153, 0, 0.6) !important;
+        }
+        .csd-amazon-btn i {
+            font-size: 1.15rem !important;
+        }
+        .csd-amazon-notice {
+            font-size: 0.75rem !important;
+            color: #94a3b8 !important;
+            margin: 0 !important;
+        }
+        
+        /* 参照ソースボックス */
+        .csd-source-box {
+            background: #f0f9ff !important;
+            border: 2px solid #bae6fd !important;
+            border-left: 6px solid #0284c7 !important;
+            border-radius: 0 16px 16px 0 !important;
+            padding: 22px 26px !important;
+            margin: 40px 0 !important;
+        }
+        .csd-source-title {
+            color: #0369a1 !important;
+            font-weight: 800 !important;
+            font-size: 0.95rem !important;
+            margin: 0 0 12px 0 !important;
+            display: flex !important;
+            align-items: center !important;
+            gap: 6px !important;
+        }
+        .csd-source-box ul {
+            margin: 0 !important;
+            padding-left: 20px !important;
+        }
+        .csd-source-box li {
+            color: #334155 !important;
+            font-size: 0.9rem !important;
+            margin-bottom: 0.6rem !important;
+            line-height: 1.8 !important;
+        }
+        .csd-source-box a {
+            color: #0284c7 !important;
+            text-decoration: underline !important;
+            text-underline-offset: 3px !important;
+            font-weight: 700 !important;
+        }
+        .csd-source-box a:hover {
+            color: #0369a1 !important;
+        }
+        
+        /* 記事全体枠（Article Container）の引き締めスタイル */
+        .csd-article-card {
+            background: #ffffff !important;
+            border: 2px solid #cbd5e1 !important;
+            border-radius: 28px !important;
+            box-shadow: 0 20px 40px -15px rgba(15, 23, 42, 0.12), 0 0 0 1px rgba(15, 23, 42, 0.05) !important;
+            position: relative;
+            overflow: hidden;
+        }
+        .csd-article-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 6px;
+            background: linear-gradient(90deg, #0ea5e9, #38bdf8, #f97316);
+        }
+        
+        .csd-cta-wrapper {
+            text-align: center !important;
+            margin: 40px 0 20px 0 !important;
+        }
+        .csd-cta-button {
+            background: linear-gradient(135deg, #f97316 0%, #ea580c 100%) !important;
+            color: #ffffff !important;
+            padding: 14px 36px !important;
+            border-radius: 9999px !important;
+            font-weight: 700 !important;
+            text-decoration: none !important;
+            display: inline-block !important;
+            box-shadow: 0 6px 20px rgba(249, 115, 22, 0.4) !important;
+            font-size: 1rem !important;
+            transition: all 0.2s ease !important;
+        }
+        .csd-cta-button:hover {
+            transform: translateY(-2px) !important;
+            box-shadow: 0 8px 26px rgba(249, 115, 22, 0.5) !important;
+            color: #ffffff !important;
+        }
+    </style>
+</head>
+<body class="font-sans antialiased text-slate-800 bg-slate-50 selection:bg-cyan-500 selection:text-white">
+
+    <div id="header-placeholder"></div>
+
+    <main class="pt-20">
+        <!-- Hero Section -->
+        <section class="bg-gradient-to-br from-slate-900 via-blue-950 to-slate-900 text-white relative overflow-hidden py-16 lg:py-20">
+            <!-- Glow effect -->
+            <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-cyan-500/10 rounded-full blur-[140px] pointer-events-none"></div>
+
+            <div class="container mx-auto px-6 relative z-10 text-center max-w-3xl space-y-4">
+                <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-cyan-500/10 border border-cyan-400/30 text-cyan-300 font-bold text-xs md:text-sm backdrop-blur-md">
+                    <i class="fas fa-newspaper text-cyan-400"></i>
+                    <span>CSD EDUCATION COLUMN</span>
+                </div>
+                <h1 class="text-2xl sm:text-4xl md:text-5xl font-extrabold tracking-tight text-white">
+                    教育現場のお役立ちコラム・ICT情報
+                </h1>
+                <p class="text-slate-300 text-sm md:text-base leading-relaxed pt-1">
+                    医療系養成校の教員業務効率化、授業・実習支援、国家試験対策のノウハウをお届けします。
+                </p>
+            </div>
+        </section>
+
+        <!-- Content Area -->
+        <section class="py-12 md:py-16 min-h-[600px]">
+            <div class="container mx-auto px-4 sm:px-6 max-w-6xl">
+
+                <!-- Loading Spinner -->
+                <div id="column-loading" class="text-center py-20">
+                    <i class="fas fa-circle-notch fa-spin text-4xl text-secondary mb-4"></i>
+                    <p class="text-slate-500 text-sm font-semibold">記事を読み込んでいます...</p>
+                </div>
+
+                <!-- Error Message -->
+                <div id="column-error" class="hidden text-center py-16 bg-white rounded-3xl border border-slate-200 p-8 max-w-lg mx-auto shadow-sm">
+                    <i class="fas fa-exclamation-triangle text-4xl text-amber-500 mb-3"></i>
+                    <h3 class="text-lg font-bold text-slate-800 mb-2">記事の取得に失敗しました</h3>
+                    <p class="text-xs text-slate-500 leading-relaxed mb-6">通信環境をお確かめの上、再度お試しください。</p>
+                    <button onclick="loadCurrentView()" class="px-6 py-2.5 bg-secondary hover:bg-secondary-dark text-white rounded-full text-sm font-bold transition-all shadow-md">
+                        再読み込み
+                    </button>
+                </div>
+
+                <!-- 1. Post List View -->
+                <div id="posts-list-view" class="hidden">
+                    <div id="posts-grid" class="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
+                        <!-- Post cards dynamically inserted here -->
+                    </div>
+
+                    <!-- Pagination -->
+                    <div id="pagination" class="mt-14 flex items-center justify-center gap-2 hidden">
+                        <!-- Pagination buttons dynamically inserted here -->
+                    </div>
+                </div>
+
+                <!-- 2. Single Post View -->
+                <div id="single-post-view" class="hidden">
+                    <div class="mb-6">
+                        <button onclick="navigateToList()" class="inline-flex items-center gap-2 text-sm font-bold text-slate-600 hover:text-secondary transition-colors bg-white px-4 py-2 rounded-full border border-slate-200 shadow-sm hover:shadow">
+                            <i class="fas fa-arrow-left text-xs"></i>
+                            <span>コラム一覧に戻る</span>
+                        </button>
+                    </div>
+
+                    <!-- Article Card Container -->
+                    <article class="csd-article-card p-6 sm:p-10 md:p-14 max-w-4xl mx-auto">
+                        <!-- Post Meta -->
+                        <div class="flex flex-wrap items-center gap-3 text-xs text-slate-500 mb-6">
+                            <span id="single-category" class="px-3 py-1 bg-cyan-50 text-cyan-700 font-bold rounded-full border border-cyan-200"></span>
+                            <span id="single-date" class="flex items-center gap-1.5">
+                                <i class="far fa-calendar-alt text-slate-400"></i>
+                                <time></time>
+                            </span>
+                        </div>
+
+                        <!-- Post Title -->
+                        <h1 id="single-title" class="text-2xl sm:text-3xl md:text-4xl font-extrabold text-slate-900 leading-tight mb-8"></h1>
+
+                        <!-- Featured Image -->
+                        <div id="single-featured-image-wrapper" class="mb-10 rounded-2xl overflow-hidden shadow-md hidden">
+                            <img id="single-featured-image" src="" alt="" class="w-full h-auto max-h-[480px] object-cover">
+                        </div>
+
+                        <!-- Post Body Content -->
+                        <div id="single-body" class="wp-content-body"></div>
+
+                        <!-- Article Footer -->
+                        <div class="mt-14 pt-8 border-t border-slate-100 flex flex-col sm:flex-row items-center justify-between gap-4">
+                            <button onclick="navigateToList()" class="inline-flex items-center gap-2 text-sm font-bold text-slate-600 hover:text-secondary transition-colors bg-slate-100 hover:bg-slate-200 px-5 py-2.5 rounded-full">
+                                <i class="fas fa-arrow-left text-xs"></i>
+                                <span>コラム一覧へ</span>
+                            </button>
+
+                            <a href="contact.html" class="inline-flex items-center gap-2 text-sm font-bold text-white bg-accent hover:bg-orange-600 px-6 py-2.5 rounded-full shadow-md transition-all">
+                                <span>システムについてお問い合わせ</span>
+                                <i class="fas fa-chevron-right text-xs"></i>
+                            </a>
+                        </div>
+                    </article>
+                </div>
+
+            </div>
+        </section>
+    </main>
+
+    <div id="footer-placeholder"></div>
+
+    <script src="js/main.js?v=20260823" data-root="./"></script>
+    <script>
+        const WP_API_BASE = 'https://affiliate.creativesd.net/wp-json/wp/v2';
+        let currentPage = 1;
+        const postsPerPage = 9;
+
+        // 日時フォーマット関数
+        function formatDate(dateStr) {
+            if (!dateStr) return '';
+            const d = new Date(dateStr);
+            const y = d.getFullYear();
+            const m = String(d.getMonth() + 1).padStart(2, '0');
+            const day = String(d.getDate()).padStart(2, '0');
+            return `${y}.${m}.${day}`;
+        }
+
+        // HTMLタグ除去・プレーンテキスト化
+        function stripHtml(html) {
+            const tmp = document.createElement('DIV');
+            tmp.innerHTML = html;
+            return tmp.textContent || tmp.innerText || '';
+        }
+
+        // 現在のURLパラメータに応じた画面表示
+        function loadCurrentView() {
+            const params = new URLSearchParams(window.location.search);
+            const postId = params.get('id') || params.get('post');
+
+            document.getElementById('column-loading').classList.remove('hidden');
+            document.getElementById('column-error').classList.add('hidden');
+            document.getElementById('posts-list-view').classList.add('hidden');
+            document.getElementById('single-post-view').classList.add('hidden');
+
+            if (postId) {
+                fetchSinglePost(postId);
+            } else {
+                fetchPosts(currentPage);
+            }
+        }
+
+        // 記事一覧の取得と描画
+        async function fetchPosts(page = 1) {
+            currentPage = page;
+            try {
+                const res = await fetch(`${WP_API_BASE}/posts?_embed&per_page=${postsPerPage}&page=${page}`);
+                if (!res.ok) throw new Error('Network response was not ok');
+
+                const totalPages = parseInt(res.headers.get('X-WP-TotalPages') || '1', 10);
+                const posts = await res.json();
+
+                renderPostsList(posts, totalPages, page);
+            } catch (err) {
+                console.error('Fetch posts error:', err);
+                document.getElementById('column-loading').classList.add('hidden');
+                document.getElementById('column-error').classList.remove('hidden');
+            }
+        }
+
+        function renderPostsList(posts, totalPages, page) {
+            const grid = document.getElementById('posts-grid');
+            grid.innerHTML = '';
+
+            if (posts.length === 0) {
+                grid.innerHTML = '<div class="col-span-full text-center py-12 text-slate-500">記事がまだありません。</div>';
+            } else {
+                posts.forEach(post => {
+                    const title = post.title && post.title.rendered ? post.title.rendered : '無題';
+                    const rawExcerpt = post.excerpt && post.excerpt.rendered ? post.excerpt.rendered : '';
+                    const cleanExcerpt = stripHtml(rawExcerpt).slice(0, 90) + '...';
+                    const dateFormatted = formatDate(post.date);
+
+                    // アイキャッチ画像の取得
+                    let featuredImg = '';
+                    if (post._embedded && post._embedded['wp:featuredmedia'] && post._embedded['wp:featuredmedia'][0]) {
+                        const media = post._embedded['wp:featuredmedia'][0];
+                        featuredImg = media.source_url || '';
+                    }
+
+                    // カテゴリーの取得
+                    let categoryName = 'コラム';
+                    if (post._embedded && post._embedded['wp:term'] && post._embedded['wp:term'][0] && post._embedded['wp:term'][0][0]) {
+                        categoryName = post._embedded['wp:term'][0][0].name || 'コラム';
+                    }
+
+                    const card = document.createElement('article');
+                    card.className = 'bg-white rounded-3xl border border-slate-200/90 shadow-sm hover:shadow-xl transition-all duration-300 overflow-hidden flex flex-col justify-between group cursor-pointer transform hover:-translate-y-1';
+                    card.onclick = () => navigateToPost(post.id);
+
+                    const imgHtml = featuredImg 
+                        ? `<div class="w-full h-48 overflow-hidden bg-slate-100"><img src="${featuredImg}" alt="${title}" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"></div>`
+                        : `<div class="w-full h-44 bg-gradient-to-br from-slate-800 via-blue-950 to-slate-900 flex items-center justify-center p-6 text-center relative overflow-hidden">
+                             <div class="absolute inset-0 bg-cyan-500/10"></div>
+                             <span class="text-cyan-300 font-bold text-sm tracking-wider uppercase z-10 flex items-center gap-2"><i class="fas fa-file-alt"></i> CSD COLUMN</span>
+                           </div>`;
+
+                    card.innerHTML = `
+                        <div>
+                            ${imgHtml}
+                            <div class="p-6 sm:p-7 space-y-3">
+                                <div class="flex items-center justify-between text-xs text-slate-500">
+                                    <span class="px-2.5 py-0.5 rounded-full bg-cyan-50 text-cyan-700 font-semibold border border-cyan-100">${categoryName}</span>
+                                    <time class="flex items-center gap-1"><i class="far fa-calendar-alt text-slate-400"></i> ${dateFormatted}</time>
+                                </div>
+                                <h2 class="text-lg font-bold text-slate-900 group-hover:text-secondary transition-colors leading-snug line-clamp-2">
+                                    ${title}
+                                </h2>
+                                <p class="text-xs sm:text-sm text-slate-600 leading-relaxed line-clamp-3">
+                                    ${cleanExcerpt}
+                                </p>
+                            </div>
+                        </div>
+                        <div class="px-6 pb-6 pt-0 flex items-center text-xs font-bold text-secondary group-hover:translate-x-1 transition-transform">
+                            <span>続きを読む</span>
+                            <i class="fas fa-arrow-right ml-1.5 text-[10px]"></i>
+                        </div>
+                    `;
+                    grid.appendChild(card);
+                });
+            }
+
+            // ページネーション描画
+            renderPagination(totalPages, page);
+
+            document.getElementById('column-loading').classList.add('hidden');
+            document.getElementById('posts-list-view').classList.remove('hidden');
+        }
+
+        function renderPagination(totalPages, current) {
+            const container = document.getElementById('pagination');
+            container.innerHTML = '';
+
+            if (totalPages <= 1) {
+                container.classList.add('hidden');
+                return;
+            }
+
+            container.classList.remove('hidden');
+
+            // 前へボタン
+            if (current > 1) {
+                const prevBtn = document.createElement('button');
+                prevBtn.className = 'w-10 h-10 rounded-full border border-slate-200 bg-white hover:bg-slate-100 flex items-center justify-center text-slate-700 font-bold transition-colors';
+                prevBtn.innerHTML = '<i class="fas fa-chevron-left text-xs"></i>';
+                prevBtn.onclick = () => { window.scrollTo({ top: 0, behavior: 'smooth' }); fetchPosts(current - 1); };
+                container.appendChild(prevBtn);
+            }
+
+            // ページ番号
+            for (let i = 1; i <= totalPages; i++) {
+                const pageBtn = document.createElement('button');
+                const isActive = i === current;
+                pageBtn.className = `w-10 h-10 rounded-full font-bold text-sm transition-all ${
+                    isActive 
+                        ? 'bg-secondary text-white shadow-md' 
+                        : 'border border-slate-200 bg-white hover:bg-slate-100 text-slate-700'
+                }`;
+                pageBtn.innerText = i;
+                pageBtn.onclick = () => { window.scrollTo({ top: 0, behavior: 'smooth' }); fetchPosts(i); };
+                container.appendChild(pageBtn);
+            }
+
+            // 次へボタン
+            if (current < totalPages) {
+                const nextBtn = document.createElement('button');
+                nextBtn.className = 'w-10 h-10 rounded-full border border-slate-200 bg-white hover:bg-slate-100 flex items-center justify-center text-slate-700 font-bold transition-colors';
+                nextBtn.innerHTML = '<i class="fas fa-chevron-right text-xs"></i>';
+                nextBtn.onclick = () => { window.scrollTo({ top: 0, behavior: 'smooth' }); fetchPosts(current + 1); };
+                container.appendChild(nextBtn);
+            }
+        }
+
+        // 個別記事の取得と描画
+        async function fetchSinglePost(id) {
+            try {
+                const res = await fetch(`${WP_API_BASE}/posts/${id}?_embed`);
+                if (!res.ok) throw new Error('Post not found');
+
+                const post = await res.json();
+                renderSinglePost(post);
+            } catch (err) {
+                console.error('Fetch single post error:', err);
+                document.getElementById('column-loading').classList.add('hidden');
+                document.getElementById('column-error').classList.remove('hidden');
+            }
+        }
+
+        function renderSinglePost(post) {
+            const title = post.title && post.title.rendered ? post.title.rendered : '無題';
+            const content = post.content && post.content.rendered ? post.content.rendered : '';
+            const dateFormatted = formatDate(post.date);
+
+            document.title = `${stripHtml(title)} | Creative System Design コラム`;
+
+            document.getElementById('single-title').innerHTML = title;
+            document.getElementById('single-date').querySelector('time').textContent = dateFormatted;
+
+            // カテゴリー
+            let categoryName = 'コラム';
+            if (post._embedded && post._embedded['wp:term'] && post._embedded['wp:term'][0] && post._embedded['wp:term'][0][0]) {
+                categoryName = post._embedded['wp:term'][0][0].name || 'コラム';
+            }
+            document.getElementById('single-category').textContent = categoryName;
+
+            // アイキャッチ画像
+            const imgWrapper = document.getElementById('single-featured-image-wrapper');
+            const imgElem = document.getElementById('single-featured-image');
+            if (post._embedded && post._embedded['wp:featuredmedia'] && post._embedded['wp:featuredmedia'][0]) {
+                imgElem.src = post._embedded['wp:featuredmedia'][0].source_url;
+                imgElem.alt = title;
+                imgWrapper.classList.remove('hidden');
+            } else {
+                imgWrapper.classList.add('hidden');
+            }
+
+            // 本文
+            document.getElementById('single-body').innerHTML = content;
+
+            document.getElementById('column-loading').classList.add('hidden');
+            document.getElementById('single-post-view').classList.remove('hidden');
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        // ナビゲーション制御
+        function navigateToPost(id) {
+            history.pushState({ postId: id }, '', `column.html?id=${id}`);
+            loadCurrentView();
+        }
+
+        function navigateToList() {
+            history.pushState(null, '', 'column.html');
+            document.title = '教育現場のお役立ちコラム・ICT情報 | Creative System Design';
+            loadCurrentView();
+        }
+
+        // ブラウザの戻る・進むボタンへの対応
+        window.addEventListener('popstate', () => {
+            loadCurrentView();
+        });
+
+        // 初期実行
+        document.addEventListener('DOMContentLoaded', () => {
+            loadCurrentView();
+        });
+    </script>
+</body>
+</html>

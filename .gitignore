@@ -1,0 +1,18 @@
+# OS files
+.DS_Store
+Thumbs.db
+
+# Python
+__pycache__/
+*.pyc
+
+# Archives and backups
+Archive/
+*.zip
+base_files/
+leaflet_output/
+
+# Temporary files
+_temp_modal_preview.html
+gas/
+*.gs

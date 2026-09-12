@@ -1,0 +1,6 @@
+# CORS Header for Cross-Domain Header/Footer Component Sharing
+<IfModule mod_headers.c>
+    <FilesMatch "\.(html|json|js|css|png|jpg|jpeg|gif|svg|webp|woff|woff2|ttf|eot)$">
+        Header set Access-Control-Allow-Origin "*"
+    </FilesMatch>
+</IfModule>

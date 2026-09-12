@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <!-- <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests"> -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>経理・学費管理システム | INTEVE SCHOOL - 学校経理をスマートに効率化</title>
+    <meta name="description" content="医療系学校向けの学納金・経理管理ソリューション。請求書の一括発行、銀行入金データの自動消込、未入金状況の可視化により、煩雑な経理事務をボタン一つで完結。ミスを防ぎ、回収業務を円滑にします。">
+
+    <link rel="icon" href="images/favicon.png" type="image/png" />
+    <link rel="apple-touch-icon" href="images/favicon.png" />
+
+    <!-- OGP Settings -->
+    <meta property="og:title" content="経理・学費管理システム | INTEVE SCHOOL - 学校経理をスマートに効率化" />
+    <meta property="og:description" content="医療系学校向けの学納金・経理管理ソリューション。ミスを防ぎ、回収業務を円滑にします。" />
+    <meta property="og:url" content="https://creativesd.net/accounting.html" />
+    <meta property="og:image" content="https://creativesd.net/images/ogp.png" />
+    <meta property="og:type" content="article" />
+    <meta name="twitter:card" content="summary_large_image" />
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-P8YSB8RZB2"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-P8YSB8RZB2');
+    </script>
+
+    <!-- Structured Data (JSON-LD) for SEO/AI -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "SoftwareApplication",
+      "name": "INTEVE SCHOOL 経理システム",
+      "operatingSystem": "Web, Windows, macOS, iOS",
+      "applicationCategory": "Educational Business System",
+      "description": "学校向けの学納金請求・入金消込管理システム。事務作業の自動化を実現。",
+      "publisher": {
+        "@type": "Organization",
+        "name": "Creative System Design"
+      }
+    }
+    </script>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts: Inter -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <!-- FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css?v=20260329">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#004080',
+                        secondary: '#00BCD4',
+                        accent: '#FF6600',
+                        glass: 'rgba(255, 255, 255, 0.7)',
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                }
+            }
+        }
+    </script>
+</head>
+<body class="font-sans text-slate-900 overflow-x-hidden bg-slate-50">
+
+    <div id="header-placeholder"></div>
+
+    <!-- Main Content -->
+    <main class="pt-[88px]">
+        
+        <!-- Hero Section -->
+        <section class="relative h-[60vh] min-h-[500px] flex items-center justify-center overflow-hidden">
+            <!-- Background Image -->
+            <div class="absolute inset-0 z-0">
+                <img src="assets/images/accounting-hero.jpg" alt="Accounting System Background" class="w-full h-full object-cover">
+                <!-- Overlay Gradient -->
+                <div class="absolute inset-0 bg-gradient-to-br from-primary/95 via-primary/80 to-secondary/60 mix-blend-multiply"></div>
+            </div>
+
+            <!-- Hero Content -->
+            <div class="container mx-auto px-6 relative z-10 text-center text-white">
+                <span class="inline-block py-1 px-3 rounded-full bg-white/10 border border-white/20 text-sm font-bold tracking-widest mb-6 backdrop-blur-md">ACCOUNTING SYSTEM</span>
+                <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight drop-shadow-lg">
+                    学校経理の「面倒」を「効率化」へ。<br>
+                    <span class="text-secondary">スマートな請求・入金管理</span>
+                </h1>
+                <p class="text-lg md:text-xl max-w-3xl mx-auto opacity-90 leading-relaxed font-light">
+                    クラス単位での請求書一括作成や送付準備がボタン一つで完了. 銀行の入金データは自動取込し、直感的な画面で「消込作業」の負担を大幅に削減します。
+                </p>
+            </div>
+        </section>
+
+        <!-- Feature Spotlights (Staggered rows) -->
+        <section class="py-24 bg-white relative overflow-hidden">
+            <!-- Decorative circle -->
+            <div class="absolute top-0 left-0 w-96 h-96 bg-secondary/5 rounded-full blur-3xl -z-10 -translate-y-1/2 -translate-x-1/2"></div>
+            
+            <div class="container mx-auto px-6 max-w-6xl space-y-32">
+                
+                <!-- Row 1 -->
+                <div class="flex flex-col md:flex-row items-center gap-12 md:gap-20">
+                    <div class="md:w-1/2 space-y-6">
+                        <div class="inline-flex items-center justify-center w-12 h-12 bg-blue-50 text-secondary rounded-xl mb-2">
+                            <i class="fas fa-eye text-2xl"></i>
+                        </div>
+                        <h3 class="text-2xl md:text-3xl font-bold text-primary leading-tight">
+                            未入金状況が一目瞭然。<br>スピーディな請求・入金管理を実現します。
+                        </h3>
+                        <p class="text-slate-600 leading-relaxed text-lg font-light">
+                            ログイン後、最初に表示されるこの画面では、入金が遅れている学生の一覧が即座に表示されます。請求状況の確認から個別の入金処理まで、シームレスに操作可能。統一感のある見やすい画面設計で、日々の経理業務のストレスを軽減し、見落としやミスを防ぎます。
+                        </p>
+                    </div>
+                    <div class="md:w-1/2">
+                        <div class="relative rounded-3xl overflow-hidden shadow-2xl shadow-primary/10 border border-slate-100 group">
+                            <div class="absolute inset-0 bg-primary/5 group-hover:bg-transparent transition-colors z-10 pointer-events-none"></div>
+                            <img src="images/accounting_payment.png" alt="学納金管理 消込処理画面" class="w-full h-auto transform group-hover:scale-105 transition-transform duration-700">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Row 2 -->
+                <div class="flex flex-col md:flex-row items-center gap-12 md:gap-20">
+                    <div class="md:w-1/2 order-2 md:order-1">
+                        <div class="relative py-6 pl-8">
+                            <!-- Base Image: Billing List -->
+                            <div class="rounded-2xl overflow-hidden shadow-xl border border-slate-100 bg-white">
+                                <img src="images/accounting_billing_list.png" alt="学納金管理 請求・入金一覧" class="w-full h-auto">
+                            </div>
+                            <!-- Overlaid Image: Invoice Sample (Forward Left) -->
+                            <div class="absolute -bottom-6 -left-2 w-[40%] rounded-xl overflow-hidden shadow-2xl border-4 border-white transform hover:-translate-y-2 transition-all duration-300">
+                                <img src="images/accounting_invoice.png" alt="請求書サンプル" class="w-full h-auto">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="md:w-1/2 order-1 md:order-2 space-y-6">
+                        <div class="inline-flex items-center justify-center w-12 h-12 bg-blue-50 text-secondary rounded-xl mb-2">
+                            <i class="fas fa-check-double text-2xl"></i>
+                        </div>
+                        <h3 class="text-2xl md:text-3xl font-bold text-primary leading-tight">
+                            請求と入金を一括管理。<br>確実な「消込」で、未収金をゼロに。
+                        </h3>
+                        <p class="text-slate-600 leading-relaxed text-lg font-light">
+                            未入金は赤、入金済みは青など、請求状況が色で一目瞭然。銀行から取り込んだ入金データと学生ごとの請求リストを左右に並べて表示し、目視で確認しながら確実な消込作業が行えます。分割納付にも対応し、どの入金をどの請求に充当するかもボタン一つで完結。
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Row 3 -->
+                <div class="flex flex-col md:flex-row items-center gap-12 md:gap-20">
+                    <div class="md:w-1/2 space-y-6">
+                        <div class="inline-flex items-center justify-center w-12 h-12 bg-blue-50 text-secondary rounded-xl mb-2">
+                            <i class="fas fa-file-invoice-dollar text-2xl"></i>
+                        </div>
+                        <h3 class="text-2xl md:text-3xl font-bold text-primary leading-tight">
+                            請求書の出力から送付準備までワンクリック。<br>煩雑な発送作業を効率化。
+                        </h3>
+                        <p class="text-slate-600 leading-relaxed text-lg font-light">
+                            クラス単位の一括発行から個別発行まで、ボタン一つで請求書をPDF出力。さらに、タックシールや封筒への宛名印刷にも標準で対応。手作業による宛名の書き間違いや発送ミスを防ぎ、発送準備作業を大幅に削減します。
+                        </p>
+                    </div>
+                    <div class="md:w-1/2">
+                        <div class="relative py-6 pr-8">
+                            <!-- Base Image: Billing List -->
+                            <div class="rounded-2xl overflow-hidden shadow-xl border border-slate-100 bg-white">
+                                <img src="images/accounting_billing_list.png" alt="学納金一覧・発送準備画面" class="w-full h-auto">
+                            </div>
+                            <!-- Overlaid Image: Invoice Sample (Forward Right) -->
+                            <div class="absolute -bottom-6 -right-2 w-[40%] rounded-xl overflow-hidden shadow-2xl border-4 border-white transform hover:-translate-y-2 transition-all duration-300">
+                                <img src="images/accounting_invoice.png" alt="請求書サンプル" class="w-full h-auto">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Use Cases & Visual Descriptions -->
+        <section class="py-24 bg-slate-50 relative">
+            <div class="container mx-auto px-6">
+                
+                <div class="text-center mb-16">
+                    <span class="text-secondary font-bold tracking-widest uppercase text-sm mb-2 block">Case Study</span>
+                    <h2 class="text-3xl md:text-4xl font-bold text-primary mb-4">必要な画面は１つだけ。<br>もう迷いません。</h2>
+                    <p class="text-slate-500 max-w-2xl mx-auto">請求状況の確認、消込作業、発送準備まで。学納金管理に必要な全ての機能を１画面に集約。直感的な操作で、誰でも迷わず使えます。</p>
+                </div>
+
+                <!-- Case Study Grid -->
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto mb-20">
+                    
+                    <div class="bg-white p-8 rounded-3xl shadow-sm border border-slate-100 hover:-translate-y-2 transition-transform">
+                        <div class="w-12 h-12 bg-primary/5 text-primary rounded-full flex items-center justify-center text-xl mb-6">1</div>
+                        <h4 class="font-bold text-primary text-lg mb-3">ポータル画面</h4>
+                        <p class="text-sm text-slate-500 leading-relaxed">「次に行うべき作業」を明確に提示します。</p>
+                    </div>
+
+                    <div class="bg-white p-8 rounded-3xl shadow-sm border border-slate-100 hover:-translate-y-2 transition-transform">
+                        <div class="w-12 h-12 bg-primary/5 text-primary rounded-full flex items-center justify-center text-xl mb-6">2</div>
+                        <h4 class="font-bold text-primary text-lg mb-3">クラス単位の入金情報</h4>
+                        <p class="text-sm text-slate-500 leading-relaxed">対象者と入金状況が、一覧で分かりやすい。</p>
+                    </div>
+
+                    <div class="bg-white p-8 rounded-3xl shadow-sm border border-slate-100 hover:-translate-y-2 transition-transform">
+                        <div class="w-12 h-12 bg-primary/5 text-primary rounded-full flex items-center justify-center text-xl mb-6">3</div>
+                        <h4 class="font-bold text-primary text-lg mb-3">消込画面</h4>
+                        <p class="text-sm text-slate-500 leading-relaxed">銀行データと並べて、目視で確実な消込作業。</p>
+                    </div>
+
+                    <div class="bg-white p-8 rounded-3xl shadow-sm border border-slate-100 hover:-translate-y-2 transition-transform">
+                        <div class="w-12 h-12 bg-primary/5 text-primary rounded-full flex items-center justify-center text-xl mb-6">4</div>
+                        <h4 class="font-bold text-primary text-lg mb-3">請求明細</h4>
+                        <p class="text-sm text-slate-500 leading-relaxed">臨時的な請求項目にも、柔軟に設定可能。</p>
+                    </div>
+
+                </div>
+
+                <!-- Deep Dive Text blocks -->
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-12 max-w-5xl mx-auto">
+                    <div class="bg-white rounded-3xl p-10 shadow-lg shadow-primary/5 border border-slate-100 relative overflow-hidden">
+                         <div class="absolute top-0 right-0 w-32 h-32 bg-secondary/5 rounded-bl-full -z-0"></div>
+                         <div class="relative z-10">
+                             <div class="text-secondary mb-4"><i class="fas fa-hand-pointer text-3xl"></i></div>
+                             <h4 class="text-xl font-bold text-primary mb-4">ドラッグ＆ドロップで消込完了。<br>入力作業はもう不要です。</h4>
+                             <p class="text-slate-600 text-sm leading-relaxed">
+                                 銀行から取り込んだ入金項目を、消し込みたい請求書にマウスでドラッグ＆ドロップしてボタンをクリックするだけ。どの入金データがどの請求に割り当てられるかが視覚的に線で結ばれ、キーボードでの入力作業をすることなく、直感的でスピーディな消込作業を実現します。手入力によるヒューマンエラーを根本からなくします。
+                             </p>
+                         </div>
+                    </div>
+
+                    <div class="bg-white rounded-3xl p-10 shadow-lg shadow-primary/5 border border-slate-100 relative overflow-hidden">
+                         <div class="absolute top-0 left-0 w-32 h-32 bg-primary/5 rounded-br-full -z-0"></div>
+                         <div class="relative z-10">
+                             <div class="text-primary mb-4"><i class="fas fa-chart-pie text-3xl"></i></div>
+                             <h4 class="text-xl font-bold text-primary mb-4">「あといくら？」が一目瞭然。<br>分納管理も迷いません。</h4>
+                             <p class="text-slate-600 text-sm leading-relaxed">
+                                 授業料の分割納付にも対応しています。入金額に応じて請求ステータス（未入金／一部入金／完済）がリアルタイムで色分け表示されるため、残額や支払状況を常に正確に把握できます。一度消込に使った銀行からの入金項目はリストから消えるため、二重割り当ての心配もありません。
+                             </p>
+                         </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Pricing / Plan Estimator CTA -->
+        <section class="py-24 bg-primary text-white text-center relative overflow-hidden">
+            <!-- Decorative light bursts -->
+            <div class="absolute top-0 left-1/4 w-96 h-96 bg-secondary/30 rounded-full blur-[100px] -translate-y-1/2"></div>
+            
+            <div class="container mx-auto px-6 relative z-10">
+                <h2 class="text-3xl md:text-4xl font-bold mb-6">貴校に最適！業務効率化プラン</h2>
+                <p class="text-lg opacity-90 max-w-2xl mx-auto mb-10">
+                    《アプリケーションプラン》と《サポートプラン》を自由に組み合わせて、貴校にぴったりの業務効率化アプリケーションをご検討いただけます。
+                </p>
+                <div class="flex justify-center mb-12">
+                     <a href="plan.html" class="bg-accent text-white px-10 py-4 rounded-full text-lg font-bold hover:bg-orange-600 hover:shadow-xl transition-all shadow-lg inline-flex items-center space-x-2">
+                        <span>プランを見積もる</span>
+                        <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <div id="footer-placeholder"></div>
+
+    <script src="js/main.js?v=20260329" data-root="./"></script>
+</body>
+</html>

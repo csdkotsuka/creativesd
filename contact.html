@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <!-- <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests"> -->
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>お問い合わせ | INTEVE SCHOOL - システム導入・試用版のご相談</title>
+    <meta name="description" content="INTEVE SCHOOLの製品導入、無料体験版「ポテンシャル・プレビュー」のお申し込み、その他業務効率化に関するご相談はこちらから。貴校の課題に合わせた最適なソリューションをご提案いたします。">
+
+    <link rel="icon" href="images/favicon.png" type="image/png" />
+    <link rel="apple-touch-icon" href="images/favicon.png" />
+
+    <!-- OGP Settings -->
+    <meta property="og:title" content="お問い合わせ | INTEVE SCHOOL - システム導入・試用版のご相談" />
+    <meta property="og:description" content="INTEVE SCHOOLの製品導入、無料体験版のお申し込みはこちらから。" />
+    <meta property="og:url" content="https://creativesd.net/contact.html" />
+    <meta property="og:image" content="https://creativesd.net/images/ogp.png" />
+    <meta property="og:type" content="article" />
+    <meta name="twitter:card" content="summary_large_image" />
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-P8YSB8RZB2"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-P8YSB8RZB2');
+    </script>
+
+    <!-- Structured Data (JSON-LD) for SEO/AI -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "ContactPage",
+      "name": "INTEVE SCHOOL お問い合わせ",
+      "description": "INTEVE SCHOOLに関するお問い合わせフォーム。",
+      "publisher": {
+        "@type": "Organization",
+        "name": "Creative System Design"
+      }
+    }
+    </script>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts: Inter -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet"/>
+    <!-- FontAwesome for Icons -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet"/>
+    <link rel="stylesheet" href="css/style.css?v=20260329">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#004080',
+                        secondary: '#00BCD4',
+                        accent: '#FF6600',
+                        glass: 'rgba(255, 255, 255, 0.7)',
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                }
+            }
+        }
+    </script>
+</head>
+<body class="font-sans text-slate-900 overflow-x-hidden bg-slate-50">
+
+    <div id="header-placeholder"></div>
+
+    <main class="pt-[88px]">
+        <!-- Hero Section -->
+        <section class="relative pt-24 pb-20 overflow-hidden bg-gradient-to-r from-primary to-blue-900">
+            <div class="absolute inset-0 z-0">
+                <div class="absolute inset-0 bg-slate-900/60 mix-blend-multiply"></div>
+                <!-- Abstract blobs -->
+                <div class="absolute top-0 right-0 w-[500px] h-[500px] bg-secondary/20 rounded-full blur-3xl -translate-y-1/2 translate-x-1/3"></div>
+                <div class="absolute bottom-0 left-0 w-[400px] h-[400px] bg-blue-500/20 rounded-full blur-3xl translate-y-1/2 -translate-x-1/3"></div>
+            </div>
+            <div class="container mx-auto px-6 relative z-10 text-center">
+                <span class="inline-block py-1 px-3 rounded-full bg-blue-500/30 text-blue-100 text-sm font-semibold tracking-wider mb-4 border border-blue-400/30 backdrop-blur-sm uppercase">Contact Us</span>
+                <h1 class="text-4xl md:text-5xl font-bold text-white mb-6 leading-tight">お問い合わせ</h1>
+                <p class="text-lg text-blue-100 max-w-4xl mx-auto mb-4">
+                    システム導入のご相談、お見積り、その他ご質問など、お気軽にお問い合わせください。<br class="hidden md:block">
+                </p>
+            </div>
+        </section>
+
+        <!-- Form Section -->
+        <section class="py-20 relative z-10">
+            <div class="container mx-auto px-6 max-w-4xl relative -mt-32">
+                <!-- Page Switcher Tabs -->
+                <div class="flex border-b border-slate-200 bg-slate-100 rounded-t-3xl overflow-hidden">
+                    <a href="contact.html" class="flex-1 py-4 px-6 text-center font-bold text-sm md:text-base bg-white text-primary border-t-4 border-secondary shadow-sm flex items-center justify-center gap-2">
+                        <i class="fas fa-comments text-secondary"></i>
+                        <span>お問い合わせ・ご相談</span>
+                    </a>
+                    <a href="download.html" class="flex-1 py-4 px-6 text-center font-semibold text-sm md:text-base text-slate-500 hover:text-primary hover:bg-slate-50 transition-colors flex items-center justify-center gap-2">
+                        <i class="fas fa-file-download text-slate-400"></i>
+                        <span>資料ダウンロード</span>
+                    </a>
+                </div>
+
+                <div class="bg-white rounded-b-3xl shadow-xl overflow-hidden border border-t-0 border-slate-100">
+                    
+                    <form id="contact-form" class="p-8 md:p-12 lg:p-16">
+                        
+                        <!-- Alert Box (Hidden by default) -->
+                        <div id="form-message" class="hidden mb-8 p-4 rounded-xl text-center font-medium transition-all duration-300"></div>
+
+                        <!-- Guide Banner -->
+                        <div class="mb-8 p-4 rounded-2xl bg-blue-50/70 border border-blue-200/60 flex items-center justify-between gap-4 text-xs md:text-sm text-slate-700">
+                            <div class="flex items-center gap-3">
+                                <i class="fas fa-info-circle text-secondary text-lg shrink-0"></i>
+                                <span>システムの詳しい紹介資料やセキュリティ仕様書をお求めの方は、<strong class="text-primary font-bold">「資料ダウンロード」</strong>ページをご利用ください。</span>
+                            </div>
+                            <a href="download.html" class="shrink-0 px-4 py-2 bg-white text-secondary hover:bg-secondary hover:text-white font-bold rounded-xl border border-secondary/30 transition-all text-xs shadow-sm whitespace-nowrap">
+                                資料DLへ <i class="fas fa-arrow-right ml-1"></i>
+                            </a>
+                        </div>
+
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
+                            <!-- Company -->
+                            <div class="form-group">
+                                <label for="company" class="block text-sm font-bold text-primary mb-2">法人名・施設名 <span class="text-accent text-xs ml-1">*</span></label>
+                                <input type="text" id="company" name="company" required placeholder="例）医療法人INTEVE会" 
+                                    class="w-full px-5 py-3 rounded-xl bg-slate-50 border border-slate-200 text-slate-700 outline-none transition-all duration-300 focus:bg-white focus:border-secondary focus:ring-4 focus:ring-secondary/10 shadow-sm hover:border-slate-300">
+                            </div>
+
+                            <!-- Name -->
+                            <div class="form-group">
+                                <label for="name" class="block text-sm font-bold text-primary mb-2">お名前 <span class="text-accent text-xs ml-1">*</span></label>
+                                <input type="text" id="name" name="name" required placeholder="例）愛媛　太郎" 
+                                    class="w-full px-5 py-3 rounded-xl bg-slate-50 border border-slate-200 text-slate-700 outline-none transition-all duration-300 focus:bg-white focus:border-secondary focus:ring-4 focus:ring-secondary/10 shadow-sm hover:border-slate-300">
+                            </div>
+                            
+                            <!-- Department -->
+                            <div class="form-group">
+                                <label for="department" class="block text-sm font-bold text-primary mb-2">部署名・役職名</label>
+                                <input type="text" id="department" name="department" placeholder="例）理学療法学科" 
+                                    class="w-full px-5 py-3 rounded-xl bg-slate-50 border border-slate-200 text-slate-700 outline-none transition-all duration-300 focus:bg-white focus:border-secondary focus:ring-4 focus:ring-secondary/10 shadow-sm hover:border-slate-300">
+                            </div>
+
+                            <!-- Contact Info -->
+                            <div class="form-group">
+                                <label for="contact" class="block text-sm font-bold text-primary mb-2">メールアドレス <span class="text-accent text-xs ml-1">*</span></label>
+                                <input type="email" id="contact" name="contact" required placeholder="例）sample@example.com" 
+                                    class="w-full px-5 py-3 rounded-xl bg-slate-50 border border-slate-200 text-slate-700 outline-none transition-all duration-300 focus:bg-white focus:border-secondary focus:ring-4 focus:ring-secondary/10 shadow-sm hover:border-slate-300">
+                            </div>
+                        </div>
+
+                        <!-- Inquiry Type (Checkboxes) -->
+                        <div class="mb-10">
+                            <label class="block text-sm font-bold text-primary mb-2">お問い合わせの種類（複数選択可） <span class="text-accent text-xs ml-1">*</span></label>
+                            <p class="text-xs text-slate-500 mb-4">ご希望の項目にチェックを入れてください。</p>
+                            <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-3 md:gap-4">
+                                <label class="cursor-pointer relative group flex h-full">
+                                    <input type="checkbox" name="inquiry_type" value="資料が欲しい" class="peer sr-only inquiry-type-checkbox">
+                                    <div class="w-full h-full min-h-[56px] px-3 py-3.5 border-2 border-slate-200 rounded-xl text-center text-slate-600 font-semibold text-sm transition-all duration-300 peer-checked:border-secondary peer-checked:bg-cyan-50 peer-checked:text-primary hover:border-slate-300 peer-focus-visible:ring-4 peer-focus-visible:ring-secondary/20 flex items-center justify-center gap-2">
+                                        <i class="fas fa-file-download text-slate-400 peer-checked:text-secondary text-xs"></i>
+                                        <span>資料が欲しい</span>
+                                    </div>
+                                    <div class="absolute top-2 right-2 text-secondary opacity-0 peer-checked:opacity-100 transition-opacity transform scale-50 peer-checked:scale-100 pointer-events-none">
+                                        <i class="fas fa-check-circle text-xs"></i>
+                                    </div>
+                                </label>
+                                <label class="cursor-pointer relative group flex h-full">
+                                    <input type="checkbox" name="inquiry_type" value="説明が聞きたい" class="peer sr-only inquiry-type-checkbox">
+                                    <div class="w-full h-full min-h-[56px] px-3 py-3.5 border-2 border-slate-200 rounded-xl text-center text-slate-600 font-semibold text-sm transition-all duration-300 peer-checked:border-secondary peer-checked:bg-cyan-50 peer-checked:text-primary hover:border-slate-300 peer-focus-visible:ring-4 peer-focus-visible:ring-secondary/20 flex items-center justify-center gap-2">
+                                        <i class="fas fa-chalkboard-teacher text-slate-400 peer-checked:text-secondary text-xs"></i>
+                                        <span>説明が聞きたい</span>
+                                    </div>
+                                    <div class="absolute top-2 right-2 text-secondary opacity-0 peer-checked:opacity-100 transition-opacity transform scale-50 peer-checked:scale-100 pointer-events-none">
+                                        <i class="fas fa-check-circle text-xs"></i>
+                                    </div>
+                                </label>
+                                <label class="cursor-pointer relative group flex h-full">
+                                    <input type="checkbox" name="inquiry_type" value="実際の画面が見たい" class="peer sr-only inquiry-type-checkbox">
+                                    <div class="w-full h-full min-h-[56px] px-3 py-3.5 border-2 border-slate-200 rounded-xl text-center text-slate-600 font-semibold text-sm transition-all duration-300 peer-checked:border-secondary peer-checked:bg-cyan-50 peer-checked:text-primary hover:border-slate-300 peer-focus-visible:ring-4 peer-focus-visible:ring-secondary/20 flex items-center justify-center gap-2">
+                                        <i class="fas fa-desktop text-slate-400 peer-checked:text-secondary text-xs"></i>
+                                        <span>実際の画面が見たい</span>
+                                    </div>
+                                    <div class="absolute top-2 right-2 text-secondary opacity-0 peer-checked:opacity-100 transition-opacity transform scale-50 peer-checked:scale-100 pointer-events-none">
+                                        <i class="fas fa-check-circle text-xs"></i>
+                                    </div>
+                                </label>
+                                <label class="cursor-pointer relative group flex h-full">
+                                    <input type="checkbox" name="inquiry_type" value="見積が欲しい" class="peer sr-only inquiry-type-checkbox">
+                                    <div class="w-full h-full min-h-[56px] px-3 py-3.5 border-2 border-slate-200 rounded-xl text-center text-slate-600 font-semibold text-sm transition-all duration-300 peer-checked:border-secondary peer-checked:bg-cyan-50 peer-checked:text-primary hover:border-slate-300 peer-focus-visible:ring-4 peer-focus-visible:ring-secondary/20 flex items-center justify-center gap-2">
+                                        <i class="fas fa-file-invoice-dollar text-slate-400 peer-checked:text-secondary text-xs"></i>
+                                        <span>見積が欲しい</span>
+                                    </div>
+                                    <div class="absolute top-2 right-2 text-secondary opacity-0 peer-checked:opacity-100 transition-opacity transform scale-50 peer-checked:scale-100 pointer-events-none">
+                                        <i class="fas fa-check-circle text-xs"></i>
+                                    </div>
+                                </label>
+                                <label class="cursor-pointer relative group flex h-full">
+                                    <input type="checkbox" name="inquiry_type" value="その他" class="peer sr-only inquiry-type-checkbox">
+                                    <div class="w-full h-full min-h-[56px] px-3 py-3.5 border-2 border-slate-200 rounded-xl text-center text-slate-600 font-semibold text-sm transition-all duration-300 peer-checked:border-secondary peer-checked:bg-cyan-50 peer-checked:text-primary hover:border-slate-300 peer-focus-visible:ring-4 peer-focus-visible:ring-secondary/20 flex items-center justify-center gap-2">
+                                        <i class="fas fa-ellipsis-h text-slate-400 peer-checked:text-secondary text-xs"></i>
+                                        <span>その他</span>
+                                    </div>
+                                    <div class="absolute top-2 right-2 text-secondary opacity-0 peer-checked:opacity-100 transition-opacity transform scale-50 peer-checked:scale-100 pointer-events-none">
+                                        <i class="fas fa-check-circle text-xs"></i>
+                                    </div>
+                                </label>
+                            </div>
+                        </div>
+
+                        <!-- System Interest (Checkboxes) -->
+                        <div class="mb-10">
+                            <label class="block text-sm font-bold text-primary mb-4">興味のあるシステム（複数選択可）</label>
+                            <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-7 gap-3 md:gap-4">
+                                <label class="cursor-pointer relative group flex h-full">
+                                    <input type="checkbox" name="interests" value="CONNECT" class="peer sr-only">
+                                    <div class="w-full h-full min-h-[64px] px-2.5 py-3 border-2 border-slate-200 rounded-xl text-center text-slate-700 font-bold text-sm transition-all duration-300 peer-checked:border-teal-500 peer-checked:bg-teal-50 peer-checked:text-teal-900 hover:border-slate-300 peer-focus-visible:ring-4 peer-focus-visible:ring-teal-500/20 flex flex-col items-center justify-center">
+                                        <div class="text-[10px] text-teal-600 font-semibold mb-0.5">AI即レス予約</div>
+                                        <span>CONNECT</span>
+                                    </div>
+                                    <div class="absolute top-2 right-2 text-teal-600 opacity-0 peer-checked:opacity-100 transition-opacity transform scale-50 peer-checked:scale-100 pointer-events-none">
+                                        <i class="fas fa-check-circle text-xs"></i>
+                                    </div>
+                                </label>
+                                <label class="cursor-pointer relative group flex h-full">
+                                    <input type="checkbox" name="interests" value="INTEVE LINK" class="peer sr-only">
+                                    <div class="w-full h-full min-h-[64px] px-2.5 py-3 border-2 border-slate-200 rounded-xl text-center text-slate-700 font-bold text-sm transition-all duration-300 peer-checked:border-secondary peer-checked:bg-cyan-50 peer-checked:text-primary hover:border-slate-300 peer-focus-visible:ring-4 peer-focus-visible:ring-secondary/20 flex flex-col items-center justify-center">
+                                        <div class="text-[10px] text-cyan-600 font-semibold mb-0.5">臨床実習ポータル</div>
+                                        <span>INTEVE LINK</span>
+                                    </div>
+                                    <div class="absolute top-2 right-2 text-secondary opacity-0 peer-checked:opacity-100 transition-opacity transform scale-50 peer-checked:scale-100 pointer-events-none">
+                                        <i class="fas fa-check-circle text-xs"></i>
+                                    </div>
+                                </label>
+                                <label class="cursor-pointer relative group flex h-full">
+                                    <input type="checkbox" name="interests" value="国家試験管理" class="peer sr-only">
+                                    <div class="w-full h-full min-h-[64px] px-2.5 py-3 border-2 border-slate-200 rounded-xl text-center text-slate-600 font-medium text-sm transition-all duration-300 peer-checked:border-secondary peer-checked:bg-cyan-50 peer-checked:text-primary hover:border-slate-300 peer-focus-visible:ring-4 peer-focus-visible:ring-secondary/20 flex flex-col items-center justify-center">
+                                        <div class="text-[10px] text-slate-400 font-normal mb-0.5">国試対策・分析</div>
+                                        <span>国家試験管理</span>
+                                    </div>
+                                    <div class="absolute top-2 right-2 text-secondary opacity-0 peer-checked:opacity-100 transition-opacity transform scale-50 peer-checked:scale-100 pointer-events-none">
+                                        <i class="fas fa-check-circle text-xs"></i>
+                                    </div>
+                                </label>
+                                <label class="cursor-pointer relative group flex h-full">
+                                    <input type="checkbox" name="interests" value="実習管理" class="peer sr-only">
+                                    <div class="w-full h-full min-h-[64px] px-2.5 py-3 border-2 border-slate-200 rounded-xl text-center text-slate-600 font-medium text-sm transition-all duration-300 peer-checked:border-secondary peer-checked:bg-cyan-50 peer-checked:text-primary hover:border-slate-300 peer-focus-visible:ring-4 peer-focus-visible:ring-secondary/20 flex flex-col items-center justify-center">
+                                        <div class="text-[10px] text-slate-400 font-normal mb-0.5">施設・巡回管理</div>
+                                        <span>実習管理</span>
+                                    </div>
+                                    <div class="absolute top-2 right-2 text-secondary opacity-0 peer-checked:opacity-100 transition-opacity transform scale-50 peer-checked:scale-100 pointer-events-none">
+                                        <i class="fas fa-check-circle text-xs"></i>
+                                    </div>
+                                </label>
+                                <label class="cursor-pointer relative group flex h-full">
+                                    <input type="checkbox" name="interests" value="学事" class="peer sr-only">
+                                    <div class="w-full h-full min-h-[64px] px-2.5 py-3 border-2 border-slate-200 rounded-xl text-center text-slate-600 font-medium text-sm transition-all duration-300 peer-checked:border-secondary peer-checked:bg-cyan-50 peer-checked:text-primary hover:border-slate-300 peer-focus-visible:ring-4 peer-focus-visible:ring-secondary/20 flex flex-col items-center justify-center">
+                                        <div class="text-[10px] text-slate-400 font-normal mb-0.5">教務・学事DX</div>
+                                        <span>学事</span>
+                                    </div>
+                                    <div class="absolute top-2 right-2 text-secondary opacity-0 peer-checked:opacity-100 transition-opacity transform scale-50 peer-checked:scale-100 pointer-events-none">
+                                        <i class="fas fa-check-circle text-xs"></i>
+                                    </div>
+                                </label>
+                                <label class="cursor-pointer relative group flex h-full">
+                                    <input type="checkbox" name="interests" value="マーケティング" class="peer sr-only">
+                                    <div class="w-full h-full min-h-[64px] px-2.5 py-3 border-2 border-slate-200 rounded-xl text-center text-slate-600 font-medium text-sm transition-all duration-300 peer-checked:border-secondary peer-checked:bg-cyan-50 peer-checked:text-primary hover:border-slate-300 peer-focus-visible:ring-4 peer-focus-visible:ring-secondary/20 flex flex-col items-center justify-center">
+                                        <div class="text-[10px] text-slate-400 font-normal mb-0.5">入試・広報・募集</div>
+                                        <span>マーケティング</span>
+                                    </div>
+                                    <div class="absolute top-2 right-2 text-secondary opacity-0 peer-checked:opacity-100 transition-opacity transform scale-50 peer-checked:scale-100 pointer-events-none">
+                                        <i class="fas fa-check-circle text-xs"></i>
+                                    </div>
+                                </label>
+                                <label class="cursor-pointer relative group flex h-full">
+                                    <input type="checkbox" name="interests" value="その他" class="peer sr-only">
+                                    <div class="w-full h-full min-h-[64px] px-2.5 py-3 border-2 border-slate-200 rounded-xl text-center text-slate-600 font-medium text-sm transition-all duration-300 peer-checked:border-secondary peer-checked:bg-cyan-50 peer-checked:text-primary hover:border-slate-300 peer-focus-visible:ring-4 peer-focus-visible:ring-secondary/20 flex flex-col items-center justify-center">
+                                        <div class="text-[10px] text-slate-400 font-normal mb-0.5">その他ご相談</div>
+                                        <span>その他</span>
+                                    </div>
+                                    <div class="absolute top-2 right-2 text-secondary opacity-0 peer-checked:opacity-100 transition-opacity transform scale-50 peer-checked:scale-100 pointer-events-none">
+                                        <i class="fas fa-check-circle text-xs"></i>
+                                    </div>
+                                </label>
+                            </div>
+                        </div>
+
+                        <!-- Details / Inquiries (Optional Textarea) -->
+                        <div class="mb-10 form-group">
+                            <label for="details" class="block text-sm font-bold text-primary mb-2">
+                                ご相談・ご質問内容 <span class="text-slate-400 text-xs font-normal ml-1">（任意）</span>
+                            </label>
+                            <textarea id="details" name="details" rows="5" placeholder="ご質問や導入にあたってのご要望、気になる点がございましたらご自由にご記入ください..." 
+                                class="w-full px-5 py-4 rounded-xl bg-slate-50 border border-slate-200 text-slate-700 outline-none transition-all duration-300 focus:bg-white focus:border-secondary focus:ring-4 focus:ring-secondary/10 shadow-sm hover:border-slate-300 resize-y"></textarea>
+                        </div>
+
+                        <!-- Policy Agreement -->
+                        <div class="mb-10 text-center">
+                            <label class="inline-flex relative items-center cursor-pointer group">
+                                <input type="checkbox" name="policy_agreement" required class="peer sr-only">
+                                <div class="w-5 h-5 flex-shrink-0 border-2 border-slate-300 rounded bg-white overflow-hidden transition-all duration-300 peer-checked:border-secondary peer-checked:bg-secondary group-hover:border-secondary flex items-center justify-center">
+                                    <i class="fas fa-check text-white text-xs opacity-0 peer-checked:opacity-100 transform scale-50 peer-checked:scale-100 transition-transform"></i>
+                                </div>
+                                <span class="ml-3 text-sm text-slate-600">
+                                    <a href="privacy.html" target="_blank" class="text-secondary hover:underline font-medium">プライバシーポリシー</a>に同意する
+                                </span>
+                            </label>
+                        </div>
+
+                        <!-- Submit Button -->
+                        <div class="text-center">
+                            <button type="submit" id="submit-btn" data-ga-click="Contact: Submit Form" class="inline-flex items-center justify-center px-10 py-4 bg-accent text-white font-bold rounded-full text-lg shadow-lg hover:shadow-xl hover:bg-orange-600 transform hover:-translate-y-1 transition-all w-full md:w-auto min-w-[280px]">
+                                <span>送信する</span>
+                                <i class="fas fa-paper-plane ml-3 text-sm"></i>
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+        <!-- Success Modal (Hidden by Default) -->
+        <div id="success-modal" class="fixed inset-0 z-[100] flex items-center justify-center opacity-0 pointer-events-none transition-opacity duration-300">
+            <!-- Backdrop -->
+            <div id="success-modal-backdrop" class="absolute inset-0 bg-slate-900/60 backdrop-blur-sm cursor-pointer"></div>
+            <!-- Modal Content -->
+            <div id="success-modal-content" class="relative bg-white rounded-3xl shadow-2xl p-8 md:p-10 text-center max-w-md w-full mx-4 transform scale-95 transition-transform duration-300">
+                <div class="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4 text-green-500 text-3xl">
+                    <i class="fas fa-check"></i>
+                </div>
+                <h3 class="text-2xl font-bold text-slate-800 mb-2">送信完了！</h3>
+                <p class="text-slate-600 mb-6 leading-relaxed text-sm">お問い合わせを受け付けました。<br>自動返信メールをご確認ください。</p>
+
+                <!-- CONNECT Download Material Card (CONNECT選択時に表示) -->
+                <div id="connect-download-card" class="hidden bg-teal-50/90 border border-teal-200 rounded-2xl p-4 mb-6 text-left space-y-3">
+                    <div class="flex items-start gap-3">
+                        <div class="w-10 h-10 rounded-xl bg-teal-100 text-teal-600 flex items-center justify-center text-xl shrink-0">
+                            <i class="fas fa-file-pdf"></i>
+                        </div>
+                        <div>
+                            <span class="text-[10px] bg-teal-100 text-teal-800 px-2 py-0.5 rounded font-bold">PDFリーフレット</span>
+                            <h4 class="font-bold text-slate-900 text-xs mt-0.5">CONNECT サービス仕様・導入概要（A4）</h4>
+                            <p class="text-[11px] text-slate-500 mt-0.5">AI即レス予約・カレンダー連携の機能詳細</p>
+                        </div>
+                    </div>
+
+                    <a id="connect-download-btn" href="files/CONNECT_Leaflet_A4.pdf" download="CONNECT_Leaflet_A4.pdf" target="_blank" class="w-full py-3 px-4 bg-teal-600 hover:bg-teal-700 text-white font-bold rounded-xl shadow-md flex items-center justify-center gap-2 text-xs transition-all transform hover:-translate-y-0.5">
+                        <i class="fas fa-download"></i>
+                        <span>PDFリーフレットをダウンロード</span>
+                    </a>
+                </div>
+
+                <button type="button" id="close-success-modal" class="w-full bg-slate-800 text-white font-bold py-3.5 rounded-xl hover:bg-slate-700 transition-colors shadow-lg shadow-slate-800/20 active:scale-[0.98] text-sm">
+                    閉じる
+                </button>
+            </div>
+        </div>
+
+    </main>
+
+    <div id="footer-placeholder"></div>
+
+    <script src="js/main.js?v=20260329" data-root="./"></script>
+</body>
+</html>

@@ -1,0 +1,63 @@
+/* Custom styles for Creative System Design Landing Page */
+
+:root {
+    --primary-blue: #004080;
+    --cyan-accent: #00BCD4;
+    --vibrant-orange: #FF6600;
+}
+
+/* Smooth Scrolling */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Glassmorphism Refinement */
+.glass-header {
+    background: rgba(10, 20, 40, 0.88);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Custom Dropdown Animation */
+.dropdown-content {
+    display: block; /* Use block but hide with opacity/visibility */
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(10px);
+    transition: opacity 0.4s ease, transform 0.4s ease, visibility 0.4s;
+    transition-delay: 0.1s; /* Slight delay before closing for better UX */
+}
+
+/* Hover state on parent .group */
+.group:hover .dropdown-content {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+    transition-delay: 0s; /* Open immediately on hover */
+}
+
+
+/* Hero Text Mask (Optional) */
+.hero-title-gradient {
+    background: linear-gradient(to right, #ffffff, #00BCD4);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+
+}
+
+/* Custom Utilities */
+.glass-card {
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(8px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Responsive Font Sizes */
+@media (max-width: 640px) {
+    h1 {
+        font-size: 2.5rem;
+        line-height: 1.2;
+    }
+}
