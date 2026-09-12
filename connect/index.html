@@ -130,14 +130,17 @@
                 </div>
             </a>
 
-            <!-- Desktop Nav Items -->
-            <nav class="hidden lg:flex items-center gap-4 xl:gap-7 flex-shrink-0">
-                <a href="#features" class="whitespace-nowrap text-sm font-semibold text-slate-600 hover:text-brand-600 transition-colors">特長</a>
-                <a href="#patient-flow" class="whitespace-nowrap text-sm font-semibold text-slate-600 hover:text-brand-600 transition-colors">患者・顧客の体験</a>
-                <a href="#admin-features" class="whitespace-nowrap text-sm font-semibold text-slate-600 hover:text-brand-600 transition-colors">医院・店舗の管理機能</a>
-                <a href="#industries" class="whitespace-nowrap text-sm font-semibold text-slate-600 hover:text-brand-600 transition-colors">対応業種</a>
-                <a href="#screens" class="whitespace-nowrap text-sm font-semibold text-slate-600 hover:text-brand-600 transition-colors">実際の画面</a>
-                <a href="#faq" class="whitespace-nowrap text-sm font-semibold text-slate-600 hover:text-brand-600 transition-colors">よくある質問</a>
+            <!-- Desktop Nav Items (Top Global Links) -->
+            <nav class="hidden md:flex items-center gap-5 xl:gap-8 flex-shrink-0">
+                <a href="about.html" class="text-sm font-bold text-slate-700 hover:text-brand-600 transition-colors flex items-center gap-1.5">
+                    <i class="fas fa-building text-slate-400 text-xs"></i>
+                    <span>事業者概要</span>
+                </a>
+                <a href="privacy.html" class="text-sm font-bold text-slate-700 hover:text-brand-600 transition-colors flex items-center gap-1.5">
+                    <i class="fas fa-shield-alt text-slate-400 text-xs"></i>
+                    <span>プライバシーポリシー</span>
+                </a>
+                <a href="#contact" class="text-sm font-semibold text-slate-600 hover:text-brand-600 transition-colors">お問い合わせ</a>
             </nav>
 
             <!-- CTA Actions -->
@@ -151,26 +154,83 @@
                     <i class="fas fa-arrow-right text-xs"></i>
                 </a>
                 <!-- Mobile Menu Button -->
-                <button id="mobile-toggle" class="lg:hidden p-2 text-slate-600 hover:text-slate-900 rounded-lg hover:bg-slate-100" aria-label="メニューを開く">
+                <button id="mobile-toggle" class="md:hidden p-2 text-slate-600 hover:text-slate-900 rounded-lg hover:bg-slate-100" aria-label="メニューを開く">
                     <i class="fas fa-bars text-xl"></i>
                 </button>
             </div>
         </div>
 
         <!-- Mobile Menu Drawer -->
-        <div id="mobile-menu" class="hidden lg:hidden bg-white/95 border-b border-slate-200 px-6 py-6 space-y-4 backdrop-blur-lg">
-            <a href="#features" class="block text-base font-semibold text-slate-700 hover:text-brand-600">特長</a>
-            <a href="#patient-flow" class="block text-base font-semibold text-slate-700 hover:text-brand-600">患者・顧客の体験</a>
-            <a href="#admin-features" class="block text-base font-semibold text-slate-700 hover:text-brand-600">医院・店舗の管理機能</a>
-            <a href="#industries" class="block text-base font-semibold text-slate-700 hover:text-brand-600">対応業種</a>
-            <a href="#screens" class="block text-base font-semibold text-slate-700 hover:text-brand-600">実際の画面</a>
-            <a href="#faq" class="block text-base font-semibold text-slate-700 hover:text-brand-600">よくある質問</a>
+        <div id="mobile-menu" class="hidden md:hidden bg-white/95 border-b border-slate-200 px-6 py-6 space-y-4 backdrop-blur-lg">
+            <div class="text-xs font-bold text-slate-400 uppercase tracking-wider pb-1 border-b border-slate-100">ページ案内</div>
+            <a href="about.html" class="block text-base font-bold text-slate-800 hover:text-brand-600">事業者概要・知財情報</a>
+            <a href="privacy.html" class="block text-base font-bold text-slate-800 hover:text-brand-600">プライバシーポリシー</a>
+            
+            <div class="text-xs font-bold text-slate-400 uppercase tracking-wider pt-2 pb-1 border-b border-slate-100">コンテンツ目次</div>
+            <a href="#features" class="block text-sm font-semibold text-slate-600 hover:text-brand-600">特長</a>
+            <a href="#patient-flow" class="block text-sm font-semibold text-slate-600 hover:text-brand-600">患者・顧客の体験</a>
+            <a href="#admin-features" class="block text-sm font-semibold text-slate-600 hover:text-brand-600">医院・店舗の管理機能</a>
+            <a href="#screens" class="block text-sm font-semibold text-slate-600 hover:text-brand-600">実際の画面</a>
+            <a href="#industries" class="block text-sm font-semibold text-slate-600 hover:text-brand-600">対応業種</a>
+            <a href="#faq" class="block text-sm font-semibold text-slate-600 hover:text-brand-600">よくある質問</a>
+            
             <div class="pt-4 border-t border-slate-100 flex flex-col gap-3">
                 <a href="https://creativesd.net/" class="text-center text-sm font-medium text-slate-600 py-2.5 rounded-xl border border-slate-200">CSD メインサイトへ</a>
                 <a href="#contact" class="text-center text-sm font-bold bg-brand-600 text-white py-3 rounded-full shadow-md">無料デモ・お問い合わせ</a>
             </div>
         </div>
     </header>
+
+    <!-- FLOATING LEFT TABLE OF CONTENTS (TOC NAV) -->
+    <aside id="toc-container" class="fixed left-3 2xl:left-6 top-1/2 -translate-y-1/2 z-40 hidden lg:block transition-all duration-300">
+        <div id="toc-panel" class="bg-white/90 backdrop-blur-md border border-slate-200/90 shadow-xl shadow-slate-300/30 rounded-2xl p-3 w-48 text-slate-700 transition-all duration-300">
+            <div class="flex items-center justify-between pb-2 mb-2 border-b border-slate-100">
+                <div class="flex items-center gap-1.5 text-[11px] font-bold text-slate-500 uppercase tracking-wider">
+                    <i class="fas fa-list-ul text-brand-600"></i>
+                    <span id="toc-title">目次</span>
+                </div>
+                <button id="toc-toggle" class="text-slate-400 hover:text-slate-600 p-1 rounded-md transition-colors" title="目次を折りたたむ/展開">
+                    <i id="toc-toggle-icon" class="fas fa-chevron-left text-[11px]"></i>
+                </button>
+            </div>
+            <nav id="toc-list" class="space-y-1">
+                <a href="#features" class="toc-link group flex items-center gap-2 px-2.5 py-1.5 rounded-xl text-xs font-semibold text-slate-600 hover:text-brand-700 hover:bg-brand-50/80 transition-all" data-target="features">
+                    <span class="w-1.5 h-1.5 rounded-full bg-slate-300 group-hover:bg-brand-500 toc-dot transition-all flex-shrink-0"></span>
+                    <span class="truncate toc-text">特長</span>
+                </a>
+                <a href="#patient-flow" class="toc-link group flex items-center gap-2 px-2.5 py-1.5 rounded-xl text-xs font-semibold text-slate-600 hover:text-brand-700 hover:bg-brand-50/80 transition-all" data-target="patient-flow">
+                    <span class="w-1.5 h-1.5 rounded-full bg-slate-300 group-hover:bg-brand-500 toc-dot transition-all flex-shrink-0"></span>
+                    <span class="truncate toc-text">患者・顧客の体験</span>
+                </a>
+                <a href="#admin-features" class="toc-link group flex items-center gap-2 px-2.5 py-1.5 rounded-xl text-xs font-semibold text-slate-600 hover:text-brand-700 hover:bg-brand-50/80 transition-all" data-target="admin-features">
+                    <span class="w-1.5 h-1.5 rounded-full bg-slate-300 group-hover:bg-brand-500 toc-dot transition-all flex-shrink-0"></span>
+                    <span class="truncate toc-text">管理機能</span>
+                </a>
+                <a href="#screens" class="toc-link group flex items-center gap-2 px-2.5 py-1.5 rounded-xl text-xs font-semibold text-slate-600 hover:text-brand-700 hover:bg-brand-50/80 transition-all" data-target="screens">
+                    <span class="w-1.5 h-1.5 rounded-full bg-slate-300 group-hover:bg-brand-500 toc-dot transition-all flex-shrink-0"></span>
+                    <span class="truncate toc-text">実際の画面</span>
+                </a>
+                <a href="#industries" class="toc-link group flex items-center gap-2 px-2.5 py-1.5 rounded-xl text-xs font-semibold text-slate-600 hover:text-brand-700 hover:bg-brand-50/80 transition-all" data-target="industries">
+                    <span class="w-1.5 h-1.5 rounded-full bg-slate-300 group-hover:bg-brand-500 toc-dot transition-all flex-shrink-0"></span>
+                    <span class="truncate toc-text">対応業種</span>
+                </a>
+                <a href="#faq" class="toc-link group flex items-center gap-2 px-2.5 py-1.5 rounded-xl text-xs font-semibold text-slate-600 hover:text-brand-700 hover:bg-brand-50/80 transition-all" data-target="faq">
+                    <span class="w-1.5 h-1.5 rounded-full bg-slate-300 group-hover:bg-brand-500 toc-dot transition-all flex-shrink-0"></span>
+                    <span class="truncate toc-text">よくある質問</span>
+                </a>
+                <a href="#contact" class="toc-link group flex items-center gap-2 px-2.5 py-1.5 rounded-xl text-xs font-semibold text-slate-600 hover:text-brand-700 hover:bg-brand-50/80 transition-all" data-target="contact">
+                    <span class="w-1.5 h-1.5 rounded-full bg-slate-300 group-hover:bg-brand-500 toc-dot transition-all flex-shrink-0"></span>
+                    <span class="truncate toc-text">お問い合わせ</span>
+                </a>
+            </nav>
+            <div class="pt-2 mt-2 border-t border-slate-100 flex items-center justify-center text-[10px] text-slate-400">
+                <button onclick="window.scrollTo({top: 0, behavior: 'smooth'})" class="hover:text-brand-600 flex items-center gap-1 transition-colors">
+                    <i class="fas fa-arrow-up text-[9px]"></i>
+                    <span class="toc-text">最上部へ</span>
+                </button>
+            </div>
+        </div>
+    </aside>
 
     <main>
         <!-- HERO SECTION -->
@@ -1332,7 +1392,8 @@
                     <a href="#patient-flow" class="hover:text-brand-600 transition-colors">患者体験</a>
                     <a href="#admin-features" class="hover:text-brand-600 transition-colors">管理機能</a>
                     <a href="#industries" class="hover:text-brand-600 transition-colors">対応業種</a>
-                    <a href="https://creativesd.net/privacy.html" class="hover:text-brand-600 transition-colors">プライバシーポリシー</a>
+                    <a href="about.html" class="text-brand-700 font-bold hover:text-brand-600 transition-colors">事業者概要</a>
+                    <a href="privacy.html" class="hover:text-brand-600 transition-colors">プライバシーポリシー</a>
                     <a href="https://creativesd.net/terms.html" class="hover:text-brand-600 transition-colors">利用規約</a>
                     <a href="https://creativesd.net/" class="hover:text-brand-600 transition-colors">運営会社（Creative System Design）</a>
                 </div>
@@ -1432,6 +1493,87 @@
                 closeModal();
             }
         });
+
+        // Floating TOC Nav Toggle & ScrollSpy
+        const tocPanel = document.getElementById('toc-panel');
+        const tocToggle = document.getElementById('toc-toggle');
+        const tocToggleIcon = document.getElementById('toc-toggle-icon');
+        const tocTexts = document.querySelectorAll('.toc-text');
+        const tocTitle = document.getElementById('toc-title');
+        let isTocCollapsed = false;
+
+        if (tocToggle && tocPanel) {
+            tocToggle.addEventListener('click', () => {
+                isTocCollapsed = !isTocCollapsed;
+                if (isTocCollapsed) {
+                    tocPanel.classList.remove('w-48');
+                    tocPanel.classList.add('w-12', 'px-2');
+                    tocTexts.forEach(el => el.classList.add('hidden'));
+                    if (tocTitle) tocTitle.classList.add('hidden');
+                    if (tocToggleIcon) {
+                        tocToggleIcon.classList.remove('fa-chevron-left');
+                        tocToggleIcon.classList.add('fa-chevron-right');
+                    }
+                } else {
+                    tocPanel.classList.remove('w-12', 'px-2');
+                    tocPanel.classList.add('w-48');
+                    tocTexts.forEach(el => el.classList.remove('hidden'));
+                    if (tocTitle) tocTitle.classList.remove('hidden');
+                    if (tocToggleIcon) {
+                        tocToggleIcon.classList.remove('fa-chevron-right');
+                        tocToggleIcon.classList.add('fa-chevron-left');
+                    }
+                }
+            });
+        }
+
+        const tocLinks = document.querySelectorAll('.toc-link');
+        const sections = Array.from(tocLinks).map(link => {
+            const targetId = link.getAttribute('data-target');
+            return document.getElementById(targetId);
+        }).filter(Boolean);
+
+        function updateTocActive() {
+            const scrollPos = window.scrollY + window.innerHeight * 0.35;
+            let currentSection = null;
+
+            sections.forEach(section => {
+                const top = section.offsetTop;
+                const height = section.offsetHeight;
+                if (scrollPos >= top && scrollPos < top + height) {
+                    currentSection = section;
+                }
+            });
+
+            // Near bottom activation
+            if ((window.innerHeight + window.scrollY) >= document.documentElement.scrollHeight - 300) {
+                currentSection = document.getElementById('contact');
+            }
+
+            tocLinks.forEach(link => {
+                const targetId = link.getAttribute('data-target');
+                const dot = link.querySelector('.toc-dot');
+                if (currentSection && currentSection.id === targetId) {
+                    link.classList.add('bg-brand-100', 'text-brand-900', 'font-bold');
+                    link.classList.remove('text-slate-600');
+                    if (dot) {
+                        dot.classList.add('bg-brand-600', 'scale-125');
+                        dot.classList.remove('bg-slate-300');
+                    }
+                } else {
+                    link.classList.remove('bg-brand-100', 'text-brand-900', 'font-bold');
+                    link.classList.add('text-slate-600');
+                    if (dot) {
+                        dot.classList.remove('bg-brand-600', 'scale-125');
+                        dot.classList.add('bg-slate-300');
+                    }
+                }
+            });
+        }
+
+        window.addEventListener('scroll', updateTocActive, { passive: true });
+        window.addEventListener('DOMContentLoaded', updateTocActive);
+        updateTocActive();
     </script>
 </body>
 </html>
