@@ -124,7 +124,7 @@
                 <!-- Category Filter Tabs -->
                 <div class="flex items-center gap-2 overflow-x-auto pb-4 scrollbar-thin mb-8" id="faq-category-tabs">
                     <button type="button" data-category="all" class="faq-tab active whitespace-nowrap px-4 py-2 rounded-full text-xs sm:text-sm font-bold transition-all bg-primary text-white shadow-md">
-                        すべて (<span id="count-all">22</span>)
+                        すべて (<span id="count-all">23</span>)
                     </button>
                     <button type="button" data-category="environment" class="faq-tab whitespace-nowrap px-4 py-2 rounded-full text-xs sm:text-sm font-semibold transition-all bg-white text-slate-600 hover:bg-slate-100 border border-slate-200">
                         システム・運用環境 (<span id="count-environment">5</span>)
@@ -139,14 +139,14 @@
                         INTEVE LINK (<span id="count-inteve-link">2</span>)
                     </button>
                     <button type="button" data-category="support" class="faq-tab whitespace-nowrap px-4 py-2 rounded-full text-xs sm:text-sm font-semibold transition-all bg-white text-slate-600 hover:bg-slate-100 border border-slate-200">
-                        導入・保守サポート (<span id="count-support">7</span>)
+                        導入・保守サポート (<span id="count-support">8</span>)
                     </button>
                 </div>
 
                 <!-- Result Counter -->
                 <div class="flex items-center justify-between text-xs sm:text-sm text-slate-500 mb-6 pb-3 border-b border-slate-200">
                     <div>
-                        該当するご質問: <span id="visible-count" class="font-bold text-primary text-base">22</span> 件
+                        該当するご質問: <span id="visible-count" class="font-bold text-primary text-base">23</span> 件
                         <span id="active-filter-label" class="ml-2 font-medium text-slate-400">（全カテゴリ表示中）</span>
                     </div>
                     <button type="button" id="reset-filter-btn" class="hidden text-xs text-secondary hover:text-primary font-bold transition-colors">
@@ -859,6 +859,51 @@
                                     <p>
                                         Zoom等のオンライン通話にて、実際の画面を共有しながら「国試問題の取り込み」「実習マッチングの操作感」「成績集計の瞬発力」などをご体感いただけます。貴校の抱える課題をヒアリングした上で最適な活用方法をご提案いたしますので、お気軽にお問い合わせください。
                                     </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Item 23: 試しに使うこと（お試しプラン） -->
+                    <div class="faq-item bg-white rounded-2xl border border-slate-200/90 shadow-sm overflow-hidden transition-all hover:border-cyan-300" data-category="support" id="faq-trial-plan">
+                        <button type="button" class="faq-question w-full text-left px-6 py-5 flex items-start justify-between gap-4 cursor-pointer focus:outline-none">
+                            <div class="flex items-start gap-3.5">
+                                <span class="flex-shrink-0 w-7 h-7 rounded-lg bg-blue-50 text-primary font-black text-sm flex items-center justify-center border border-blue-100">Q</span>
+                                <div>
+                                    <span class="inline-block text-[11px] font-bold px-2 py-0.5 rounded-full bg-slate-100 text-slate-600 mb-1.5">導入・保守サポート</span>
+                                    <h3 class="text-base sm:text-lg font-bold text-slate-900 leading-snug question-text">試しに使うことはできますか？（テスト運用・トライアル）</h3>
+                                </div>
+                            </div>
+                            <span class="faq-chevron w-8 h-8 rounded-full bg-slate-100 flex items-center justify-center text-slate-500 flex-shrink-0 transition-transform duration-300 mt-1">
+                                <i class="fas fa-chevron-down text-xs"></i>
+                            </span>
+                        </button>
+                        <div class="faq-answer hidden px-6 pb-6 pt-2 text-slate-600 text-sm leading-relaxed border-t border-slate-100">
+                            <div class="flex items-start gap-3 pl-1">
+                                <span class="flex-shrink-0 w-7 h-7 rounded-lg bg-emerald-50 text-emerald-600 font-black text-sm flex items-center justify-center border border-emerald-100">A</span>
+                                <div class="space-y-3 answer-text">
+                                    <p class="font-bold text-slate-800">
+                                        はい、本格導入前に実際の操作感をしっかりご確認いただける「INTEVE SCHOOL お試しプラン（ポテンシャル・プレビュー）」をご用意しております。
+                                    </p>
+                                    <p>
+                                        サンプルデータだけでなく、<strong>貴校で実際に扱われている名簿や試験データ、実習施設リストなどの実データを投入して検証運用することが可能</strong>です。先生方が普段お使いの環境で業務の効率化や使用感を直接お確かめいただけます。
+                                    </p>
+                                    <div class="bg-amber-50 p-4 rounded-xl border border-amber-200 text-xs sm:text-sm text-slate-700 space-y-1.5">
+                                        <div class="font-bold text-amber-900 flex items-center gap-1.5">
+                                            <i class="fas fa-shield-alt text-amber-600"></i>
+                                            <span>データ保護と完全消去のお約束</span>
+                                        </div>
+                                        <p class="leading-relaxed">
+                                            検証後、もし導入を見送られる場合やテスト運用を終了される際には、<strong>お預かり・登録した貴校の検証データは責任を持って完全に消去・破棄いたします</strong>。情報管理面でもご安心の上、お気軽にお試しいただけます。
+                                        </p>
+                                    </div>
+                                    <div class="pt-1">
+                                        <a href="plan.html#trial-plan" class="inline-flex items-center gap-2 text-xs sm:text-sm font-bold text-primary hover:text-secondary bg-blue-50/70 hover:bg-blue-50 px-4 py-2.5 rounded-xl border border-blue-200 transition-colors">
+                                            <i class="fas fa-tags text-secondary"></i>
+                                            <span>料金プランページ（INTEVE SCHOOLお試しプラン『ポテンシャル・プレビュー』）はこちら</span>
+                                            <i class="fas fa-arrow-right text-xs"></i>
+                                        </a>
+                                    </div>
                                 </div>
                             </div>
                         </div>
