@@ -1,0 +1,1096 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <!-- <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests"> -->
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>よくある質問（FAQ） | INTEVE SCHOOL - 医療系専門学校・大学向け教育DX</title>
+    <meta name="description" content="INTEVE SCHOOLおよび臨床実習ポータルINTEVE LINKに関するよくあるご質問（FAQ）です。オフライン稼動、セキュリティ、ライセンス、既存システム連携、導入サポートなどにお答えします。">
+
+    <link rel="icon" href="images/favicon.png" type="image/png" />
+    <link rel="apple-touch-icon" href="images/favicon.png" />
+
+    <!-- OGP Settings -->
+    <meta property="og:title" content="よくある質問（FAQ） | INTEVE SCHOOL" />
+    <meta property="og:description" content="INTEVE SCHOOLやINTEVE LINKの運用環境、セキュリティ、連携、サポート体制などに関するよくあるご質問と回答を掲載しています。" />
+    <meta property="og:url" content="https://creativesd.net/faq.html" />
+    <meta property="og:image" content="https://creativesd.net/images/ogp.png" />
+    <meta property="og:type" content="website" />
+    <meta name="twitter:card" content="summary_large_image" />
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-P8YSB8RZB2"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-P8YSB8RZB2');
+    </script>
+
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts: Inter -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet"/>
+    <!-- FontAwesome for Icons -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet"/>
+    <link rel="stylesheet" href="css/style.css?v=20260329">
+    <link rel="stylesheet" href="css/survey-widget.css?v=20260329">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#004080',
+                        secondary: '#00BCD4',
+                        accent: '#FF6600',
+                        glass: 'rgba(255, 255, 255, 0.7)',
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                }
+            }
+        }
+    </script>
+    <style>
+        .hero-gradient {
+            background: linear-gradient(135deg, #002244 0%, #004080 50%, #0077B6 100%);
+        }
+        .faq-answer {
+            transition: max-height 0.3s ease-out, opacity 0.3s ease-out;
+        }
+    </style>
+</head>
+<body class="font-sans text-slate-900 overflow-x-hidden bg-slate-50 min-h-screen flex flex-col justify-between">
+
+    <div id="header-placeholder"></div>
+
+    <main class="flex-grow pt-[80px]">
+        <!-- Page Header / Hero -->
+        <section class="relative hero-gradient text-white py-14 md:py-20 overflow-hidden">
+            <!-- Background Decorative Glow -->
+            <div class="absolute top-0 right-10 w-96 h-96 bg-cyan-500/10 rounded-full blur-[100px] pointer-events-none"></div>
+            <div class="absolute bottom-0 left-10 w-80 h-80 bg-blue-400/10 rounded-full blur-[90px] pointer-events-none"></div>
+
+            <div class="container mx-auto px-6 relative z-10 max-w-5xl">
+                <!-- Breadcrumbs -->
+                <nav class="flex items-center space-x-2 text-xs md:text-sm text-cyan-200 mb-6">
+                    <a href="index.html" class="hover:text-white transition-colors">ホーム</a>
+                    <span>&gt;</span>
+                    <span class="text-white font-medium">よくある質問（FAQ）</span>
+                </nav>
+
+                <div class="text-center max-w-3xl mx-auto space-y-4">
+                    <div class="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-cyan-500/20 text-cyan-200 border border-cyan-400/30 text-xs font-bold backdrop-blur-sm">
+                        <i class="fas fa-question-circle text-cyan-300"></i>
+                        <span>Q&amp;A / FREQUENTLY ASKED QUESTIONS</span>
+                    </div>
+                    <h1 class="text-3xl sm:text-4xl md:text-5xl font-extrabold tracking-tight leading-tight">
+                        よくあるご質問
+                    </h1>
+                    <p class="text-slate-200 text-sm md:text-base leading-relaxed">
+                        INTEVE SCHOOLの導入や運用、セキュリティ、連携機能について、教育現場の皆様から想定される疑問に分かりやすくお答えします。
+                    </p>
+                </div>
+
+                <!-- Live Search Box inside Hero -->
+                <div class="mt-8 max-w-2xl mx-auto">
+                    <div class="relative bg-white/10 backdrop-blur-md rounded-2xl p-2 border border-white/20 shadow-2xl">
+                        <div class="relative flex items-center">
+                            <i class="fas fa-search text-cyan-300 text-lg absolute left-4 pointer-events-none"></i>
+                            <input type="text" id="faq-search-input" placeholder="質問・キーワードで検索（例: オフライン、セキュリティ、スマホ、料金）" 
+                                   class="w-full bg-white text-slate-800 placeholder-slate-400 pl-12 pr-10 py-3.5 rounded-xl text-sm md:text-base font-medium focus:outline-none focus:ring-2 focus:ring-cyan-400 shadow-inner">
+                            <button id="faq-search-clear" class="hidden absolute right-3 text-slate-400 hover:text-slate-600 p-1" title="検索クリア" aria-label="検索クリア">
+                                <i class="fas fa-times-circle text-lg"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="flex items-center justify-between text-xs text-cyan-100 mt-2.5 px-2">
+                        <span>キーワード入力で即座に絞り込まれます</span>
+                        <div class="space-x-3">
+                            <button type="button" id="faq-expand-all" class="hover:text-white underline underline-offset-2">すべて開く</button>
+                            <span>|</span>
+                            <button type="button" id="faq-collapse-all" class="hover:text-white underline underline-offset-2">すべて閉じる</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Main FAQ Content Section -->
+        <section class="py-12 md:py-16">
+            <div class="container mx-auto px-6 max-w-5xl">
+
+                <!-- Category Filter Tabs -->
+                <div class="flex items-center gap-2 overflow-x-auto pb-4 scrollbar-thin mb-8" id="faq-category-tabs">
+                    <button type="button" data-category="all" class="faq-tab active whitespace-nowrap px-4 py-2 rounded-full text-xs sm:text-sm font-bold transition-all bg-primary text-white shadow-md">
+                        すべて (<span id="count-all">22</span>)
+                    </button>
+                    <button type="button" data-category="environment" class="faq-tab whitespace-nowrap px-4 py-2 rounded-full text-xs sm:text-sm font-semibold transition-all bg-white text-slate-600 hover:bg-slate-100 border border-slate-200">
+                        システム・運用環境 (<span id="count-environment">5</span>)
+                    </button>
+                    <button type="button" data-category="license" class="faq-tab whitespace-nowrap px-4 py-2 rounded-full text-xs sm:text-sm font-semibold transition-all bg-white text-slate-600 hover:bg-slate-100 border border-slate-200">
+                        規模・ライセンス (<span id="count-license">4</span>)
+                    </button>
+                    <button type="button" data-category="integration" class="faq-tab whitespace-nowrap px-4 py-2 rounded-full text-xs sm:text-sm font-semibold transition-all bg-white text-slate-600 hover:bg-slate-100 border border-slate-200">
+                        連携・データ移行 (<span id="count-integration">4</span>)
+                    </button>
+                    <button type="button" data-category="inteve-link" class="faq-tab whitespace-nowrap px-4 py-2 rounded-full text-xs sm:text-sm font-semibold transition-all bg-white text-slate-600 hover:bg-slate-100 border border-slate-200">
+                        INTEVE LINK (<span id="count-inteve-link">2</span>)
+                    </button>
+                    <button type="button" data-category="support" class="faq-tab whitespace-nowrap px-4 py-2 rounded-full text-xs sm:text-sm font-semibold transition-all bg-white text-slate-600 hover:bg-slate-100 border border-slate-200">
+                        導入・保守サポート (<span id="count-support">7</span>)
+                    </button>
+                </div>
+
+                <!-- Result Counter -->
+                <div class="flex items-center justify-between text-xs sm:text-sm text-slate-500 mb-6 pb-3 border-b border-slate-200">
+                    <div>
+                        該当するご質問: <span id="visible-count" class="font-bold text-primary text-base">22</span> 件
+                        <span id="active-filter-label" class="ml-2 font-medium text-slate-400">（全カテゴリ表示中）</span>
+                    </div>
+                    <button type="button" id="reset-filter-btn" class="hidden text-xs text-secondary hover:text-primary font-bold transition-colors">
+                        <i class="fas fa-undo mr-1"></i>条件をリセット
+                    </button>
+                </div>
+
+                <!-- FAQ List Container -->
+                <div class="space-y-4" id="faq-list">
+
+                    <!-- ================= Category 1: システム・運用環境 ================= -->
+
+                    <!-- Item 1: オフライン稼動 -->
+                    <div class="faq-item bg-white rounded-2xl border border-slate-200/90 shadow-sm overflow-hidden transition-all hover:border-cyan-300" data-category="environment" id="faq-offline">
+                        <button type="button" class="faq-question w-full text-left px-6 py-5 flex items-start justify-between gap-4 cursor-pointer focus:outline-none">
+                            <div class="flex items-start gap-3.5">
+                                <span class="flex-shrink-0 w-7 h-7 rounded-lg bg-blue-50 text-primary font-black text-sm flex items-center justify-center border border-blue-100">Q</span>
+                                <div>
+                                    <span class="inline-block text-[11px] font-bold px-2 py-0.5 rounded-full bg-slate-100 text-slate-600 mb-1.5">システム・運用環境</span>
+                                    <h3 class="text-base sm:text-lg font-bold text-slate-900 leading-snug question-text">完全にオフラインでも稼動できますか？</h3>
+                                </div>
+                            </div>
+                            <span class="faq-chevron w-8 h-8 rounded-full bg-slate-100 flex items-center justify-center text-slate-500 flex-shrink-0 transition-transform duration-300 mt-1">
+                                <i class="fas fa-chevron-down text-xs"></i>
+                            </span>
+                        </button>
+                        <div class="faq-answer hidden px-6 pb-6 pt-2 text-slate-600 text-sm leading-relaxed border-t border-slate-100">
+                            <div class="flex items-start gap-3 pl-1">
+                                <span class="flex-shrink-0 w-7 h-7 rounded-lg bg-emerald-50 text-emerald-600 font-black text-sm flex items-center justify-center border border-emerald-100">A</span>
+                                <div class="space-y-2.5 answer-text">
+                                    <p class="font-bold text-slate-800">
+                                        はい、基本的な校務機能（学事・成績管理、経理、国試対策、学内データ集計など）は完全オフライン環境でも問題なく運用可能です。
+                                    </p>
+                                    <p>
+                                        インターネット回線が届かない環境や学内閉域網（オフラインLAN）での運用にも対応しております。ただし、以下の機能についてはオンライン環境が必要となります。
+                                    </p>
+                                    <ul class="list-disc list-inside space-y-1 bg-slate-50 p-3 rounded-xl border border-slate-200 text-xs sm:text-sm">
+                                        <li><strong>外部Web API連動</strong>（郵便番号自動検索、オンラインフォーム自動取り込み等）</li>
+                                        <li><strong>臨床実習ポータル『INTEVE LINK』</strong>（実習生・臨床指導者・教員のリアルタイム三者通信）</li>
+                                        <li><strong>FileMaker Cloudを利用した学外アクセス・共同編集</strong></li>
+                                    </ul>
+                                    <p class="text-xs text-slate-500">
+                                        校務DXを最大限に活かせる便利な機能群はオンラインを前提に設計されていますが、学校様のネットワーク方針に合わせてオフライン構成・ハイブリッド構成どちらでも柔軟に設計可能です。
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Item 2: セキュリティ -->
+                    <div class="faq-item bg-white rounded-2xl border border-slate-200/90 shadow-sm overflow-hidden transition-all hover:border-cyan-300" data-category="environment" id="faq-security">
+                        <button type="button" class="faq-question w-full text-left px-6 py-5 flex items-start justify-between gap-4 cursor-pointer focus:outline-none">
+                            <div class="flex items-start gap-3.5">
+                                <span class="flex-shrink-0 w-7 h-7 rounded-lg bg-blue-50 text-primary font-black text-sm flex items-center justify-center border border-blue-100">Q</span>
+                                <div>
+                                    <span class="inline-block text-[11px] font-bold px-2 py-0.5 rounded-full bg-slate-100 text-slate-600 mb-1.5">システム・運用環境</span>
+                                    <h3 class="text-base sm:text-lg font-bold text-slate-900 leading-snug question-text">セキュリティは大丈夫ですか？（個人情報・学生情報管理）</h3>
+                                </div>
+                            </div>
+                            <span class="faq-chevron w-8 h-8 rounded-full bg-slate-100 flex items-center justify-center text-slate-500 flex-shrink-0 transition-transform duration-300 mt-1">
+                                <i class="fas fa-chevron-down text-xs"></i>
+                            </span>
+                        </button>
+                        <div class="faq-answer hidden px-6 pb-6 pt-2 text-slate-600 text-sm leading-relaxed border-t border-slate-100">
+                            <div class="flex items-start gap-3 pl-1">
+                                <span class="flex-shrink-0 w-7 h-7 rounded-lg bg-emerald-50 text-emerald-600 font-black text-sm flex items-center justify-center border border-emerald-100">A</span>
+                                <div class="space-y-3 answer-text">
+                                    <p class="font-bold text-slate-800">
+                                        オフライン・オンラインを問わず極めて強固なセキュリティを担保しています。
+                                    </p>
+                                    <p>
+                                        基盤技術である「Claris FileMaker」はApple社の子会社Claris社が開発しており、世界各国の医療機関や金融機関で採用されている国際標準のセキュリティ機能を標準搭載しています。
+                                    </p>
+                                    <div class="grid sm:grid-cols-2 gap-2.5 my-2">
+                                        <div class="bg-blue-50/50 p-3 rounded-xl border border-blue-100 text-xs">
+                                            <div class="font-bold text-primary mb-1"><i class="fas fa-shield-alt text-secondary mr-1"></i>FileMakerの強固な保護</div>
+                                            <p class="text-slate-600">AES-256ビット暗号化による通信保護および保存データ暗号化（EAR）。教員・管理者・閲覧者ごとの厳格なアクセス権制限。</p>
+                                        </div>
+                                        <div class="bg-blue-50/50 p-3 rounded-xl border border-blue-100 text-xs">
+                                            <div class="font-bold text-primary mb-1"><i class="fas fa-cloud text-secondary mr-1"></i>FileMaker Cloudの安全性</div>
+                                            <p class="text-slate-600">AWSインフラ基盤上で稼動。SOC2 TypeIIやISO27001等の国際基準に準拠し、自動バックアップと24時間監視を提供。</p>
+                                        </div>
+                                    </div>
+                                    <p>
+                                        また、臨床実習ポータル『INTEVE LINK』のセキュリティ設計（SSL/TLS暗号化、ワンタイムURL、アクセスログ監査など）については、専用資料をご案内しております。
+                                    </p>
+                                    <div class="pt-1">
+                                        <a href="download_inteve_link.html" class="inline-flex items-center gap-2 text-xs sm:text-sm font-bold text-cyan-600 hover:text-cyan-700 bg-cyan-50 px-4 py-2 rounded-xl border border-cyan-200">
+                                            <i class="fas fa-file-pdf text-red-500"></i>
+                                            <span>INTEVE LINK 詳細資料・セキュリティ設計書のダウンロードはこちら</span>
+                                            <i class="fas fa-arrow-right text-xs"></i>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Item 3: スマホ (FileMaker Go & BYOD) -->
+                    <div class="faq-item bg-white rounded-2xl border border-slate-200/90 shadow-sm overflow-hidden transition-all hover:border-cyan-300" data-category="environment" id="faq-smartphone">
+                        <button type="button" class="faq-question w-full text-left px-6 py-5 flex items-start justify-between gap-4 cursor-pointer focus:outline-none">
+                            <div class="flex items-start gap-3.5">
+                                <span class="flex-shrink-0 w-7 h-7 rounded-lg bg-blue-50 text-primary font-black text-sm flex items-center justify-center border border-blue-100">Q</span>
+                                <div>
+                                    <span class="inline-block text-[11px] font-bold px-2 py-0.5 rounded-full bg-slate-100 text-slate-600 mb-1.5">システム・運用環境</span>
+                                    <h3 class="text-base sm:text-lg font-bold text-slate-900 leading-snug question-text">スマートフォンやタブレット（iPhone/iPad）でも使えますか？</h3>
+                                </div>
+                            </div>
+                            <span class="faq-chevron w-8 h-8 rounded-full bg-slate-100 flex items-center justify-center text-slate-500 flex-shrink-0 transition-transform duration-300 mt-1">
+                                <i class="fas fa-chevron-down text-xs"></i>
+                            </span>
+                        </button>
+                        <div class="faq-answer hidden px-6 pb-6 pt-2 text-slate-600 text-sm leading-relaxed border-t border-slate-100">
+                            <div class="flex items-start gap-3 pl-1">
+                                <span class="flex-shrink-0 w-7 h-7 rounded-lg bg-emerald-50 text-emerald-600 font-black text-sm flex items-center justify-center border border-emerald-100">A</span>
+                                <div class="space-y-2.5 answer-text">
+                                    <p class="font-bold text-slate-800">
+                                        はい、iOS向け無料アプリ「FileMaker Go」を利用することで、iPhoneやiPadからでもそのまま快適にご利用いただけます。
+                                    </p>
+                                    <p>
+                                        講義室での出欠確認、実習室巡回中のカルテ入力、出先からの急なデータ確認などに大変重宝します。また『INTEVE LINK』はWebブラウザ対応のため、AndroidスマートフォンやPCからも端末を選ばずアクセス可能です。
+                                    </p>
+                                    <div class="bg-amber-50 p-3 rounded-xl border border-amber-200 text-xs text-amber-900">
+                                        <i class="fas fa-info-circle text-amber-600 mr-1 font-bold"></i><strong>BYOD（私有端末利用）に関する推奨事項:</strong><br>
+                                        教員個人の私有スマートフォンで学内データにアクセスする場合は、情報漏洩防止のため「学内規程・BYOD利用ガイドライン」に端末パスコード必須化やスクリーンショット制限などのルールを明記しておくことを推奨しております。学校様の規約策定についてもご相談いただけます。
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Item 4: MacとWindows混在 -->
+                    <div class="faq-item bg-white rounded-2xl border border-slate-200/90 shadow-sm overflow-hidden transition-all hover:border-cyan-300" data-category="environment" id="faq-os-cross">
+                        <button type="button" class="faq-question w-full text-left px-6 py-5 flex items-start justify-between gap-4 cursor-pointer focus:outline-none">
+                            <div class="flex items-start gap-3.5">
+                                <span class="flex-shrink-0 w-7 h-7 rounded-lg bg-blue-50 text-primary font-black text-sm flex items-center justify-center border border-blue-100">Q</span>
+                                <div>
+                                    <span class="inline-block text-[11px] font-bold px-2 py-0.5 rounded-full bg-slate-100 text-slate-600 mb-1.5">システム・運用環境</span>
+                                    <h3 class="text-base sm:text-lg font-bold text-slate-900 leading-snug question-text">MacとWindowsが混在する環境でも使えますか？</h3>
+                                </div>
+                            </div>
+                            <span class="faq-chevron w-8 h-8 rounded-full bg-slate-100 flex items-center justify-center text-slate-500 flex-shrink-0 transition-transform duration-300 mt-1">
+                                <i class="fas fa-chevron-down text-xs"></i>
+                            </span>
+                        </button>
+                        <div class="faq-answer hidden px-6 pb-6 pt-2 text-slate-600 text-sm leading-relaxed border-t border-slate-100">
+                            <div class="flex items-start gap-3 pl-1">
+                                <span class="flex-shrink-0 w-7 h-7 rounded-lg bg-emerald-50 text-emerald-600 font-black text-sm flex items-center justify-center border border-emerald-100">A</span>
+                                <div class="space-y-2 answer-text">
+                                    <p class="font-bold text-slate-800">
+                                        はい、完全なマルチプラットフォーム対応です。
+                                    </p>
+                                    <p>
+                                        教員研究室のMac、事務局のWindows PC、実習室のiPadなど、異なるOSが混在していても全く同じ画面・データベースにリアルタイムで同時アクセスできます。OS間の文字化けやレイアウト崩れも発生しません。
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Item 5: サーバー機の購入 -->
+                    <div class="faq-item bg-white rounded-2xl border border-slate-200/90 shadow-sm overflow-hidden transition-all hover:border-cyan-300" data-category="environment" id="faq-server-hardware">
+                        <button type="button" class="faq-question w-full text-left px-6 py-5 flex items-start justify-between gap-4 cursor-pointer focus:outline-none">
+                            <div class="flex items-start gap-3.5">
+                                <span class="flex-shrink-0 w-7 h-7 rounded-lg bg-blue-50 text-primary font-black text-sm flex items-center justify-center border border-blue-100">Q</span>
+                                <div>
+                                    <span class="inline-block text-[11px] font-bold px-2 py-0.5 rounded-full bg-slate-100 text-slate-600 mb-1.5">システム・運用環境</span>
+                                    <h3 class="text-base sm:text-lg font-bold text-slate-900 leading-snug question-text">高額なサーバー機など専用機器を新しく購入する必要がありますか？</h3>
+                                </div>
+                            </div>
+                            <span class="faq-chevron w-8 h-8 rounded-full bg-slate-100 flex items-center justify-center text-slate-500 flex-shrink-0 transition-transform duration-300 mt-1">
+                                <i class="fas fa-chevron-down text-xs"></i>
+                            </span>
+                        </button>
+                        <div class="faq-answer hidden px-6 pb-6 pt-2 text-slate-600 text-sm leading-relaxed border-t border-slate-100">
+                            <div class="flex items-start gap-3 pl-1">
+                                <span class="flex-shrink-0 w-7 h-7 rounded-lg bg-emerald-50 text-emerald-600 font-black text-sm flex items-center justify-center border border-emerald-100">A</span>
+                                <div class="space-y-2 answer-text">
+                                    <p class="font-bold text-slate-800">
+                                        いいえ、専用の高額サーバーを導入する必要はありません。
+                                    </p>
+                                    <p>
+                                        学内LAN共有であれば、既存のパソコン1台をホスト機として稼働させることが可能です。また「FileMaker Cloud」を活用したクラウド構成をお選びいただければ、ハードウェアの調達・設置スペース・物理保守・定期買い替えなどの負担は一切発生しません。
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <!-- ================= Category 2: 規模・ライセンス ================= -->
+
+                    <!-- Item 6: 何人でも利用できるか -->
+                    <div class="faq-item bg-white rounded-2xl border border-slate-200/90 shadow-sm overflow-hidden transition-all hover:border-cyan-300" data-category="license" id="faq-capacity-users">
+                        <button type="button" class="faq-question w-full text-left px-6 py-5 flex items-start justify-between gap-4 cursor-pointer focus:outline-none">
+                            <div class="flex items-start gap-3.5">
+                                <span class="flex-shrink-0 w-7 h-7 rounded-lg bg-blue-50 text-primary font-black text-sm flex items-center justify-center border border-blue-100">Q</span>
+                                <div>
+                                    <span class="inline-block text-[11px] font-bold px-2 py-0.5 rounded-full bg-slate-100 text-slate-600 mb-1.5">規模・ライセンス</span>
+                                    <h3 class="text-base sm:text-lg font-bold text-slate-900 leading-snug question-text">教員や事務職員は何人でも利用できますか？</h3>
+                                </div>
+                            </div>
+                            <span class="faq-chevron w-8 h-8 rounded-full bg-slate-100 flex items-center justify-center text-slate-500 flex-shrink-0 transition-transform duration-300 mt-1">
+                                <i class="fas fa-chevron-down text-xs"></i>
+                            </span>
+                        </button>
+                        <div class="faq-answer hidden px-6 pb-6 pt-2 text-slate-600 text-sm leading-relaxed border-t border-slate-100">
+                            <div class="flex items-start gap-3 pl-1">
+                                <span class="flex-shrink-0 w-7 h-7 rounded-lg bg-emerald-50 text-emerald-600 font-black text-sm flex items-center justify-center border border-emerald-100">A</span>
+                                <div class="space-y-2 answer-text">
+                                    <p class="font-bold text-slate-800">
+                                        はい、何人でもご利用可能です。
+                                    </p>
+                                    <p>
+                                        システムのソフトウェア自体に利用人数制限はありません。ただし、同時にアクセスする教職員数に応じた「Claris FileMaker」の正規ライセンス（ユーザーライセンスまたは同時接続ライセンス）が必要となります。貴校がすでにFileMakerライセンスを保有されている場合はそのまま活用いただけますし、新規購入の場合も教育機関向け特別価格（アカデミック版）で最小コストとなる構成をご提案いたします。
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Item 7: 学科数 -->
+                    <div class="faq-item bg-white rounded-2xl border border-slate-200/90 shadow-sm overflow-hidden transition-all hover:border-cyan-300" data-category="license" id="faq-capacity-departments">
+                        <button type="button" class="faq-question w-full text-left px-6 py-5 flex items-start justify-between gap-4 cursor-pointer focus:outline-none">
+                            <div class="flex items-start gap-3.5">
+                                <span class="flex-shrink-0 w-7 h-7 rounded-lg bg-blue-50 text-primary font-black text-sm flex items-center justify-center border border-blue-100">Q</span>
+                                <div>
+                                    <span class="inline-block text-[11px] font-bold px-2 py-0.5 rounded-full bg-slate-100 text-slate-600 mb-1.5">規模・ライセンス</span>
+                                    <h3 class="text-base sm:text-lg font-bold text-slate-900 leading-snug question-text">学科やコースはいくつまで登録できますか？</h3>
+                                </div>
+                            </div>
+                            <span class="faq-chevron w-8 h-8 rounded-full bg-slate-100 flex items-center justify-center text-slate-500 flex-shrink-0 transition-transform duration-300 mt-1">
+                                <i class="fas fa-chevron-down text-xs"></i>
+                            </span>
+                        </button>
+                        <div class="faq-answer hidden px-6 pb-6 pt-2 text-slate-600 text-sm leading-relaxed border-t border-slate-100">
+                            <div class="flex items-start gap-3 pl-1">
+                                <span class="flex-shrink-0 w-7 h-7 rounded-lg bg-emerald-50 text-emerald-600 font-black text-sm flex items-center justify-center border border-emerald-100">A</span>
+                                <div class="space-y-2 answer-text">
+                                    <p class="font-bold text-slate-800">
+                                        いくつでも登録可能です。学科数・コース数に制限はありません。
+                                    </p>
+                                    <p>
+                                        理学療法学科、作業療法学科、言語聴覚学科、看護学科、視能訓練学科、柔道整復学科、鍼灸学科など、複数学科・昼夜間部が併設された医療系総合専門学校・大学でも、1つのシステム内で一元管理できます。学科ごとにアクセス権を切り分けることも可能です。
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Item 8: 学生数 -->
+                    <div class="faq-item bg-white rounded-2xl border border-slate-200/90 shadow-sm overflow-hidden transition-all hover:border-cyan-300" data-category="license" id="faq-capacity-students">
+                        <button type="button" class="faq-question w-full text-left px-6 py-5 flex items-start justify-between gap-4 cursor-pointer focus:outline-none">
+                            <div class="flex items-start gap-3.5">
+                                <span class="flex-shrink-0 w-7 h-7 rounded-lg bg-blue-50 text-primary font-black text-sm flex items-center justify-center border border-blue-100">Q</span>
+                                <div>
+                                    <span class="inline-block text-[11px] font-bold px-2 py-0.5 rounded-full bg-slate-100 text-slate-600 mb-1.5">規模・ライセンス</span>
+                                    <h3 class="text-base sm:text-lg font-bold text-slate-900 leading-snug question-text">学生数は何人まで登録・管理できますか？</h3>
+                                </div>
+                            </div>
+                            <span class="faq-chevron w-8 h-8 rounded-full bg-slate-100 flex items-center justify-center text-slate-500 flex-shrink-0 transition-transform duration-300 mt-1">
+                                <i class="fas fa-chevron-down text-xs"></i>
+                            </span>
+                        </button>
+                        <div class="faq-answer hidden px-6 pb-6 pt-2 text-slate-600 text-sm leading-relaxed border-t border-slate-100">
+                            <div class="flex items-start gap-3 pl-1">
+                                <span class="flex-shrink-0 w-7 h-7 rounded-lg bg-emerald-50 text-emerald-600 font-black text-sm flex items-center justify-center border border-emerald-100">A</span>
+                                <div class="space-y-2 answer-text">
+                                    <p class="font-bold text-slate-800">
+                                        何人でも登録可能です。登録人数の上限はありません。
+                                    </p>
+                                    <p>
+                                        現役在学生はもちろん、過去数十年分にわたる卒業生の学事記録や国家試験成績データもアーカイブとして蓄積・高速検索できます。データ量が増えても軽快に動作するようリレーショナル設計されています。
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Item 9: 使いたい機能が限られる場合 -->
+                    <div class="faq-item bg-white rounded-2xl border border-slate-200/90 shadow-sm overflow-hidden transition-all hover:border-cyan-300" data-category="license" id="faq-partial-plans">
+                        <button type="button" class="faq-question w-full text-left px-6 py-5 flex items-start justify-between gap-4 cursor-pointer focus:outline-none">
+                            <div class="flex items-start gap-3.5">
+                                <span class="flex-shrink-0 w-7 h-7 rounded-lg bg-blue-50 text-primary font-black text-sm flex items-center justify-center border border-blue-100">Q</span>
+                                <div>
+                                    <span class="inline-block text-[11px] font-bold px-2 py-0.5 rounded-full bg-slate-100 text-slate-600 mb-1.5">規模・ライセンス</span>
+                                    <h3 class="text-base sm:text-lg font-bold text-slate-900 leading-snug question-text">使いたい機能が限られているのですが、必要な機能だけの導入はできますか？</h3>
+                                </div>
+                            </div>
+                            <span class="faq-chevron w-8 h-8 rounded-full bg-slate-100 flex items-center justify-center text-slate-500 flex-shrink-0 transition-transform duration-300 mt-1">
+                                <i class="fas fa-chevron-down text-xs"></i>
+                            </span>
+                        </button>
+                        <div class="faq-answer hidden px-6 pb-6 pt-2 text-slate-600 text-sm leading-relaxed border-t border-slate-100">
+                            <div class="flex items-start gap-3 pl-1">
+                                <span class="flex-shrink-0 w-7 h-7 rounded-lg bg-emerald-50 text-emerald-600 font-black text-sm flex items-center justify-center border border-emerald-100">A</span>
+                                <div class="space-y-2 answer-text">
+                                    <p class="font-bold text-slate-800">
+                                        はい、必要な機能だけを厳選したスモールスタートが可能です。
+                                    </p>
+                                    <p>
+                                        例えば「国家試験対策アプリだけを使いたい」「臨床実習ポータル（INTEVE LINK）だけを導入したい」「学事と出席管理だけ導入したい」といったご要望に対応し、使いたい機能に合わせた無駄のない料金プランをご提示いたします。まずは部分導入し、翌年度以降に他業務へ拡大していく運用もおすすめです。
+                                    </p>
+                                    <div class="pt-1">
+                                        <a href="plan.html" class="inline-flex items-center gap-1.5 text-xs font-bold text-secondary hover:text-primary transition-colors">
+                                            <span>選べる4つの契約プランを見る</span>
+                                            <i class="fas fa-arrow-right text-[10px]"></i>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <!-- ================= Category 3: 連携・データ移行 ================= -->
+
+                    <!-- Item 10: 既存システム連動 -->
+                    <div class="faq-item bg-white rounded-2xl border border-slate-200/90 shadow-sm overflow-hidden transition-all hover:border-cyan-300" data-category="integration" id="faq-legacy-system">
+                        <button type="button" class="faq-question w-full text-left px-6 py-5 flex items-start justify-between gap-4 cursor-pointer focus:outline-none">
+                            <div class="flex items-start gap-3.5">
+                                <span class="flex-shrink-0 w-7 h-7 rounded-lg bg-blue-50 text-primary font-black text-sm flex items-center justify-center border border-blue-100">Q</span>
+                                <div>
+                                    <span class="inline-block text-[11px] font-bold px-2 py-0.5 rounded-full bg-slate-100 text-slate-600 mb-1.5">連携・データ移行</span>
+                                    <h3 class="text-base sm:text-lg font-bold text-slate-900 leading-snug question-text">現在使っている学校内の既存システムやデータベースと連動できますか？</h3>
+                                </div>
+                            </div>
+                            <span class="faq-chevron w-8 h-8 rounded-full bg-slate-100 flex items-center justify-center text-slate-500 flex-shrink-0 transition-transform duration-300 mt-1">
+                                <i class="fas fa-chevron-down text-xs"></i>
+                            </span>
+                        </button>
+                        <div class="faq-answer hidden px-6 pb-6 pt-2 text-slate-600 text-sm leading-relaxed border-t border-slate-100">
+                            <div class="flex items-start gap-3 pl-1">
+                                <span class="flex-shrink-0 w-7 h-7 rounded-lg bg-emerald-50 text-emerald-600 font-black text-sm flex items-center justify-center border border-emerald-100">A</span>
+                                <div class="space-y-2.5 answer-text">
+                                    <p class="font-bold text-slate-800">
+                                        はい、連動可能です。
+                                    </p>
+                                    <p>
+                                        <strong>【継続的なリアルタイム連動の場合】</strong><br>
+                                        既存システムの運用会社様・システムベンダー様との仕様確認・APIやデータ中間テーブルの調整が必要となりますが、技術的に連動構築が可能です。
+                                    </p>
+                                    <p>
+                                        <strong>【初期移行・一括インポートの場合】</strong><br>
+                                        現在稼働中のシステムやサーバーから書き出されたCSVやExcelデータがあれば、弊社にて変換スクリプトを組み、INTEVE SCHOOL側へ安全に一括移行・取り込み作業を行います。
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Item 11: Googleフォーム等との連動 -->
+                    <div class="faq-item bg-white rounded-2xl border border-slate-200/90 shadow-sm overflow-hidden transition-all hover:border-cyan-300" data-category="integration" id="faq-google-forms">
+                        <button type="button" class="faq-question w-full text-left px-6 py-5 flex items-start justify-between gap-4 cursor-pointer focus:outline-none">
+                            <div class="flex items-start gap-3.5">
+                                <span class="flex-shrink-0 w-7 h-7 rounded-lg bg-blue-50 text-primary font-black text-sm flex items-center justify-center border border-blue-100">Q</span>
+                                <div>
+                                    <span class="inline-block text-[11px] font-bold px-2 py-0.5 rounded-full bg-slate-100 text-slate-600 mb-1.5">連携・データ移行</span>
+                                    <h3 class="text-base sm:text-lg font-bold text-slate-900 leading-snug question-text">Googleフォームなどのオンラインフォームと連動できますか？</h3>
+                                </div>
+                            </div>
+                            <span class="faq-chevron w-8 h-8 rounded-full bg-slate-100 flex items-center justify-center text-slate-500 flex-shrink-0 transition-transform duration-300 mt-1">
+                                <i class="fas fa-chevron-down text-xs"></i>
+                            </span>
+                        </button>
+                        <div class="faq-answer hidden px-6 pb-6 pt-2 text-slate-600 text-sm leading-relaxed border-t border-slate-100">
+                            <div class="flex items-start gap-3 pl-1">
+                                <span class="flex-shrink-0 w-7 h-7 rounded-lg bg-emerald-50 text-emerald-600 font-black text-sm flex items-center justify-center border border-emerald-100">A</span>
+                                <div class="space-y-2 answer-text">
+                                    <p class="font-bold text-slate-800">
+                                        はい、単発の集計作業でも継続的な自動連動でも柔軟に対応できます。
+                                    </p>
+                                    <p>
+                                        オープンキャンパス参加申し込み、アンケート回収、学生からの各種申請などのGoogleフォーム回答データを、スプレッドシートやAPI・Webhookを経由してINTEVE SCHOOLへ直接自動同期させることが可能です。教員が手入力で転記する手間を完全にゼロにできます。
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Item 12: 代理データ入力 -->
+                    <div class="faq-item bg-white rounded-2xl border border-slate-200/90 shadow-sm overflow-hidden transition-all hover:border-cyan-300" data-category="integration" id="faq-data-import-service">
+                        <button type="button" class="faq-question w-full text-left px-6 py-5 flex items-start justify-between gap-4 cursor-pointer focus:outline-none">
+                            <div class="flex items-start gap-3.5">
+                                <span class="flex-shrink-0 w-7 h-7 rounded-lg bg-blue-50 text-primary font-black text-sm flex items-center justify-center border border-blue-100">Q</span>
+                                <div>
+                                    <span class="inline-block text-[11px] font-bold px-2 py-0.5 rounded-full bg-slate-100 text-slate-600 mb-1.5">連携・データ移行</span>
+                                    <h3 class="text-base sm:text-lg font-bold text-slate-900 leading-snug question-text">初期導入時に過去データや名簿の入力を代理で行ってもらえますか？</h3>
+                                </div>
+                            </div>
+                            <span class="faq-chevron w-8 h-8 rounded-full bg-slate-100 flex items-center justify-center text-slate-500 flex-shrink-0 transition-transform duration-300 mt-1">
+                                <i class="fas fa-chevron-down text-xs"></i>
+                            </span>
+                        </button>
+                        <div class="faq-answer hidden px-6 pb-6 pt-2 text-slate-600 text-sm leading-relaxed border-t border-slate-100">
+                            <div class="flex items-start gap-3 pl-1">
+                                <span class="flex-shrink-0 w-7 h-7 rounded-lg bg-emerald-50 text-emerald-600 font-black text-sm flex items-center justify-center border border-emerald-100">A</span>
+                                <div class="space-y-2 answer-text">
+                                    <p class="font-bold text-slate-800">
+                                        はい、初期導入時のデータ投入は弊社にて一括対応いたします。
+                                    </p>
+                                    <p>
+                                        既存のExcel名簿、学生台帳、実習施設マスターデータなどをご提示いただければ、名寄せ・フォーマット整形を行った上で初期セットアップを代行します。先生方に過度な移行負荷がかからないようサポートいたします。運用開始後の追加データ移行についてもご相談に応じます。
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Item 13: Excel帳票の出力再現 -->
+                    <div class="faq-item bg-white rounded-2xl border border-slate-200/90 shadow-sm overflow-hidden transition-all hover:border-cyan-300" data-category="integration" id="faq-excel-export">
+                        <button type="button" class="faq-question w-full text-left px-6 py-5 flex items-start justify-between gap-4 cursor-pointer focus:outline-none">
+                            <div class="flex items-start gap-3.5">
+                                <span class="flex-shrink-0 w-7 h-7 rounded-lg bg-blue-50 text-primary font-black text-sm flex items-center justify-center border border-blue-100">Q</span>
+                                <div>
+                                    <span class="inline-block text-[11px] font-bold px-2 py-0.5 rounded-full bg-slate-100 text-slate-600 mb-1.5">連携・データ移行</span>
+                                    <h3 class="text-base sm:text-lg font-bold text-slate-900 leading-snug question-text">現在使っているExcel帳票や行政指定の書式はそのまま出力できますか？</h3>
+                                </div>
+                            </div>
+                            <span class="faq-chevron w-8 h-8 rounded-full bg-slate-100 flex items-center justify-center text-slate-500 flex-shrink-0 transition-transform duration-300 mt-1">
+                                <i class="fas fa-chevron-down text-xs"></i>
+                            </span>
+                        </button>
+                        <div class="faq-answer hidden px-6 pb-6 pt-2 text-slate-600 text-sm leading-relaxed border-t border-slate-100">
+                            <div class="flex items-start gap-3 pl-1">
+                                <span class="flex-shrink-0 w-7 h-7 rounded-lg bg-emerald-50 text-emerald-600 font-black text-sm flex items-center justify-center border border-emerald-100">A</span>
+                                <div class="space-y-2 answer-text">
+                                    <p class="font-bold text-slate-800">
+                                        はい、学校様が現在ご利用中のExcel書式や法定指定帳票をほぼそのまま再現可能です。
+                                    </p>
+                                    <p>
+                                        文部科学省・厚生労働省提出用の指定フォーマット、成績判定会議資料、学務課用帳票など、従来のレイアウトに合わせて印刷・PDF出力できるよう帳票レイアウトを個別にカスタマイズ設計いたします。
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <!-- ================= Category 4: INTEVE LINK ================= -->
+
+                    <!-- Item 14: INTEVE LINK追加料金 -->
+                    <div class="faq-item bg-white rounded-2xl border border-slate-200/90 shadow-sm overflow-hidden transition-all hover:border-cyan-300" data-category="inteve-link" id="faq-inteve-link-pricing">
+                        <button type="button" class="faq-question w-full text-left px-6 py-5 flex items-start justify-between gap-4 cursor-pointer focus:outline-none">
+                            <div class="flex items-start gap-3.5">
+                                <span class="flex-shrink-0 w-7 h-7 rounded-lg bg-cyan-50 text-cyan-600 font-black text-sm flex items-center justify-center border border-cyan-100">Q</span>
+                                <div>
+                                    <span class="inline-block text-[11px] font-bold px-2 py-0.5 rounded-full bg-cyan-50 text-cyan-700 mb-1.5 border border-cyan-200">INTEVE LINK</span>
+                                    <h3 class="text-base sm:text-lg font-bold text-slate-900 leading-snug question-text">臨床実習ポータル『INTEVE LINK』は追加料金が必要ですか？</h3>
+                                </div>
+                            </div>
+                            <span class="faq-chevron w-8 h-8 rounded-full bg-slate-100 flex items-center justify-center text-slate-500 flex-shrink-0 transition-transform duration-300 mt-1">
+                                <i class="fas fa-chevron-down text-xs"></i>
+                            </span>
+                        </button>
+                        <div class="faq-answer hidden px-6 pb-6 pt-2 text-slate-600 text-sm leading-relaxed border-t border-slate-100">
+                            <div class="flex items-start gap-3 pl-1">
+                                <span class="flex-shrink-0 w-7 h-7 rounded-lg bg-emerald-50 text-emerald-600 font-black text-sm flex items-center justify-center border border-emerald-100">A</span>
+                                <div class="space-y-3 answer-text">
+                                    <p class="font-bold text-slate-800">
+                                        はい、INTEVE LINKは外部クラウドサーバーおよび三者通信インフラを利用するため追加料金を頂戴しております。
+                                    </p>
+                                    <div class="bg-cyan-50/70 p-4 rounded-xl border border-cyan-200 text-xs sm:text-sm">
+                                        <div class="font-bold text-cyan-900 mb-1 flex items-center gap-1.5">
+                                            <i class="fas fa-check-circle text-cyan-600"></i>
+                                            <span>学生数・指導者数・施設数による従量課金はありません（安心の定額制）</span>
+                                        </div>
+                                        <p class="text-slate-700 leading-relaxed">
+                                            一般的な実習管理システムでは「学生1人あたり月額◯◯円」「登録施設数◯◯件まで」といった課金体系が多いですが、INTEVE LINKは<strong>学校単位の定額ライセンス</strong>です。実習生が増えても、連携する病院・施設が何百施設あっても追加課金は発生しません。
+                                        </p>
+                                    </div>
+                                    <div class="pt-1 flex flex-wrap gap-3">
+                                        <a href="inteve_link.html" class="inline-flex items-center gap-1.5 text-xs font-bold text-cyan-600 hover:text-cyan-700">
+                                            <span>INTEVE LINK 特設ページを見る</span>
+                                            <i class="fas fa-arrow-right text-[10px]"></i>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Item 15: INTEVE LINKでの施設側コスト -->
+                    <div class="faq-item bg-white rounded-2xl border border-slate-200/90 shadow-sm overflow-hidden transition-all hover:border-cyan-300" data-category="inteve-link" id="faq-inteve-link-facility-cost">
+                        <button type="button" class="faq-question w-full text-left px-6 py-5 flex items-start justify-between gap-4 cursor-pointer focus:outline-none">
+                            <div class="flex items-start gap-3.5">
+                                <span class="flex-shrink-0 w-7 h-7 rounded-lg bg-cyan-50 text-cyan-600 font-black text-sm flex items-center justify-center border border-cyan-100">Q</span>
+                                <div>
+                                    <span class="inline-block text-[11px] font-bold px-2 py-0.5 rounded-full bg-cyan-50 text-cyan-700 mb-1.5 border border-cyan-200">INTEVE LINK</span>
+                                    <h3 class="text-base sm:text-lg font-bold text-slate-900 leading-snug question-text">実習先の病院・施設側にも費用や特別なソフトウェアが必要ですか？</h3>
+                                </div>
+                            </div>
+                            <span class="faq-chevron w-8 h-8 rounded-full bg-slate-100 flex items-center justify-center text-slate-500 flex-shrink-0 transition-transform duration-300 mt-1">
+                                <i class="fas fa-chevron-down text-xs"></i>
+                            </span>
+                        </button>
+                        <div class="faq-answer hidden px-6 pb-6 pt-2 text-slate-600 text-sm leading-relaxed border-t border-slate-100">
+                            <div class="flex items-start gap-3 pl-1">
+                                <span class="flex-shrink-0 w-7 h-7 rounded-lg bg-emerald-50 text-emerald-600 font-black text-sm flex items-center justify-center border border-emerald-100">A</span>
+                                <div class="space-y-2 answer-text">
+                                    <p class="font-bold text-slate-800">
+                                        いいえ、実習施設側の費用負担や専用ソフトのインストールは一切不要です。
+                                    </p>
+                                    <p>
+                                        臨床実習指導者の先生方は、普段病院でお使いのPC・タブレット・スマートフォンの標準ブラウザ（Safari、Chrome、Edge等）から安全な専用ログインURLを開くだけで、実習日誌の確認や承諾書の電子受領が行えます。施設側に面倒な導入設定や金銭的負担をお願いすることはありません。
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <!-- ================= Category 5: 導入・保守サポート ================= -->
+
+                    <!-- Item 16: 機能追加 -->
+                    <div class="faq-item bg-white rounded-2xl border border-slate-200/90 shadow-sm overflow-hidden transition-all hover:border-cyan-300" data-category="support" id="faq-custom-features">
+                        <button type="button" class="faq-question w-full text-left px-6 py-5 flex items-start justify-between gap-4 cursor-pointer focus:outline-none">
+                            <div class="flex items-start gap-3.5">
+                                <span class="flex-shrink-0 w-7 h-7 rounded-lg bg-blue-50 text-primary font-black text-sm flex items-center justify-center border border-blue-100">Q</span>
+                                <div>
+                                    <span class="inline-block text-[11px] font-bold px-2 py-0.5 rounded-full bg-slate-100 text-slate-600 mb-1.5">導入・保守サポート</span>
+                                    <h3 class="text-base sm:text-lg font-bold text-slate-900 leading-snug question-text">自校独自の運用に合わせた機能追加やカスタマイズは可能ですか？</h3>
+                                </div>
+                            </div>
+                            <span class="faq-chevron w-8 h-8 rounded-full bg-slate-100 flex items-center justify-center text-slate-500 flex-shrink-0 transition-transform duration-300 mt-1">
+                                <i class="fas fa-chevron-down text-xs"></i>
+                            </span>
+                        </button>
+                        <div class="faq-answer hidden px-6 pb-6 pt-2 text-slate-600 text-sm leading-relaxed border-t border-slate-100">
+                            <div class="flex items-start gap-3 pl-1">
+                                <span class="flex-shrink-0 w-7 h-7 rounded-lg bg-emerald-50 text-emerald-600 font-black text-sm flex items-center justify-center border border-emerald-100">A</span>
+                                <div class="space-y-2 answer-text">
+                                    <p class="font-bold text-slate-800">
+                                        はい、喜んで対応いたします。
+                                    </p>
+                                    <p>
+                                        INTEVE SCHOOLの最大の強みは「FileMaker基盤ならではの圧倒的なアジリティ（迅速な改修力）」です。パッケージソフトのように「仕様だから変更できない」と諦めていただく必要はありません。学校ごとの独自ルール、新しい評価項目の新設、特別帳票の追加など、規模やご要望に応じて柔軟にご相談の上でスピーディーに開発・実装いたします。
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Item 17: 導入時現地訪問 -->
+                    <div class="faq-item bg-white rounded-2xl border border-slate-200/90 shadow-sm overflow-hidden transition-all hover:border-cyan-300" data-category="support" id="faq-on-site-visit">
+                        <button type="button" class="faq-question w-full text-left px-6 py-5 flex items-start justify-between gap-4 cursor-pointer focus:outline-none">
+                            <div class="flex items-start gap-3.5">
+                                <span class="flex-shrink-0 w-7 h-7 rounded-lg bg-blue-50 text-primary font-black text-sm flex items-center justify-center border border-blue-100">Q</span>
+                                <div>
+                                    <span class="inline-block text-[11px] font-bold px-2 py-0.5 rounded-full bg-slate-100 text-slate-600 mb-1.5">導入・保守サポート</span>
+                                    <h3 class="text-base sm:text-lg font-bold text-slate-900 leading-snug question-text">導入の際は学校まで直接来てくれますか？</h3>
+                                </div>
+                            </div>
+                            <span class="faq-chevron w-8 h-8 rounded-full bg-slate-100 flex items-center justify-center text-slate-500 flex-shrink-0 transition-transform duration-300 mt-1">
+                                <i class="fas fa-chevron-down text-xs"></i>
+                            </span>
+                        </button>
+                        <div class="faq-answer hidden px-6 pb-6 pt-2 text-slate-600 text-sm leading-relaxed border-t border-slate-100">
+                            <div class="flex items-start gap-3 pl-1">
+                                <span class="flex-shrink-0 w-7 h-7 rounded-lg bg-emerald-50 text-emerald-600 font-black text-sm flex items-center justify-center border border-emerald-100">A</span>
+                                <div class="space-y-2 answer-text">
+                                    <p class="font-bold text-slate-800">
+                                        はい、直接現地へお伺いいたします。
+                                    </p>
+                                    <p>
+                                        初期導入時の環境設定や教職員様向けの操作レクチャー、教員会議でのご説明など、ご要望に応じて直接貴校へ訪問し、face-to-faceで丁寧に伴走サポートいたします（※ご都合に合わせてオンラインと対面の併用も可能です）。
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Item 18: 相談窓口 -->
+                    <div class="faq-item bg-white rounded-2xl border border-slate-200/90 shadow-sm overflow-hidden transition-all hover:border-cyan-300" data-category="support" id="faq-contact-channels">
+                        <button type="button" class="faq-question w-full text-left px-6 py-5 flex items-start justify-between gap-4 cursor-pointer focus:outline-none">
+                            <div class="flex items-start gap-3.5">
+                                <span class="flex-shrink-0 w-7 h-7 rounded-lg bg-blue-50 text-primary font-black text-sm flex items-center justify-center border border-blue-100">Q</span>
+                                <div>
+                                    <span class="inline-block text-[11px] font-bold px-2 py-0.5 rounded-full bg-slate-100 text-slate-600 mb-1.5">導入・保守サポート</span>
+                                    <h3 class="text-base sm:text-lg font-bold text-slate-900 leading-snug question-text">導入後に困ったとき、どのような方法で相談できますか？</h3>
+                                </div>
+                            </div>
+                            <span class="faq-chevron w-8 h-8 rounded-full bg-slate-100 flex items-center justify-center text-slate-500 flex-shrink-0 transition-transform duration-300 mt-1">
+                                <i class="fas fa-chevron-down text-xs"></i>
+                            </span>
+                        </button>
+                        <div class="faq-answer hidden px-6 pb-6 pt-2 text-slate-600 text-sm leading-relaxed border-t border-slate-100">
+                            <div class="flex items-start gap-3 pl-1">
+                                <span class="flex-shrink-0 w-7 h-7 rounded-lg bg-emerald-50 text-emerald-600 font-black text-sm flex items-center justify-center border border-emerald-100">A</span>
+                                <div class="space-y-2 answer-text">
+                                    <p class="font-bold text-slate-800">
+                                        公式LINE、お電話、メール、オンライン通話（Zoom / Teams）など、貴校が連絡しやすい方法でいつでも対応いたします。
+                                    </p>
+                                    <p>
+                                        「今この画面でエラーが出た」「この数字はどう集計すればいい？」といった現場のリアルタイムな疑問も、公式LINEなら画面の写真や動画を送るだけですぐに共有・解決できます。堅苦しいチケット制ではなく、現場の教員目線でスピーディーに対応いたします。
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Item 19: バグ対応・リモート保守 -->
+                    <div class="faq-item bg-white rounded-2xl border border-slate-200/90 shadow-sm overflow-hidden transition-all hover:border-cyan-300" data-category="support" id="faq-bug-hotfix">
+                        <button type="button" class="faq-question w-full text-left px-6 py-5 flex items-start justify-between gap-4 cursor-pointer focus:outline-none">
+                            <div class="flex items-start gap-3.5">
+                                <span class="flex-shrink-0 w-7 h-7 rounded-lg bg-blue-50 text-primary font-black text-sm flex items-center justify-center border border-blue-100">Q</span>
+                                <div>
+                                    <span class="inline-block text-[11px] font-bold px-2 py-0.5 rounded-full bg-slate-100 text-slate-600 mb-1.5">導入・保守サポート</span>
+                                    <h3 class="text-base sm:text-lg font-bold text-slate-900 leading-snug question-text">不具合（バグ）や予期せぬエラーが発生したときはどう対応しますか？</h3>
+                                </div>
+                            </div>
+                            <span class="faq-chevron w-8 h-8 rounded-full bg-slate-100 flex items-center justify-center text-slate-500 flex-shrink-0 transition-transform duration-300 mt-1">
+                                <i class="fas fa-chevron-down text-xs"></i>
+                            </span>
+                        </button>
+                        <div class="faq-answer hidden px-6 pb-6 pt-2 text-slate-600 text-sm leading-relaxed border-t border-slate-100">
+                            <div class="flex items-start gap-3 pl-1">
+                                <span class="flex-shrink-0 w-7 h-7 rounded-lg bg-emerald-50 text-emerald-600 font-black text-sm flex items-center justify-center border border-emerald-100">A</span>
+                                <div class="space-y-2 answer-text">
+                                    <p class="font-bold text-slate-800">
+                                        リモート接続により、可能な限り早急に調査・修正対応いたします。
+                                    </p>
+                                    <p>
+                                        運用開始後は、オンライン経由でリモートメンテナンスを実施できます（※学校側のセキュリティ許可およびVPN等の設定対応が必要です）。万が一不具合が判明した場合でも、現地訪問を待たずに即座にスクリプトや定義をホットフィックス（緊急修正）し、教務運営への支障を最小限に抑えます。
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Item 20: マニュアルボタン -->
+                    <div class="faq-item bg-white rounded-2xl border border-slate-200/90 shadow-sm overflow-hidden transition-all hover:border-cyan-300" data-category="support" id="faq-manual-access">
+                        <button type="button" class="faq-question w-full text-left px-6 py-5 flex items-start justify-between gap-4 cursor-pointer focus:outline-none">
+                            <div class="flex items-start gap-3.5">
+                                <span class="flex-shrink-0 w-7 h-7 rounded-lg bg-blue-50 text-primary font-black text-sm flex items-center justify-center border border-blue-100">Q</span>
+                                <div>
+                                    <span class="inline-block text-[11px] font-bold px-2 py-0.5 rounded-full bg-slate-100 text-slate-600 mb-1.5">導入・保守サポート</span>
+                                    <h3 class="text-base sm:text-lg font-bold text-slate-900 leading-snug question-text">画面の使い方が分からなくなったときはどう調べればよいですか？</h3>
+                                </div>
+                            </div>
+                            <span class="faq-chevron w-8 h-8 rounded-full bg-slate-100 flex items-center justify-center text-slate-500 flex-shrink-0 transition-transform duration-300 mt-1">
+                                <i class="fas fa-chevron-down text-xs"></i>
+                            </span>
+                        </button>
+                        <div class="faq-answer hidden px-6 pb-6 pt-2 text-slate-600 text-sm leading-relaxed border-t border-slate-100">
+                            <div class="flex items-start gap-3 pl-1">
+                                <span class="flex-shrink-0 w-7 h-7 rounded-lg bg-emerald-50 text-emerald-600 font-black text-sm flex items-center justify-center border border-emerald-100">A</span>
+                                <div class="space-y-2 answer-text">
+                                    <p class="font-bold text-slate-800">
+                                        各画面レイアウト内に配置されている「マニュアル」ボタンをワンクリックするだけです。
+                                    </p>
+                                    <p>
+                                        ボタンを押すと自動的にブラウザが立ち上がり、現在開いている画面専用の操作マニュアル・解説ページ（<a href="https://manual.creativesd.net/" target="_blank" rel="noopener noreferrer" class="text-secondary hover:underline font-semibold">公式オンラインマニュアル</a>）が直接開きます。分厚い冊子をめくる必要もなく、初めて使う先生や非常勤の先生でも迷わず直感的に操作いただけます。
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Item 21: 導入スケジュール -->
+                    <div class="faq-item bg-white rounded-2xl border border-slate-200/90 shadow-sm overflow-hidden transition-all hover:border-cyan-300" data-category="support" id="faq-lead-time">
+                        <button type="button" class="faq-question w-full text-left px-6 py-5 flex items-start justify-between gap-4 cursor-pointer focus:outline-none">
+                            <div class="flex items-start gap-3.5">
+                                <span class="flex-shrink-0 w-7 h-7 rounded-lg bg-blue-50 text-primary font-black text-sm flex items-center justify-center border border-blue-100">Q</span>
+                                <div>
+                                    <span class="inline-block text-[11px] font-bold px-2 py-0.5 rounded-full bg-slate-100 text-slate-600 mb-1.5">導入・保守サポート</span>
+                                    <h3 class="text-base sm:text-lg font-bold text-slate-900 leading-snug question-text">問い合わせから導入・稼動開始までにどのくらいの期間がかかりますか？</h3>
+                                </div>
+                            </div>
+                            <span class="faq-chevron w-8 h-8 rounded-full bg-slate-100 flex items-center justify-center text-slate-500 flex-shrink-0 transition-transform duration-300 mt-1">
+                                <i class="fas fa-chevron-down text-xs"></i>
+                            </span>
+                        </button>
+                        <div class="faq-answer hidden px-6 pb-6 pt-2 text-slate-600 text-sm leading-relaxed border-t border-slate-100">
+                            <div class="flex items-start gap-3 pl-1">
+                                <span class="flex-shrink-0 w-7 h-7 rounded-lg bg-emerald-50 text-emerald-600 font-black text-sm flex items-center justify-center border border-emerald-100">A</span>
+                                <div class="space-y-2 answer-text">
+                                    <p class="font-bold text-slate-800">
+                                        標準的な基本構成であれば、最短2週間〜1ヶ月程度で本稼動が可能です。
+                                    </p>
+                                    <p>
+                                        既存データの移行や学校独自のカスタマイズ開発がある場合でも、通常1〜2ヶ月程度でスムーズに導入いただけます。新年度（4月）スタートに合わせた導入はもちろん、年度途中からの実習対策・国試対策に絞った導入も柔軟に承っております。
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Item 22: デモ・体験 -->
+                    <div class="faq-item bg-white rounded-2xl border border-slate-200/90 shadow-sm overflow-hidden transition-all hover:border-cyan-300" data-category="support" id="faq-demo-request">
+                        <button type="button" class="faq-question w-full text-left px-6 py-5 flex items-start justify-between gap-4 cursor-pointer focus:outline-none">
+                            <div class="flex items-start gap-3.5">
+                                <span class="flex-shrink-0 w-7 h-7 rounded-lg bg-blue-50 text-primary font-black text-sm flex items-center justify-center border border-blue-100">Q</span>
+                                <div>
+                                    <span class="inline-block text-[11px] font-bold px-2 py-0.5 rounded-full bg-slate-100 text-slate-600 mb-1.5">導入・保守サポート</span>
+                                    <h3 class="text-base sm:text-lg font-bold text-slate-900 leading-snug question-text">導入前に実際の画面やデモを見ることはできますか？</h3>
+                                </div>
+                            </div>
+                            <span class="faq-chevron w-8 h-8 rounded-full bg-slate-100 flex items-center justify-center text-slate-500 flex-shrink-0 transition-transform duration-300 mt-1">
+                                <i class="fas fa-chevron-down text-xs"></i>
+                            </span>
+                        </button>
+                        <div class="faq-answer hidden px-6 pb-6 pt-2 text-slate-600 text-sm leading-relaxed border-t border-slate-100">
+                            <div class="flex items-start gap-3 pl-1">
+                                <span class="flex-shrink-0 w-7 h-7 rounded-lg bg-emerald-50 text-emerald-600 font-black text-sm flex items-center justify-center border border-emerald-100">A</span>
+                                <div class="space-y-2 answer-text">
+                                    <p class="font-bold text-slate-800">
+                                        はい、オンラインまたは現地での実機デモ実演を随時無料で承っております。
+                                    </p>
+                                    <p>
+                                        Zoom等のオンライン通話にて、実際の画面を共有しながら「国試問題の取り込み」「実習マッチングの操作感」「成績集計の瞬発力」などをご体感いただけます。貴校の抱える課題をヒアリングした上で最適な活用方法をご提案いたしますので、お気軽にお問い合わせください。
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- No Results State -->
+                <div id="faq-no-results" class="hidden bg-white rounded-3xl p-12 text-center border border-slate-200 shadow-sm my-8">
+                    <div class="w-16 h-16 bg-slate-100 rounded-full flex items-center justify-center text-slate-400 text-2xl mx-auto mb-4">
+                        <i class="fas fa-search"></i>
+                    </div>
+                    <h4 class="text-lg font-bold text-slate-800 mb-2">該当するご質問が見つかりませんでした</h4>
+                    <p class="text-slate-500 text-sm max-w-md mx-auto mb-6">
+                        キーワードを変更するか、カテゴリを切り替えて再度お試しください。個別のご質問はお問い合わせフォームからも承っております。
+                    </p>
+                    <button type="button" id="faq-no-results-reset" class="inline-flex items-center gap-2 px-5 py-2.5 bg-primary text-white rounded-full text-xs font-bold hover:bg-blue-900 transition-colors">
+                        <i class="fas fa-undo"></i>
+                        <span>検索条件をリセットする</span>
+                    </button>
+                </div>
+
+                <!-- Bottom Inquiry Card -->
+                <div class="mt-16 bg-gradient-to-br from-primary to-blue-950 text-white rounded-3xl p-8 sm:p-12 shadow-xl relative overflow-hidden">
+                    <div class="absolute -right-10 -bottom-10 w-64 h-64 bg-cyan-500/10 rounded-full blur-2xl pointer-events-none"></div>
+                    <div class="relative z-10 flex flex-col md:flex-row items-center justify-between gap-8">
+                        <div class="space-y-3 text-center md:text-left">
+                            <span class="inline-block text-cyan-300 font-bold text-xs tracking-wider uppercase">Contact Support</span>
+                            <h3 class="text-2xl sm:text-3xl font-bold leading-tight">
+                                疑問やご不明点は解決しましたか？
+                            </h3>
+                            <p class="text-slate-200 text-sm max-w-xl leading-relaxed">
+                                上記に記載のない個別運用のご相談や、貴校の現在の校務フローに合わせた導入可否など、どのような些細なことでもお気軽にご相談ください。
+                            </p>
+                        </div>
+                        <div class="flex flex-col sm:flex-row items-center gap-4 flex-shrink-0 w-full md:w-auto">
+                            <a href="contact.html" class="w-full sm:w-auto text-center px-8 py-4 bg-accent hover:bg-orange-600 text-white font-bold rounded-full shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 transition-all text-sm whitespace-nowrap">
+                                <i class="fas fa-envelope mr-2"></i>お問い合わせ
+                            </a>
+                            <a href="https://lin.ee/tqB9kPc" target="_blank" rel="noopener noreferrer" class="w-full sm:w-auto text-center px-6 py-4 bg-[#06C755] hover:bg-[#05b34c] text-white font-bold rounded-full shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 transition-all text-sm whitespace-nowrap flex items-center justify-center gap-2">
+                                <i class="fab fa-line text-xl"></i>LINEで気軽に相談
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+    </main>
+
+    <div id="footer-placeholder"></div>
+
+    <script src="js/main.js?v=20260329" data-root="./"></script>
+    <script src="js/survey-widget.js?v=20260329"></script>
+
+    <!-- FAQ Search and Accordion Logic -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const searchInput = document.getElementById('faq-search-input');
+            const searchClear = document.getElementById('faq-search-clear');
+            const categoryTabs = document.querySelectorAll('.faq-tab');
+            const faqItems = document.querySelectorAll('.faq-item');
+            const visibleCountEl = document.getElementById('visible-count');
+            const noResultsEl = document.getElementById('faq-no-results');
+            const noResultsResetBtn = document.getElementById('faq-no-results-reset');
+            const resetFilterBtn = document.getElementById('reset-filter-btn');
+            const activeFilterLabel = document.getElementById('active-filter-label');
+            const expandAllBtn = document.getElementById('faq-expand-all');
+            const collapseAllBtn = document.getElementById('faq-collapse-all');
+
+            let currentCategory = 'all';
+
+            // 1. カテゴリごとの初期件数計算
+            const counts = { all: faqItems.length, environment: 0, license: 0, integration: 0, 'inteve-link': 0, support: 0 };
+            faqItems.forEach(item => {
+                const cat = item.getAttribute('data-category');
+                if (counts[cat] !== undefined) counts[cat]++;
+            });
+            Object.keys(counts).forEach(key => {
+                const el = document.getElementById(`count-${key}`);
+                if (el) el.textContent = counts[key];
+            });
+
+            // 2. アコーディオン開閉
+            faqItems.forEach(item => {
+                const questionBtn = item.querySelector('.faq-question');
+                const answerEl = item.querySelector('.faq-answer');
+                const chevron = item.querySelector('.faq-chevron i');
+
+                questionBtn.addEventListener('click', () => {
+                    const isClosed = answerEl.classList.contains('hidden');
+                    if (isClosed) {
+                        answerEl.classList.remove('hidden');
+                        chevron.style.transform = 'rotate(180deg)';
+                    } else {
+                        answerEl.classList.add('hidden');
+                        chevron.style.transform = 'rotate(0deg)';
+                    }
+                });
+            });
+
+            // 一括開閉
+            expandAllBtn.addEventListener('click', () => {
+                faqItems.forEach(item => {
+                    if (!item.classList.contains('hidden')) {
+                        const answerEl = item.querySelector('.faq-answer');
+                        const chevron = item.querySelector('.faq-chevron i');
+                        answerEl.classList.remove('hidden');
+                        chevron.style.transform = 'rotate(180deg)';
+                    }
+                });
+            });
+
+            collapseAllBtn.addEventListener('click', () => {
+                faqItems.forEach(item => {
+                    const answerEl = item.querySelector('.faq-answer');
+                    const chevron = item.querySelector('.faq-chevron i');
+                    answerEl.classList.add('hidden');
+                    chevron.style.transform = 'rotate(0deg)';
+                });
+            });
+
+            // 3. フィルタリング実行関数
+            function filterFaqs() {
+                const query = (searchInput.value || '').trim().toLowerCase();
+                let visibleCount = 0;
+
+                searchClear.classList.toggle('hidden', query.length === 0);
+
+                faqItems.forEach(item => {
+                    const cat = item.getAttribute('data-category');
+                    const qText = item.querySelector('.question-text').textContent.toLowerCase();
+                    const aText = item.querySelector('.answer-text').textContent.toLowerCase();
+
+                    const matchesCategory = (currentCategory === 'all' || cat === currentCategory);
+                    const matchesQuery = !query || qText.includes(query) || aText.includes(query);
+
+                    if (matchesCategory && matchesQuery) {
+                        item.classList.remove('hidden');
+                        visibleCount++;
+
+                        // 検索語句があれば自動でアコーディオンを展開
+                        if (query) {
+                            const answerEl = item.querySelector('.faq-answer');
+                            const chevron = item.querySelector('.faq-chevron i');
+                            answerEl.classList.remove('hidden');
+                            chevron.style.transform = 'rotate(180deg)';
+                        }
+                    } else {
+                        item.classList.add('hidden');
+                    }
+                });
+
+                visibleCountEl.textContent = visibleCount;
+                noResultsEl.classList.toggle('hidden', visibleCount > 0);
+
+                // リセットボタン & ラベル制御
+                const isFiltered = (currentCategory !== 'all' || query.length > 0);
+                resetFilterBtn.classList.toggle('hidden', !isFiltered);
+
+                let label = '';
+                if (currentCategory !== 'all') {
+                    const activeTab = document.querySelector(`.faq-tab[data-category="${currentCategory}"]`);
+                    label += `【${activeTab ? activeTab.textContent.trim().split(' ')[0] : currentCategory}】`;
+                }
+                if (query) {
+                    label += ` 検索: "${query}"`;
+                }
+                activeFilterLabel.textContent = label ? `（${label}）` : '（全カテゴリ表示中）';
+            }
+
+            // 4. カテゴリ切り替え
+            categoryTabs.forEach(tab => {
+                tab.addEventListener('click', () => {
+                    categoryTabs.forEach(t => {
+                        t.classList.remove('active', 'bg-primary', 'text-white', 'shadow-md');
+                        t.classList.add('bg-white', 'text-slate-600', 'border', 'border-slate-200');
+                    });
+                    tab.classList.add('active', 'bg-primary', 'text-white', 'shadow-md');
+                    tab.classList.remove('bg-white', 'text-slate-600', 'border', 'border-slate-200');
+
+                    currentCategory = tab.getAttribute('data-category');
+                    filterFaqs();
+                });
+            });
+
+            // 5. 検索入力イベント
+            searchInput.addEventListener('input', filterFaqs);
+
+            searchClear.addEventListener('click', () => {
+                searchInput.value = '';
+                searchInput.focus();
+                filterFaqs();
+            });
+
+            // リセット共通処理
+            function resetAllFilters() {
+                searchInput.value = '';
+                currentCategory = 'all';
+                categoryTabs.forEach(t => {
+                    t.classList.remove('active', 'bg-primary', 'text-white', 'shadow-md');
+                    t.classList.add('bg-white', 'text-slate-600', 'border', 'border-slate-200');
+                });
+                const allTab = document.querySelector('.faq-tab[data-category="all"]');
+                if (allTab) {
+                    allTab.classList.add('active', 'bg-primary', 'text-white', 'shadow-md');
+                    allTab.classList.remove('bg-white', 'text-slate-600', 'border', 'border-slate-200');
+                }
+                filterFaqs();
+            }
+
+            resetFilterBtn.addEventListener('click', resetAllFilters);
+            noResultsResetBtn.addEventListener('click', resetAllFilters);
+
+            // 6. URLハッシュによる特定質問の自動スクロール & 展開（例: faq.html#faq-offline）
+            if (window.location.hash) {
+                const targetId = window.location.hash.substring(1);
+                const targetItem = document.getElementById(targetId);
+                if (targetItem) {
+                    const answerEl = targetItem.querySelector('.faq-answer');
+                    const chevron = targetItem.querySelector('.faq-chevron i');
+                    if (answerEl) {
+                        answerEl.classList.remove('hidden');
+                        if (chevron) chevron.style.transform = 'rotate(180deg)';
+                    }
+                    setTimeout(() => {
+                        targetItem.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                        targetItem.classList.add('ring-2', 'ring-cyan-400');
+                    }, 300);
+                }
+            }
+        });
+    </script>
+</body>
+</html>
