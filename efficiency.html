@@ -192,101 +192,1079 @@
 </div>
 </section>
 <!-- Deep Dive Section (Tab UI for Tables) -->
-<section class="py-20 bg-white relative overflow-hidden">
-<div class="absolute top-0 left-0 w-96 h-96 bg-secondary/5 rounded-full blur-3xl -z-10 -translate-y-1/4 -translate-x-1/4"></div>
-<div class="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl 2xl:max-w-[1560px]">
-<div class="text-center mb-10 max-w-3xl mx-auto">
-<h2 class="text-2xl sm:text-3xl md:text-4xl font-bold text-primary mb-4">臨床実習・国家試験・教務の効率比較</h2>
-<p class="text-slate-600 leading-relaxed text-sm sm:text-base">
-    年間を通して膨大な業務が集中する臨床実習（INTEVE LINK連携含む）、学生の合格を力強く支える国家試験対策、そして日々の学生管理・教務まで、具体的な作業内容と目安時間の劇的な削減効果をご覧ください。
-</p>
-</div>
-<!-- Tab Framework start -->
-<div class="mb-16">
-<!-- Tab Buttons -->
-<div class="flex justify-center border-b-2 border-slate-200 overflow-x-auto whitespace-nowrap scrollbar-hide gap-1 sm:gap-4">
-<button class="py-3.5 px-4 sm:px-6 md:px-8 text-primary font-bold border-b-4 border-secondary hover:bg-slate-50 transition-all text-sm sm:text-base md:text-lg focus:outline-none inline-flex items-center justify-center gap-2" id="btn-tab-practice" onclick="switchTab('practice')">
-<i class="fas fa-stethoscope text-secondary"></i><span>臨床実習 ＆ INTEVE LINK</span>
-</button>
-<button class="py-3.5 px-4 sm:px-6 md:px-8 text-slate-400 font-bold border-b-4 border-transparent hover:text-primary hover:bg-slate-50 transition-all text-sm sm:text-base md:text-lg focus:outline-none inline-flex items-center justify-center gap-2" id="btn-tab-exam" onclick="switchTab('exam')">
-<i class="fas fa-file-signature"></i><span>国家試験対策</span>
-</button>
-<button class="py-3.5 px-4 sm:px-6 md:px-8 text-slate-400 font-bold border-b-4 border-transparent hover:text-primary hover:bg-slate-50 transition-all text-sm sm:text-base md:text-lg focus:outline-none inline-flex items-center justify-center gap-2" id="btn-tab-student" onclick="switchTab('student')">
-<i class="fas fa-user-graduate"></i><span>学生管理・教務</span>
-</button>
-</div>
-<!-- Tab Content Area -->
-<div class="mt-8 relative">
-<!-- Exam Tab Content -->
-<div class="animate-fade-in hidden" id="tab-exam">
-<div class="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-4 gap-2">
-    <h3 class="text-xl sm:text-2xl font-bold text-primary flex items-center gap-2">
-        <i class="fas fa-file-signature text-secondary text-lg"></i>
-        業務改善目安データ（国家試験対策）
-    </h3>
-    <div class="text-xs text-slate-400 lg:hidden flex items-center gap-1 self-end sm:self-auto">
-        <i class="fas fa-arrows-alt-h text-slate-400"></i> 表は左右にスクロールできます
-    </div>
-</div>
-<div class="overflow-x-auto border-2 border-blue-100 bg-blue-50/20 rounded-2xl p-3 sm:p-5 shadow-sm"><table class="w-full text-left border-collapse border bg-white shadow-sm min-w-[880px] lg:min-w-full border-slate-200 text-xs sm:text-sm"><thead><tr><th class="p-3 sm:p-4 align-middle bg-slate-100 text-slate-800 font-bold text-center border border-slate-300">作業項目</th><th class="p-3 sm:p-4 align-middle bg-slate-100 text-slate-800 font-bold text-center border border-slate-300">詳細</th><th class="p-3 sm:p-4 align-middle bg-slate-100 text-slate-800 font-bold text-center border border-slate-300" colspan="2">昭和レトロ時代</th><th class="p-3 sm:p-4 align-middle bg-slate-100 text-slate-800 font-bold text-center border border-slate-300" colspan="2">デジタルデータのアナログ利用</th><th class="p-3 sm:p-4 align-middle bg-primary text-yellow-400 text-base sm:text-lg font-bold text-center border-t-[3px] border-t-primary border-l-[3px] border-l-primary border-r-[3px] border-r-primary border-b border-b-slate-300" colspan="2">INTEVE SCHOOL利用</th></tr>
+<section class="py-20 bg-slate-50 relative overflow-hidden">
+    <div class="absolute top-0 left-0 w-96 h-96 bg-secondary/5 rounded-full blur-3xl -z-10 -translate-y-1/4 -translate-x-1/4"></div>
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl 2xl:max-w-[1560px]">
+        <div class="text-center mb-10 max-w-3xl mx-auto">
+            <span class="inline-block py-1 px-3 rounded-full bg-blue-500/10 text-primary border border-blue-200/80 text-xs sm:text-sm font-bold tracking-widest mb-3">
+                EFFICIENCY COMPARISON
+            </span>
+            <h2 class="text-2xl sm:text-3xl md:text-4xl font-extrabold text-primary mb-4 tracking-tight">
+                臨床実習・国家試験・教務の劇的効率化
+            </h2>
+            <p class="text-slate-600 leading-relaxed text-sm sm:text-base">
+                年間を通して膨大な業務が集中する臨床実習（INTEVE LINK連携含む）、学生の合格を力強く支える国家試験対策、そして日々の学生管理・教務まで、具体的な作業内容と目安時間の劇的な削減効果をご覧ください。
+            </p>
+        </div>
+
+        <!-- Tab Framework start -->
+        <div class="mb-16">
+            <!-- Tab Buttons (Segmented Controls) -->
+            <div class="flex justify-center mb-8">
+                <div class="inline-flex p-1.5 bg-slate-200/70 rounded-2xl border border-slate-300/60 shadow-inner max-w-full overflow-x-auto gap-1.5 scrollbar-hide">
+                    <button id="btn-tab-practice" onclick="switchTab('practice')" class="py-3 px-4 sm:px-6 md:px-8 text-primary font-extrabold bg-white rounded-xl shadow-md border border-slate-200/80 transition-all text-xs sm:text-sm md:text-base inline-flex items-center gap-2 whitespace-nowrap">
+                        <i class="fas fa-stethoscope text-secondary"></i><span>臨床実習 ＆ INTEVE LINK</span>
+                    </button>
+                    <button id="btn-tab-exam" onclick="switchTab('exam')" class="py-3 px-4 sm:px-6 md:px-8 text-slate-500 font-bold hover:text-primary hover:bg-white/60 rounded-xl transition-all text-xs sm:text-sm md:text-base inline-flex items-center gap-2 whitespace-nowrap">
+                        <i class="fas fa-file-signature text-slate-400"></i><span>国家試験対策</span>
+                    </button>
+                    <button id="btn-tab-student" onclick="switchTab('student')" class="py-3 px-4 sm:px-6 md:px-8 text-slate-500 font-bold hover:text-primary hover:bg-white/60 rounded-xl transition-all text-xs sm:text-sm md:text-base inline-flex items-center gap-2 whitespace-nowrap">
+                        <i class="fas fa-user-graduate text-slate-400"></i><span>学生管理・教務</span>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Tab Content Area -->
+            <div class="mt-4 relative">
+                <!-- Practice Tab Content (Default Active) -->
+                <div class="animate-fade-in block" id="tab-practice">
+                    <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-4 gap-2">
+                        <h3 class="text-xl sm:text-2xl font-extrabold text-primary flex items-center gap-2">
+                            <i class="fas fa-stethoscope text-secondary text-lg"></i>
+                            業務改善目安データ（臨床実習 ＆ INTEVE LINK）
+                        </h3>
+                        <div class="text-xs text-slate-400 lg:hidden flex items-center gap-1 self-end sm:self-auto">
+                            <i class="fas fa-arrows-alt-h text-slate-400"></i> 表は左右にスクロールできます
+                        </div>
+                    </div>
+                    <div class="overflow-x-auto bg-white rounded-3xl shadow-xl border border-slate-200 p-2 sm:p-5 relative">
+    <table class="w-full text-left border-collapse min-w-[920px] lg:min-w-full text-xs sm:text-sm">
+        <thead>
+    <tr class="border-b border-slate-200">
+        <th class="p-3.5 sm:p-4 text-center font-bold text-slate-700 bg-slate-100/90 border-r border-slate-200 w-1/12 min-w-[110px] align-middle">作業項目</th>
+        <th class="p-3.5 sm:p-4 text-center font-bold text-slate-700 bg-slate-100/90 border-r border-slate-200 w-3/12 min-w-[200px] align-middle">詳細</th>
+        <th colspan="2" class="p-3.5 sm:p-4 text-center font-bold text-slate-600 bg-slate-100/90 border-r border-slate-200 w-2/12 min-w-[150px] align-middle">
+            <span class="text-[11px] text-slate-400 block font-normal mb-0.5">全て紙と手作業</span>
+            <span>昭和レトロ時代</span>
+        </th>
+        <th colspan="2" class="p-3.5 sm:p-4 text-center font-bold text-slate-800 bg-amber-50/60 border-r border-slate-200 w-3/12 min-w-[220px] align-middle relative">
+            <span class="text-[11px] text-amber-700 block font-bold mb-0.5">Excelの手動入力・転記</span>
+            <span>デジタルデータのアナログ利用</span>
+        </th>
+        <th colspan="2" class="p-4 sm:p-5 text-center bg-gradient-to-br from-primary via-blue-900 to-primary text-white rounded-t-2xl border-t-4 border-t-secondary shadow-lg relative w-3/12 min-w-[240px] align-middle">
+            <!-- Overlapping Reduction Badge spanning boundary -->
+            <div class="absolute -top-3.5 -left-7 sm:-left-9 z-30 pointer-events-none">
+                <span class="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full bg-gradient-to-r from-rose-500 via-orange-500 to-amber-500 text-white text-xs sm:text-sm font-black shadow-xl shadow-orange-500/40 border-2 border-white ring-2 ring-orange-400/30 whitespace-nowrap transform -rotate-3">
+                    <i class="fas fa-arrow-trend-down text-yellow-200"></i>
+                    <span>実習業務 95%削減！</span>
+                </span>
+            </div>
+            <!-- Floating top badge -->
+            <div class="absolute -top-3 left-1/2 -translate-x-1/2 bg-gradient-to-r from-cyan-400 to-secondary text-slate-950 text-[11px] sm:text-xs font-black px-4 py-0.5 sm:py-1 rounded-full shadow-md whitespace-nowrap flex items-center gap-1.5 border border-white/60">
+                <i class="fas fa-sparkles text-amber-500"></i>
+                <span>圧倒的時短DX</span>
+            </div>
+            <!-- Title -->
+            <div class="text-sm sm:text-base md:text-lg font-black tracking-tight text-white flex items-center justify-center gap-2 mt-1">
+                <i class="fas fa-check-circle text-secondary"></i>
+                <span>INTEVE SCHOOL ＆ LINK利用</span>
+            </div>
+        </th>
+    </tr>
 </thead>
-<tbody class="divide-y divide-slate-200 text-slate-700 text-sm"><tr class="even:bg-blue-50/40"><td class="p-4 align-top font-bold align-top border border-slate-300" data-label="作業項目" rowspan="10">練習問題作成<br/>（40人の学生に対して50問の練習問題を作成した場合）</td><td class="p-4 align-top font-bold align-top border border-slate-300" data-label="詳細">（①20問、②10問、③10問、④10問とする）<br/>①過去問の引用</td><td class="p-4 align-top align-top border border-slate-300" data-label="昭和レトロ時代">参考書から探してコピーして貼付する</td><td class="p-4 align-top align-top border border-slate-300" data-label="昭和レトロ時代">100分（5分/1問）</td><td class="p-4 align-top align-top border border-slate-300" data-label="デジタルデータのアナログ利用">ExcelやWordでストックしている問題から検索してコピーペーストする</td><td class="p-4 align-top align-top border border-slate-300" data-label="デジタルデータのアナログ利用">40分（2分/1問）</td><td class="p-4 align-top align-top bg-[#f0f9ff] border-l-[3px] border-l-primary border-r border-r-slate-200 border-t border-t-slate-300 border-b border-b-slate-300" data-label="INTEVE SCHOOL利用">過去問データベースからキーワード・分野検索し「全件挿入」またはピンポイント挿入</td><td class="p-4 align-top align-top bg-[#f0f9ff] border-r-[3px] border-r-primary border-t border-t-slate-300 border-b border-b-slate-300 font-bold text-primary" data-label="INTEVE SCHOOL利用">2分弱（2秒/1問）</td></tr>
-<tr class="even:bg-blue-50/40"><td class="p-4 align-top font-bold align-top border border-slate-300" data-label="詳細">②過去問の選択肢入れ替え</td><td class="p-4 align-top align-top border border-slate-300" data-label="昭和レトロ時代">参考書から探してワープロで手入力する</td><td class="p-4 align-top align-top border border-slate-300" data-label="昭和レトロ時代">50分（5分/1問）</td><td class="p-4 align-top align-top border border-slate-300" data-label="デジタルデータのアナログ利用">ExcelやWordで検索・コピペしたのちに手入力で並べ替える</td><td class="p-4 align-top align-top border border-slate-300" data-label="デジタルデータのアナログ利用">30分（3分/1問）</td><td class="p-4 align-top align-top bg-[#f0f9ff] border-l-[3px] border-l-primary border-r border-r-slate-200 border-t border-t-slate-300 border-b border-b-slate-300" data-label="INTEVE SCHOOL利用">本システム上で選択肢の順番をワンクリックで入れ替え</td><td class="p-4 align-top align-top bg-[#f0f9ff] border-r-[3px] border-r-primary border-t border-t-slate-300 border-b border-b-slate-300 font-bold text-primary" data-label="INTEVE SCHOOL利用">1分弱（1秒/1問）</td></tr>
-<tr class="even:bg-blue-50/40"><td class="p-4 align-top font-bold align-top border border-slate-300" data-label="詳細">③過去問のアレンジ</td><td class="p-4 align-top align-top border border-slate-300" data-label="昭和レトロ時代">参考書から探してワープロで手入力する</td><td class="p-4 align-top align-top border border-slate-300" data-label="昭和レトロ時代">50分（5分/1問）</td><td class="p-4 align-top align-top border border-slate-300" data-label="デジタルデータのアナログ利用">ExcelやWordで手修正する</td><td class="p-4 align-top align-top border border-slate-300" data-label="デジタルデータのアナログ利用">30分（3分/1問）</td><td class="p-4 align-top align-top bg-[#f0f9ff] border-l-[3px] border-l-primary border-r border-r-slate-200 border-t border-t-slate-300 border-b border-b-slate-300" data-label="INTEVE SCHOOL利用">本システム上で設問・数値を編集</td><td class="p-4 align-top align-top bg-[#f0f9ff] border-r-[3px] border-r-primary border-t border-t-slate-300 border-b border-b-slate-300 font-bold text-primary" data-label="INTEVE SCHOOL利用">1分弱（1分/1問）</td></tr>
-<tr class="even:bg-blue-50/40"><td class="p-4 align-top font-bold align-top border border-slate-300" data-label="詳細">④新規問題の作成<br/><span class="text-xs text-secondary font-bold">★AI解説支援機能</span></td><td class="p-4 align-top align-top border border-slate-300" data-label="昭和レトロ時代">手書き・ワープロで手入力する</td><td class="p-4 align-top align-top border border-slate-300" data-label="昭和レトロ時代">50分（5分/1問）</td><td class="p-4 align-top align-top border border-slate-300" data-label="デジタルデータのアナログ利用">ExcelやWordで問題文・解説・正答を手入力する</td><td class="p-4 align-top align-top border border-slate-300" data-label="デジタルデータのアナログ利用">50分（5分/1問）</td><td class="p-4 align-top align-top bg-[#f0f9ff] border-l-[3px] border-l-primary border-r border-r-slate-200 border-t border-t-slate-300 border-b border-b-slate-300" data-label="INTEVE SCHOOL利用">システム内で新規作成。原本データを基に<strong class="text-secondary">AIが詳細解説文を自動生成</strong>し、推奨選択肢も自動判定</td><td class="p-4 align-top align-top bg-[#f0f9ff] border-r-[3px] border-r-primary border-t border-t-slate-300 border-b border-b-slate-300 font-bold text-primary" data-label="INTEVE SCHOOL利用">25分（2.5分/1問）</td></tr>
-<tr class="even:bg-blue-50/40"><td class="p-4 align-top font-bold align-top border border-slate-300" data-label="詳細">⑤カンニング防止用シャッフル問題（A/B問題）の作成</td><td class="p-4 align-top align-top border border-slate-300" data-label="昭和レトロ時代">手作業で切り貼り・再配置する</td><td class="p-4 align-top align-top border border-slate-300" data-label="昭和レトロ時代">30分</td><td class="p-4 align-top align-top border border-slate-300" data-label="デジタルデータのアナログ利用">Word等で問題番号や選択肢を手動で入れ替え、正答表を別個に作り直す</td><td class="p-4 align-top align-top border border-slate-300" data-label="デジタルデータのアナログ利用">20分</td><td class="p-4 align-top align-top bg-[#f0f9ff] border-l-[3px] border-l-primary border-r border-r-slate-200 border-t border-t-slate-300 border-b border-b-slate-300" data-label="INTEVE SCHOOL利用"><strong class="text-secondary">「ランダム番号挿入」ボタン</strong>を押すだけで問題順・正答をワンクリックでシャッフル生成</td><td class="p-4 align-top align-top bg-[#f0f9ff] border-r-[3px] border-r-primary border-t border-t-slate-300 border-b border-b-slate-300 font-bold text-primary" data-label="INTEVE SCHOOL利用">0分（数秒）</td></tr>
-<tr class="even:bg-blue-50/40"><td class="p-4 align-top font-bold align-top border border-slate-300" data-label="詳細">印刷準備　レイアウト調整</td><td class="p-4 align-top align-top border border-slate-300" data-label="昭和レトロ時代">1問ずつ調整しながら作成（体裁は最低限）</td><td class="p-4 align-top align-top border border-slate-300" data-label="昭和レトロ時代">追加30分</td><td class="p-4 align-top align-top border border-slate-300" data-label="デジタルデータのアナログ利用">改ページ位置や図のズレを手作業で微調整</td><td class="p-4 align-top align-top border border-slate-300" data-label="デジタルデータのアナログ利用">追加10分</td><td class="p-4 align-top align-top bg-[#f0f9ff] border-l-[3px] border-l-primary border-r border-r-slate-200 border-t border-t-slate-300 border-b border-b-slate-300" data-label="INTEVE SCHOOL利用">横2段組・国試本番公式仕様・プロジェクター映写用など、目的に合わせた美しいレイアウトを完全自動生成</td><td class="p-4 align-top align-top bg-[#f0f9ff] border-r-[3px] border-r-primary border-t border-t-slate-300 border-b border-b-slate-300 font-bold text-primary" data-label="INTEVE SCHOOL利用">0分</td></tr>
-<tr class="even:bg-blue-50/40"><td class="p-4 align-top font-bold align-top border border-slate-300" data-label="詳細">印刷またはWeb試験配信</td><td class="p-4 align-top align-top border border-slate-300" data-label="昭和レトロ時代">輪転機で印刷する</td><td class="p-4 align-top align-top border border-slate-300" data-label="昭和レトロ時代">5分</td><td class="p-4 align-top align-top border border-slate-300" data-label="デジタルデータのアナログ利用">Wordから印刷する / Googleフォームを手動で作るなら60分以上</td><td class="p-4 align-top align-top border border-slate-300" data-label="デジタルデータのアナログ利用">5分（フォーム化なら60分）</td><td class="p-4 align-top align-top bg-[#f0f9ff] border-l-[3px] border-l-primary border-r border-r-slate-200 border-t border-t-slate-300 border-b border-b-slate-300" data-label="INTEVE SCHOOL利用">PDFから印刷。または<strong class="text-secondary">API連携でGoogleフォームを一瞬で自動生成</strong>しQRコードを配るだけ</td><td class="p-4 align-top align-top bg-[#f0f9ff] border-r-[3px] border-r-primary border-t border-t-slate-300 border-b border-b-slate-300 font-bold text-primary" data-label="INTEVE SCHOOL利用">1〜5分</td></tr>
-<tr class="even:bg-blue-50/40"><td class="p-4 align-top font-bold align-top border border-slate-300" data-label="詳細">成績分析<br/>（学生の解答回収・採点）</td><td class="p-4 align-top align-top border border-slate-300" data-label="昭和レトロ時代">1問ずつ手作業で採点・手計算する<br/>正解率等は電卓を用いる</td><td class="p-4 align-top align-top border border-slate-300" data-label="昭和レトロ時代">400分（10分/1人）</td><td class="p-4 align-top align-top border border-slate-300" data-label="デジタルデータのアナログ利用">高いマークシート業者に委託するか、Excel手入力・関数集計</td><td class="p-4 align-top align-top border border-slate-300" data-label="デジタルデータのアナログ利用">30分〜1時間</td><td class="p-4 align-top align-top bg-[#f0f9ff] border-l-[3px] border-l-primary border-r border-r-slate-200 border-t border-t-slate-300 border-b border-b-slate-300" data-label="INTEVE SCHOOL利用"><strong class="text-secondary">普通紙マークシートを複合機でスキャンするだけで自動OCR採点！</strong> またはGoogleフォーム回答を即時自動反映</td><td class="p-4 align-top align-top bg-[#f0f9ff] border-r-[3px] border-r-primary border-t border-t-slate-300 border-b border-b-slate-300 font-bold text-primary" data-label="INTEVE SCHOOL利用">1分</td></tr>
-<tr class="even:bg-blue-50/40"><td class="p-4 align-top font-bold align-top border border-slate-300" data-label="詳細">解答分析・個別フィードバック<br/>（傾向分析・個別指導用カルテ）</td><td class="p-4 align-top align-top border border-slate-300" data-label="昭和レトロ時代">1人ずつ個別に確認して手書きで学生フィードバック資料を作成</td><td class="p-4 align-top align-top border border-slate-300" data-label="昭和レトロ時代">400分（10分/1人）</td><td class="p-4 align-top align-top border border-slate-300" data-label="デジタルデータのアナログ利用">Excelデータを加工して資料作成（Excelスキル次第）</td><td class="p-4 align-top align-top border border-slate-300" data-label="デジタルデータのアナログ利用">30分〜1時間</td><td class="p-4 align-top align-top bg-[#f0f9ff] border-l-[3px] border-l-primary border-r border-r-slate-200 border-t border-t-slate-300 border-b border-b-slate-300" data-label="INTEVE SCHOOL利用">学生ごとの<strong class="text-secondary">「振り返り・自己分析欄」付き個人カルテ</strong>、分野別レーダーチャート、過去問別正答率推移を一瞬で自動出力</td><td class="p-4 align-top align-top bg-[#f0f9ff] border-r-[3px] border-r-primary border-t border-t-slate-300 border-b border-b-slate-300 font-bold text-primary" data-label="INTEVE SCHOOL利用">5秒</td></tr>
-<tr class="even:bg-blue-50/40"><td class="p-4 align-middle font-bold bg-slate-100 align-middle text-center border border-slate-300 text-base sm:text-lg" colspan="2" data-label="作業項目・詳細">小計（試験1回あたり）</td><td class="p-4 align-top font-bold bg-slate-100 align-middle text-center border border-slate-300 text-base sm:text-lg" colspan="2" data-label="昭和レトロ時代">18.6時間</td><td class="p-4 align-top font-bold bg-slate-100 align-middle text-center border border-slate-300 text-base sm:text-lg" colspan="2" data-label="デジタルデータのアナログ利用">5.6時間</td><td class="p-4 align-top font-bold align-middle text-center border-l-[3px] border-l-primary border-r-[3px] border-r-primary border-b-[3px] border-b-primary border-t border-t-slate-300 text-base sm:text-lg bg-blue-100 text-primary" colspan="2" data-label="INTEVE SCHOOL利用">約 35分</td></tr>
-<tr class="even:bg-blue-50/40"><td class="p-4 align-top py-6 text-primary font-bold bg-white border-t border-t-slate-300 border-b border-b-slate-300 text-right text-base sm:text-lg pr-6 sm:pr-8" colspan="8">試験1回あたり約5時間の業務短縮！ 年間何十回と実施するテストの負担が激減し、学生の個別指導に時間を使えます。</td></tr>
-<tr class="even:bg-blue-50/40"><td class="p-4 align-top font-bold align-top border border-slate-300" data-label="作業項目" rowspan="4">問題文字起こし<br/>（100問の過去問題をテキスト化する場合）</td><td class="p-4 align-top font-bold align-top border border-slate-300" data-label="詳細">問題入力</td><td class="p-4 align-top align-top border border-slate-300" data-label="昭和レトロ時代">そもそもしない（参考書を使うため）</td><td class="p-4 align-top align-top border border-slate-300" data-label="昭和レトロ時代">0分</td><td class="p-4 align-top align-top border border-slate-300" data-label="デジタルデータのアナログ利用">PDFをOCR処理するか、原本から手入力する</td><td class="p-4 align-top align-top border border-slate-300" data-label="デジタルデータのアナログ利用">300分（3分/1問）</td><td class="p-4 align-top align-top bg-[#f0f9ff] border-l-[3px] border-l-primary border-r border-r-slate-200 border-t-[3px] border-t-primary border-b border-b-slate-300" data-label="INTEVE SCHOOL利用">本システムでAIが自動処理したのちに微修正</td><td class="p-4 align-top align-top bg-[#f0f9ff] border-r-[3px] border-r-primary border-t-[3px] border-t-primary border-b border-b-slate-300 font-bold text-primary" data-label="INTEVE SCHOOL利用">40分</td></tr>
-<tr class="even:bg-blue-50/40"><td class="p-4 align-top font-bold align-top border border-slate-300" data-label="詳細">図の取り込み</td><td class="p-4 align-top align-top border border-slate-300" data-label="昭和レトロ時代">そもそもしない</td><td class="p-4 align-top align-top border border-slate-300" data-label="昭和レトロ時代">0分</td><td class="p-4 align-top align-top border border-slate-300" data-label="デジタルデータのアナログ利用">PDFから切り取り、ExcelやWordに貼り付ける</td><td class="p-4 align-top align-top border border-slate-300" data-label="デジタルデータのアナログ利用">30分〜1時間</td><td class="p-4 align-top align-top bg-[#f0f9ff] border-l-[3px] border-l-primary border-r border-r-slate-200 border-t border-t-slate-300 border-b border-b-slate-300" data-label="INTEVE SCHOOL利用">本システムで画像抽出・自動取り込み</td><td class="p-4 align-top align-top bg-[#f0f9ff] border-r-[3px] border-r-primary border-t border-t-slate-300 border-b border-b-slate-300 font-bold text-primary" data-label="INTEVE SCHOOL利用">5分</td></tr>
-<tr class="even:bg-blue-50/40"><td class="p-4 align-top font-bold align-top border border-slate-300" data-label="詳細">分野の整理</td><td class="p-4 align-top align-top border border-slate-300" data-label="昭和レトロ時代">そもそもしない</td><td class="p-4 align-top align-top border border-slate-300" data-label="昭和レトロ時代">0分</td><td class="p-4 align-top align-top border border-slate-300" data-label="デジタルデータのアナログ利用">しない（使うときに探すため）</td><td class="p-4 align-top align-top border border-slate-300" data-label="デジタルデータのアナログ利用">0分</td><td class="p-4 align-top align-top bg-[#f0f9ff] border-l-[3px] border-l-primary border-r border-r-slate-200 border-t border-t-slate-300 border-b border-b-slate-300" data-label="INTEVE SCHOOL利用">本システムの科目・分野マスタへ自動紐付け</td><td class="p-4 align-top align-top bg-[#f0f9ff] border-r-[3px] border-r-primary border-t border-t-slate-300 border-b border-b-slate-300 font-bold text-primary" data-label="INTEVE SCHOOL利用">15分</td></tr>
-<tr class="even:bg-blue-50/40"><td class="p-4 align-top font-bold align-top border border-slate-300" data-label="詳細">誤字脱字チェック</td><td class="p-4 align-top align-top border border-slate-300" data-label="昭和レトロ時代">そもそもしない</td><td class="p-4 align-top align-top border border-slate-300" data-label="昭和レトロ時代">0分</td><td class="p-4 align-top align-top border border-slate-300" data-label="デジタルデータのアナログ利用">OCR精度が悪く目視校正に時間がかかる</td><td class="p-4 align-top align-top border border-slate-300" data-label="デジタルデータのアナログ利用">60分</td><td class="p-4 align-top align-top bg-[#f0f9ff] border-l-[3px] border-l-primary border-r border-r-slate-200 border-t border-t-slate-300 border-b border-b-slate-300" data-label="INTEVE SCHOOL利用">AIによる高精度校正サポート</td><td class="p-4 align-top align-top bg-[#f0f9ff] border-r-[3px] border-r-primary border-t border-t-slate-300 border-b border-b-slate-300 font-bold text-primary" data-label="INTEVE SCHOOL利用">20分</td></tr>
-<tr class="even:bg-blue-50/40"><td class="p-4 align-middle font-bold bg-slate-100 align-middle text-center border border-slate-300 text-base sm:text-lg" colspan="2" data-label="作業項目・詳細">小計（100問文字起こし）</td><td class="p-4 align-top font-bold bg-slate-100 align-middle text-center border border-slate-300 text-base sm:text-lg" colspan="2" data-label="昭和レトロ時代">0.0時間</td><td class="p-4 align-top font-bold bg-slate-100 align-middle text-center border border-slate-300 text-base sm:text-lg" colspan="2" data-label="デジタルデータのアナログ利用">6.7時間</td><td class="p-4 align-top font-bold align-middle text-center border-l-[3px] border-l-primary border-r-[3px] border-r-primary border-b-[3px] border-b-primary border-t border-t-slate-300 text-base sm:text-lg bg-blue-100 text-primary" colspan="2" data-label="INTEVE SCHOOL利用">1.3時間</td></tr>
-<tr class="even:bg-blue-50/40"><td class="p-4 align-top py-6 text-primary font-bold bg-white border-t border-t-slate-300 border-b border-b-slate-300 text-right text-base sm:text-lg pr-6 sm:pr-8" colspan="8">毎年度悩ましい過去問テキスト化も大幅短縮！ ※弊社への外注対応も承っております。</td></tr>
-<tr class="even:bg-blue-50/40"><td class="p-4 align-top py-4 bg-slate-200 font-bold text-left px-6 border border-slate-300" colspan="8" data-label="作業項目">《備考：出題分析・研究機能》</td></tr>
-<tr class="even:bg-blue-50/40"><td class="p-4 align-top font-bold align-middle border border-slate-300" data-label="作業項目">問題の傾向分析</td><td class="p-4 align-top font-bold align-middle border border-slate-300" data-label="詳細">年度別の出題傾向を研究する</td><td class="p-4 align-top align-middle text-center border border-slate-300" colspan="2" data-label="昭和レトロ時代">そもそもしないか、参考書に頼る</td><td class="p-4 align-top align-middle text-center border border-slate-300" colspan="2" data-label="デジタルデータのアナログ利用">そもそもしないか、参考書に頼る（やるとしても極めて大変）</td><td class="p-4 align-top bg-[#f0f9ff] p-4 font-bold border-t-[3px] border-t-primary border-b-[3px] border-b-primary border-l-[3px] border-l-primary border-r-[3px] border-r-primary" colspan="2" data-label="INTEVE SCHOOL利用">指定した分野の年度別問題を瞬時に比較。X2問題数、否定形問題数などの出題パターン分析や自動カウントも可能</td></tr>
-</tbody>
-</table></div>
+        <tbody class="divide-y divide-slate-200/80 text-slate-700">
+            <tr class="hover:bg-slate-50/70 transition-colors border-b border-slate-200/80">
+        <td rowspan="6" class="p-4 align-top font-bold text-slate-800 border-r border-slate-200/80 bg-white">受入依頼</td>
+        <td class="p-4 align-top font-medium text-slate-700 border-r border-slate-200/80">実習受入依頼をする施設の抽出</td>
+        <td class="p-4 align-top text-slate-500 border-r border-slate-200/80 text-xs sm:text-sm">前年度の書類から探して整理する</td>
+        <td class="p-4 align-top text-right text-slate-500 font-semibold border-r border-slate-200/80 whitespace-nowrap">2時間</td>
+        <td class="p-4 align-top text-slate-700 border-r border-slate-200/80 text-xs sm:text-sm bg-amber-50/20">前年度のデータを元に整理する</td>
+        <td class="p-4 align-top text-right text-slate-700 font-bold border-r border-slate-200/80 whitespace-nowrap bg-amber-50/20">20分</td>
+        <td class="p-4 align-top text-slate-700 bg-blue-50/30 border-l-2 border-l-primary/30 border-r border-r-slate-200/60">前年度のデータを移行する</td>
+        <td class="p-4 align-top text-right bg-blue-50/30 border-r-2 border-r-primary/30 whitespace-nowrap">
+            <div class="flex items-center justify-end gap-2">
+                <span class="inline-flex items-center px-2 py-0.5 rounded-full text-[10px] sm:text-xs font-black bg-rose-50 text-rose-600 border border-rose-200 shadow-xs whitespace-nowrap">99%減</span>
+                <span class="font-black text-primary text-sm sm:text-base">2秒</span>
+            </div>
+        </td>
+    </tr>
+<tr class="hover:bg-slate-50/70 transition-colors border-b border-slate-200/80">
+        <td class="p-4 align-top font-medium text-slate-700 border-r border-slate-200/80">実習受入の依頼文書を作成する</td>
+        <td class="p-4 align-top text-slate-500 border-r border-slate-200/80 text-xs sm:text-sm">ワープロで1から作成する</td>
+        <td class="p-4 align-top text-right text-slate-500 font-semibold border-r border-slate-200/80 whitespace-nowrap">1時間</td>
+        <td class="p-4 align-top text-slate-700 border-r border-slate-200/80 text-xs sm:text-sm bg-amber-50/20">前年度のデータを元に整理する</td>
+        <td class="p-4 align-top text-right text-slate-700 font-bold border-r border-slate-200/80 whitespace-nowrap bg-amber-50/20">10分</td>
+        <td class="p-4 align-top text-slate-700 bg-blue-50/30 border-l-2 border-l-primary/30 border-r border-r-slate-200/60">複数期を1通にまとめた公文書を自動生成</td>
+        <td class="p-4 align-top text-right bg-blue-50/30 border-r-2 border-r-primary/30 whitespace-nowrap">
+            <div class="flex items-center justify-end gap-2">
+                <span class="inline-flex items-center px-2 py-0.5 rounded-full text-[10px] sm:text-xs font-black bg-rose-50 text-rose-600 border border-rose-200 shadow-xs whitespace-nowrap">90%減</span>
+                <span class="font-black text-primary text-sm sm:text-base">1分</span>
+            </div>
+        </td>
+    </tr>
+<tr class="hover:bg-slate-50/70 transition-colors border-b border-slate-200/80">
+        <td class="p-4 align-top font-medium text-slate-700 border-r border-slate-200/80">依頼文書を印刷する</td>
+        <td class="p-4 align-top text-slate-500 border-r border-slate-200/80 text-xs sm:text-sm">原紙を印刷する</td>
+        <td class="p-4 align-top text-right text-slate-500 font-semibold border-r border-slate-200/80 whitespace-nowrap">10分</td>
+        <td class="p-4 align-top text-slate-700 border-r border-slate-200/80 text-xs sm:text-sm bg-amber-50/20">Wordファイルから印刷する</td>
+        <td class="p-4 align-top text-right text-slate-700 font-bold border-r border-slate-200/80 whitespace-nowrap bg-amber-50/20">10分</td>
+        <td class="p-4 align-top text-slate-700 bg-blue-50/30 border-l-2 border-l-primary/30 border-r border-r-slate-200/60">PDFから一括印刷<br/><span class="text-xs text-primary font-bold">（※LINK利用施設はオンライン送信0分）</span></td>
+        <td class="p-4 align-top text-right bg-blue-50/30 border-r-2 border-r-primary/30 whitespace-nowrap">
+            <div class="flex items-center justify-end gap-2">
+                <span class="inline-flex items-center px-2 py-0.5 rounded-full text-[10px] sm:text-xs font-black bg-emerald-50 text-emerald-700 border border-emerald-300 shadow-xs whitespace-nowrap">LINKは0分</span>
+                <span class="font-black text-primary text-sm sm:text-base">10分</span>
+            </div>
+        </td>
+    </tr>
+<tr class="hover:bg-slate-50/70 transition-colors border-b border-slate-200/80">
+        <td class="p-4 align-top font-medium text-slate-700 border-r border-slate-200/80">依頼文書発送のための宛名を入力する</td>
+        <td class="p-4 align-top text-slate-500 border-r border-slate-200/80 text-xs sm:text-sm">封筒に宛名を個別に手書き・印刷する</td>
+        <td class="p-4 align-top text-right text-slate-500 font-semibold border-r border-slate-200/80 whitespace-nowrap">8時間</td>
+        <td class="p-4 align-top text-slate-700 border-r border-slate-200/80 text-xs sm:text-sm bg-amber-50/20">Wordの差し込み印刷機能でタックシールを作成する</td>
+        <td class="p-4 align-top text-right text-slate-700 font-bold border-r border-slate-200/80 whitespace-nowrap bg-amber-50/20">30分</td>
+        <td class="p-4 align-top text-slate-700 bg-blue-50/30 border-l-2 border-l-primary/30 border-r border-r-slate-200/60">本システムでタックシールを一括作成</td>
+        <td class="p-4 align-top text-right bg-blue-50/30 border-r-2 border-r-primary/30 whitespace-nowrap">
+            <div class="flex items-center justify-end gap-2">
+                <span class="inline-flex items-center px-2 py-0.5 rounded-full text-[10px] sm:text-xs font-black bg-rose-50 text-rose-600 border border-rose-200 shadow-xs whitespace-nowrap">93%減</span>
+                <span class="font-black text-primary text-sm sm:text-base">2分</span>
+            </div>
+        </td>
+    </tr>
+<tr class="hover:bg-slate-50/70 transition-colors border-b border-slate-200/80 bg-blue-50/20">
+        <td class="p-4 align-top font-medium text-slate-700 border-r border-slate-200/80">
+            返信文書を回収・受入枠を集約する<br/>
+            <span class="inline-flex items-center gap-1 text-xs font-extrabold text-secondary mt-1">
+                <i class="fas fa-check-circle"></i> 回収という概念が消滅！
+            </span>
+        </td>
+        <td class="p-4 align-top text-slate-500 border-r border-slate-200/80 text-xs sm:text-sm">返信ハガキや書類から目視で台帳に転記</td>
+        <td class="p-4 align-top text-right text-slate-500 font-semibold border-r border-slate-200/80 whitespace-nowrap">5時間</td>
+        <td class="p-4 align-top text-slate-700 border-r border-slate-200/80 text-xs sm:text-sm bg-amber-50/20">返信書類を見ながらExcelファイルへ手入力転記</td>
+        <td class="p-4 align-top text-right text-slate-700 font-bold border-r border-slate-200/80 whitespace-nowrap bg-amber-50/20">2時間30分</td>
+        <td class="p-4 align-top text-slate-700 bg-blue-50/30 border-l-2 border-l-primary/30 border-r border-r-slate-200/60">
+            <strong class="text-primary font-bold">INTEVE LINKで施設側がWeb直接入力するため回収・転記業務そのものが消滅！</strong> 受入枠へリアルタイム自動同期。<br/>
+            <span class="text-xs text-slate-500 mt-1 block">※紙返送時もPDFスキャン自動分割プレビュー機能で転記時間を半減</span>
+        </td>
+        <td class="p-4 align-top text-right bg-blue-50/30 border-r-2 border-r-primary/30 whitespace-nowrap">
+            <div class="flex items-center justify-end gap-2">
+                <span class="inline-flex items-center px-2 py-0.5 rounded-full text-[10px] sm:text-xs font-black bg-emerald-50 text-emerald-700 border border-emerald-300 shadow-xs whitespace-nowrap">100%減・消滅</span>
+                <span class="font-black text-emerald-600 text-sm sm:text-base">0分</span>
+            </div>
+        </td>
+    </tr>
+<tr class="hover:bg-slate-50/70 transition-colors border-b border-slate-200/80">
+        <td class="p-4 align-top font-medium text-slate-700 border-r border-slate-200/80">臨床実習対象施設を抽出する</td>
+        <td class="p-4 align-top text-slate-500 border-r border-slate-200/80 text-xs sm:text-sm">目視で探して、紙に手作業で記入していく</td>
+        <td class="p-4 align-top text-right text-slate-500 font-semibold border-r border-slate-200/80 whitespace-nowrap">2時間</td>
+        <td class="p-4 align-top text-slate-700 border-r border-slate-200/80 text-xs sm:text-sm bg-amber-50/20">Excelで作成していたデータを元に整理する</td>
+        <td class="p-4 align-top text-right text-slate-700 font-bold border-r border-slate-200/80 whitespace-nowrap bg-amber-50/20">3分</td>
+        <td class="p-4 align-top text-slate-700 bg-blue-50/30 border-l-2 border-l-primary/30 border-r border-r-slate-200/60">本システムから検索して瞬時に出力</td>
+        <td class="p-4 align-top text-right bg-blue-50/30 border-r-2 border-r-primary/30 whitespace-nowrap">
+            <div class="flex items-center justify-end gap-2">
+                <span class="inline-flex items-center px-2 py-0.5 rounded-full text-[10px] sm:text-xs font-black bg-rose-50 text-rose-600 border border-rose-200 shadow-xs whitespace-nowrap">94%減</span>
+                <span class="font-black text-primary text-sm sm:text-base">10秒</span>
+            </div>
+        </td>
+    </tr>
+<tr class="hover:bg-slate-50/70 transition-colors border-b border-slate-200/80 bg-rose-50/20">
+        <td rowspan="2" class="p-4 align-top font-bold text-slate-800 border-r border-slate-200/80 bg-white">学生配置<br/><span class="text-xs font-normal text-slate-500">（マッチング）</span></td>
+        <td class="p-4 align-top font-medium text-slate-700 border-r border-slate-200/80">
+            学生配置を検討する<br/>
+            <span class="text-xs text-slate-500 font-normal">（希望・適性・通勤経路・宿泊先などを勘案）</span>
+        </td>
+        <td class="p-4 align-top text-slate-500 border-r border-slate-200/80 text-xs sm:text-sm">紙面上で検討。入れ替えの際はさらに手作業</td>
+        <td class="p-4 align-top text-right text-slate-500 font-semibold border-r border-slate-200/80 whitespace-nowrap">6時間</td>
+        <td class="p-4 align-top text-slate-700 border-r border-slate-200/80 text-xs sm:text-sm bg-amber-50/20">
+            学生全員の通学ルートや乗換案内を1件ずつWeb検索し、Excelシートで施設条件と突合。1人変更すると玉突き再検索が発生し丸数日間の地獄のパズル作業に
+        </td>
+        <td class="p-4 align-top text-right text-red-600 font-extrabold border-r border-slate-200/80 whitespace-nowrap bg-amber-50/20">
+            20時間<br/><span class="text-xs font-normal text-slate-500">（2〜3日）</span>
+        </td>
+        <td class="p-4 align-top text-slate-700 bg-blue-50/30 border-l-2 border-l-primary/30 border-r border-r-slate-200/60">
+            <strong class="text-primary font-bold">AI自動マッチングで叩き台を数秒生成！</strong><br/>
+            <ul class="text-xs space-y-1 text-slate-600 mt-1.5 list-disc list-inside">
+                <li><strong class="text-slate-800">NAVITIME API連携</strong>：通学ルート・最短時間・最安運賃を自動算出</li>
+                <li><strong class="text-slate-800">Booking.com API連携</strong>：周辺ホテル・宿泊費を自動取得</li>
+                <li>学生基準/施設基準の画面連動パズル（D&amp;D）と不公平感カラー判定で微調整</li>
+            </ul>
+        </td>
+        <td class="p-4 align-top text-right bg-blue-50/30 border-r-2 border-r-primary/30 whitespace-nowrap">
+            <div class="flex items-center justify-end gap-2">
+                <span class="inline-flex items-center px-2 py-0.5 rounded-full text-[10px] sm:text-xs font-black bg-rose-50 text-rose-600 border border-rose-200 shadow-xs whitespace-nowrap">97%減</span>
+                <span class="font-black text-primary text-sm sm:text-base">30分</span>
+            </div>
+        </td>
+    </tr>
+<tr class="hover:bg-slate-50/70 transition-colors border-b border-slate-200/80">
+        <td class="p-4 align-top font-medium text-slate-700 border-r border-slate-200/80">完成データの利活用・本番反映</td>
+        <td class="p-4 align-top text-slate-500 border-r border-slate-200/80 text-xs sm:text-sm">完成版を清書する</td>
+        <td class="p-4 align-top text-right text-slate-500 font-semibold border-r border-slate-200/80 whitespace-nowrap">1時間</td>
+        <td class="p-4 align-top text-slate-700 border-r border-slate-200/80 text-xs sm:text-sm bg-amber-50/20">完成版の体裁を整えて出力・各台帳へ転記</td>
+        <td class="p-4 align-top text-right text-slate-700 font-bold border-r border-slate-200/80 whitespace-nowrap bg-amber-50/20">10分</td>
+        <td class="p-4 align-top text-slate-700 bg-blue-50/30 border-l-2 border-l-primary/30 border-r border-r-slate-200/60">ボタン1つで本番実習データへ正式反映・帳票出力</td>
+        <td class="p-4 align-top text-right bg-blue-50/30 border-r-2 border-r-primary/30 whitespace-nowrap">
+            <div class="flex items-center justify-end gap-2">
+                <span class="inline-flex items-center px-2 py-0.5 rounded-full text-[10px] sm:text-xs font-black bg-rose-50 text-rose-600 border border-rose-200 shadow-xs whitespace-nowrap">98%減</span>
+                <span class="font-black text-primary text-sm sm:text-base">10秒</span>
+            </div>
+        </td>
+    </tr>
+<tr class="hover:bg-slate-50/70 transition-colors border-b border-slate-200/80">
+        <td rowspan="6" class="p-4 align-top font-bold text-slate-800 border-r border-slate-200/80 bg-white">指導者会議</td>
+        <td class="p-4 align-top font-medium text-slate-700 border-r border-slate-200/80">臨床実習指導者会議に招待する施設を抽出する</td>
+        <td class="p-4 align-top text-slate-500 border-r border-slate-200/80 text-xs sm:text-sm">紙面上で確認して、また別の紙面で作成する</td>
+        <td class="p-4 align-top text-right text-slate-500 font-semibold border-r border-slate-200/80 whitespace-nowrap">2時間</td>
+        <td class="p-4 align-top text-slate-700 border-r border-slate-200/80 text-xs sm:text-sm bg-amber-50/20">Excel上で整理する</td>
+        <td class="p-4 align-top text-right text-slate-700 font-bold border-r border-slate-200/80 whitespace-nowrap bg-amber-50/20">5分</td>
+        <td class="p-4 align-top text-slate-700 bg-blue-50/30 border-l-2 border-l-primary/30 border-r border-r-slate-200/60">受入決定施設を一発で一括抽出・自動登録</td>
+        <td class="p-4 align-top text-right bg-blue-50/30 border-r-2 border-r-primary/30 whitespace-nowrap">
+            <div class="flex items-center justify-end gap-2">
+                <span class="inline-flex items-center px-2 py-0.5 rounded-full text-[10px] sm:text-xs font-black bg-emerald-50 text-emerald-700 border border-emerald-300 shadow-xs whitespace-nowrap">自動0分</span>
+                <span class="font-black text-emerald-600 text-sm sm:text-base">0分</span>
+            </div>
+        </td>
+    </tr>
+<tr class="hover:bg-slate-50/70 transition-colors border-b border-slate-200/80">
+        <td class="p-4 align-top font-medium text-slate-700 border-r border-slate-200/80">案内文書を作成する</td>
+        <td class="p-4 align-top text-slate-500 border-r border-slate-200/80 text-xs sm:text-sm">ワープロで1から作成する</td>
+        <td class="p-4 align-top text-right text-slate-500 font-semibold border-r border-slate-200/80 whitespace-nowrap">30分</td>
+        <td class="p-4 align-top text-slate-700 border-r border-slate-200/80 text-xs sm:text-sm bg-amber-50/20">前年度のファイルを元に整理する</td>
+        <td class="p-4 align-top text-right text-slate-700 font-bold border-r border-slate-200/80 whitespace-nowrap bg-amber-50/20">2分</td>
+        <td class="p-4 align-top text-slate-700 bg-blue-50/30 border-l-2 border-l-primary/30 border-r border-r-slate-200/60">前年度のデータをワンクリックで移行</td>
+        <td class="p-4 align-top text-right bg-blue-50/30 border-r-2 border-r-primary/30 whitespace-nowrap">
+            <div class="flex items-center justify-end gap-2">
+                <span class="inline-flex items-center px-2 py-0.5 rounded-full text-[10px] sm:text-xs font-black bg-rose-50 text-rose-600 border border-rose-200 shadow-xs whitespace-nowrap">98%減</span>
+                <span class="font-black text-primary text-sm sm:text-base">2秒</span>
+            </div>
+        </td>
+    </tr>
+<tr class="hover:bg-slate-50/70 transition-colors border-b border-slate-200/80">
+        <td class="p-4 align-top font-medium text-slate-700 border-r border-slate-200/80">案内文書発送のための宛名を入力する</td>
+        <td class="p-4 align-top text-slate-500 border-r border-slate-200/80 text-xs sm:text-sm">封筒に宛名を個別に手書き・印刷する</td>
+        <td class="p-4 align-top text-right text-slate-500 font-semibold border-r border-slate-200/80 whitespace-nowrap">8時間</td>
+        <td class="p-4 align-top text-slate-700 border-r border-slate-200/80 text-xs sm:text-sm bg-amber-50/20">Wordの差し込み印刷機能でタックシールを作成する</td>
+        <td class="p-4 align-top text-right text-slate-700 font-bold border-r border-slate-200/80 whitespace-nowrap bg-amber-50/20">30分</td>
+        <td class="p-4 align-top text-slate-700 bg-blue-50/30 border-l-2 border-l-primary/30 border-r border-r-slate-200/60">本システムでタックシールを一括作成</td>
+        <td class="p-4 align-top text-right bg-blue-50/30 border-r-2 border-r-primary/30 whitespace-nowrap">
+            <div class="flex items-center justify-end gap-2">
+                <span class="inline-flex items-center px-2 py-0.5 rounded-full text-[10px] sm:text-xs font-black bg-rose-50 text-rose-600 border border-rose-200 shadow-xs whitespace-nowrap">93%減</span>
+                <span class="font-black text-primary text-sm sm:text-base">2分</span>
+            </div>
+        </td>
+    </tr>
+<tr class="hover:bg-slate-50/70 transition-colors border-b border-slate-200/80 bg-blue-50/20">
+        <td class="p-4 align-top font-medium text-slate-700 border-r border-slate-200/80">
+            返信文書を回収・出欠を集約する<br/>
+            <span class="inline-flex items-center gap-1 text-xs font-extrabold text-secondary mt-1">
+                <i class="fas fa-check-circle"></i> LINKで自動化！
+            </span>
+        </td>
+        <td class="p-4 align-top text-slate-500 border-r border-slate-200/80 text-xs sm:text-sm">返信用紙から目視で出席台帳に記入</td>
+        <td class="p-4 align-top text-right text-slate-500 font-semibold border-r border-slate-200/80 whitespace-nowrap">5時間</td>
+        <td class="p-4 align-top text-slate-700 border-r border-slate-200/80 text-xs sm:text-sm bg-amber-50/20">返信メールやFAXからExcelファイルへ手入力</td>
+        <td class="p-4 align-top text-right text-slate-700 font-bold border-r border-slate-200/80 whitespace-nowrap bg-amber-50/20">2時間30分</td>
+        <td class="p-4 align-top text-slate-700 bg-blue-50/30 border-l-2 border-l-primary/30 border-r border-r-slate-200/60">
+            <strong class="text-primary font-bold">INTEVE LINK上でオンライン出欠回答、ボタン1つで参加者名簿へ自動集約！</strong>
+        </td>
+        <td class="p-4 align-top text-right bg-blue-50/30 border-r-2 border-r-primary/30 whitespace-nowrap">
+            <div class="flex items-center justify-end gap-2">
+                <span class="inline-flex items-center px-2 py-0.5 rounded-full text-[10px] sm:text-xs font-black bg-emerald-50 text-emerald-700 border border-emerald-300 shadow-xs whitespace-nowrap">100%減・自動集約</span>
+                <span class="font-black text-emerald-600 text-sm sm:text-base">0分</span>
+            </div>
+        </td>
+    </tr>
+<tr class="hover:bg-slate-50/70 transition-colors border-b border-slate-200/80">
+        <td class="p-4 align-top font-medium text-slate-700 border-r border-slate-200/80">会議当日に必要な書類を作成する（名簿や金銭計算等）</td>
+        <td class="p-4 align-top text-slate-500 border-r border-slate-200/80 text-xs sm:text-sm">手作業で作成</td>
+        <td class="p-4 align-top text-right text-slate-500 font-semibold border-r border-slate-200/80 whitespace-nowrap">5時間</td>
+        <td class="p-4 align-top text-slate-700 border-r border-slate-200/80 text-xs sm:text-sm bg-amber-50/20">Excelデータを元に整理。修正の都度再確認が必要</td>
+        <td class="p-4 align-top text-right text-slate-700 font-bold border-r border-slate-200/80 whitespace-nowrap bg-amber-50/20">1時間</td>
+        <td class="p-4 align-top text-slate-700 bg-blue-50/30 border-l-2 border-l-primary/30 border-r border-r-slate-200/60">本システムから検索して一発出力。確認作業は不要</td>
+        <td class="p-4 align-top text-right bg-blue-50/30 border-r-2 border-r-primary/30 whitespace-nowrap">
+            <div class="flex items-center justify-end gap-2">
+                <span class="inline-flex items-center px-2 py-0.5 rounded-full text-[10px] sm:text-xs font-black bg-rose-50 text-rose-600 border border-rose-200 shadow-xs whitespace-nowrap">99%減</span>
+                <span class="font-black text-primary text-sm sm:text-base">30秒</span>
+            </div>
+        </td>
+    </tr>
+<tr class="hover:bg-slate-50/70 transition-colors border-b border-slate-200/80">
+        <td class="p-4 align-top font-medium text-slate-700 border-r border-slate-200/80">会議の議事録等を発送するための宛名を入力する</td>
+        <td class="p-4 align-top text-slate-500 border-r border-slate-200/80 text-xs sm:text-sm">封筒に宛名を個別に手書き・印刷する</td>
+        <td class="p-4 align-top text-right text-slate-500 font-semibold border-r border-slate-200/80 whitespace-nowrap">8時間</td>
+        <td class="p-4 align-top text-slate-700 border-r border-slate-200/80 text-xs sm:text-sm bg-amber-50/20">Wordの差し込み印刷機能でタックシールを作成する</td>
+        <td class="p-4 align-top text-right text-slate-700 font-bold border-r border-slate-200/80 whitespace-nowrap bg-amber-50/20">30分</td>
+        <td class="p-4 align-top text-slate-700 bg-blue-50/30 border-l-2 border-l-primary/30 border-r border-r-slate-200/60">本システムでタックシールを一括作成</td>
+        <td class="p-4 align-top text-right bg-blue-50/30 border-r-2 border-r-primary/30 whitespace-nowrap">
+            <div class="flex items-center justify-end gap-2">
+                <span class="inline-flex items-center px-2 py-0.5 rounded-full text-[10px] sm:text-xs font-black bg-rose-50 text-rose-600 border border-rose-200 shadow-xs whitespace-nowrap">93%減</span>
+                <span class="font-black text-primary text-sm sm:text-base">2分</span>
+            </div>
+        </td>
+    </tr>
+<tr class="hover:bg-slate-50/70 transition-colors border-b border-slate-200/80">
+        <td rowspan="4" class="p-4 align-top font-bold text-slate-800 border-r border-slate-200/80 bg-white">実習依頼</td>
+        <td class="p-4 align-top font-medium text-slate-700 border-r border-slate-200/80">実習生用のプロフィールを作成する</td>
+        <td class="p-4 align-top text-slate-500 border-r border-slate-200/80 text-xs sm:text-sm">顔写真はハサミで切り貼りする</td>
+        <td class="p-4 align-top text-right text-slate-500 font-semibold border-r border-slate-200/80 whitespace-nowrap">3時間</td>
+        <td class="p-4 align-top text-slate-700 border-r border-slate-200/80 text-xs sm:text-sm bg-amber-50/20">顔写真はデータ上でコピペするか印刷後に手貼り</td>
+        <td class="p-4 align-top text-right text-slate-700 font-bold border-r border-slate-200/80 whitespace-nowrap bg-amber-50/20">3時間</td>
+        <td class="p-4 align-top text-slate-700 bg-blue-50/30 border-l-2 border-l-primary/30 border-r border-r-slate-200/60">QRコード自動撮影取込機能と連動し、本システムからワンクリック出力</td>
+        <td class="p-4 align-top text-right bg-blue-50/30 border-r-2 border-r-primary/30 whitespace-nowrap">
+            <div class="flex items-center justify-end gap-2">
+                <span class="inline-flex items-center px-2 py-0.5 rounded-full text-[10px] sm:text-xs font-black bg-rose-50 text-rose-600 border border-rose-200 shadow-xs whitespace-nowrap">99%減</span>
+                <span class="font-black text-primary text-sm sm:text-base">1分</span>
+            </div>
+        </td>
+    </tr>
+<tr class="hover:bg-slate-50/70 transition-colors border-b border-slate-200/80">
+        <td class="p-4 align-top font-medium text-slate-700 border-r border-slate-200/80">実習の依頼文書を作成する</td>
+        <td class="p-4 align-top text-slate-500 border-r border-slate-200/80 text-xs sm:text-sm">ワープロで1から作成する</td>
+        <td class="p-4 align-top text-right text-slate-500 font-semibold border-r border-slate-200/80 whitespace-nowrap">3時間</td>
+        <td class="p-4 align-top text-slate-700 border-r border-slate-200/80 text-xs sm:text-sm bg-amber-50/20">前年度のファイルを元に整理する</td>
+        <td class="p-4 align-top text-right text-slate-700 font-bold border-r border-slate-200/80 whitespace-nowrap bg-amber-50/20">10分</td>
+        <td class="p-4 align-top text-slate-700 bg-blue-50/30 border-l-2 border-l-primary/30 border-r border-r-slate-200/60">前年度のデータを移行し複数実習を一括公文書化</td>
+        <td class="p-4 align-top text-right bg-blue-50/30 border-r-2 border-r-primary/30 whitespace-nowrap">
+            <div class="flex items-center justify-end gap-2">
+                <span class="inline-flex items-center px-2 py-0.5 rounded-full text-[10px] sm:text-xs font-black bg-rose-50 text-rose-600 border border-rose-200 shadow-xs whitespace-nowrap">90%減</span>
+                <span class="font-black text-primary text-sm sm:text-base">1分</span>
+            </div>
+        </td>
+    </tr>
+<tr class="hover:bg-slate-50/70 transition-colors border-b border-slate-200/80">
+        <td class="p-4 align-top font-medium text-slate-700 border-r border-slate-200/80">実習の依頼文書を確認する</td>
+        <td class="p-4 align-top text-slate-500 border-r border-slate-200/80 text-xs sm:text-sm">確実な目視確認が必要</td>
+        <td class="p-4 align-top text-right text-slate-500 font-semibold border-r border-slate-200/80 whitespace-nowrap">1時間</td>
+        <td class="p-4 align-top text-slate-700 border-r border-slate-200/80 text-xs sm:text-sm bg-amber-50/20">確実な目視確認が必要</td>
+        <td class="p-4 align-top text-right text-slate-700 font-bold border-r border-slate-200/80 whitespace-nowrap bg-amber-50/20">1時間</td>
+        <td class="p-4 align-top text-slate-700 bg-blue-50/30 border-l-2 border-l-primary/30 border-r border-r-slate-200/60">システム連携済みのため確認不要</td>
+        <td class="p-4 align-top text-right bg-blue-50/30 border-r-2 border-r-primary/30 whitespace-nowrap">
+            <div class="flex items-center justify-end gap-2">
+                <span class="inline-flex items-center px-2 py-0.5 rounded-full text-[10px] sm:text-xs font-black bg-rose-50 text-rose-600 border border-rose-200 shadow-xs whitespace-nowrap">98%減</span>
+                <span class="font-black text-primary text-sm sm:text-base">1分</span>
+            </div>
+        </td>
+    </tr>
+<tr class="hover:bg-slate-50/70 transition-colors border-b border-slate-200/80">
+        <td class="p-4 align-top font-medium text-slate-700 border-r border-slate-200/80">実習の依頼文書発送のための宛名を入力する</td>
+        <td class="p-4 align-top text-slate-500 border-r border-slate-200/80 text-xs sm:text-sm">封筒に宛名を個別に手書き・印刷する</td>
+        <td class="p-4 align-top text-right text-slate-500 font-semibold border-r border-slate-200/80 whitespace-nowrap">8時間</td>
+        <td class="p-4 align-top text-slate-700 border-r border-slate-200/80 text-xs sm:text-sm bg-amber-50/20">Wordの差し込み印刷機能でタックシールを作成する</td>
+        <td class="p-4 align-top text-right text-slate-700 font-bold border-r border-slate-200/80 whitespace-nowrap bg-amber-50/20">30分</td>
+        <td class="p-4 align-top text-slate-700 bg-blue-50/30 border-l-2 border-l-primary/30 border-r border-r-slate-200/60">本システムでタックシールを一括作成</td>
+        <td class="p-4 align-top text-right bg-blue-50/30 border-r-2 border-r-primary/30 whitespace-nowrap">
+            <div class="flex items-center justify-end gap-2">
+                <span class="inline-flex items-center px-2 py-0.5 rounded-full text-[10px] sm:text-xs font-black bg-rose-50 text-rose-600 border border-rose-200 shadow-xs whitespace-nowrap">93%減</span>
+                <span class="font-black text-primary text-sm sm:text-base">2分</span>
+            </div>
+        </td>
+    </tr>
+<tr class="hover:bg-slate-50/70 transition-colors border-b border-slate-200/80 bg-sky-50/30">
+        <td rowspan="4" class="p-4 align-top font-bold text-primary border-r border-slate-200/80 bg-white">
+            <span class="inline-block bg-primary text-white text-[11px] font-black px-2 py-0.5 rounded mr-1">注目</span>
+            実習期間中<br/>
+            <span class="text-xs font-normal text-slate-500">（INTEVE LINK）</span>
+        </td>
+        <td class="p-4 align-top font-medium text-slate-700 border-r border-slate-200/80">
+            日誌・デイリーノートの回収・確認・指導者印の管理<br/>
+            <span class="text-xs text-slate-500 font-normal">（実習生40人・全期間）</span>
+        </td>
+        <td class="p-4 align-top text-slate-500 border-r border-slate-200/80 text-xs sm:text-sm">紙の日誌を定期回収。教員が手書きで赤入れ・確認・押印</td>
+        <td class="p-4 align-top text-right text-slate-500 font-semibold border-r border-slate-200/80 whitespace-nowrap">80時間</td>
+        <td class="p-4 align-top text-slate-700 border-r border-slate-200/80 text-xs sm:text-sm bg-amber-50/20">Word等の日誌をメール送付させ、教員が1通ずつ添付を開いて確認・返信・フォルダ整理</td>
+        <td class="p-4 align-top text-right text-red-600 font-extrabold border-r border-slate-200/80 whitespace-nowrap bg-amber-50/20">30時間</td>
+        <td class="p-4 align-top text-slate-700 bg-blue-50/30 border-l-2 border-l-primary/30 border-r border-r-slate-200/60">
+            <strong class="text-primary font-bold">学生がスマホ入力（手書き写真UPも可）→ 指導者がオンラインで赤入れ・電子印。</strong> 教員はダッシュボードで全学生の提出状況を一覧即時確認＆ワンクリックPDF化
+        </td>
+        <td class="p-4 align-top text-right bg-blue-50/30 border-r-2 border-r-primary/30 whitespace-nowrap">
+            <div class="flex items-center justify-end gap-2">
+                <span class="inline-flex items-center px-2 py-0.5 rounded-full text-[10px] sm:text-xs font-black bg-rose-50 text-rose-600 border border-rose-200 shadow-xs whitespace-nowrap">93%減</span>
+                <span class="font-black text-primary text-sm sm:text-base">期間計 約2時間<br/><span class="text-xs font-normal text-slate-500">（5分/日）</span></span>
+            </div>
+        </td>
+    </tr>
+<tr class="hover:bg-slate-50/70 transition-colors border-b border-slate-200/80 bg-sky-50/30">
+        <td class="p-4 align-top font-medium text-slate-700 border-r border-slate-200/80">出席管理・総実習時間の算出・指導者サイン回収</td>
+        <td class="p-4 align-top text-slate-500 border-r border-slate-200/80 text-xs sm:text-sm">紙の出勤簿を手計算で電卓集計、押印漏れの確認、手書き転記</td>
+        <td class="p-4 align-top text-right text-slate-500 font-semibold border-r border-slate-200/80 whitespace-nowrap">10時間</td>
+        <td class="p-4 align-top text-slate-700 border-r border-slate-200/80 text-xs sm:text-sm bg-amber-50/20">Excelに入力して関数計算、押印・サインの有無を目視確認</td>
+        <td class="p-4 align-top text-right text-red-600 font-extrabold border-r border-slate-200/80 whitespace-nowrap bg-amber-50/20">5時間</td>
+        <td class="p-4 align-top text-slate-700 bg-blue-50/30 border-l-2 border-l-primary/30 border-r border-r-slate-200/60">
+            <strong class="text-primary font-bold">開始・終了時間から「総実習時間」を完全自動算出！</strong> 実習最終日に指導者画面で電子手書きサイン受領後、そのまま正式提出書類として自動保管
+        </td>
+        <td class="p-4 align-top text-right bg-blue-50/30 border-r-2 border-r-primary/30 whitespace-nowrap">
+            <div class="flex items-center justify-end gap-2">
+                <span class="inline-flex items-center px-2 py-0.5 rounded-full text-[10px] sm:text-xs font-black bg-emerald-50 text-emerald-700 border border-emerald-300 shadow-xs whitespace-nowrap">完全自動0分</span>
+                <span class="font-black text-emerald-600 text-sm sm:text-base">0分</span>
+            </div>
+        </td>
+    </tr>
+<tr class="hover:bg-slate-50/70 transition-colors border-b border-slate-200/80 bg-sky-50/30">
+        <td class="p-4 align-top font-medium text-slate-700 border-r border-slate-200/80">
+            メンタル＆コンディション管理・早期離脱防止<br/>
+            <span class="text-xs text-slate-500 font-normal">（三者間チャット連携）</span>
+        </td>
+        <td class="p-4 align-top text-slate-500 border-r border-slate-200/80 text-xs sm:text-sm">電話や訪問まで学生の異変に気づけず、問題発生後に事後対応で何日も追われる</td>
+        <td class="p-4 align-top text-right text-slate-500 font-semibold border-r border-slate-200/80 whitespace-nowrap">20時間</td>
+        <td class="p-4 align-top text-slate-700 border-r border-slate-200/80 text-xs sm:text-sm bg-amber-50/20">メール等で聞くものの本音が拾えず、すれ違いや急な離脱トラブルが発生</td>
+        <td class="p-4 align-top text-right text-red-600 font-extrabold border-r border-slate-200/80 whitespace-nowrap bg-amber-50/20">10時間</td>
+        <td class="p-4 align-top text-slate-700 bg-blue-50/30 border-l-2 border-l-primary/30 border-r border-r-slate-200/60">
+            <strong class="text-primary font-bold">毎日の体調・メンタルを5段階可視化（指導者非開示・教員限定安全設計）</strong>。アラートとメール通知付き三者チャットで不調を早期察知しトラブルを未然防止
+        </td>
+        <td class="p-4 align-top text-right bg-blue-50/30 border-r-2 border-r-primary/30 whitespace-nowrap">
+            <div class="flex items-center justify-end gap-2">
+                <span class="inline-flex items-center px-2 py-0.5 rounded-full text-[10px] sm:text-xs font-black bg-rose-50 text-rose-600 border border-rose-200 shadow-xs whitespace-nowrap">90%減</span>
+                <span class="font-black text-primary text-sm sm:text-base">期間計 約1時間<br/><span class="text-xs font-normal text-slate-500">（1日1分）</span></span>
+            </div>
+        </td>
+    </tr>
+<tr class="hover:bg-slate-50/70 transition-colors border-b border-slate-200/80 bg-sky-50/30">
+        <td class="p-4 align-top font-medium text-slate-700 border-r border-slate-200/80">到達度チェックリストの確認・承認</td>
+        <td class="p-4 align-top text-slate-500 border-r border-slate-200/80 text-xs sm:text-sm">紙の冊子チェック表を回収して手計算集計</td>
+        <td class="p-4 align-top text-right text-slate-500 font-semibold border-r border-slate-200/80 whitespace-nowrap">5時間</td>
+        <td class="p-4 align-top text-slate-700 border-r border-slate-200/80 text-xs sm:text-sm bg-amber-50/20">Excelシートを集約・転記</td>
+        <td class="p-4 align-top text-right text-slate-700 font-bold border-r border-slate-200/80 whitespace-nowrap bg-amber-50/20">2時間</td>
+        <td class="p-4 align-top text-slate-700 bg-blue-50/30 border-l-2 border-l-primary/30 border-r border-r-slate-200/60">
+            自校仕様のチェック項目を学生がスマホで「見学・模倣・実施」入力、<strong class="text-primary font-bold">指導者がその場でタップ承認</strong>。教員画面にリアルタイム反映
+        </td>
+        <td class="p-4 align-top text-right bg-blue-50/30 border-r-2 border-r-primary/30 whitespace-nowrap">
+            <div class="flex items-center justify-end gap-2">
+                <span class="inline-flex items-center px-2 py-0.5 rounded-full text-[10px] sm:text-xs font-black bg-emerald-50 text-emerald-700 border border-emerald-300 shadow-xs whitespace-nowrap">リアルタイム0分</span>
+                <span class="font-black text-emerald-600 text-sm sm:text-base">0分</span>
+            </div>
+        </td>
+    </tr>
+<tr class="hover:bg-slate-50/70 transition-colors border-b border-slate-200/80">
+        <td rowspan="2" class="p-4 align-top font-bold text-slate-800 border-r border-slate-200/80 bg-white">
+            実習終了後<br/>
+            <span class="text-xs font-normal text-slate-500">（精算・管理）</span>
+        </td>
+        <td class="p-4 align-top font-medium text-slate-700 border-r border-slate-200/80">実習指導謝礼金・経費の計算と書類作成</td>
+        <td class="p-4 align-top text-slate-500 border-r border-slate-200/80 text-xs sm:text-sm">実習台帳と施設控えを手作業で突き合わせ、重複学生を集約、口座番号を確認して手書き振込票作成</td>
+        <td class="p-4 align-top text-right text-slate-500 font-semibold border-r border-slate-200/80 whitespace-nowrap">15時間</td>
+        <td class="p-4 align-top text-slate-700 border-r border-slate-200/80 text-xs sm:text-sm bg-amber-50/20">実習データと施設マスタをExcelでVLOOKUP等で照合、重複を手作業で整理、振込依頼書や精算書を作成</td>
+        <td class="p-4 align-top text-right text-red-600 font-extrabold border-r border-slate-200/80 whitespace-nowrap bg-amber-50/20">6時間</td>
+        <td class="p-4 align-top text-slate-700 bg-blue-50/30 border-l-2 border-l-primary/30 border-r border-r-slate-200/60">
+            <strong class="text-primary font-bold">実習データから重複学生を自動集約、登録済み口座マスタと自動突合！</strong> 振込依頼書や各種経費精算書類を一括生成
+        </td>
+        <td class="p-4 align-top text-right bg-blue-50/30 border-r-2 border-r-primary/30 whitespace-nowrap">
+            <div class="flex items-center justify-end gap-2">
+                <span class="inline-flex items-center px-2 py-0.5 rounded-full text-[10px] sm:text-xs font-black bg-rose-50 text-rose-600 border border-rose-200 shadow-xs whitespace-nowrap">99%減</span>
+                <span class="font-black text-primary text-sm sm:text-base">3分</span>
+            </div>
+        </td>
+    </tr>
+<tr class="hover:bg-slate-50/70 transition-colors border-b border-slate-200/80">
+        <td class="p-4 align-top font-medium text-slate-700 border-r border-slate-200/80">巡回指導報告書の一元管理と印刷</td>
+        <td class="p-4 align-top text-slate-500 border-r border-slate-200/80 text-xs sm:text-sm">手書き報告書をファイリング・保管</td>
+        <td class="p-4 align-top text-right text-slate-500 font-semibold border-r border-slate-200/80 whitespace-nowrap">4時間</td>
+        <td class="p-4 align-top text-slate-700 border-r border-slate-200/80 text-xs sm:text-sm bg-amber-50/20">教員各自がWordで作成したファイルを学内サーバーに保存・探すのに一苦労</td>
+        <td class="p-4 align-top text-right text-slate-700 font-bold border-r border-slate-200/80 whitespace-nowrap bg-amber-50/20">2時間</td>
+        <td class="p-4 align-top text-slate-700 bg-blue-50/30 border-l-2 border-l-primary/30 border-r border-r-slate-200/60">訪問・電話・オンライン等の指導記録を一元登録。教員名や学生名で瞬時に絞り込み、統一フォーマットで即時PDF出力</td>
+        <td class="p-4 align-top text-right bg-blue-50/30 border-r-2 border-r-primary/30 whitespace-nowrap">
+            <div class="flex items-center justify-end gap-2">
+                <span class="inline-flex items-center px-2 py-0.5 rounded-full text-[10px] sm:text-xs font-black bg-rose-50 text-rose-600 border border-rose-200 shadow-xs whitespace-nowrap">99%減</span>
+                <span class="font-black text-primary text-sm sm:text-base">1分</span>
+            </div>
+        </td>
+    </tr>
+<tr class="bg-gradient-to-r from-slate-100 via-slate-50 to-blue-50/60 border-t-2 border-slate-300 border-b-2 border-primary/40">
+        <td colspan="2" class="p-4 sm:p-5 align-middle text-center font-bold text-slate-800 border-r border-slate-200 text-sm sm:text-base">
+            合計（年間を通した実習業務全体）
+        </td>
+        <td colspan="2" class="p-4 sm:p-5 align-middle text-center font-bold text-slate-500 border-r border-slate-200 text-sm sm:text-base">
+            約 202時間
+        </td>
+        <td colspan="2" class="p-4 sm:p-5 align-middle text-center font-extrabold text-red-600 border-r border-slate-200 text-sm sm:text-base bg-amber-50/60">
+            約 95時間<br/><span class="text-xs font-normal text-slate-500">（2〜3週間分）</span>
+        </td>
+        <td colspan="2" class="relative p-4 sm:p-5 align-middle text-center font-black text-primary text-base sm:text-xl bg-gradient-to-r from-blue-100/90 to-sky-100/80 border-l-2 border-l-primary border-r-2 border-r-primary border-b-2 border-b-primary shadow-inner">
+            <div class="absolute -top-3.5 left-0 -translate-x-1/2 z-30 pointer-events-none">
+    <span class="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full bg-gradient-to-r from-red-600 via-orange-500 to-amber-500 text-white text-xs sm:text-sm font-black shadow-xl shadow-orange-500/50 border-2 border-white ring-4 ring-orange-400/20 whitespace-nowrap transform -rotate-3">
+        <i class="fas fa-bolt text-yellow-200"></i>
+        <span>95% 削減！</span>
+    </span>
 </div>
-<!-- Practice Tab Content -->
-<div class="animate-fade-in block" id="tab-practice">
-<div class="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-4 gap-2">
-    <h3 class="text-xl sm:text-2xl font-bold text-primary flex items-center gap-2">
-        <i class="fas fa-stethoscope text-secondary text-lg"></i>
-        業務改善目安データ（臨床実習 ＆ INTEVE LINK）
-    </h3>
-    <div class="text-xs text-slate-400 lg:hidden flex items-center gap-1 self-end sm:self-auto">
-        <i class="fas fa-arrows-alt-h text-slate-400"></i> 表は左右にスクロールできます
+            <div class="flex items-center justify-center gap-2">
+                <span class="text-xs font-bold text-slate-500 hidden sm:inline">（年間計）</span>
+                <span class="text-xl sm:text-2xl font-black text-primary">約 4.5時間</span>
+            </div>
+        </td>
+    </tr>
+<tr class="border-t border-slate-200">
+    <td colspan="8" class="p-5 sm:p-6 bg-gradient-to-r from-blue-900 via-primary to-slate-900 text-white rounded-b-2xl shadow-inner">
+        <div class="flex flex-col md:flex-row items-center justify-between gap-4">
+            <div class="flex items-center gap-3.5">
+                <div class="w-11 h-11 rounded-2xl bg-secondary/20 border border-secondary/30 text-secondary flex items-center justify-center text-xl shrink-0 shadow-sm">
+                    <i class="fas fa-sparkles text-secondary"></i>
+                </div>
+                <div>
+                    <div class="text-xs font-bold text-cyan-300 uppercase tracking-wider mb-0.5">業務改善インパクト</div>
+                    <p class="text-sm sm:text-base font-bold text-white leading-snug">
+                        INTEVE LINKの登場により「回収・転記・集計」の業務自体が消滅！ 年間通して教員1人あたり約90時間以上の膨大な時間を創出します。
+                    </p>
+                </div>
+            </div>
+            <a href="plan.html" class="shrink-0 px-6 py-3 bg-accent hover:bg-orange-600 text-white rounded-full font-bold text-sm shadow-lg shadow-orange-950/30 transition-all flex items-center gap-2 whitespace-nowrap group">
+                <span>プランを見る</span>
+                <i class="fas fa-arrow-right text-xs group-hover:translate-x-0.5 transition-transform"></i>
+            </a>
+        </div>
+    </td>
+</tr>
+<tr class="hover:bg-slate-50/70 transition-colors border-b border-slate-200/80">
+        <td rowspan="3" class="p-4 align-top font-bold text-slate-800 border-r border-slate-200/80 bg-white">作成データの<br/>利活用</td>
+        <td class="p-4 align-top font-medium text-slate-700 border-r border-slate-200/80">ある目的のために作成したデータを、別の目的のために使用する</td>
+        <td colspan="2" class="p-4 align-top text-slate-500 border-r border-slate-200/80 text-xs sm:text-sm">一から手直し</td>
+        <td colspan="2" class="p-4 align-top text-slate-700 border-r border-slate-200/80 text-xs sm:text-sm bg-amber-50/20">基本的にコピーペーストで可能だが、似たようなデータが次々に複製され、その都度混乱を招く</td>
+        <td colspan="2" class="p-4 align-top text-slate-700 bg-blue-50/30 border-l-2 border-l-primary/30 border-r-2 border-r-primary/30">
+            <strong class="text-primary font-bold">一元管理されている本システムから都度出力する</strong>ため、データ散在・複製による混乱は一切生じません。
+        </td>
+    </tr>
+<tr class="hover:bg-slate-50/70 transition-colors border-b border-slate-200/80">
+        <td class="p-4 align-top font-medium text-slate-700 border-r border-slate-200/80">データの最新情報を確認する</td>
+        <td colspan="2" class="p-4 align-top text-slate-500 border-r border-slate-200/80 text-xs sm:text-sm">口づてか正しいかどうか分からない書類でのやり取りでミスが頻発する</td>
+        <td colspan="2" class="p-4 align-top text-slate-700 border-r border-slate-200/80 text-xs sm:text-sm bg-amber-50/20">データが複製されているために、どれが最新の情報かの判別が困難でしばしば混乱を招く</td>
+        <td colspan="2" class="p-4 align-top text-slate-700 bg-blue-50/30 border-l-2 border-l-primary/30 border-r-2 border-r-primary/30">
+            <strong class="text-primary font-bold">一元管理されたクラウドデータベース</strong>により、常に全員がリアルタイムで最新の共通情報にアクセス可能。
+        </td>
+    </tr>
+<tr class="hover:bg-slate-50/70 transition-colors border-b border-slate-200/80">
+        <td class="p-4 align-top font-medium text-slate-700 border-r border-slate-200/80">過去データの参照</td>
+        <td colspan="2" class="p-4 align-top text-slate-500 border-r border-slate-200/80 text-xs sm:text-sm">あるかないか分からない紙面かワープロのデータから探すか、誰かの記憶を頼る</td>
+        <td colspan="2" class="p-4 align-top text-slate-700 border-r border-slate-200/80 text-xs sm:text-sm bg-amber-50/20">あるかないか分からないデータから探すか、誰かの記憶を頼る</td>
+        <td colspan="2" class="p-4 align-top text-slate-700 bg-blue-50/30 border-l-2 border-l-primary/30 border-r-2 border-r-primary/30">
+            <strong class="text-primary font-bold">年度・施設名・教員名で瞬時にインクリメンタル検索</strong>。数秒で過去の全記録を呼び出せます。
+        </td>
+    </tr>
+        </tbody>
+    </table>
+</div>
+                </div>
+
+                <!-- Exam Tab Content -->
+                <div class="animate-fade-in hidden" id="tab-exam">
+                    <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-4 gap-2">
+                        <h3 class="text-xl sm:text-2xl font-extrabold text-primary flex items-center gap-2">
+                            <i class="fas fa-file-signature text-secondary text-lg"></i>
+                            業務改善目安データ（国家試験対策）
+                        </h3>
+                        <div class="text-xs text-slate-400 lg:hidden flex items-center gap-1 self-end sm:self-auto">
+                            <i class="fas fa-arrows-alt-h text-slate-400"></i> 表は左右にスクロールできます
+                        </div>
+                    </div>
+                    <div class="overflow-x-auto bg-white rounded-3xl shadow-xl border border-slate-200 p-2 sm:p-5 relative">
+    <table class="w-full text-left border-collapse min-w-[920px] lg:min-w-full text-xs sm:text-sm">
+        <thead>
+    <tr class="border-b border-slate-200">
+        <th class="p-3.5 sm:p-4 text-center font-bold text-slate-700 bg-slate-100/90 border-r border-slate-200 w-1/12 min-w-[110px] align-middle">作業項目</th>
+        <th class="p-3.5 sm:p-4 text-center font-bold text-slate-700 bg-slate-100/90 border-r border-slate-200 w-3/12 min-w-[200px] align-middle">詳細</th>
+        <th colspan="2" class="p-3.5 sm:p-4 text-center font-bold text-slate-600 bg-slate-100/90 border-r border-slate-200 w-2/12 min-w-[150px] align-middle">
+            <span class="text-[11px] text-slate-400 block font-normal mb-0.5">全て紙と手作業</span>
+            <span>昭和レトロ時代</span>
+        </th>
+        <th colspan="2" class="p-3.5 sm:p-4 text-center font-bold text-slate-800 bg-amber-50/60 border-r border-slate-200 w-3/12 min-w-[220px] align-middle relative">
+            <span class="text-[11px] text-amber-700 block font-bold mb-0.5">Excelの手動入力・転記</span>
+            <span>デジタルデータのアナログ利用</span>
+        </th>
+        <th colspan="2" class="p-4 sm:p-5 text-center bg-gradient-to-br from-primary via-blue-900 to-primary text-white rounded-t-2xl border-t-4 border-t-secondary shadow-lg relative w-3/12 min-w-[240px] align-middle">
+            <!-- Overlapping Reduction Badge spanning boundary -->
+            <div class="absolute -top-3.5 -left-7 sm:-left-9 z-30 pointer-events-none">
+                <span class="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full bg-gradient-to-r from-rose-500 via-orange-500 to-amber-500 text-white text-xs sm:text-sm font-black shadow-xl shadow-orange-500/40 border-2 border-white ring-2 ring-orange-400/30 whitespace-nowrap transform -rotate-3">
+                    <i class="fas fa-arrow-trend-down text-yellow-200"></i>
+                    <span>国試対策 90%削減！</span>
+                </span>
+            </div>
+            <!-- Floating top badge -->
+            <div class="absolute -top-3 left-1/2 -translate-x-1/2 bg-gradient-to-r from-cyan-400 to-secondary text-slate-950 text-[11px] sm:text-xs font-black px-4 py-0.5 sm:py-1 rounded-full shadow-md whitespace-nowrap flex items-center gap-1.5 border border-white/60">
+                <i class="fas fa-sparkles text-amber-500"></i>
+                <span>圧倒的時短DX</span>
+            </div>
+            <!-- Title -->
+            <div class="text-sm sm:text-base md:text-lg font-black tracking-tight text-white flex items-center justify-center gap-2 mt-1">
+                <i class="fas fa-check-circle text-secondary"></i>
+                <span>INTEVE SCHOOL利用</span>
+            </div>
+        </th>
+    </tr>
+</thead>
+        <tbody class="divide-y divide-slate-200/80 text-slate-700">
+            <tr class="hover:bg-slate-50/70 transition-colors border-b border-slate-200/80">
+        <td rowspan="9" class="p-4 align-top font-bold text-slate-800 border-r border-slate-200/80 bg-white">
+            練習問題作成<br/>
+            <span class="text-xs font-normal text-slate-500">（40人分・50問作成）</span>
+        </td>
+        <td class="p-4 align-top font-medium text-slate-700 border-r border-slate-200/80">
+            ①過去問の引用<br/>
+            <span class="text-xs text-slate-500 font-normal">（20問）</span>
+        </td>
+        <td class="p-4 align-top text-slate-500 border-r border-slate-200/80 text-xs sm:text-sm">参考書から探してコピーして貼付する</td>
+        <td class="p-4 align-top text-right text-slate-500 font-semibold border-r border-slate-200/80 whitespace-nowrap">100分<br/><span class="text-xs font-normal text-slate-500">（5分/問）</span></td>
+        <td class="p-4 align-top text-slate-700 border-r border-slate-200/80 text-xs sm:text-sm bg-amber-50/20">ExcelやWordのストック問題から検索してコピペ</td>
+        <td class="p-4 align-top text-right text-slate-700 font-bold border-r border-slate-200/80 whitespace-nowrap bg-amber-50/20">40分<br/><span class="text-xs font-normal text-slate-500">（2分/問）</span></td>
+        <td class="p-4 align-top text-slate-700 bg-blue-50/30 border-l-2 border-l-primary/30 border-r border-r-slate-200/60">過去問データベースからキーワード・分野検索し「全件挿入」またはピンポイント挿入</td>
+        <td class="p-4 align-top text-right bg-blue-50/30 border-r-2 border-r-primary/30 whitespace-nowrap">
+            <div class="flex items-center justify-end gap-2">
+                <span class="inline-flex items-center px-2 py-0.5 rounded-full text-[10px] sm:text-xs font-black bg-rose-50 text-rose-600 border border-rose-200 shadow-xs whitespace-nowrap">95%減</span>
+                <span class="font-black text-primary text-sm sm:text-base">2分弱<br/><span class="text-xs font-normal text-slate-500">（2秒/問）</span></span>
+            </div>
+        </td>
+    </tr>
+<tr class="hover:bg-slate-50/70 transition-colors border-b border-slate-200/80">
+        <td class="p-4 align-top font-medium text-slate-700 border-r border-slate-200/80">
+            ②過去問の選択肢入れ替え<br/>
+            <span class="text-xs text-slate-500 font-normal">（10問）</span>
+        </td>
+        <td class="p-4 align-top text-slate-500 border-r border-slate-200/80 text-xs sm:text-sm">参考書から探して手入力する</td>
+        <td class="p-4 align-top text-right text-slate-500 font-semibold border-r border-slate-200/80 whitespace-nowrap">50分<br/><span class="text-xs font-normal text-slate-500">（5分/問）</span></td>
+        <td class="p-4 align-top text-slate-700 border-r border-slate-200/80 text-xs sm:text-sm bg-amber-50/20">検索・コピペしたのちに手入力で並べ替える</td>
+        <td class="p-4 align-top text-right text-slate-700 font-bold border-r border-slate-200/80 whitespace-nowrap bg-amber-50/20">30分<br/><span class="text-xs font-normal text-slate-500">（3分/問）</span></td>
+        <td class="p-4 align-top text-slate-700 bg-blue-50/30 border-l-2 border-l-primary/30 border-r border-r-slate-200/60">本システム上で選択肢の順番をワンクリックで入れ替え</td>
+        <td class="p-4 align-top text-right bg-blue-50/30 border-r-2 border-r-primary/30 whitespace-nowrap">
+            <div class="flex items-center justify-end gap-2">
+                <span class="inline-flex items-center px-2 py-0.5 rounded-full text-[10px] sm:text-xs font-black bg-rose-50 text-rose-600 border border-rose-200 shadow-xs whitespace-nowrap">97%減</span>
+                <span class="font-black text-primary text-sm sm:text-base">1分弱<br/><span class="text-xs font-normal text-slate-500">（1秒/問）</span></span>
+            </div>
+        </td>
+    </tr>
+<tr class="hover:bg-slate-50/70 transition-colors border-b border-slate-200/80">
+        <td class="p-4 align-top font-medium text-slate-700 border-r border-slate-200/80">
+            ③過去問のアレンジ<br/>
+            <span class="text-xs text-slate-500 font-normal">（10問）</span>
+        </td>
+        <td class="p-4 align-top text-slate-500 border-r border-slate-200/80 text-xs sm:text-sm">参考書から探して手入力する</td>
+        <td class="p-4 align-top text-right text-slate-500 font-semibold border-r border-slate-200/80 whitespace-nowrap">50分<br/><span class="text-xs font-normal text-slate-500">（5分/問）</span></td>
+        <td class="p-4 align-top text-slate-700 border-r border-slate-200/80 text-xs sm:text-sm bg-amber-50/20">ExcelやWordで手修正する</td>
+        <td class="p-4 align-top text-right text-slate-700 font-bold border-r border-slate-200/80 whitespace-nowrap bg-amber-50/20">30分<br/><span class="text-xs font-normal text-slate-500">（3分/問）</span></td>
+        <td class="p-4 align-top text-slate-700 bg-blue-50/30 border-l-2 border-l-primary/30 border-r border-r-slate-200/60">本システム上で設問・数値を編集</td>
+        <td class="p-4 align-top text-right bg-blue-50/30 border-r-2 border-r-primary/30 whitespace-nowrap">
+            <div class="flex items-center justify-end gap-2">
+                <span class="inline-flex items-center px-2 py-0.5 rounded-full text-[10px] sm:text-xs font-black bg-rose-50 text-rose-600 border border-rose-200 shadow-xs whitespace-nowrap">97%減</span>
+                <span class="font-black text-primary text-sm sm:text-base">1分弱</span>
+            </div>
+        </td>
+    </tr>
+<tr class="hover:bg-slate-50/70 transition-colors border-b border-slate-200/80 bg-blue-50/20">
+        <td class="p-4 align-top font-medium text-slate-700 border-r border-slate-200/80">
+            ④新規問題の作成<br/>
+            <span class="inline-flex items-center gap-1 text-xs font-extrabold text-secondary mt-1">
+                <i class="fas fa-robot"></i> AI解説支援機能
+            </span>
+        </td>
+        <td class="p-4 align-top text-slate-500 border-r border-slate-200/80 text-xs sm:text-sm">手書き・ワープロで手入力する</td>
+        <td class="p-4 align-top text-right text-slate-500 font-semibold border-r border-slate-200/80 whitespace-nowrap">50分<br/><span class="text-xs font-normal text-slate-500">（5分/問）</span></td>
+        <td class="p-4 align-top text-slate-700 border-r border-slate-200/80 text-xs sm:text-sm bg-amber-50/20">ExcelやWordで問題文・解説・正答を手入力する</td>
+        <td class="p-4 align-top text-right text-slate-700 font-bold border-r border-slate-200/80 whitespace-nowrap bg-amber-50/20">50分<br/><span class="text-xs font-normal text-slate-500">（5分/問）</span></td>
+        <td class="p-4 align-top text-slate-700 bg-blue-50/30 border-l-2 border-l-primary/30 border-r border-r-slate-200/60">
+            システム内で新規作成。原本データを基に<strong class="text-primary font-bold">AIが詳細解説文を自動生成</strong>し、推奨選択肢も自動判定
+        </td>
+        <td class="p-4 align-top text-right bg-blue-50/30 border-r-2 border-r-primary/30 whitespace-nowrap">
+            <div class="flex items-center justify-end gap-2">
+                <span class="inline-flex items-center px-2 py-0.5 rounded-full text-[10px] sm:text-xs font-black bg-blue-50 text-primary border border-blue-200 shadow-xs whitespace-nowrap">50%減・AI支援</span>
+                <span class="font-black text-primary text-sm sm:text-base">25分<br/><span class="text-xs font-normal text-slate-500">（2.5分/問）</span></span>
+            </div>
+        </td>
+    </tr>
+<tr class="hover:bg-slate-50/70 transition-colors border-b border-slate-200/80">
+        <td class="p-4 align-top font-medium text-slate-700 border-r border-slate-200/80">
+            ⑤カンニング防止用シャッフル問題<br/>
+            <span class="text-xs text-slate-500 font-normal">（A/B問題の作成）</span>
+        </td>
+        <td class="p-4 align-top text-slate-500 border-r border-slate-200/80 text-xs sm:text-sm">手作業で切り貼り・再配置する</td>
+        <td class="p-4 align-top text-right text-slate-500 font-semibold border-r border-slate-200/80 whitespace-nowrap">30分</td>
+        <td class="p-4 align-top text-slate-700 border-r border-slate-200/80 text-xs sm:text-sm bg-amber-50/20">Word等で問題番号や選択肢を手動で入れ替え、正答表を別個に作り直す</td>
+        <td class="p-4 align-top text-right text-slate-700 font-bold border-r border-slate-200/80 whitespace-nowrap bg-amber-50/20">20分</td>
+        <td class="p-4 align-top text-slate-700 bg-blue-50/30 border-l-2 border-l-primary/30 border-r border-r-slate-200/60">
+            <strong class="text-primary font-bold">「ランダム番号挿入」ボタン</strong>を押すだけで問題順・正答をワンクリックでシャッフル生成
+        </td>
+        <td class="p-4 align-top text-right bg-blue-50/30 border-r-2 border-r-primary/30 whitespace-nowrap">
+            <div class="flex items-center justify-end gap-2">
+                <span class="inline-flex items-center px-2 py-0.5 rounded-full text-[10px] sm:text-xs font-black bg-emerald-50 text-emerald-700 border border-emerald-300 shadow-xs whitespace-nowrap">即時0分</span>
+                <span class="font-black text-emerald-600 text-sm sm:text-base">0分（数秒）</span>
+            </div>
+        </td>
+    </tr>
+<tr class="hover:bg-slate-50/70 transition-colors border-b border-slate-200/80">
+        <td class="p-4 align-top font-medium text-slate-700 border-r border-slate-200/80">印刷準備　レイアウト調整</td>
+        <td class="p-4 align-top text-slate-500 border-r border-slate-200/80 text-xs sm:text-sm">1問ずつ調整しながら作成（体裁は最低限）</td>
+        <td class="p-4 align-top text-right text-slate-500 font-semibold border-r border-slate-200/80 whitespace-nowrap">追加30分</td>
+        <td class="p-4 align-top text-slate-700 border-r border-slate-200/80 text-xs sm:text-sm bg-amber-50/20">改ページ位置や図のズレを手作業で微調整</td>
+        <td class="p-4 align-top text-right text-slate-700 font-bold border-r border-slate-200/80 whitespace-nowrap bg-amber-50/20">追加10分</td>
+        <td class="p-4 align-top text-slate-700 bg-blue-50/30 border-l-2 border-l-primary/30 border-r border-r-slate-200/60">横2段組・国試本番公式仕様・プロジェクター映写用など、目的に合わせたレイアウトを完全自動生成</td>
+        <td class="p-4 align-top text-right bg-blue-50/30 border-r-2 border-r-primary/30 whitespace-nowrap">
+            <div class="flex items-center justify-end gap-2">
+                <span class="inline-flex items-center px-2 py-0.5 rounded-full text-[10px] sm:text-xs font-black bg-emerald-50 text-emerald-700 border border-emerald-300 shadow-xs whitespace-nowrap">完全自動0分</span>
+                <span class="font-black text-emerald-600 text-sm sm:text-base">0分</span>
+            </div>
+        </td>
+    </tr>
+<tr class="hover:bg-slate-50/70 transition-colors border-b border-slate-200/80">
+        <td class="p-4 align-top font-medium text-slate-700 border-r border-slate-200/80">印刷またはWeb試験配信</td>
+        <td class="p-4 align-top text-slate-500 border-r border-slate-200/80 text-xs sm:text-sm">輪転機で印刷する</td>
+        <td class="p-4 align-top text-right text-slate-500 font-semibold border-r border-slate-200/80 whitespace-nowrap">5分</td>
+        <td class="p-4 align-top text-slate-700 border-r border-slate-200/80 text-xs sm:text-sm bg-amber-50/20">Wordから印刷 / Googleフォーム手動作成なら60分以上</td>
+        <td class="p-4 align-top text-right text-slate-700 font-bold border-r border-slate-200/80 whitespace-nowrap bg-amber-50/20">5分〜60分</td>
+        <td class="p-4 align-top text-slate-700 bg-blue-50/30 border-l-2 border-l-primary/30 border-r border-r-slate-200/60">PDFから印刷。または<strong class="text-primary font-bold">API連携でGoogleフォームを一瞬で自動生成</strong>しQRコードを配るだけ</td>
+        <td class="p-4 align-top text-right bg-blue-50/30 border-r-2 border-r-primary/30 whitespace-nowrap">
+            <div class="flex items-center justify-end gap-2">
+                <span class="inline-flex items-center px-2 py-0.5 rounded-full text-[10px] sm:text-xs font-black bg-rose-50 text-rose-600 border border-rose-200 shadow-xs whitespace-nowrap">98%減</span>
+                <span class="font-black text-primary text-sm sm:text-base">1〜5分</span>
+            </div>
+        </td>
+    </tr>
+<tr class="hover:bg-slate-50/70 transition-colors border-b border-slate-200/80">
+        <td class="p-4 align-top font-medium text-slate-700 border-r border-slate-200/80">
+            成績分析<br/>
+            <span class="text-xs text-slate-500 font-normal">（学生の解答回収・採点）</span>
+        </td>
+        <td class="p-4 align-top text-slate-500 border-r border-slate-200/80 text-xs sm:text-sm">1問ずつ手作業で採点・手計算。正解率等は電卓</td>
+        <td class="p-4 align-top text-right text-slate-500 font-semibold border-r border-slate-200/80 whitespace-nowrap">400分<br/><span class="text-xs font-normal text-slate-500">（10分/人）</span></td>
+        <td class="p-4 align-top text-slate-700 border-r border-slate-200/80 text-xs sm:text-sm bg-amber-50/20">高いマークシート業者に委託するか、Excel手入力・関数集計</td>
+        <td class="p-4 align-top text-right text-slate-700 font-bold border-r border-slate-200/80 whitespace-nowrap bg-amber-50/20">30〜60分</td>
+        <td class="p-4 align-top text-slate-700 bg-blue-50/30 border-l-2 border-l-primary/30 border-r border-r-slate-200/60">
+            <strong class="text-primary font-bold">普通紙マークシートを複合機でスキャンするだけで自動OCR採点！</strong> またはGoogleフォーム回答を即時自動反映
+        </td>
+        <td class="p-4 align-top text-right bg-blue-50/30 border-r-2 border-r-primary/30 whitespace-nowrap">
+            <div class="flex items-center justify-end gap-2">
+                <span class="inline-flex items-center px-2 py-0.5 rounded-full text-[10px] sm:text-xs font-black bg-rose-50 text-rose-600 border border-rose-200 shadow-xs whitespace-nowrap">98%減</span>
+                <span class="font-black text-primary text-sm sm:text-base">1分</span>
+            </div>
+        </td>
+    </tr>
+<tr class="hover:bg-slate-50/70 transition-colors border-b border-slate-200/80">
+        <td class="p-4 align-top font-medium text-slate-700 border-r border-slate-200/80">
+            解答分析・個別フィードバック<br/>
+            <span class="text-xs text-slate-500 font-normal">（傾向分析・個別指導用カルテ）</span>
+        </td>
+        <td class="p-4 align-top text-slate-500 border-r border-slate-200/80 text-xs sm:text-sm">1人ずつ個別に確認して手書きで学生フィードバック資料を作成</td>
+        <td class="p-4 align-top text-right text-slate-500 font-semibold border-r border-slate-200/80 whitespace-nowrap">400分<br/><span class="text-xs font-normal text-slate-500">（10分/人）</span></td>
+        <td class="p-4 align-top text-slate-700 border-r border-slate-200/80 text-xs sm:text-sm bg-amber-50/20">Excelデータを加工して資料作成（担当者のスキル次第）</td>
+        <td class="p-4 align-top text-right text-slate-700 font-bold border-r border-slate-200/80 whitespace-nowrap bg-amber-50/20">30〜60分</td>
+        <td class="p-4 align-top text-slate-700 bg-blue-50/30 border-l-2 border-l-primary/30 border-r border-r-slate-200/60">
+            学生ごとの<strong class="text-primary font-bold">「振り返り・自己分析欄」付き個人カルテ</strong>、分野別レーダーチャート、過去問別正答率推移を一瞬で自動出力
+        </td>
+        <td class="p-4 align-top text-right bg-blue-50/30 border-r-2 border-r-primary/30 whitespace-nowrap">
+            <div class="flex items-center justify-end gap-2">
+                <span class="inline-flex items-center px-2 py-0.5 rounded-full text-[10px] sm:text-xs font-black bg-rose-50 text-rose-600 border border-rose-200 shadow-xs whitespace-nowrap">99%減</span>
+                <span class="font-black text-primary text-sm sm:text-base">5秒</span>
+            </div>
+        </td>
+    </tr>
+<tr class="bg-gradient-to-r from-slate-100 via-slate-50 to-blue-50/60 border-t-2 border-slate-300 border-b-2 border-primary/40">
+        <td colspan="2" class="p-4 sm:p-5 align-middle text-center font-bold text-slate-800 border-r border-slate-200 text-sm sm:text-base">
+            小計（試験1回あたり）
+        </td>
+        <td colspan="2" class="p-4 sm:p-5 align-middle text-center font-bold text-slate-500 border-r border-slate-200 text-sm sm:text-base">
+            18.6時間
+        </td>
+        <td colspan="2" class="p-4 sm:p-5 align-middle text-center font-extrabold text-red-600 border-r border-slate-200 text-sm sm:text-base bg-amber-50/60">
+            5.6時間
+        </td>
+        <td colspan="2" class="relative p-4 sm:p-5 align-middle text-center font-black text-primary text-base sm:text-xl bg-gradient-to-r from-blue-100/90 to-sky-100/80 border-l-2 border-l-primary border-r-2 border-r-primary border-b-2 border-b-primary shadow-inner">
+            <div class="absolute -top-3.5 left-0 -translate-x-1/2 z-30 pointer-events-none">
+    <span class="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full bg-gradient-to-r from-red-600 via-orange-500 to-amber-500 text-white text-xs sm:text-sm font-black shadow-xl shadow-orange-500/50 border-2 border-white ring-4 ring-orange-400/20 whitespace-nowrap transform -rotate-3">
+        <i class="fas fa-bolt text-yellow-200"></i>
+        <span>90% 削減！</span>
+    </span>
+</div>
+            <div class="flex items-center justify-center gap-2">
+                <span class="text-xs font-bold text-slate-500 hidden sm:inline">（1回あたり）</span>
+                <span class="text-xl sm:text-2xl font-black text-primary">約 35分</span>
+            </div>
+        </td>
+    </tr>
+<tr class="border-t border-slate-200">
+    <td colspan="8" class="p-5 sm:p-6 bg-gradient-to-r from-blue-900 via-primary to-slate-900 text-white rounded-b-2xl shadow-inner">
+        <div class="flex flex-col md:flex-row items-center justify-between gap-4">
+            <div class="flex items-center gap-3.5">
+                <div class="w-11 h-11 rounded-2xl bg-secondary/20 border border-secondary/30 text-secondary flex items-center justify-center text-xl shrink-0 shadow-sm">
+                    <i class="fas fa-sparkles text-secondary"></i>
+                </div>
+                <div>
+                    <div class="text-xs font-bold text-cyan-300 uppercase tracking-wider mb-0.5">業務改善インパクト</div>
+                    <p class="text-sm sm:text-base font-bold text-white leading-snug">
+                        試験1回あたり約5時間の業務短縮！ 年間何十回と実施するテストの負担が激減し、学生の個別指導に時間を使えます。
+                    </p>
+                </div>
+            </div>
+            <a href="plan.html" class="shrink-0 px-6 py-3 bg-accent hover:bg-orange-600 text-white rounded-full font-bold text-sm shadow-lg shadow-orange-950/30 transition-all flex items-center gap-2 whitespace-nowrap group">
+                <span>プランを見る</span>
+                <i class="fas fa-arrow-right text-xs group-hover:translate-x-0.5 transition-transform"></i>
+            </a>
+        </div>
+    </td>
+</tr>
+<tr class="hover:bg-slate-50/70 transition-colors border-b border-slate-200/80">
+        <td rowspan="4" class="p-4 align-top font-bold text-slate-800 border-r border-slate-200/80 bg-white">
+            問題文字起こし<br/>
+            <span class="text-xs font-normal text-slate-500">（100問テキスト化）</span>
+        </td>
+        <td class="p-4 align-top font-medium text-slate-700 border-r border-slate-200/80">問題入力</td>
+        <td class="p-4 align-top text-slate-500 border-r border-slate-200/80 text-xs sm:text-sm">そもそもしない（参考書を使うため）</td>
+        <td class="p-4 align-top text-right text-slate-500 font-semibold border-r border-slate-200/80 whitespace-nowrap">0分</td>
+        <td class="p-4 align-top text-slate-700 border-r border-slate-200/80 text-xs sm:text-sm bg-amber-50/20">PDFをOCR処理するか、原本から手入力する</td>
+        <td class="p-4 align-top text-right text-slate-700 font-bold border-r border-slate-200/80 whitespace-nowrap bg-amber-50/20">300分<br/><span class="text-xs font-normal text-slate-500">（3分/問）</span></td>
+        <td class="p-4 align-top text-slate-700 bg-blue-50/30 border-l-2 border-l-primary/30 border-r border-r-slate-200/60">本システムでAIが自動処理したのちに微修正</td>
+        <td class="p-4 align-top text-right bg-blue-50/30 border-r-2 border-r-primary/30 whitespace-nowrap">
+            <div class="flex items-center justify-end gap-2">
+                <span class="inline-flex items-center px-2 py-0.5 rounded-full text-[10px] sm:text-xs font-black bg-orange-50 text-orange-600 border border-orange-200 shadow-xs whitespace-nowrap">87%減</span>
+                <span class="font-black text-primary text-sm sm:text-base">40分</span>
+            </div>
+        </td>
+    </tr>
+<tr class="hover:bg-slate-50/70 transition-colors border-b border-slate-200/80">
+        <td class="p-4 align-top font-medium text-slate-700 border-r border-slate-200/80">図の取り込み</td>
+        <td class="p-4 align-top text-slate-500 border-r border-slate-200/80 text-xs sm:text-sm">そもそもしない</td>
+        <td class="p-4 align-top text-right text-slate-500 font-semibold border-r border-slate-200/80 whitespace-nowrap">0分</td>
+        <td class="p-4 align-top text-slate-700 border-r border-slate-200/80 text-xs sm:text-sm bg-amber-50/20">PDFから切り取り、ExcelやWordに貼り付ける</td>
+        <td class="p-4 align-top text-right text-slate-700 font-bold border-r border-slate-200/80 whitespace-nowrap bg-amber-50/20">30〜60分</td>
+        <td class="p-4 align-top text-slate-700 bg-blue-50/30 border-l-2 border-l-primary/30 border-r border-r-slate-200/60">本システムで画像抽出・自動取り込み</td>
+        <td class="p-4 align-top text-right bg-blue-50/30 border-r-2 border-r-primary/30 whitespace-nowrap">
+            <div class="flex items-center justify-end gap-2">
+                <span class="inline-flex items-center px-2 py-0.5 rounded-full text-[10px] sm:text-xs font-black bg-orange-50 text-orange-600 border border-orange-200 shadow-xs whitespace-nowrap">89%減</span>
+                <span class="font-black text-primary text-sm sm:text-base">5分</span>
+            </div>
+        </td>
+    </tr>
+<tr class="hover:bg-slate-50/70 transition-colors border-b border-slate-200/80">
+        <td class="p-4 align-top font-medium text-slate-700 border-r border-slate-200/80">分野の整理</td>
+        <td class="p-4 align-top text-slate-500 border-r border-slate-200/80 text-xs sm:text-sm">そもそもしない</td>
+        <td class="p-4 align-top text-right text-slate-500 font-semibold border-r border-slate-200/80 whitespace-nowrap">0分</td>
+        <td class="p-4 align-top text-slate-700 border-r border-slate-200/80 text-xs sm:text-sm bg-amber-50/20">しない（使うときに探すため）</td>
+        <td class="p-4 align-top text-right text-slate-700 font-bold border-r border-slate-200/80 whitespace-nowrap bg-amber-50/20">0分</td>
+        <td class="p-4 align-top text-slate-700 bg-blue-50/30 border-l-2 border-l-primary/30 border-r border-r-slate-200/60">本システムの科目・分野マスタへ自動紐付け</td>
+        <td class="p-4 align-top text-right bg-blue-50/30 border-r-2 border-r-primary/30 whitespace-nowrap">
+            <div class="flex items-center justify-end gap-2">
+                <span class="inline-flex items-center px-2 py-0.5 rounded-full text-[10px] sm:text-xs font-black bg-blue-50 text-primary border border-blue-200 shadow-xs whitespace-nowrap">自動分類</span>
+                <span class="font-black text-primary text-sm sm:text-base">15分</span>
+            </div>
+        </td>
+    </tr>
+<tr class="hover:bg-slate-50/70 transition-colors border-b border-slate-200/80">
+        <td class="p-4 align-top font-medium text-slate-700 border-r border-slate-200/80">誤字脱字チェック</td>
+        <td class="p-4 align-top text-slate-500 border-r border-slate-200/80 text-xs sm:text-sm">そもそもしない</td>
+        <td class="p-4 align-top text-right text-slate-500 font-semibold border-r border-slate-200/80 whitespace-nowrap">0分</td>
+        <td class="p-4 align-top text-slate-700 border-r border-slate-200/80 text-xs sm:text-sm bg-amber-50/20">OCR精度が悪く目視校正に時間がかかる</td>
+        <td class="p-4 align-top text-right text-slate-700 font-bold border-r border-slate-200/80 whitespace-nowrap bg-amber-50/20">60分</td>
+        <td class="p-4 align-top text-slate-700 bg-blue-50/30 border-l-2 border-l-primary/30 border-r border-r-slate-200/60">AIによる高精度校正サポート</td>
+        <td class="p-4 align-top text-right bg-blue-50/30 border-r-2 border-r-primary/30 whitespace-nowrap">
+            <div class="flex items-center justify-end gap-2">
+                <span class="inline-flex items-center px-2 py-0.5 rounded-full text-[10px] sm:text-xs font-black bg-blue-50 text-primary border border-blue-200 shadow-xs whitespace-nowrap">67%減</span>
+                <span class="font-black text-primary text-sm sm:text-base">20分</span>
+            </div>
+        </td>
+    </tr>
+<tr class="bg-gradient-to-r from-slate-100 via-slate-50 to-blue-50/60 border-t-2 border-slate-300 border-b-2 border-primary/40">
+        <td colspan="2" class="p-4 sm:p-5 align-middle text-center font-bold text-slate-800 border-r border-slate-200 text-sm sm:text-base">
+            小計（100問文字起こし）
+        </td>
+        <td colspan="2" class="p-4 sm:p-5 align-middle text-center font-bold text-slate-500 border-r border-slate-200 text-sm sm:text-base">
+            0.0時間
+        </td>
+        <td colspan="2" class="p-4 sm:p-5 align-middle text-center font-extrabold text-red-600 border-r border-slate-200 text-sm sm:text-base bg-amber-50/60">
+            6.7時間
+        </td>
+        <td colspan="2" class="relative p-4 sm:p-5 align-middle text-center font-black text-primary text-base sm:text-xl bg-gradient-to-r from-blue-100/90 to-sky-100/80 border-l-2 border-l-primary border-r-2 border-r-primary border-b-2 border-b-primary shadow-inner">
+            <div class="absolute -top-3.5 left-0 -translate-x-1/2 z-30 pointer-events-none">
+    <span class="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full bg-gradient-to-r from-red-600 via-orange-500 to-amber-500 text-white text-xs sm:text-sm font-black shadow-xl shadow-orange-500/50 border-2 border-white ring-4 ring-orange-400/20 whitespace-nowrap transform -rotate-3">
+        <i class="fas fa-bolt text-yellow-200"></i>
+        <span>80% 削減！</span>
+    </span>
+</div>
+            <div class="flex items-center justify-center gap-2">
+                <span class="text-xs font-bold text-slate-500 hidden sm:inline">（100問計）</span>
+                <span class="text-xl sm:text-2xl font-black text-primary">1.3時間</span>
+            </div>
+        </td>
+    </tr>
+<tr class="border-t border-slate-200">
+    <td colspan="8" class="p-5 sm:p-6 bg-gradient-to-r from-blue-900 via-primary to-slate-900 text-white rounded-b-2xl shadow-inner">
+        <div class="flex flex-col md:flex-row items-center justify-between gap-4">
+            <div class="flex items-center gap-3.5">
+                <div class="w-11 h-11 rounded-2xl bg-secondary/20 border border-secondary/30 text-secondary flex items-center justify-center text-xl shrink-0 shadow-sm">
+                    <i class="fas fa-sparkles text-secondary"></i>
+                </div>
+                <div>
+                    <div class="text-xs font-bold text-cyan-300 uppercase tracking-wider mb-0.5">業務改善インパクト</div>
+                    <p class="text-sm sm:text-base font-bold text-white leading-snug">
+                        毎年度悩ましい過去問テキスト化も大幅短縮！ ※弊社への外注対応（テキスト化代行）も承っております。
+                    </p>
+                </div>
+            </div>
+            <a href="plan.html" class="shrink-0 px-6 py-3 bg-accent hover:bg-orange-600 text-white rounded-full font-bold text-sm shadow-lg shadow-orange-950/30 transition-all flex items-center gap-2 whitespace-nowrap group">
+                <span>プランを見る</span>
+                <i class="fas fa-arrow-right text-xs group-hover:translate-x-0.5 transition-transform"></i>
+            </a>
+        </div>
+    </td>
+</tr>
+<tr class="hover:bg-slate-50/70 transition-colors border-b border-slate-200/80">
+        <td class="p-4 align-top font-bold text-slate-800 border-r border-slate-200/80 bg-white">出題傾向分析</td>
+        <td class="p-4 align-top font-medium text-slate-700 border-r border-slate-200/80">年度別の出題傾向を研究・比較する</td>
+        <td colspan="2" class="p-4 align-top text-slate-500 border-r border-slate-200/80 text-xs sm:text-sm">そもそもしないか、参考書に頼る</td>
+        <td colspan="2" class="p-4 align-top text-slate-700 border-r border-slate-200/80 text-xs sm:text-sm bg-amber-50/20">そもそもしないか、参考書に頼る（自前作成は極めて困難）</td>
+        <td colspan="2" class="p-4 align-top text-slate-700 bg-blue-50/30 border-l-2 border-l-primary/30 border-r-2 border-r-primary/30">
+            指定した分野の年度別問題を瞬時に比較。<strong class="text-primary font-bold">X2問題数、否定形問題数などの出題パターン分析や自動カウント</strong>も可能
+        </td>
+    </tr>
+        </tbody>
+    </table>
+</div>
+                </div>
+
+                <!-- Student Management Tab Content -->
+                <div class="animate-fade-in hidden" id="tab-student">
+                    <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-4 gap-2">
+                        <h3 class="text-xl sm:text-2xl font-extrabold text-primary flex items-center gap-2">
+                            <i class="fas fa-user-graduate text-secondary text-lg"></i>
+                            業務改善目安データ（学生管理・教務）
+                        </h3>
+                        <div class="text-xs text-slate-400 lg:hidden flex items-center gap-1 self-end sm:self-auto">
+                            <i class="fas fa-arrows-alt-h text-slate-400"></i> 表は左右にスクロールできます
+                        </div>
+                    </div>
+                    <div class="overflow-x-auto bg-white rounded-3xl shadow-xl border border-slate-200 p-2 sm:p-5 relative">
+    <table class="w-full text-left border-collapse min-w-[920px] lg:min-w-full text-xs sm:text-sm">
+        <thead>
+    <tr class="border-b border-slate-200">
+        <th class="p-3.5 sm:p-4 text-center font-bold text-slate-700 bg-slate-100/90 border-r border-slate-200 w-1/12 min-w-[110px] align-middle">作業項目</th>
+        <th class="p-3.5 sm:p-4 text-center font-bold text-slate-700 bg-slate-100/90 border-r border-slate-200 w-3/12 min-w-[200px] align-middle">詳細</th>
+        <th colspan="2" class="p-3.5 sm:p-4 text-center font-bold text-slate-600 bg-slate-100/90 border-r border-slate-200 w-2/12 min-w-[150px] align-middle">
+            <span class="text-[11px] text-slate-400 block font-normal mb-0.5">全て紙と手作業</span>
+            <span>昭和レトロ時代</span>
+        </th>
+        <th colspan="2" class="p-3.5 sm:p-4 text-center font-bold text-slate-800 bg-amber-50/60 border-r border-slate-200 w-3/12 min-w-[220px] align-middle relative">
+            <span class="text-[11px] text-amber-700 block font-bold mb-0.5">Excelの手動入力・転記</span>
+            <span>デジタルデータのアナログ利用</span>
+        </th>
+        <th colspan="2" class="p-4 sm:p-5 text-center bg-gradient-to-br from-primary via-blue-900 to-primary text-white rounded-t-2xl border-t-4 border-t-secondary shadow-lg relative w-3/12 min-w-[240px] align-middle">
+            <!-- Overlapping Reduction Badge spanning boundary -->
+            <div class="absolute -top-3.5 -left-7 sm:-left-9 z-30 pointer-events-none">
+                <span class="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full bg-gradient-to-r from-rose-500 via-orange-500 to-amber-500 text-white text-xs sm:text-sm font-black shadow-xl shadow-orange-500/40 border-2 border-white ring-2 ring-orange-400/30 whitespace-nowrap transform -rotate-3">
+                    <i class="fas fa-arrow-trend-down text-yellow-200"></i>
+                    <span>教務ルーチン 98%削減！</span>
+                </span>
+            </div>
+            <!-- Floating top badge -->
+            <div class="absolute -top-3 left-1/2 -translate-x-1/2 bg-gradient-to-r from-cyan-400 to-secondary text-slate-950 text-[11px] sm:text-xs font-black px-4 py-0.5 sm:py-1 rounded-full shadow-md whitespace-nowrap flex items-center gap-1.5 border border-white/60">
+                <i class="fas fa-sparkles text-amber-500"></i>
+                <span>圧倒的時短DX</span>
+            </div>
+            <!-- Title -->
+            <div class="text-sm sm:text-base md:text-lg font-black tracking-tight text-white flex items-center justify-center gap-2 mt-1">
+                <i class="fas fa-check-circle text-secondary"></i>
+                <span>INTEVE SCHOOL利用</span>
+            </div>
+        </th>
+    </tr>
+</thead>
+        <tbody class="divide-y divide-slate-200/80 text-slate-700">
+            <tr class="hover:bg-slate-50/70 transition-colors border-b border-slate-200/80 bg-blue-50/20">
+        <td rowspan="3" class="p-4 align-top font-bold text-slate-800 border-r border-slate-200/80 bg-white">
+            学生・教務管理
+        </td>
+        <td class="p-4 align-top font-medium text-slate-700 border-r border-slate-200/80">
+            学生の顔写真一括登録・自動トリミング<br/>
+            <span class="text-xs text-slate-500 font-normal">（新入生・クラス40人分）</span>
+        </td>
+        <td class="p-4 align-top text-slate-500 border-r border-slate-200/80 text-xs sm:text-sm">現像写真をハサミで切り、のりで学生台帳に1枚ずつ貼付</td>
+        <td class="p-4 align-top text-right text-slate-500 font-semibold border-r border-slate-200/80 whitespace-nowrap">3時間</td>
+        <td class="p-4 align-top text-slate-700 border-r border-slate-200/80 text-xs sm:text-sm bg-amber-50/20">デジカメ写真を取り込み、画像ソフトで1人ずつ手動トリミング、学籍番号でリネームしてExcel名簿に手動貼り付け</td>
+        <td class="p-4 align-top text-right text-red-600 font-extrabold border-r border-slate-200/80 whitespace-nowrap bg-amber-50/20">4時間</td>
+        <td class="p-4 align-top text-slate-700 bg-blue-50/30 border-l-2 border-l-primary/30 border-r border-r-slate-200/60">
+            <strong class="text-primary font-bold">学生にQRコードを持たせて撮影し、フォルダごと読み込んで「個別トリミング」を押すだけ！</strong><br/>
+            QRから学籍番号を自動取得し顔サイズに自動トリミング＆学生カルテへ自動マッピング。<span class="text-xs text-slate-500 mt-1 block">（※解析画像はクラウドサーバーから即時自動消去されセキュリティ万全）</span>
+        </td>
+        <td class="p-4 align-top text-right bg-blue-50/30 border-r-2 border-r-primary/30 whitespace-nowrap">
+            <div class="flex items-center justify-end gap-2">
+                <span class="inline-flex items-center px-2 py-0.5 rounded-full text-[10px] sm:text-xs font-black bg-rose-50 text-rose-600 border border-rose-200 shadow-xs whitespace-nowrap">98%減</span>
+                <span class="font-black text-primary text-sm sm:text-base">5分</span>
+            </div>
+        </td>
+    </tr>
+<tr class="hover:bg-slate-50/70 transition-colors border-b border-slate-200/80">
+        <td class="p-4 align-top font-medium text-slate-700 border-r border-slate-200/80">日常記録（面談・指導記録）の蓄積と保護者面談資料作成</td>
+        <td class="p-4 align-top text-slate-500 border-r border-slate-200/80 text-xs sm:text-sm">過去の手書き指導ノートや日誌をめくって該当学生の記録を探し出し、清書</td>
+        <td class="p-4 align-top text-right text-slate-500 font-semibold border-r border-slate-200/80 whitespace-nowrap">2時間</td>
+        <td class="p-4 align-top text-slate-700 border-r border-slate-200/80 text-xs sm:text-sm bg-amber-50/20">教員個人のWordやメモから過去履歴を探してまとめ直す（情報の属人化）</td>
+        <td class="p-4 align-top text-right text-red-600 font-extrabold border-r border-slate-200/80 whitespace-nowrap bg-amber-50/20">1時間</td>
+        <td class="p-4 align-top text-slate-700 bg-blue-50/30 border-l-2 border-l-primary/30 border-r border-r-slate-200/60">
+            学生カルテに日々の面談・指導を記録。<strong class="text-primary font-bold">「時系列印刷」を押すだけで、保護者面談用の美麗な個人カルテ帳票が一括PDF出力</strong>
+        </td>
+        <td class="p-4 align-top text-right bg-blue-50/30 border-r-2 border-r-primary/30 whitespace-nowrap">
+            <div class="flex items-center justify-end gap-2">
+                <span class="inline-flex items-center px-2 py-0.5 rounded-full text-[10px] sm:text-xs font-black bg-rose-50 text-rose-600 border border-rose-200 shadow-xs whitespace-nowrap">99%減</span>
+                <span class="font-black text-primary text-sm sm:text-base">10秒</span>
+            </div>
+        </td>
+    </tr>
+<tr class="hover:bg-slate-50/70 transition-colors border-b border-slate-200/80">
+        <td class="p-4 align-top font-medium text-slate-700 border-r border-slate-200/80">就職活動の履歴管理・求人票の集計</td>
+        <td class="p-4 align-top text-slate-500 border-r border-slate-200/80 text-xs sm:text-sm">紙の求人票ファイルと学生の報告書を手作業で照合</td>
+        <td class="p-4 align-top text-right text-slate-500 font-semibold border-r border-slate-200/80 whitespace-nowrap">5時間</td>
+        <td class="p-4 align-top text-slate-700 border-r border-slate-200/80 text-xs sm:text-sm bg-amber-50/20">求人Excelと学生の進路Excelを二重管理し、内定状況を手入力更新</td>
+        <td class="p-4 align-top text-right text-red-600 font-extrabold border-r border-slate-200/80 whitespace-nowrap bg-amber-50/20">2時間</td>
+        <td class="p-4 align-top text-slate-700 bg-blue-50/30 border-l-2 border-l-primary/30 border-r border-r-slate-200/60">
+            施設IDで求人情報と学生の活動履歴（見学・受験・内定）が完全連動。内定状況や施設分類別の就職統計が全自動で集計
+        </td>
+        <td class="p-4 align-top text-right bg-blue-50/30 border-r-2 border-r-primary/30 whitespace-nowrap">
+            <div class="flex items-center justify-end gap-2">
+                <span class="inline-flex items-center px-2 py-0.5 rounded-full text-[10px] sm:text-xs font-black bg-rose-50 text-rose-600 border border-rose-200 shadow-xs whitespace-nowrap">99%減</span>
+                <span class="font-black text-primary text-sm sm:text-base">1分</span>
+            </div>
+        </td>
+    </tr>
+<tr class="bg-gradient-to-r from-slate-100 via-slate-50 to-blue-50/60 border-t-2 border-slate-300 border-b-2 border-primary/40">
+        <td colspan="2" class="p-4 sm:p-5 align-middle text-center font-bold text-slate-800 border-r border-slate-200 text-sm sm:text-base">
+            合計（学生管理・教務ルーチン）
+        </td>
+        <td colspan="2" class="p-4 sm:p-5 align-middle text-center font-bold text-slate-500 border-r border-slate-200 text-sm sm:text-base">
+            10.0時間
+        </td>
+        <td colspan="2" class="p-4 sm:p-5 align-middle text-center font-extrabold text-red-600 border-r border-slate-200 text-sm sm:text-base bg-amber-50/60">
+            7.0時間
+        </td>
+        <td colspan="2" class="relative p-4 sm:p-5 align-middle text-center font-black text-primary text-base sm:text-xl bg-gradient-to-r from-blue-100/90 to-sky-100/80 border-l-2 border-l-primary border-r-2 border-r-primary border-b-2 border-b-primary shadow-inner">
+            <div class="absolute -top-3.5 left-0 -translate-x-1/2 z-30 pointer-events-none">
+    <span class="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full bg-gradient-to-r from-red-600 via-orange-500 to-amber-500 text-white text-xs sm:text-sm font-black shadow-xl shadow-orange-500/50 border-2 border-white ring-4 ring-orange-400/20 whitespace-nowrap transform -rotate-3">
+        <i class="fas fa-bolt text-yellow-200"></i>
+        <span>98% 削減！</span>
+    </span>
+</div>
+            <div class="flex items-center justify-center gap-2">
+                <span class="text-xs font-bold text-slate-500 hidden sm:inline">（合計）</span>
+                <span class="text-xl sm:text-2xl font-black text-primary">約 6分</span>
+            </div>
+        </td>
+    </tr>
+<tr class="border-t border-slate-200">
+    <td colspan="8" class="p-5 sm:p-6 bg-gradient-to-r from-blue-900 via-primary to-slate-900 text-white rounded-b-2xl shadow-inner">
+        <div class="flex flex-col md:flex-row items-center justify-between gap-4">
+            <div class="flex items-center gap-3.5">
+                <div class="w-11 h-11 rounded-2xl bg-secondary/20 border border-secondary/30 text-secondary flex items-center justify-center text-xl shrink-0 shadow-sm">
+                    <i class="fas fa-sparkles text-secondary"></i>
+                </div>
+                <div>
+                    <div class="text-xs font-bold text-cyan-300 uppercase tracking-wider mb-0.5">業務改善インパクト</div>
+                    <p class="text-sm sm:text-base font-bold text-white leading-snug">
+                        教務の煩雑なルーチンワークを瞬時に完了。先生方の本来の役目である教育と学生指導に専念できます。
+                    </p>
+                </div>
+            </div>
+            <a href="plan.html" class="shrink-0 px-6 py-3 bg-accent hover:bg-orange-600 text-white rounded-full font-bold text-sm shadow-lg shadow-orange-950/30 transition-all flex items-center gap-2 whitespace-nowrap group">
+                <span>プランを見る</span>
+                <i class="fas fa-arrow-right text-xs group-hover:translate-x-0.5 transition-transform"></i>
+            </a>
+        </div>
+    </td>
+</tr>
+        </tbody>
+    </table>
+</div>
+                </div>
+            </div>
+        </div>
+        <!-- Tab Framework end -->
     </div>
-</div>
-<div class="overflow-x-auto border-2 border-blue-100 bg-blue-50/20 rounded-2xl p-3 sm:p-5 shadow-sm"><table class="w-full text-left border-collapse border bg-white shadow-sm min-w-[880px] lg:min-w-full border-slate-200 text-xs sm:text-sm"><thead><tr><th class="border border-slate-300 bg-slate-100 text-slate-800 font-bold align-middle text-center p-3 sm:p-4">作業項目</th><th class="border border-slate-300 bg-slate-100 text-slate-800 font-bold align-middle text-center p-3 sm:p-4">詳細</th><th class="border border-slate-300 bg-slate-100 text-slate-800 font-bold align-middle text-center p-3 sm:p-4" colspan="2">昭和レトロ時代</th><th class="border border-slate-300 bg-slate-100 text-slate-800 font-bold align-middle text-center p-3 sm:p-4" colspan="2">デジタルデータのアナログ利用</th><th class="border-t-[3px] border-t-primary border-l-[3px] border-l-primary border-r-[3px] border-r-primary border-b border-b-slate-300 bg-primary text-yellow-400 text-base sm:text-lg font-bold align-middle text-center p-3 sm:p-4" colspan="2">INTEVE SCHOOL ＆ LINK利用</th></tr></thead><tbody class="divide-y divide-slate-200 text-slate-700 text-sm"><tr class="even:bg-blue-50/40"><td class="p-4 align-top font-bold border border-slate-300" data-label="作業項目" rowspan="6">受入依頼</td><td class="p-4 align-top font-bold border border-slate-300" data-label="詳細">実習受入依頼をする施設の抽出</td><td class="p-4 align-top border border-slate-300" data-label="昭和レトロ時代">前年度の書類から探して整理する</td><td class="p-4 align-top border border-slate-300 text-right" data-label="昭和レトロ時代 時間">2時間</td><td class="p-4 align-top border border-slate-300" data-label="デジタルデータのアナログ利用">前年度のデータを元に整理する</td><td class="p-4 align-top border border-slate-300 text-right" data-label="デジタルデータのアナログ利用 時間">20分</td><td class="p-4 align-top bg-[#f0f9ff] border-l-[3px] border-l-primary border-r border-r-slate-200 border-t border-t-slate-300 border-b border-b-slate-300" data-label="INTEVE SCHOOL利用">前年度のデータを移行する</td><td class="p-4 align-top bg-[#f0f9ff] border-l border-l-slate-200 border-r-[3px] border-r-primary border-t border-t-slate-300 border-b border-b-slate-300 text-right font-bold text-primary" data-label="INTEVE SCHOOL利用 時間">2秒</td></tr><tr class="even:bg-blue-50/40"><td class="p-4 align-top font-bold border border-slate-300" data-label="詳細">実習受入の依頼文書を作成する</td><td class="p-4 align-top border border-slate-300" data-label="昭和レトロ時代">ワープロで1から作成する</td><td class="p-4 align-top border border-slate-300 text-right" data-label="昭和レトロ時代 時間">1時間</td><td class="p-4 align-top border border-slate-300" data-label="デジタルデータのアナログ利用">前年度のデータを元に整理する</td><td class="p-4 align-top border border-slate-300 text-right" data-label="デジタルデータのアナログ利用 時間">10分</td><td class="p-4 align-top bg-[#f0f9ff] border-l-[3px] border-l-primary border-r border-r-slate-200 border-t border-t-slate-300 border-b border-b-slate-300" data-label="INTEVE SCHOOL利用">複数期を1通にまとめた公文書を自動生成</td><td class="p-4 align-top bg-[#f0f9ff] border-l border-l-slate-200 border-r-[3px] border-r-primary border-t border-t-slate-300 border-b border-b-slate-300 text-right font-bold text-primary" data-label="INTEVE SCHOOL利用 時間">1分</td></tr><tr class="even:bg-blue-50/40"><td class="p-4 align-top font-bold border border-slate-300" data-label="詳細">依頼文書を印刷する</td><td class="p-4 align-top border border-slate-300" data-label="昭和レトロ時代">原紙を印刷する</td><td class="p-4 align-top border border-slate-300 text-right" data-label="昭和レトロ時代 時間">10分</td><td class="p-4 align-top border border-slate-300" data-label="デジタルデータのアナログ利用">Wordファイルから印刷する</td><td class="p-4 align-top border border-slate-300 text-right" data-label="デジタルデータのアナログ利用 時間">10分</td><td class="p-4 align-top bg-[#f0f9ff] border-l-[3px] border-l-primary border-r border-r-slate-200 border-t border-t-slate-300 border-b border-b-slate-300" data-label="INTEVE SCHOOL利用">PDFから一括印刷（※LINK利用施設はオンライン送信0分）</td><td class="p-4 align-top bg-[#f0f9ff] border-l border-l-slate-200 border-r-[3px] border-r-primary border-t border-t-slate-300 border-b border-b-slate-300 text-right font-bold text-primary" data-label="INTEVE SCHOOL利用 時間">10分</td></tr><tr class="even:bg-blue-50/40"><td class="p-4 align-top font-bold border border-slate-300" data-label="詳細">依頼文書発送のための宛名を入力する</td><td class="p-4 align-top border border-slate-300" data-label="昭和レトロ時代">封筒に宛名を個別に手書き・印刷する</td><td class="p-4 align-top border border-slate-300 text-right" data-label="昭和レトロ時代 時間">8時間</td><td class="p-4 align-top border border-slate-300" data-label="デジタルデータのアナログ利用">Wordの差し込み印刷機能でタックシールを作成する</td><td class="p-4 align-top border border-slate-300 text-right" data-label="デジタルデータのアナログ利用 時間">30分</td><td class="p-4 align-top bg-[#f0f9ff] border-l-[3px] border-l-primary border-r border-r-slate-200 border-t border-t-slate-300 border-b border-b-slate-300" data-label="INTEVE SCHOOL利用">本システムでタックシールを一括作成</td><td class="p-4 align-top bg-[#f0f9ff] border-l border-l-slate-200 border-r-[3px] border-r-primary border-t border-t-slate-300 border-b border-b-slate-300 text-right font-bold text-primary" data-label="INTEVE SCHOOL利用 時間">2分</td></tr><tr class="even:bg-blue-50/40"><td class="p-4 align-top font-bold border border-slate-300" data-label="詳細">返信文書を回収・受入枠を集約する<br/><span class="text-xs text-secondary font-bold">★回収という概念が消滅！</span></td><td class="p-4 align-top border border-slate-300" data-label="昭和レトロ時代">返信ハガキや書類から目視で台帳に転記</td><td class="p-4 align-top border border-slate-300 text-right" data-label="昭和レトロ時代 時間">5時間</td><td class="p-4 align-top border border-slate-300" data-label="デジタルデータのアナログ利用">返信書類を見ながらExcelファイルへ手入力転記</td><td class="p-4 align-top border border-slate-300 text-right" data-label="デジタルデータのアナログ利用 時間">2時間30分</td><td class="p-4 align-top bg-[#f0f9ff] border-l-[3px] border-l-primary border-r border-r-slate-200 border-t border-t-slate-300 border-b border-b-slate-300" data-label="INTEVE SCHOOL利用"><strong class="text-secondary">INTEVE LINKで施設側がWeb直接入力するため回収・転記業務そのものが消滅！</strong> 受入枠へリアルタイム自動同期。<br/>※紙返送時もPDFスキャン自動分割プレビュー機能で転記時間を半減</td><td class="p-4 align-top bg-[#f0f9ff] border-l border-l-slate-200 border-r-[3px] border-r-primary border-t border-t-slate-300 border-b border-b-slate-300 text-right font-bold text-primary" data-label="INTEVE SCHOOL利用 時間">0分</td></tr><tr class="even:bg-blue-50/40"><td class="p-4 align-top font-bold border border-slate-300" data-label="詳細">臨床実習対象施設を抽出する</td><td class="p-4 align-top border border-slate-300" data-label="昭和レトロ時代">目視で探して、紙に手作業で記入していく</td><td class="p-4 align-top border border-slate-300 text-right" data-label="昭和レトロ時代 時間">2時間</td><td class="p-4 align-top border border-slate-300" data-label="デジタルデータのアナログ利用">Excelで作成していたデータを元に整理する</td><td class="p-4 align-top border border-slate-300 text-right" data-label="デジタルデータのアナログ利用 時間">3分</td><td class="p-4 align-top bg-[#f0f9ff] border-l-[3px] border-l-primary border-r border-r-slate-200 border-t border-t-slate-300 border-b border-b-slate-300" data-label="INTEVE SCHOOL利用">本システムから検索して瞬時に出力</td><td class="p-4 align-top bg-[#f0f9ff] border-l border-l-slate-200 border-r-[3px] border-r-primary border-t border-t-slate-300 border-b border-b-slate-300 text-right font-bold text-primary" data-label="INTEVE SCHOOL利用 時間">10秒</td></tr><tr class="even:bg-blue-50/40"><td class="p-4 align-top font-bold border border-slate-300" data-label="作業項目" rowspan="2">学生配置<br/>（マッチング）</td><td class="p-4 align-top font-bold border border-slate-300" data-label="詳細">学生配置を検討する<br/>（学生の希望・適性・通勤経路・宿泊先などを勘案）</td><td class="p-4 align-top border border-slate-300" data-label="昭和レトロ時代">紙面上で検討。入れ替えの際はさらに手作業</td><td class="p-4 align-top border border-slate-300 text-right" data-label="昭和レトロ時代 時間">6時間</td><td class="p-4 align-top border border-slate-300" data-label="デジタルデータのアナログ利用">学生全員の通学ルートや乗換案内を1件ずつWeb検索し、Excelシートで施設条件と突合。1人変更すると玉突き再検索が発生し丸数日間の地獄のパズル作業に</td><td class="p-4 align-top border border-slate-300 text-right font-bold text-red-600" data-label="デジタルデータのアナログ利用 時間">20時間（2〜3日）</td><td class="p-4 align-top bg-[#f0f9ff] border-l-[3px] border-l-primary border-r border-r-slate-200 border-t border-t-slate-300 border-b border-b-slate-300" data-label="INTEVE SCHOOL利用"><strong class="text-secondary">AI自動マッチングで叩き台を数秒生成！</strong><br/>・NAVITIME API連携：通学ルート・最短時間・最安運賃を自動算出<br/>・Booking.com API連携：周辺ホテル・宿泊費を自動取得<br/>・学生基準/施設基準の画面連動パズル（D&amp;D）と不公平感カラー判定で微調整</td><td class="p-4 align-top bg-[#f0f9ff] border-l border-l-slate-200 border-r-[3px] border-r-primary border-t border-t-slate-300 border-b border-b-slate-300 text-right font-bold text-primary" data-label="INTEVE SCHOOL利用 時間">30分</td></tr><tr class="even:bg-blue-50/40"><td class="p-4 align-top font-bold border border-slate-300" data-label="詳細">完成データの利活用・本番反映</td><td class="p-4 align-top border border-slate-300" data-label="昭和レトロ時代">完成版を清書する</td><td class="p-4 align-top border border-slate-300 text-right" data-label="昭和レトロ時代 時間">1時間</td><td class="p-4 align-top border border-slate-300" data-label="デジタルデータのアナログ利用">完成版の体裁を整えて出力・各台帳へ転記</td><td class="p-4 align-top border border-slate-300 text-right" data-label="デジタルデータのアナログ利用 時間">10分</td><td class="p-4 align-top bg-[#f0f9ff] border-l-[3px] border-l-primary border-r border-r-slate-200 border-t border-t-slate-300 border-b border-b-slate-300" data-label="INTEVE SCHOOL利用">ボタン1つで本番実習データへ正式反映・帳票出力</td><td class="p-4 align-top bg-[#f0f9ff] border-l border-l-slate-200 border-r-[3px] border-r-primary border-t border-t-slate-300 border-b border-b-slate-300 text-right font-bold text-primary" data-label="INTEVE SCHOOL利用 時間">10秒</td></tr><tr class="even:bg-blue-50/40"><td class="p-4 align-top font-bold border border-slate-300" data-label="作業項目" rowspan="6">指導者会議</td><td class="p-4 align-top font-bold border border-slate-300" data-label="詳細">臨床実習指導者会議に招待する施設を抽出する</td><td class="p-4 align-top border border-slate-300" data-label="昭和レトロ時代">紙面上で確認して、また別の紙面で作成する</td><td class="p-4 align-top border border-slate-300 text-right" data-label="昭和レトロ時代 時間">2時間</td><td class="p-4 align-top border border-slate-300" data-label="デジタルデータのアナログ利用">Excel上で整理する</td><td class="p-4 align-top border border-slate-300 text-right" data-label="デジタルデータのアナログ利用 時間">5分</td><td class="p-4 align-top bg-[#f0f9ff] border-l-[3px] border-l-primary border-r border-r-slate-200 border-t border-t-slate-300 border-b border-b-slate-300" data-label="INTEVE SCHOOL利用">受入決定施設を一発で一括抽出・自動登録</td><td class="p-4 align-top bg-[#f0f9ff] border-l border-l-slate-200 border-r-[3px] border-r-primary border-t border-t-slate-300 border-b border-b-slate-300 text-right font-bold text-primary" data-label="INTEVE SCHOOL利用 時間">0分</td></tr><tr class="even:bg-blue-50/40"><td class="p-4 align-top font-bold border border-slate-300" data-label="詳細">案内文書を作成する</td><td class="p-4 align-top border border-slate-300" data-label="昭和レトロ時代">ワープロで1から作成する</td><td class="p-4 align-top border border-slate-300 text-right" data-label="昭和レトロ時代 時間">30分</td><td class="p-4 align-top border border-slate-300" data-label="デジタルデータのアナログ利用">前年度のファイルを元に整理する</td><td class="p-4 align-top border border-slate-300 text-right" data-label="デジタルデータのアナログ利用 時間">2分</td><td class="p-4 align-top bg-[#f0f9ff] border-l-[3px] border-l-primary border-r border-r-slate-200 border-t border-t-slate-300 border-b border-b-slate-300" data-label="INTEVE SCHOOL利用">前年度のデータをワンクリックで移行</td><td class="p-4 align-top bg-[#f0f9ff] border-l border-l-slate-200 border-r-[3px] border-r-primary border-t border-t-slate-300 border-b border-b-slate-300 text-right font-bold text-primary" data-label="INTEVE SCHOOL利用 時間">2秒</td></tr><tr class="even:bg-blue-50/40"><td class="p-4 align-top font-bold border border-slate-300" data-label="詳細">案内文書発送のための宛名を入力する</td><td class="p-4 align-top border border-slate-300" data-label="昭和レトロ時代">封筒に宛名を個別に手書き・印刷する</td><td class="p-4 align-top border border-slate-300 text-right" data-label="昭和レトロ時代 時間">8時間</td><td class="p-4 align-top border border-slate-300" data-label="デジタルデータのアナログ利用">Wordの差し込み印刷機能でタックシールを作成する</td><td class="p-4 align-top border border-slate-300 text-right" data-label="デジタルデータのアナログ利用 時間">30分</td><td class="p-4 align-top bg-[#f0f9ff] border-l-[3px] border-l-primary border-r border-r-slate-200 border-t border-t-slate-300 border-b border-b-slate-300" data-label="INTEVE SCHOOL利用">本システムでタックシールを一括作成</td><td class="p-4 align-top bg-[#f0f9ff] border-l border-l-slate-200 border-r-[3px] border-r-primary border-t border-t-slate-300 border-b border-b-slate-300 text-right font-bold text-primary" data-label="INTEVE SCHOOL利用 時間">2分</td></tr><tr class="even:bg-blue-50/40"><td class="p-4 align-top font-bold border border-slate-300" data-label="詳細">返信文書を回収・出欠を集約する</td><td class="p-4 align-top border border-slate-300" data-label="昭和レトロ時代">返信用紙から目視で出席台帳に記入</td><td class="p-4 align-top border border-slate-300 text-right" data-label="昭和レトロ時代 時間">5時間</td><td class="p-4 align-top border border-slate-300" data-label="デジタルデータのアナログ利用">返信メールやFAXからExcelファイルへ手入力</td><td class="p-4 align-top border border-slate-300 text-right" data-label="デジタルデータのアナログ利用 時間">2時間30分</td><td class="p-4 align-top bg-[#f0f9ff] border-l-[3px] border-l-primary border-r border-r-slate-200 border-t border-t-slate-300 border-b border-b-slate-300" data-label="INTEVE SCHOOL利用"><strong class="text-secondary">INTEVE LINK上でオンライン出欠回答、ボタン1つで参加者名簿へ自動集約！</strong></td><td class="p-4 align-top bg-[#f0f9ff] border-l border-l-slate-200 border-r-[3px] border-r-primary border-t border-t-slate-300 border-b border-b-slate-300 text-right font-bold text-primary" data-label="INTEVE SCHOOL利用 時間">0分</td></tr><tr class="even:bg-blue-50/40"><td class="p-4 align-top font-bold border border-slate-300" data-label="詳細">会議当日に必要な書類を作成する（名簿や金銭計算等）</td><td class="p-4 align-top border border-slate-300" data-label="昭和レトロ時代">手作業で作成</td><td class="p-4 align-top border border-slate-300 text-right" data-label="昭和レトロ時代 時間">5時間</td><td class="p-4 align-top border border-slate-300" data-label="デジタルデータのアナログ利用">Excelデータを元に整理。修正の都度再確認が必要</td><td class="p-4 align-top border border-slate-300 text-right" data-label="デジタルデータのアナログ利用 時間">1時間</td><td class="p-4 align-top bg-[#f0f9ff] border-l-[3px] border-l-primary border-r border-r-slate-200 border-t border-t-slate-300 border-b border-b-slate-300" data-label="INTEVE SCHOOL利用">本システムから検索して一発出力。確認作業は不要</td><td class="p-4 align-top bg-[#f0f9ff] border-l border-l-slate-200 border-r-[3px] border-r-primary border-t border-t-slate-300 border-b border-b-slate-300 text-right font-bold text-primary" data-label="INTEVE SCHOOL利用 時間">30秒</td></tr><tr class="even:bg-blue-50/40"><td class="p-4 align-top font-bold border border-slate-300" data-label="詳細">会議の議事録等を発送するための宛名を入力する</td><td class="p-4 align-top border border-slate-300" data-label="昭和レトロ時代">封筒に宛名を個別に手書き・印刷する</td><td class="p-4 align-top border border-slate-300 text-right" data-label="昭和レトロ時代 時間">8時間</td><td class="p-4 align-top border border-slate-300" data-label="デジタルデータのアナログ利用">Wordの差し込み印刷機能でタックシールを作成する</td><td class="p-4 align-top border border-slate-300 text-right" data-label="デジタルデータのアナログ利用 時間">30分</td><td class="p-4 align-top bg-[#f0f9ff] border-l-[3px] border-l-primary border-r border-r-slate-200 border-t border-t-slate-300 border-b border-b-slate-300" data-label="INTEVE SCHOOL利用">本システムでタックシールを一括作成</td><td class="p-4 align-top bg-[#f0f9ff] border-l border-l-slate-200 border-r-[3px] border-r-primary border-t border-t-slate-300 border-b border-b-slate-300 text-right font-bold text-primary" data-label="INTEVE SCHOOL利用 時間">2分</td></tr><tr class="even:bg-blue-50/40"><td class="p-4 align-top font-bold border border-slate-300" data-label="作業項目" rowspan="4">実習依頼</td><td class="p-4 align-top font-bold border border-slate-300" data-label="詳細">実習生用のプロフィールを作成する</td><td class="p-4 align-top border border-slate-300" data-label="昭和レトロ時代">顔写真はハサミで切り貼りする</td><td class="p-4 align-top border border-slate-300 text-right" data-label="昭和レトロ時代 時間">3時間</td><td class="p-4 align-top border border-slate-300" data-label="デジタルデータのアナログ利用">顔写真はデータ上でコピペするか印刷後に手貼り</td><td class="p-4 align-top border border-slate-300 text-right" data-label="デジタルデータのアナログ利用 時間">3時間</td><td class="p-4 align-top bg-[#f0f9ff] border-l-[3px] border-l-primary border-r border-r-slate-200 border-t border-t-slate-300 border-b border-b-slate-300" data-label="INTEVE SCHOOL利用">QRコード自動撮影取込機能と連動し、本システムからワンクリック出力</td><td class="p-4 align-top bg-[#f0f9ff] border-l border-l-slate-200 border-r-[3px] border-r-primary border-t border-t-slate-300 border-b border-b-slate-300 text-right font-bold text-primary" data-label="INTEVE SCHOOL利用 時間">1分</td></tr><tr class="even:bg-blue-50/40"><td class="p-4 align-top font-bold border border-slate-300" data-label="詳細">実習の依頼文書を作成する</td><td class="p-4 align-top border border-slate-300" data-label="昭和レトロ時代">ワープロで1から作成する</td><td class="p-4 align-top border border-slate-300 text-right" data-label="昭和レトロ時代 時間">3時間</td><td class="p-4 align-top border border-slate-300" data-label="デジタルデータのアナログ利用">前年度のファイルを元に整理する</td><td class="p-4 align-top border border-slate-300 text-right" data-label="デジタルデータのアナログ利用 時間">10分</td><td class="p-4 align-top bg-[#f0f9ff] border-l-[3px] border-l-primary border-r border-r-slate-200 border-t border-t-slate-300 border-b border-b-slate-300" data-label="INTEVE SCHOOL利用">前年度のデータを移行し複数実習を一括公文書化</td><td class="p-4 align-top bg-[#f0f9ff] border-l border-l-slate-200 border-r-[3px] border-r-primary border-t border-t-slate-300 border-b border-b-slate-300 text-right font-bold text-primary" data-label="INTEVE SCHOOL利用 時間">1分</td></tr><tr class="even:bg-blue-50/40"><td class="p-4 align-top font-bold border border-slate-300" data-label="詳細">実習の依頼文書を確認する</td><td class="p-4 align-top border border-slate-300" data-label="昭和レトロ時代">確実な目視確認が必要</td><td class="p-4 align-top border border-slate-300 text-right" data-label="昭和レトロ時代 時間">1時間</td><td class="p-4 align-top border border-slate-300" data-label="デジタルデータのアナログ利用">確実な目視確認が必要</td><td class="p-4 align-top border border-slate-300 text-right" data-label="デジタルデータのアナログ利用 時間">1時間</td><td class="p-4 align-top bg-[#f0f9ff] border-l-[3px] border-l-primary border-r border-r-slate-200 border-t border-t-slate-300 border-b border-b-slate-300" data-label="INTEVE SCHOOL利用">システム連携済みのため確認不要</td><td class="p-4 align-top bg-[#f0f9ff] border-l border-l-slate-200 border-r-[3px] border-r-primary border-t border-t-slate-300 border-b border-b-slate-300 text-right font-bold text-primary" data-label="INTEVE SCHOOL利用 時間">1分</td></tr><tr class="even:bg-blue-50/40"><td class="p-4 align-top font-bold border border-slate-300" data-label="詳細">実習の依頼文書発送のための宛名を入力する</td><td class="p-4 align-top border border-slate-300" data-label="昭和レトロ時代">封筒に宛名を個別に手書き・印刷する</td><td class="p-4 align-top border border-slate-300 text-right" data-label="昭和レトロ時代 時間">8時間</td><td class="p-4 align-top border border-slate-300" data-label="デジタルデータのアナログ利用">Wordの差し込み印刷機能でタックシールを作成する</td><td class="p-4 align-top border border-slate-300 text-right" data-label="デジタルデータのアナログ利用 時間">30分</td><td class="p-4 align-top bg-[#f0f9ff] border-l-[3px] border-l-primary border-r border-r-slate-200 border-t border-t-slate-300 border-b border-b-slate-300" data-label="INTEVE SCHOOL利用">本システムでタックシールを一括作成</td><td class="p-4 align-top bg-[#f0f9ff] border-l border-l-slate-200 border-r-[3px] border-r-primary border-t border-t-slate-300 border-b border-b-slate-300 text-right font-bold text-primary" data-label="INTEVE SCHOOL利用 時間">2分</td></tr>
-<!-- INTEVE LINK Real-time Practice Section -->
-<tr class="even:bg-blue-50/40 bg-sky-50/60"><td class="p-4 align-top font-bold border border-slate-300 text-primary" data-label="作業項目" rowspan="4"><span class="inline-block bg-primary text-white text-xs px-2 py-0.5 rounded mr-1">NEW</span>実習期間中<br/>（INTEVE LINK本格始動）</td><td class="p-4 align-top font-bold border border-slate-300" data-label="詳細">日誌・デイリーノートの回収・確認・指導者印の管理<br/>（実習生40人・全期間）</td><td class="p-4 align-top border border-slate-300" data-label="昭和レトロ時代">紙の日誌を定期回収。教員が手書きで赤入れ・確認・押印</td><td class="p-4 align-top border border-slate-300 text-right" data-label="昭和レトロ時代 時間">80時間</td><td class="p-4 align-top border border-slate-300" data-label="デジタルデータのアナログ利用">Word等の日誌をメール送付させ、教員が1通ずつ添付を開いて確認・返信・フォルダ整理</td><td class="p-4 align-top border border-slate-300 text-right font-bold text-red-600" data-label="デジタルデータのアナログ利用 時間">30時間</td><td class="p-4 align-top bg-[#f0f9ff] border-l-[3px] border-l-primary border-r border-r-slate-200 border-t border-t-slate-300 border-b border-b-slate-300" data-label="INTEVE SCHOOL利用"><strong class="text-secondary">学生がスマホ入力（手書きノート写真UPも可）→ 指導者がオンラインで赤入れ・電子印。</strong> 教員はダッシュボードで全学生の提出状況を一覧即時確認＆ワンクリックPDF化</td><td class="p-4 align-top bg-[#f0f9ff] border-l border-l-slate-200 border-r-[3px] border-r-primary border-t border-t-slate-300 border-b border-b-slate-300 text-right font-bold text-primary" data-label="INTEVE SCHOOL利用 時間">期間計 約2時間<br/>（5分/日）</td></tr><tr class="even:bg-blue-50/40 bg-sky-50/60"><td class="p-4 align-top font-bold border border-slate-300" data-label="詳細">出席管理・総実習時間の算出・指導者サイン回収</td><td class="p-4 align-top border border-slate-300" data-label="昭和レトロ時代">紙の出勤簿を手計算で電卓集計、押印漏れの確認、手書き転記</td><td class="p-4 align-top border border-slate-300 text-right" data-label="昭和レトロ時代 時間">10時間</td><td class="p-4 align-top border border-slate-300" data-label="デジタルデータのアナログ利用">Excelに入力して関数計算、押印・サインの有無を目視確認</td><td class="p-4 align-top border border-slate-300 text-right font-bold text-red-600" data-label="デジタルデータのアナログ利用 時間">5時間</td><td class="p-4 align-top bg-[#f0f9ff] border-l-[3px] border-l-primary border-r border-r-slate-200 border-t border-t-slate-300 border-b border-b-slate-300" data-label="INTEVE SCHOOL利用"><strong class="text-secondary">開始・終了時間から「総実習時間」を完全自動算出！</strong> 実習最終日に指導者画面で電子手書きサイン受領後、そのまま正式提出書類として自動保管</td><td class="p-4 align-top bg-[#f0f9ff] border-l border-l-slate-200 border-r-[3px] border-r-primary border-t border-t-slate-300 border-b border-b-slate-300 text-right font-bold text-primary" data-label="INTEVE SCHOOL利用 時間">0分</td></tr><tr class="even:bg-blue-50/40 bg-sky-50/60"><td class="p-4 align-top font-bold border border-slate-300" data-label="詳細">メンタル＆コンディション管理・早期離脱防止<br/>（三者間チャット連携）</td><td class="p-4 align-top border border-slate-300" data-label="昭和レトロ時代">電話や訪問まで学生の異変に気づけず、問題発生後に事後対応で何日も追われる</td><td class="p-4 align-top border border-slate-300 text-right" data-label="昭和レトロ時代 時間">20時間</td><td class="p-4 align-top border border-slate-300" data-label="デジタルデータのアナログ利用">メール等で聞くものの本音が拾えず、すれ違いや急な離脱トラブルが発生</td><td class="p-4 align-top border border-slate-300 text-right font-bold text-red-600" data-label="デジタルデータのアナログ利用 時間">10時間</td><td class="p-4 align-top bg-[#f0f9ff] border-l-[3px] border-l-primary border-r border-r-slate-200 border-t border-t-slate-300 border-b border-b-slate-300" data-label="INTEVE SCHOOL利用"><strong class="text-secondary">毎日の体調・メンタルを5段階可視化（指導者非開示・教員限定安全設計）</strong>。アラートとメール通知付き三者チャットで不調を早期察知しトラブルを未然防止</td><td class="p-4 align-top bg-[#f0f9ff] border-l border-l-slate-200 border-r-[3px] border-r-primary border-t border-t-slate-300 border-b border-b-slate-300 text-right font-bold text-primary" data-label="INTEVE SCHOOL利用 時間">期間計 約1時間<br/>（1日1分）</td></tr><tr class="even:bg-blue-50/40 bg-sky-50/60"><td class="p-4 align-top font-bold border border-slate-300" data-label="詳細">到達度チェックリストの確認・承認</td><td class="p-4 align-top border border-slate-300" data-label="昭和レトロ時代">紙の冊子チェック表を回収して手計算集計</td><td class="p-4 align-top border border-slate-300 text-right" data-label="昭和レトロ時代 時間">5時間</td><td class="p-4 align-top border border-slate-300" data-label="デジタルデータのアナログ利用">Excelシートを集約・転記</td><td class="p-4 align-top border border-slate-300 text-right" data-label="デジタルデータのアナログ利用 時間">2時間</td><td class="p-4 align-top bg-[#f0f9ff] border-l-[3px] border-l-primary border-r border-r-slate-200 border-t border-t-slate-300 border-b border-b-slate-300" data-label="INTEVE SCHOOL利用">自校仕様のチェック項目を学生がスマホで「見学・模倣・実施」入力、<strong class="text-secondary">指導者がその場でタップ承認</strong>。教員画面にリアルタイム反映</td><td class="p-4 align-top bg-[#f0f9ff] border-l border-l-slate-200 border-r-[3px] border-r-primary border-t border-t-slate-300 border-b border-b-slate-300 text-right font-bold text-primary" data-label="INTEVE SCHOOL利用 時間">0分</td></tr>
-<!-- Post Practice Admin Section -->
-<tr class="even:bg-blue-50/40"><td class="p-4 align-top font-bold border border-slate-300" data-label="作業項目" rowspan="2"><span class="inline-block bg-primary text-white text-xs px-2 py-0.5 rounded mr-1">NEW</span>実習終了後<br/>（精算・管理）</td><td class="p-4 align-top font-bold border border-slate-300" data-label="詳細">実習指導謝礼金・経費の計算と書類作成</td><td class="p-4 align-top border border-slate-300" data-label="昭和レトロ時代">実習台帳と施設控えを手作業で突き合わせ、重複学生を集約、口座番号を確認して手書き振込票作成</td><td class="p-4 align-top border border-slate-300 text-right" data-label="昭和レトロ時代 時間">15時間</td><td class="p-4 align-top border border-slate-300" data-label="デジタルデータのアナログ利用">実習データと施設マスタをExcelでVLOOKUP等で照合、重複を手作業で整理、振込依頼書や精算書を作成</td><td class="p-4 align-top border border-slate-300 text-right font-bold text-red-600" data-label="デジタルデータのアナログ利用 時間">6時間</td><td class="p-4 align-top bg-[#f0f9ff] border-l-[3px] border-l-primary border-r border-r-slate-200 border-t border-t-slate-300 border-b border-b-slate-300" data-label="INTEVE SCHOOL利用"><strong class="text-secondary">実習データから重複学生を自動集約、登録済み口座マスタと自動突合！</strong> 振込依頼書や各種経費精算書類を一括生成</td><td class="p-4 align-top bg-[#f0f9ff] border-l border-l-slate-200 border-r-[3px] border-r-primary border-t border-t-slate-300 border-b border-b-slate-300 text-right font-bold text-primary" data-label="INTEVE SCHOOL利用 時間">3分</td></tr><tr class="even:bg-blue-50/40"><td class="p-4 align-top font-bold border border-slate-300" data-label="詳細">巡回指導報告書の一元管理と印刷</td><td class="p-4 align-top border border-slate-300" data-label="昭和レトロ時代">手書き報告書をファイリング・保管</td><td class="p-4 align-top border border-slate-300 text-right" data-label="昭和レトロ時代 時間">4時間</td><td class="p-4 align-top border border-slate-300" data-label="デジタルデータのアナログ利用">教員各自がWordで作成したファイルを学内サーバーに保存・探すのに一苦労</td><td class="p-4 align-top border border-slate-300 text-right" data-label="デジタルデータのアナログ利用 時間">2時間</td><td class="p-4 align-top bg-[#f0f9ff] border-l-[3px] border-l-primary border-r border-r-slate-200 border-t border-t-slate-300 border-b border-b-slate-300" data-label="INTEVE SCHOOL利用">訪問・電話・オンライン等の指導記録を一元登録。教員名や学生名で瞬時に絞り込み、統一フォーマットで即時PDF出力</td><td class="p-4 align-top bg-[#f0f9ff] border-l border-l-slate-200 border-r-[3px] border-r-primary border-t border-t-slate-300 border-b border-b-slate-300 text-right font-bold text-primary" data-label="INTEVE SCHOOL利用 時間">1分</td></tr>
-<tr class="large-text-row even:bg-blue-50/40"><td class="font-bold align-middle text-center text-base sm:text-lg p-4 bg-slate-100 border border-slate-300" colspan="2" data-label="作業項目・詳細">合計（年間を通した実習業務全体）</td><td class="font-bold align-middle text-base sm:text-lg p-4 bg-slate-100 border border-slate-300 text-right" colspan="2" data-label="昭和レトロ時代 時間">約 202時間</td><td class="font-bold align-middle text-base sm:text-lg p-4 bg-slate-100 border border-slate-300 text-right font-bold text-red-600" colspan="2" data-label="デジタルデータのアナログ利用 時間">約 95時間（2〜3週間分）</td><td class="font-bold align-middle text-base sm:text-lg p-4 bg-blue-100 border-l-[3px] border-l-primary border-r-[3px] border-r-primary border-b-[3px] border-b-primary border-t border-t-slate-300 text-right font-bold text-primary" colspan="2" data-label="INTEVE SCHOOL利用 時間">約 4.5時間</td></tr><tr class="styled-message-row even:bg-blue-50/40"><td class="border-t border-t-slate-300 border-b border-b-slate-300 text-right py-6 text-primary font-bold bg-white text-base sm:text-lg pr-6 sm:pr-8" colspan="8">INTEVE LINKの登場により「回収・転記・集計」の業務自体が消滅！ 年間通して教員1人あたり約90時間以上の膨大な時間を創出します。</td></tr><tr class="even:bg-blue-50/40"><td class="p-4 align-top font-bold border border-slate-300" data-label="作業項目" rowspan="3">作成データの利活用</td><td class="p-4 align-top font-bold border border-slate-300" data-label="詳細">ある目的のために作成したデータを、別の目的のために使用する</td><td class="p-4 align-top border border-slate-300" colspan="2" data-label="昭和レトロ時代">一から手直し</td><td class="p-4 align-top border border-slate-300" colspan="2" data-label="デジタルデータのアナログ利用">基本的にコピーペーストで可能だが、似たようなデータが次々に複製され、その都度混乱を招く</td><td class="p-4 align-top bg-[#f0f9ff] border-l-[3px] border-l-primary border-r-[3px] border-r-primary border-t-[3px] border-t-primary border-b border-b-slate-300" colspan="2" data-label="INTEVE SCHOOL利用">一元管理されている本システムから都度出力する　混乱することはない</td></tr><tr class="even:bg-blue-50/40"><td class="p-4 align-top font-bold border border-slate-300" data-label="詳細">データの最新情報を確認する</td><td class="p-4 align-top border border-slate-300" colspan="2" data-label="昭和レトロ時代">口づてか正しいかどうか分からない書類でのやり取りでミスが頻発する</td><td class="p-4 align-top border border-slate-300" colspan="2" data-label="デジタルデータのアナログ利用">データが複製されているために、どれが最新の情報かの判別が困難でしばしば混乱を招く</td><td class="p-4 align-top bg-[#f0f9ff] border-l-[3px] border-l-primary border-r-[3px] border-r-primary border-t border-t-slate-300 border-b border-b-slate-300" colspan="2" data-label="INTEVE SCHOOL利用">一元管理されている本システムに情報を集約しているので、常に最新の情報に全員がアクセスできる</td></tr><tr class="even:bg-blue-50/40"><td class="p-4 align-top font-bold border border-slate-300" data-label="詳細">過去データの参照</td><td class="p-4 align-top border border-slate-300" colspan="2" data-label="昭和レトロ時代">あるかないか分からない紙面かワープロのデータから探すか、誰かの記憶を頼る</td><td class="p-4 align-top border border-slate-300" colspan="2" data-label="デジタルデータのアナログ利用">あるかないか分からないデータから探すか、誰かの記憶を頼る</td><td class="p-4 align-top bg-[#f0f9ff] border-l-[3px] border-l-primary border-r-[3px] border-r-primary border-t border-t-slate-300 border-b-[3px] border-b-primary" colspan="2" data-label="INTEVE SCHOOL利用">本システム上で検索する</td></tr></tbody></table></div>
-</div>
-<!-- Student Management Tab Content -->
-<div class="animate-fade-in hidden" id="tab-student">
-<div class="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-4 gap-2">
-    <h3 class="text-xl sm:text-2xl font-bold text-primary flex items-center gap-2">
-        <i class="fas fa-user-graduate text-secondary text-lg"></i>
-        業務改善目安データ（学生管理・教務）
-    </h3>
-    <div class="text-xs text-slate-400 lg:hidden flex items-center gap-1 self-end sm:self-auto">
-        <i class="fas fa-arrows-alt-h text-slate-400"></i> 表は左右にスクロールできます
-    </div>
-</div>
-<div class="overflow-x-auto border-2 border-blue-100 bg-blue-50/20 rounded-2xl p-3 sm:p-5 shadow-sm"><table class="w-full text-left border-collapse border bg-white shadow-sm min-w-[880px] lg:min-w-full border-slate-200 text-xs sm:text-sm"><thead><tr><th class="border border-slate-300 bg-slate-100 text-slate-800 font-bold align-middle text-center p-3 sm:p-4">作業項目</th><th class="border border-slate-300 bg-slate-100 text-slate-800 font-bold align-middle text-center p-3 sm:p-4">詳細</th><th class="border border-slate-300 bg-slate-100 text-slate-800 font-bold align-middle text-center p-3 sm:p-4" colspan="2">昭和レトロ時代</th><th class="border border-slate-300 bg-slate-100 text-slate-800 font-bold align-middle text-center p-3 sm:p-4" colspan="2">デジタルデータのアナログ利用</th><th class="border-t-[3px] border-t-primary border-l-[3px] border-l-primary border-r-[3px] border-r-primary border-b border-b-slate-300 bg-primary text-yellow-400 text-base sm:text-lg font-bold align-middle text-center p-3 sm:p-4" colspan="2">INTEVE SCHOOL利用</th></tr></thead><tbody class="divide-y divide-slate-200 text-slate-700 text-sm"><tr class="even:bg-blue-50/40"><td class="p-4 align-top font-bold border border-slate-300" data-label="作業項目" rowspan="3">学生・教務管理</td><td class="p-4 align-top font-bold border border-slate-300" data-label="詳細">学生の顔写真一括登録・自動トリミング<br/>（新入生・クラス40人分）</td><td class="p-4 align-top border border-slate-300" data-label="昭和レトロ時代">現像写真をハサミで切り、のりで学生台帳に1枚ずつ貼付</td><td class="p-4 align-top border border-slate-300 text-right" data-label="昭和レトロ時代 時間">3時間</td><td class="p-4 align-top border border-slate-300" data-label="デジタルデータのアナログ利用">デジカメ写真を取り込み、画像ソフトで1人ずつ手動トリミング、学籍番号でリネームしてExcel名簿に手動貼り付け</td><td class="p-4 align-top border border-slate-300 text-right font-bold text-red-600" data-label="デジタルデータのアナログ利用 時間">4時間</td><td class="p-4 align-top bg-[#f0f9ff] border-l-[3px] border-l-primary border-r border-r-slate-200 border-t border-t-slate-300 border-b border-b-slate-300" data-label="INTEVE SCHOOL利用"><strong class="text-secondary">学生にQRコードを持たせて撮影し、フォルダごと読み込んで「個別トリミング」を押すだけ！</strong><br/>QRから学籍番号を自動取得し顔サイズに自動トリミング＆学生カルテへ自動マッピング。（※解析画像はクラウドサーバーから即時自動消去されセキュリティ万全）</td><td class="p-4 align-top bg-[#f0f9ff] border-l border-l-slate-200 border-r-[3px] border-r-primary border-t border-t-slate-300 border-b border-b-slate-300 text-right font-bold text-primary" data-label="INTEVE SCHOOL利用 時間">5分</td></tr><tr class="even:bg-blue-50/40"><td class="p-4 align-top font-bold border border-slate-300" data-label="詳細">日常記録（面談・指導記録）の蓄積と保護者面談資料作成</td><td class="p-4 align-top border border-slate-300" data-label="昭和レトロ時代">過去の手書き指導ノートや日誌をめくって該当学生の記録を探し出し、清書</td><td class="p-4 align-top border border-slate-300 text-right" data-label="昭和レトロ時代 時間">2時間</td><td class="p-4 align-top border border-slate-300" data-label="デジタルデータのアナログ利用">教員個人のWordやメモから過去履歴を探してまとめ直す（情報の属人化）</td><td class="p-4 align-top border border-slate-300 text-right font-bold text-red-600" data-label="デジタルデータのアナログ利用 時間">1時間</td><td class="p-4 align-top bg-[#f0f9ff] border-l-[3px] border-l-primary border-r border-r-slate-200 border-t border-t-slate-300 border-b border-b-slate-300" data-label="INTEVE SCHOOL利用">学生カルテに日々の面談・指導を記録。<strong class="text-secondary">「時系列印刷」を押すだけで、保護者面談用の美麗な個人カルテ帳票が一括PDF出力</strong></td><td class="p-4 align-top bg-[#f0f9ff] border-l border-l-slate-200 border-r-[3px] border-r-primary border-t border-t-slate-300 border-b border-b-slate-300 text-right font-bold text-primary" data-label="INTEVE SCHOOL利用 時間">10秒</td></tr><tr class="even:bg-blue-50/40"><td class="p-4 align-top font-bold border border-slate-300" data-label="詳細">就職活動の履歴管理・求人票の集計</td><td class="p-4 align-top border border-slate-300" data-label="昭和レトロ時代">紙の求人票ファイルと学生の報告書を手作業で照合</td><td class="p-4 align-top border border-slate-300 text-right" data-label="昭和レトロ時代 時間">5時間</td><td class="p-4 align-top border border-slate-300" data-label="デジタルデータのアナログ利用">求人Excelと学生の進路Excelを二重管理し、内定状況を手入力更新</td><td class="p-4 align-top border border-slate-300 text-right font-bold text-red-600" data-label="デジタルデータのアナログ利用 時間">2時間</td><td class="p-4 align-top bg-[#f0f9ff] border-l-[3px] border-l-primary border-r border-r-slate-200 border-t border-t-slate-300 border-b border-b-slate-300" data-label="INTEVE SCHOOL利用">施設IDで求人情報と学生の活動履歴（見学・受験・内定）が完全連動。内定状況や施設分類別の就職統計が全自動で集計</td><td class="p-4 align-top bg-[#f0f9ff] border-l border-l-slate-200 border-r-[3px] border-r-primary border-t border-t-slate-300 border-b border-b-slate-300 text-right font-bold text-primary" data-label="INTEVE SCHOOL利用 時間">1分</td></tr><tr class="large-text-row even:bg-blue-50/40"><td class="font-bold align-middle text-center text-base sm:text-lg p-4 bg-slate-100 border border-slate-300" colspan="2" data-label="作業項目・詳細">合計（学生管理・教務）</td><td class="font-bold align-middle text-base sm:text-lg p-4 bg-slate-100 border border-slate-300 text-right" colspan="2" data-label="昭和レトロ時代 時間">10.0時間</td><td class="font-bold align-middle text-base sm:text-lg p-4 bg-slate-100 border border-slate-300 text-right font-bold text-red-600" colspan="2" data-label="デジタルデータのアナログ利用 時間">7.0時間</td><td class="font-bold align-middle text-base sm:text-lg p-4 bg-blue-100 border-l-[3px] border-l-primary border-r-[3px] border-r-primary border-b-[3px] border-b-primary border-t border-t-slate-300 text-right font-bold text-primary" colspan="2" data-label="INTEVE SCHOOL利用 時間">約 6分</td></tr><tr class="styled-message-row even:bg-blue-50/40"><td class="border-t border-t-slate-300 border-b border-b-slate-300 text-right py-6 text-primary font-bold bg-white text-base sm:text-lg pr-6 sm:pr-8" colspan="8">教務の煩雑なルーチンワークを瞬時に完了。先生方の本来の役目である教育と学生指導に専念できます。</td></tr></tbody></table></div>
-</div>
-</div>
-</div>
-<!-- Tab Framework end -->
-</div>
 </section>
 <!-- Related Column Section -->
 <section class="py-16 bg-slate-50 border-t border-slate-200">
@@ -330,24 +1308,34 @@
 <div id="footer-placeholder"></div>
 <!-- Inline script for Tabs -->
 <script>
-        function switchTab(tabId) {
-            const activeClass = "py-3.5 px-4 sm:px-6 md:px-8 text-primary font-bold border-b-4 border-secondary hover:bg-slate-50 transition-all text-sm sm:text-base md:text-lg focus:outline-none inline-flex items-center justify-center gap-2";
-            const inactiveClass = "py-3.5 px-4 sm:px-6 md:px-8 text-slate-400 font-bold border-b-4 border-transparent hover:text-primary hover:bg-slate-50 transition-all text-sm sm:text-base md:text-lg focus:outline-none inline-flex items-center justify-center gap-2";
-            
-            const tabs = ['practice', 'exam', 'student'];
-            tabs.forEach(id => {
-                const content = document.getElementById('tab-' + id);
-                const btn = document.getElementById('btn-tab-' + id);
-                if (content) {
-                    content.classList.toggle('hidden', id !== tabId);
-                    content.classList.toggle('block', id === tabId);
+    function switchTab(tabId) {
+        const activeClass = "py-3 px-4 sm:px-6 md:px-8 text-primary font-extrabold bg-white rounded-xl shadow-md border border-slate-200/80 transition-all text-xs sm:text-sm md:text-base inline-flex items-center gap-2 whitespace-nowrap";
+        const inactiveClass = "py-3 px-4 sm:px-6 md:px-8 text-slate-500 font-bold hover:text-primary hover:bg-white/60 rounded-xl transition-all text-xs sm:text-sm md:text-base inline-flex items-center gap-2 whitespace-nowrap";
+        
+        const tabs = ['practice', 'exam', 'student'];
+        tabs.forEach(id => {
+            const content = document.getElementById('tab-' + id);
+            const btn = document.getElementById('btn-tab-' + id);
+            if (content) {
+                content.classList.toggle('hidden', id !== tabId);
+                content.classList.toggle('block', id === tabId);
+            }
+            if (btn) {
+                btn.className = (id === tabId) ? activeClass : inactiveClass;
+                const icon = btn.querySelector('i');
+                if (icon) {
+                    if (id === tabId) {
+                        icon.classList.remove('text-slate-400');
+                        icon.classList.add('text-secondary');
+                    } else {
+                        icon.classList.remove('text-secondary');
+                        icon.classList.add('text-slate-400');
+                    }
                 }
-                if (btn) {
-                    btn.className = (id === tabId) ? activeClass : inactiveClass;
-                }
-            });
-        }
-    </script>
+            }
+        });
+    }
+</script>
 <style>
         .animate-fade-in {
             animation: fadeIn 0.3s ease-in-out forwards;
