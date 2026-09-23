@@ -8,3 +8,7 @@
 # Redirect download.html to contact.html
 Redirect 301 /download.html https://creativesd.net/contact.html
 
+
+# Redirect connect to homepage
+Redirect 301 /connect https://creativesd.net/
+Redirect 301 /connect.html https://creativesd.net/

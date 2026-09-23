@@ -1,0 +1,30 @@
+{
+  "redirects": [
+    {
+      "source": "/connect",
+      "destination": "https://creativesd.net/",
+      "permanent": true
+    },
+    {
+      "source": "/connect.html",
+      "destination": "https://creativesd.net/",
+      "permanent": true
+    },
+    {
+      "source": "/connect/:match*",
+      "destination": "https://creativesd.net/",
+      "permanent": true
+    },
+    {
+      "source": "/:match*",
+      "has": [
+        {
+          "type": "host",
+          "value": "connect.creativesd.net"
+        }
+      ],
+      "destination": "https://creativesd.net/",
+      "permanent": true
+    }
+  ]
+}
