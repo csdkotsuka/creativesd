@@ -1,0 +1,538 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>開発実績・プロダクト（ポートフォリオ） | Creative System Design</title>
+    <meta name="description" content="Creative System Designが開発・提供するWebアプリケーション・システム実績のご紹介。AI予約管理、代行マッチング、セルフケアダイアリー、現場スタッフ管理、チームスケジュール連携など、現場の課題を解決する実践的なプロダクトを掲載しています。">
+
+    <link rel="icon" href="images/favicon.png" type="image/png" />
+    <link rel="apple-touch-icon" href="images/favicon.png" />
+
+    <!-- OGP Settings -->
+    <meta property="og:title" content="開発実績・プロダクト（ポートフォリオ） | Creative System Design" />
+    <meta property="og:description" content="AI予約管理、代行マッチング、セルフケア、現場スタッフ管理など、現場のリアルな課題を解決するWebアプリケーション開発実績をご紹介します。" />
+    <meta property="og:url" content="https://creativesd.net/portfolio.html" />
+    <meta property="og:image" content="https://creativesd.net/images/ogp.png" />
+    <meta property="og:type" content="article" />
+    <meta name="twitter:card" content="summary_large_image" />
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-P8YSB8RZB2"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-P8YSB8RZB2');
+    </script>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts: Inter -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Noto+Sans+JP:wght@400;500;700;800&display=swap" rel="stylesheet">
+    <!-- FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css?v=20260329">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#004080',
+                        secondary: '#00BCD4',
+                        accent: '#FF6600',
+                        glass: 'rgba(255, 255, 255, 0.7)',
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'Noto Sans JP', 'sans-serif'],
+                    },
+                }
+            }
+        }
+    </script>
+</head>
+<body class="font-sans text-slate-900 overflow-x-hidden bg-slate-50">
+
+    <div id="header-placeholder"></div>
+
+    <main class="pt-32 pb-24 relative overflow-hidden">
+        
+        <!-- Elegant Background Blobs -->
+        <div class="absolute top-0 right-0 w-96 h-96 bg-secondary/10 rounded-full blur-3xl -z-10 -translate-y-1/2 translate-x-1/3"></div>
+        <div class="absolute top-1/3 left-0 w-96 h-96 bg-primary/5 rounded-full blur-3xl -z-10 -translate-x-1/3"></div>
+        <div class="absolute bottom-1/4 right-0 w-80 h-80 bg-accent/5 rounded-full blur-3xl -z-10 translate-x-1/4"></div>
+
+        <!-- Page Header -->
+        <section class="container mx-auto px-6 mb-16 text-center max-w-4xl">
+            <span class="text-secondary font-bold tracking-widest uppercase text-xs sm:text-sm mb-3 block">Portfolio & Products</span>
+            <h1 class="text-3xl sm:text-4xl md:text-5xl font-extrabold text-primary mb-6 tracking-tight">
+                開発実績・プロダクト紹介
+            </h1>
+            <p class="text-base sm:text-lg text-slate-600 font-medium leading-relaxed max-w-2xl mx-auto">
+                現場のリアルな不便や課題に向き合い、最新のWebテクノロジーとAIを活用して開発してきたアプリケーション群です。<br class="hidden sm:inline">
+                業種・規模を問わず、実務で本当に役立つシステムの企画・設計・開発を行っています。
+            </p>
+        </section>
+
+        <!-- Product Cards Container -->
+        <div class="container mx-auto px-4 sm:px-6 max-w-5xl space-y-12">
+
+            <!-- 1. CONNECT -->
+            <article class="bg-white rounded-3xl p-6 sm:p-10 shadow-[0_8px_30px_rgb(0,0,0,0.04)] border border-slate-100 relative overflow-hidden transition-all duration-300 hover:shadow-xl hover:border-teal-200">
+                <div class="absolute top-0 left-0 w-2 h-full bg-teal-500"></div>
+                <div class="flex flex-col md:flex-row md:items-start gap-6 sm:gap-8">
+                    <!-- Icon / Visual -->
+                    <div class="shrink-0 flex items-center md:items-start justify-between md:justify-center">
+                        <div class="w-20 h-20 sm:w-24 sm:h-24 rounded-2xl bg-teal-50 border border-teal-100 p-2 shadow-sm flex items-center justify-center overflow-hidden">
+                            <img src="images/portfolio/connect.png" alt="CONNECT アイコン" class="w-full h-full object-contain">
+                        </div>
+                        <span class="md:hidden text-xs font-bold px-3 py-1 rounded-full bg-teal-50 text-teal-700 border border-teal-200">
+                            No. 1 / 予約・顧客管理
+                        </span>
+                    </div>
+
+                    <!-- Details -->
+                    <div class="flex-1 space-y-4">
+                        <div class="flex flex-wrap items-center justify-between gap-2">
+                            <div class="flex flex-wrap items-center gap-2">
+                                <span class="hidden md:inline-block text-xs font-bold px-2.5 py-0.5 rounded-full bg-teal-50 text-teal-700 border border-teal-200">
+                                    No. 1
+                                </span>
+                                <span class="text-xs font-bold px-2.5 py-0.5 rounded-full bg-slate-100 text-slate-700">
+                                    クリニック・店舗DX
+                                </span>
+                                <span class="text-xs font-bold px-2.5 py-0.5 rounded-full bg-emerald-50 text-emerald-700 border border-emerald-200 flex items-center gap-1">
+                                    <span class="w-1.5 h-1.5 rounded-full bg-emerald-500"></span> サービス提供中
+                                </span>
+                            </div>
+                        </div>
+
+                        <div>
+                            <h2 class="text-2xl sm:text-3xl font-bold text-slate-900 tracking-tight">
+                                CONNECT<span class="text-lg sm:text-xl font-normal text-slate-500 ml-2">（コネクト）</span>
+                            </h2>
+                            <p class="text-sm sm:text-base font-semibold text-teal-600 mt-1">
+                                24時間AI即レス予約 ＆ 顧客・スタッフ管理システム
+                            </p>
+                        </div>
+
+                        <p class="text-slate-600 text-sm sm:text-base leading-relaxed">
+                            歯科医院をはじめ、接骨院・サロン・パーソナルジムなど幅広い業種に対応する次世代予約・顧客管理システム。
+                            LINE・WebからAIが24時間365日即時レスポンスで患者・顧客の予約受付や日時変更を自動化し、スタッフ別のタイムラインカレンダーに即時反映。
+                            QR受付や電子カルテ・問診連携により、電話対応の手間と二重予約リスクを大幅に削減します。
+                        </p>
+
+                        <!-- Key Features -->
+                        <div class="bg-slate-50 rounded-2xl p-4 sm:p-5 border border-slate-100">
+                            <h3 class="text-xs font-bold text-slate-500 uppercase tracking-wider mb-2.5">主な特長・機能</h3>
+                            <ul class="grid grid-cols-1 sm:grid-cols-2 gap-2 text-xs sm:text-sm text-slate-700">
+                                <li class="flex items-center gap-2">
+                                    <i class="fas fa-check-circle text-teal-500 text-sm"></i>
+                                    <span>LINE / Web両対応の24時間AI自動予約</span>
+                                </li>
+                                <li class="flex items-center gap-2">
+                                    <i class="fas fa-check-circle text-teal-500 text-sm"></i>
+                                    <span>スタッフ別タイムラインカレンダー＆シフト連動</span>
+                                </li>
+                                <li class="flex items-center gap-2">
+                                    <i class="fas fa-check-circle text-teal-500 text-sm"></i>
+                                    <span>スマホQR来院受付 ＆ 顧客カルテ連携</span>
+                                </li>
+                                <li class="flex items-center gap-2">
+                                    <i class="fas fa-check-circle text-teal-500 text-sm"></i>
+                                    <span>即時SMS/メール通知・リマインド配信</span>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <!-- Tech Stack & Links -->
+                        <div class="pt-2 flex flex-col sm:flex-row sm:items-center justify-between gap-4 border-t border-slate-100">
+                            <div class="text-xs text-slate-400 font-mono">
+                                Tech: React / Vite / Tailwind CSS / Supabase / LINE LIFF
+                            </div>
+                            <div class="flex flex-wrap items-center gap-3">
+                                <a href="https://connect.inteve-cloud.com/about/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 px-5 py-2.5 rounded-full text-xs sm:text-sm font-bold text-white bg-teal-600 hover:bg-teal-700 shadow-sm hover:shadow transition-all group">
+                                    <span>解説・紹介ページを見る</span>
+                                    <i class="fas fa-external-link-alt text-[11px] transform group-hover:translate-x-0.5 transition-transform"></i>
+                                </a>
+                                <a href="https://connect.inteve-cloud.com/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 px-4 py-2.5 rounded-full text-xs sm:text-sm font-semibold text-slate-600 hover:text-teal-700 bg-white hover:bg-slate-50 border border-slate-200 transition-all">
+                                    <span>システムを開く</span>
+                                    <i class="fas fa-arrow-right text-[11px]"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </article>
+
+            <!-- 2. ココロモウ (Kokoromou) -->
+            <article class="bg-white rounded-3xl p-6 sm:p-10 shadow-[0_8px_30px_rgb(0,0,0,0.04)] border border-slate-100 relative overflow-hidden transition-all duration-300 hover:shadow-xl hover:border-emerald-200">
+                <div class="absolute top-0 left-0 w-2 h-full bg-emerald-600"></div>
+                <div class="flex flex-col md:flex-row md:items-start gap-6 sm:gap-8">
+                    <!-- Icon / Visual -->
+                    <div class="shrink-0 flex items-center md:items-start justify-between md:justify-center">
+                        <div class="w-20 h-20 sm:w-24 sm:h-24 rounded-2xl bg-emerald-50 border border-emerald-100 p-2 shadow-sm flex items-center justify-center overflow-hidden">
+                            <img src="images/portfolio/kokoromou.png" alt="ココロモウ アイコン" class="w-full h-full object-contain">
+                        </div>
+                        <span class="md:hidden text-xs font-bold px-3 py-1 rounded-full bg-emerald-50 text-emerald-800 border border-emerald-200">
+                            No. 2 / マッチング・代行
+                        </span>
+                    </div>
+
+                    <!-- Details -->
+                    <div class="flex-1 space-y-4">
+                        <div class="flex flex-wrap items-center justify-between gap-2">
+                            <div class="flex flex-wrap items-center gap-2">
+                                <span class="hidden md:inline-block text-xs font-bold px-2.5 py-0.5 rounded-full bg-emerald-50 text-emerald-800 border border-emerald-200">
+                                    No. 2
+                                </span>
+                                <span class="text-xs font-bold px-2.5 py-0.5 rounded-full bg-slate-100 text-slate-700">
+                                    マッチングプラットフォーム
+                                </span>
+                                <span class="text-xs font-bold px-2.5 py-0.5 rounded-full bg-emerald-50 text-emerald-700 border border-emerald-200 flex items-center gap-1">
+                                    <span class="w-1.5 h-1.5 rounded-full bg-emerald-500"></span> サービス提供中
+                                </span>
+                            </div>
+                        </div>
+
+                        <div>
+                            <h2 class="text-2xl sm:text-3xl font-bold text-slate-900 tracking-tight">
+                                ココロモウ<span class="text-lg sm:text-xl font-normal text-slate-500 ml-2">（Kokoromou）</span>
+                            </h2>
+                            <p class="text-sm sm:text-base font-semibold text-emerald-700 mt-1">
+                                お墓参り・お掃除代行プラットフォーム ＆ Stripe自動分配決済
+                            </p>
+                        </div>
+
+                        <p class="text-slate-600 text-sm sm:text-base leading-relaxed">
+                            遠方に住み訪問が難しい施主様と、地元の信頼できる石材店・霊園管理会社・清掃代行者を繋ぐマッチングプラットフォーム。
+                            依頼から作業完了後の写真付きWeb報告書の受取・ご親族への共有までワンストップで完結。
+                            Stripe Connect（Destination Charges）によるエスクロー決済・手数料自動分配を実装し、霊園・寺院管理会社向けの区画管理ダッシュボードも備えています。
+                        </p>
+
+                        <!-- Key Features -->
+                        <div class="bg-slate-50 rounded-2xl p-4 sm:p-5 border border-slate-100">
+                            <h3 class="text-xs font-bold text-slate-500 uppercase tracking-wider mb-2.5">主な特長・機能</h3>
+                            <ul class="grid grid-cols-1 sm:grid-cols-2 gap-2 text-xs sm:text-sm text-slate-700">
+                                <li class="flex items-center gap-2">
+                                    <i class="fas fa-check-circle text-emerald-600 text-sm"></i>
+                                    <span>オンライン申込＆高画質写真付きWeb報告書</span>
+                                </li>
+                                <li class="flex items-center gap-2">
+                                    <i class="fas fa-check-circle text-emerald-600 text-sm"></i>
+                                    <span>Stripe Connectによる安心の自動分配・即時決済</span>
+                                </li>
+                                <li class="flex items-center gap-2">
+                                    <i class="fas fa-check-circle text-emerald-600 text-sm"></i>
+                                    <span>霊園・提携業者向け専用管理ダッシュボード</span>
+                                </li>
+                                <li class="flex items-center gap-2">
+                                    <i class="fas fa-check-circle text-emerald-600 text-sm"></i>
+                                    <span>チラシ・案内DM・QRコード自動発行機能</span>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <!-- Tech Stack & Links -->
+                        <div class="pt-2 flex flex-col sm:flex-row sm:items-center justify-between gap-4 border-t border-slate-100">
+                            <div class="text-xs text-slate-400 font-mono">
+                                Tech: Next.js 16 / React 19 / TypeScript / Firebase / Stripe Connect
+                            </div>
+                            <div class="flex flex-wrap items-center gap-3">
+                                <a href="https://kokoromou.vercel.app" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 px-5 py-2.5 rounded-full text-xs sm:text-sm font-bold text-white bg-emerald-700 hover:bg-emerald-800 shadow-sm hover:shadow transition-all group">
+                                    <span>解説・紹介ページを見る</span>
+                                    <i class="fas fa-external-link-alt text-[11px] transform group-hover:translate-x-0.5 transition-transform"></i>
+                                </a>
+                                <a href="https://kokoromou.vercel.app/flyer" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 px-4 py-2.5 rounded-full text-xs sm:text-sm font-semibold text-slate-600 hover:text-emerald-800 bg-white hover:bg-slate-50 border border-slate-200 transition-all">
+                                    <span>販促・チラシ発行機能</span>
+                                    <i class="fas fa-arrow-right text-[11px]"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </article>
+
+            <!-- 3. Cheer -->
+            <article class="bg-white rounded-3xl p-6 sm:p-10 shadow-[0_8px_30px_rgb(0,0,0,0.04)] border border-slate-100 relative overflow-hidden transition-all duration-300 hover:shadow-xl hover:border-pink-200">
+                <div class="absolute top-0 left-0 w-2 h-full bg-gradient-to-b from-pink-500 to-purple-600"></div>
+                <div class="flex flex-col md:flex-row md:items-start gap-6 sm:gap-8">
+                    <!-- Icon / Visual -->
+                    <div class="shrink-0 flex items-center md:items-start justify-between md:justify-center">
+                        <div class="w-20 h-20 sm:w-24 sm:h-24 rounded-2xl bg-pink-50 border border-pink-100 p-2 shadow-sm flex items-center justify-center overflow-hidden">
+                            <img src="images/portfolio/cheer-icon.svg" alt="Cheer アイコン" class="w-full h-full object-contain">
+                        </div>
+                        <span class="md:hidden text-xs font-bold px-3 py-1 rounded-full bg-pink-50 text-pink-700 border border-pink-200">
+                            No. 3 / セルフケア
+                        </span>
+                    </div>
+
+                    <!-- Details -->
+                    <div class="flex-1 space-y-4">
+                        <div class="flex flex-wrap items-center justify-between gap-2">
+                            <div class="flex flex-wrap items-center gap-2">
+                                <span class="hidden md:inline-block text-xs font-bold px-2.5 py-0.5 rounded-full bg-pink-50 text-pink-700 border border-pink-200">
+                                    No. 3
+                                </span>
+                                <span class="text-xs font-bold px-2.5 py-0.5 rounded-full bg-slate-100 text-slate-700">
+                                    ヘルスケア・習慣化
+                                </span>
+                                <span class="text-xs font-bold px-2.5 py-0.5 rounded-full bg-emerald-50 text-emerald-700 border border-emerald-200 flex items-center gap-1">
+                                    <span class="w-1.5 h-1.5 rounded-full bg-emerald-500"></span> サービス提供中
+                                </span>
+                            </div>
+                        </div>
+
+                        <div>
+                            <h2 class="text-2xl sm:text-3xl font-bold text-slate-900 tracking-tight">
+                                Cheer<span class="text-lg sm:text-xl font-normal text-slate-500 ml-2">（チアー）</span>
+                            </h2>
+                            <p class="text-sm sm:text-base font-semibold text-pink-600 mt-1">
+                                毎日に寄り添うパートナー ＆ セルフケアダイアリー
+                            </p>
+                        </div>
+
+                        <p class="text-slate-600 text-sm sm:text-base leading-relaxed">
+                            「推し活」や日々のモチベーションをエネルギーに変え、心と身体の健康（セルフケア）を両立するためのWebアプリケーション。
+                            インタラクティブなパートナーアバターが日々の気分・睡眠・体調記録に寄り添い、温かい応援メッセージを返答。
+                            大切なイベントや目標に向けたカウントダウン、目標達成時のリワード演出、Firebaseによるリアルタイム同期を搭載し、事業者・専門職向けPRテンプレート機能も備えています。
+                        </p>
+
+                        <!-- Key Features -->
+                        <div class="bg-slate-50 rounded-2xl p-4 sm:p-5 border border-slate-100">
+                            <h3 class="text-xs font-bold text-slate-500 uppercase tracking-wider mb-2.5">主な特長・機能</h3>
+                            <ul class="grid grid-cols-1 sm:grid-cols-2 gap-2 text-xs sm:text-sm text-slate-700">
+                                <li class="flex items-center gap-2">
+                                    <i class="fas fa-check-circle text-pink-500 text-sm"></i>
+                                    <span>寄り添いパートナーによる応援・対話UI</span>
+                                </li>
+                                <li class="flex items-center gap-2">
+                                    <i class="fas fa-check-circle text-pink-500 text-sm"></i>
+                                    <span>気分・体調・習慣のグラフィカル記録＆推移分析</span>
+                                </li>
+                                <li class="flex items-center gap-2">
+                                    <i class="fas fa-check-circle text-pink-500 text-sm"></i>
+                                    <span>目標イベントカウントダウン ＆ 達成リワード</span>
+                                </li>
+                                <li class="flex items-center gap-2">
+                                    <i class="fas fa-check-circle text-pink-500 text-sm"></i>
+                                    <span>事業者・専門職向けPR＆テンプレート配信</span>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <!-- Tech Stack & Links -->
+                        <div class="pt-2 flex flex-col sm:flex-row sm:items-center justify-between gap-4 border-t border-slate-100">
+                            <div class="text-xs text-slate-400 font-mono">
+                                Tech: React 19 / TypeScript / Vite / Tailwind CSS / Firebase / Chart.js
+                            </div>
+                            <div class="flex flex-wrap items-center gap-3">
+                                <a href="https://cheer.inteve-cloud.com/?page=pr-partner" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 px-5 py-2.5 rounded-full text-xs sm:text-sm font-bold text-white bg-gradient-to-r from-pink-500 to-purple-600 hover:opacity-95 shadow-sm hover:shadow transition-all group">
+                                    <span>事業者向け解説を見る</span>
+                                    <i class="fas fa-external-link-alt text-[11px] transform group-hover:translate-x-0.5 transition-transform"></i>
+                                </a>
+                                <a href="https://cheer.inteve-cloud.com/?page=guide-lounge" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 px-4 py-2.5 rounded-full text-xs sm:text-sm font-semibold text-slate-600 hover:text-pink-700 bg-white hover:bg-slate-50 border border-slate-200 transition-all">
+                                    <span>使い方ガイドを見る</span>
+                                    <i class="fas fa-arrow-right text-[11px]"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </article>
+
+            <!-- 4. staff_manage (現場NOW / CraftSync) -->
+            <article class="bg-white rounded-3xl p-6 sm:p-10 shadow-[0_8px_30px_rgb(0,0,0,0.04)] border border-slate-100 relative overflow-hidden transition-all duration-300 hover:shadow-xl hover:border-amber-200">
+                <div class="absolute top-0 left-0 w-2 h-full bg-amber-500"></div>
+                <div class="flex flex-col md:flex-row md:items-start gap-6 sm:gap-8">
+                    <!-- Icon / Visual -->
+                    <div class="shrink-0 flex items-center md:items-start justify-between md:justify-center">
+                        <div class="w-20 h-20 sm:w-24 sm:h-24 rounded-2xl bg-amber-50 border border-amber-100 p-2 shadow-sm flex items-center justify-center overflow-hidden">
+                            <img src="images/portfolio/staff_manage.svg" alt="現場NOW アイコン" class="w-full h-full object-contain">
+                        </div>
+                        <span class="md:hidden text-xs font-bold px-3 py-1 rounded-full bg-amber-50 text-amber-800 border border-amber-200">
+                            No. 4 / 現場・位置管理
+                        </span>
+                    </div>
+
+                    <!-- Details -->
+                    <div class="flex-1 space-y-4">
+                        <div class="flex flex-wrap items-center justify-between gap-2">
+                            <div class="flex flex-wrap items-center gap-2">
+                                <span class="hidden md:inline-block text-xs font-bold px-2.5 py-0.5 rounded-full bg-amber-50 text-amber-800 border border-amber-200">
+                                    No. 4
+                                </span>
+                                <span class="text-xs font-bold px-2.5 py-0.5 rounded-full bg-slate-100 text-slate-700">
+                                    建設・フィールドサービスDX
+                                </span>
+                                <span class="text-xs font-bold px-2.5 py-0.5 rounded-full bg-amber-50 text-amber-800 border border-amber-200 flex items-center gap-1">
+                                    <span class="w-1.5 h-1.5 rounded-full bg-amber-500"></span> 社内・PoC実証運用
+                                </span>
+                            </div>
+                        </div>
+
+                        <div>
+                            <h2 class="text-2xl sm:text-3xl font-bold text-slate-900 tracking-tight">
+                                現場NOW<span class="text-lg sm:text-xl font-normal text-slate-500 ml-2">（CraftSync / スタッフ管理システム）</span>
+                            </h2>
+                            <p class="text-sm sm:text-base font-semibold text-amber-600 mt-1">
+                                リアルタイム現場・位置・ステータス共有 ＆ 急募レスキューアプリ (PWA)
+                            </p>
+                        </div>
+
+                        <p class="text-slate-600 text-sm sm:text-base leading-relaxed">
+                            建設会社・工務店・設備メンテナンスなど、直行直帰や急な現場呼び出しが多い少人数チーム向けに設計されたモバイルファーストWebアプリケーション（PWA対応）。
+                            インタラクティブ地図上に現場位置と各社員の現在地・ステータス（移動中／作業中／完了／空き）をリアルタイム表示。
+                            トラブル現場発生時は、空き状況と現在地から「最も近い社員」をAIが自動計算し、ワンタップで出動要請（レスキュー）を発行できます。
+                        </p>
+
+                        <!-- Key Features -->
+                        <div class="bg-slate-50 rounded-2xl p-4 sm:p-5 border border-slate-100">
+                            <h3 class="text-xs font-bold text-slate-500 uppercase tracking-wider mb-2.5">主な特長・機能</h3>
+                            <ul class="grid grid-cols-1 sm:grid-cols-2 gap-2 text-xs sm:text-sm text-slate-700">
+                                <li class="flex items-center gap-2">
+                                    <i class="fas fa-check-circle text-amber-500 text-sm"></i>
+                                    <span>現場マップ（Leaflet）× 全員ステータス一括表示</span>
+                                </li>
+                                <li class="flex items-center gap-2">
+                                    <i class="fas fa-check-circle text-amber-500 text-sm"></i>
+                                    <span>🚨トラブル現場への最短スタッフ自動選定＆急募要請</span>
+                                </li>
+                                <li class="flex items-center gap-2">
+                                    <i class="fas fa-check-circle text-amber-500 text-sm"></i>
+                                    <span>屋外現場・手袋でも操作しやすい高コントラストPWA</span>
+                                </li>
+                                <li class="flex items-center gap-2">
+                                    <i class="fas fa-check-circle text-amber-500 text-sm"></i>
+                                    <span>「今空いてる人は？」に応えるAI自然言語アシスタント</span>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <!-- Tech Stack & Note -->
+                        <div class="pt-2 flex flex-col sm:flex-row sm:items-center justify-between gap-4 border-t border-slate-100">
+                            <div class="text-xs text-slate-400 font-mono">
+                                Tech: Next.js 16 / React 19 / TypeScript / Leaflet / Firebase / PWA
+                            </div>
+                            <div class="inline-flex items-center gap-2 text-xs text-slate-500 bg-slate-100 px-3.5 py-1.5 rounded-full font-medium">
+                                <i class="fas fa-lock text-slate-400"></i>
+                                <span>実証実験・限定利用中（個別デモ・カスタマイズ相談可）</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </article>
+
+            <!-- 5. fordays (チーム活動・スケジュール同期システム) -->
+            <article class="bg-white rounded-3xl p-6 sm:p-10 shadow-[0_8px_30px_rgb(0,0,0,0.04)] border border-slate-100 relative overflow-hidden transition-all duration-300 hover:shadow-xl hover:border-cyan-200">
+                <div class="absolute top-0 left-0 w-2 h-full bg-cyan-600"></div>
+                <div class="flex flex-col md:flex-row md:items-start gap-6 sm:gap-8">
+                    <!-- Icon / Visual -->
+                    <div class="shrink-0 flex items-center md:items-start justify-between md:justify-center">
+                        <div class="w-20 h-20 sm:w-24 sm:h-24 rounded-2xl bg-cyan-50 border border-cyan-100 p-2 shadow-sm flex items-center justify-center overflow-hidden">
+                            <img src="images/portfolio/team_schedule.svg" alt="チームスケジュール同期 アイコン" class="w-full h-full object-contain">
+                        </div>
+                        <span class="md:hidden text-xs font-bold px-3 py-1 rounded-full bg-cyan-50 text-cyan-800 border border-cyan-200">
+                            No. 5 / スケジュール管理
+                        </span>
+                    </div>
+
+                    <!-- Details -->
+                    <div class="flex-1 space-y-4">
+                        <div class="flex flex-wrap items-center justify-between gap-2">
+                            <div class="flex flex-wrap items-center gap-2">
+                                <span class="hidden md:inline-block text-xs font-bold px-2.5 py-0.5 rounded-full bg-cyan-50 text-cyan-800 border border-cyan-200">
+                                    No. 5
+                                </span>
+                                <span class="text-xs font-bold px-2.5 py-0.5 rounded-full bg-slate-100 text-slate-700">
+                                    ヘルスケア流通・サロンチームDX
+                                </span>
+                                <span class="text-xs font-bold px-2.5 py-0.5 rounded-full bg-cyan-50 text-cyan-800 border border-cyan-200 flex items-center gap-1">
+                                    <span class="w-1.5 h-1.5 rounded-full bg-cyan-600"></span> チーム内限定運用
+                                </span>
+                            </div>
+                        </div>
+
+                        <div>
+                            <h2 class="text-2xl sm:text-3xl font-bold text-slate-900 tracking-tight">
+                                チーム活動・スケジュール同期システム
+                            </h2>
+                            <p class="text-sm sm:text-base font-semibold text-cyan-700 mt-1">
+                                Googleカレンダー双方向同期 ＆ スマホ最適化 チーム運営支援
+                            </p>
+                        </div>
+
+                        <p class="text-slate-600 text-sm sm:text-base leading-relaxed">
+                            某大手ヘルスケア流通企業およびサロン運営チームのセミナー・勉強会・イベント日程管理のために開発された専用Webアプリケーション。
+                            Googleカレンダー（iCal）とサーバーサイドで定期自動同期し、常に最新の公式スケジュールを全メンバーが迷わず確認可能。
+                            スマホに最適化された月間グリッド・リストビュー、iPhoneやAndroidの標準カレンダーへのワンタップ登録（.ics生成）、Googleマップ会場連携など、日程連絡のミスをゼロにする仕組みを構築しました。
+                        </p>
+
+                        <!-- Key Features -->
+                        <div class="bg-slate-50 rounded-2xl p-4 sm:p-5 border border-slate-100">
+                            <h3 class="text-xs font-bold text-slate-500 uppercase tracking-wider mb-2.5">主な特長・機能</h3>
+                            <ul class="grid grid-cols-1 sm:grid-cols-2 gap-2 text-xs sm:text-sm text-slate-700">
+                                <li class="flex items-center gap-2">
+                                    <i class="fas fa-check-circle text-cyan-600 text-sm"></i>
+                                    <span>Googleカレンダー（iCal）自動同期による最新性維持</span>
+                                </li>
+                                <li class="flex items-center gap-2">
+                                    <i class="fas fa-check-circle text-cyan-600 text-sm"></i>
+                                    <span>スマホ標準カレンダー（iOS/Android）ワンタップ登録</span>
+                                </li>
+                                <li class="flex items-center gap-2">
+                                    <i class="fas fa-check-circle text-cyan-600 text-sm"></i>
+                                    <span>月間カレンダー ＆ 条件検索・キーワード絞り込み</span>
+                                </li>
+                                <li class="flex items-center gap-2">
+                                    <i class="fas fa-check-circle text-cyan-600 text-sm"></i>
+                                    <span>開催場所のGoogleマップ即時ナビゲーション連携</span>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <!-- Tech Stack & Note -->
+                        <div class="pt-2 flex flex-col sm:flex-row sm:items-center justify-between gap-4 border-t border-slate-100">
+                            <div class="text-xs text-slate-400 font-mono">
+                                Tech: Next.js 15 / React 19 / TypeScript / node-ical / Tailwind CSS
+                            </div>
+                            <div class="inline-flex items-center gap-2 text-xs text-slate-500 bg-slate-100 px-3.5 py-1.5 rounded-full font-medium">
+                                <i class="fas fa-shield-alt text-slate-400"></i>
+                                <span>チーム専用運用のプライベートシステム（社名・特定名称非公開）</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </article>
+
+        </div>
+
+        <!-- Custom Development CTA Section -->
+        <section class="container mx-auto px-6 max-w-4xl mt-20">
+            <div class="bg-gradient-to-br from-primary to-slate-900 rounded-3xl p-8 sm:p-12 text-white shadow-xl text-center space-y-6 relative overflow-hidden">
+                <div class="absolute -top-12 -right-12 w-48 h-48 bg-secondary/20 rounded-full blur-2xl"></div>
+                <div class="absolute -bottom-12 -left-12 w-48 h-48 bg-accent/20 rounded-full blur-2xl"></div>
+                
+                <span class="text-secondary font-bold tracking-widest uppercase text-xs">Custom Development</span>
+                <h2 class="text-2xl sm:text-3xl font-bold tracking-tight">
+                    現場の課題に合わせたWebシステム・受託開発のご相談
+                </h2>
+                <p class="text-slate-300 text-sm sm:text-base leading-relaxed max-w-2xl mx-auto">
+                    Creative System Design では、自社製品「INTEVE SCHOOL」の開発実績・特許出願技術を基盤に、予約・マッチング・現場管理・業務自動化など、多様な業界の実務に合わせたWebシステム開発・プロトタイプ作成を行っております。<br class="hidden sm:inline">
+                    「こんなシステムが欲しい」「業務を効率化したい」というご構想がございましたら、まずはお気軽にご相談ください。
+                </p>
+                <div class="pt-2">
+                    <a href="contact.html" data-ga-click="Portfolio: Contact" class="inline-flex items-center gap-2 px-8 py-3.5 rounded-full text-sm font-bold text-white bg-accent hover:bg-orange-600 shadow-lg hover:shadow-xl transition-all transform hover:-translate-y-0.5">
+                        <i class="fas fa-envelope"></i>
+                        <span>開発・システム導入のご相談はこちら</span>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <div id="footer-placeholder"></div>
+
+    <script src="js/main.js?v=20260329" data-root="./"></script>
+</body>
+</html>

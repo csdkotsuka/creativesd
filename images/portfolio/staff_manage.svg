@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" width="120" height="120">
+  <defs>
+    <linearGradient id="grad-staff" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0f172a" />
+      <stop offset="50%" stop-color="#1e293b" />
+      <stop offset="100%" stop-color="#334155" />
+    </linearGradient>
+    <linearGradient id="grad-amber" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#f59e0b" />
+      <stop offset="100%" stop-color="#d97706" />
+    </linearGradient>
+    <linearGradient id="grad-cyan" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#06b6d4" />
+      <stop offset="100%" stop-color="#0284c7" />
+    </linearGradient>
+    <filter id="shadow-staff" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="4" stdDeviation="6" flood-color="#000" flood-opacity="0.25" />
+    </filter>
+  </defs>
+  <!-- Background with rounded corners -->
+  <rect width="120" height="120" rx="28" fill="url(#grad-staff)" />
+  <rect x="1" y="1" width="118" height="118" rx="27" fill="none" stroke="#475569" stroke-width="1.5" stroke-opacity="0.4" />
+  
+  <!-- Subtle radar circles -->
+  <circle cx="60" cy="62" r="38" fill="none" stroke="#38bdf8" stroke-width="1" stroke-opacity="0.15" stroke-dasharray="3 3" />
+  <circle cx="60" cy="62" r="26" fill="none" stroke="#38bdf8" stroke-width="1" stroke-opacity="0.2" />
+
+  <!-- Hard Hat / Safety Helmet Icon -->
+  <g transform="translate(60, 52) scale(0.9)" filter="url(#shadow-staff)">
+    <!-- Helmet dome -->
+    <path d="M -26 6 C -26 -14, 26 -14, 26 6 C 26 8, 24 9, 21 9 L -21 9 C -24 9, -26 8, -26 6 Z" fill="url(#grad-amber)" />
+    <!-- Helmet brim -->
+    <path d="M -30 9 C -30 6, -26 7, -20 7 L 20 7 C 26 7, 30 6, 30 9 C 30 11, 26 12, 18 12 L -18 12 C -26 12, -30 11, -30 9 Z" fill="#b45309" />
+    <!-- Helmet ridge / crest -->
+    <path d="M -3 -12 L 3 -12 L 4 7 L -4 7 Z" fill="#fef3c7" opacity="0.8" />
+  </g>
+
+  <!-- Location Pin with pulse -->
+  <g transform="translate(60, 84)">
+    <!-- Outer glow pulse -->
+    <circle cx="0" cy="0" r="11" fill="#22c55e" opacity="0.25" />
+    <!-- Active Status Pin Badge -->
+    <circle cx="0" cy="0" r="6" fill="#22c55e" stroke="#ffffff" stroke-width="2" />
+  </g>
+
+  <!-- Small Team/Worker Dots -->
+  <circle cx="34" cy="46" r="3.5" fill="#38bdf8" />
+  <circle cx="86" cy="48" r="3.5" fill="#38bdf8" />
+</svg>
