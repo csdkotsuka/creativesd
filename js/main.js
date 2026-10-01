@@ -23,6 +23,9 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
+    // フォーム送信スパム対策用のタイムスタンプ
+    const pageLoadedAt = Date.now();
+
     // --- お問い合わせフォームの送信処理 ---
     const contactForm = document.getElementById('contact-form');
     const GAS_ENDPOINT = "https://script.google.com/macros/s/AKfycbwyBdlYrwEmNOsrsIpIg5Qvk-i3B5kLpaLIi25EunSYhQcMUSHdmakJU41k_Yp12v-d/exec";
@@ -30,6 +33,19 @@ document.addEventListener('DOMContentLoaded', () => {
     if (contactForm) {
         contactForm.addEventListener('submit', async (e) => {
             e.preventDefault();
+
+            // ハニーポット（スパムボット自動入力チェック）
+            const honeypotVal = (contactForm.querySelector('input[name="website_url"]') || {}).value || "";
+            if (honeypotVal.trim() !== "") {
+                console.warn("Spam detected via honeypot field. Dropping request silently.");
+                // ボットには送信完了に見せかける
+                if (window.showContactSuccessModal) {
+                    window.showContactSuccessModal(false, []);
+                }
+                contactForm.reset();
+                if (window.turnstile) window.turnstile.reset();
+                return;
+            }
 
             // お問い合わせの種類の選択チェック
             const inquiryCheckboxes = contactForm.querySelectorAll('input[name="inquiry_type"]:checked');
@@ -55,9 +71,12 @@ document.addEventListener('DOMContentLoaded', () => {
             try {
                 // フォームデータの収集
                 const formData = new FormData(contactForm);
+                const submitDuration = Math.floor((Date.now() - pageLoadedAt) / 1000);
                 const payload = {
                     form_source: "contact",
-                    turnstile_token: turnstileToken
+                    turnstile_token: turnstileToken,
+                    submit_duration: submitDuration,
+                    website_url: honeypotVal
                 };
 
                 formData.forEach((value, key) => {
@@ -129,6 +148,18 @@ document.addEventListener('DOMContentLoaded', () => {
                 return;
             }
 
+            // ハニーポット（スパムボット自動入力チェック）
+            const honeypotVal = (downloadForm.querySelector('input[name="website_url"]') || {}).value || "";
+            if (honeypotVal.trim() !== "") {
+                console.warn("Spam detected via honeypot field. Dropping request silently.");
+                if (window.showDownloadSuccessModal) {
+                    window.showDownloadSuccessModal([]);
+                }
+                downloadForm.reset();
+                if (window.turnstile) window.turnstile.reset();
+                return;
+            }
+
             // Cloudflare Turnstile 検証チェック
             const turnstileInput = downloadForm.querySelector('input[name="cf-turnstile-response"]');
             const turnstileToken = turnstileInput ? turnstileInput.value : "";
@@ -146,10 +177,13 @@ document.addEventListener('DOMContentLoaded', () => {
             try {
                 // フォームデータの収集
                 const formData = new FormData(downloadForm);
+                const submitDuration = Math.floor((Date.now() - pageLoadedAt) / 1000);
                 const payload = {
                     form_source: "download",
                     inquiry_type: "資料ダウンロード",
-                    turnstile_token: turnstileToken
+                    turnstile_token: turnstileToken,
+                    submit_duration: submitDuration,
+                    website_url: honeypotVal
                 };
 
                 formData.forEach((value, key) => {
@@ -206,6 +240,18 @@ document.addEventListener('DOMContentLoaded', () => {
         ilDownloadForm.addEventListener('submit', async (e) => {
             e.preventDefault();
 
+            // ハニーポット（スパムボット自動入力チェック）
+            const honeypotVal = (ilDownloadForm.querySelector('input[name="website_url"]') || {}).value || "";
+            if (honeypotVal.trim() !== "") {
+                console.warn("Spam detected via honeypot field. Dropping request silently.");
+                if (window.showILDownloadSuccessModal) {
+                    window.showILDownloadSuccessModal();
+                }
+                ilDownloadForm.reset();
+                if (window.turnstile) window.turnstile.reset();
+                return;
+            }
+
             // Cloudflare Turnstile 検証チェック
             const turnstileInput = ilDownloadForm.querySelector('input[name="cf-turnstile-response"]');
             const turnstileToken = turnstileInput ? turnstileInput.value : "";
@@ -223,11 +269,14 @@ document.addEventListener('DOMContentLoaded', () => {
             try {
                 // フォームデータの収集
                 const formData = new FormData(ilDownloadForm);
+                const submitDuration = Math.floor((Date.now() - pageLoadedAt) / 1000);
                 const payload = {
                     form_source: "download",
                     inquiry_type: "資料ダウンロード",
                     interests: "INTEVE LINK",
-                    turnstile_token: turnstileToken
+                    turnstile_token: turnstileToken,
+                    submit_duration: submitDuration,
+                    website_url: honeypotVal
                 };
 
                 formData.forEach((value, key) => {

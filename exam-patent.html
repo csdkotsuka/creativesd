@@ -1,0 +1,759 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>特許技術・詳細解説レポート | INTEVE SCHOOL 国家試験対策</title>
+    <meta name="description" content="国家試験対策システムの特許出願技術（特願2025-265873）を徹底解説。S-P表注意係数、推奨選択肢リスク分析、AIパーソナライズアドバイスなど、教員向け全体分析と学生向け個人成績表の実物レポートとともにご紹介します。">
+
+    <link rel="icon" href="images/favicon.png" type="image/png" />
+    <link rel="apple-touch-icon" href="images/favicon.png" />
+
+    <!-- OGP Settings -->
+    <meta property="og:title" content="特許技術・詳細解説レポート | INTEVE SCHOOL 国家試験対策" />
+    <meta property="og:description" content="「点数」では見抜けない学習の質と臨床リスクを可視化。特許出願システムの全貌を実例レポートとともに解説。" />
+    <meta property="og:url" content="https://creativesd.net/exam-patent.html" />
+    <meta property="og:image" content="https://creativesd.net/images/ogp.png" />
+    <meta property="og:type" content="article" />
+    <meta name="twitter:card" content="summary_large_image" />
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-P8YSB8RZB2"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-P8YSB8RZB2');
+    </script>
+
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts: Inter -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    <!-- FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css?v=20260329">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#004080',
+                        secondary: '#00BCD4',
+                        accent: '#FF6600',
+                        glass: 'rgba(255, 255, 255, 0.7)',
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                }
+            }
+        }
+    </script>
+</head>
+<body class="font-sans text-slate-900 overflow-x-hidden bg-slate-50">
+
+    <div id="header-placeholder"></div>
+
+    <main>
+        <!-- Page Top Header Banner -->
+        <section class="bg-primary text-white pt-24 pb-12 md:pt-28 md:pb-16 relative overflow-hidden">
+            <div class="absolute inset-0 bg-gradient-to-r from-primary via-blue-900 to-primary opacity-95"></div>
+            <!-- Decorative Glow -->
+            <div class="absolute -top-24 -right-24 w-96 h-96 bg-secondary/20 rounded-full blur-3xl pointer-events-none"></div>
+            <div class="absolute -bottom-24 -left-24 w-96 h-96 bg-accent/20 rounded-full blur-3xl pointer-events-none"></div>
+
+            <div class="container mx-auto px-6 max-w-6xl relative z-10">
+                <!-- Breadcrumbs -->
+                <nav class="flex items-center space-x-2 text-xs md:text-sm text-cyan-200 mb-4">
+                    <a href="index.html" class="hover:text-white transition-colors">ホーム</a>
+                    <span>&gt;</span>
+                    <a href="exam.html" class="hover:text-white transition-colors">国家試験対策</a>
+                    <span>&gt;</span>
+                    <span class="text-white font-medium">特許技術・詳細解説レポート</span>
+                </nav>
+
+                <div class="flex flex-col lg:flex-row lg:items-center justify-between gap-6">
+                    <div class="space-y-3">
+                        <div class="inline-flex items-center space-x-2 bg-white/10 text-cyan-300 text-xs px-3.5 py-1.5 rounded-full font-bold border border-cyan-400/30 backdrop-blur">
+                            <i class="fas fa-certificate text-yellow-300"></i>
+                            <span>特許出願中（特願2025-265873）独自システム解説</span>
+                        </div>
+                        <h1 class="text-3xl md:text-4xl lg:text-5xl font-bold leading-tight drop-shadow-md">
+                            「点数」では届かない領域へ。<br>
+                            <span class="text-secondary">学習の『質』と『臨床リスク』</span>を解き明かす特許技術
+                        </h1>
+                        <p class="text-cyan-100 text-sm md:text-base max-w-3xl font-light leading-relaxed">
+                            単なる〇×採点では見抜けない「まぐれ当たり」「禁忌肢の選択」「集団的誤解」を科学的に可視化。<br class="hidden sm:inline">
+                            教員向け【全体試験結果レポート】と学生向け【個人成績表レポート】の2大帳票による徹底解説をお届けします。
+                        </p>
+                    </div>
+                    <div class="shrink-0 flex flex-col sm:flex-row lg:flex-col gap-3">
+                        <a href="exam.html" class="inline-flex items-center justify-center gap-2 px-5 py-2.5 bg-white/10 hover:bg-white/20 border border-white/30 text-white rounded-xl text-sm font-semibold transition-all">
+                            <i class="fas fa-arrow-left"></i>
+                            <span>国家試験対策へ戻る</span>
+                        </a>
+                        <a href="risk-analysis.html" class="inline-flex items-center justify-center gap-2 px-5 py-2.5 bg-secondary/80 hover:bg-secondary text-primary rounded-xl text-sm font-bold transition-all shadow-md">
+                            <i class="fas fa-shield-alt"></i>
+                            <span>推奨選択肢リスク分析とは？</span>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Quick Navigation Pills -->
+                <div class="mt-8 pt-6 border-t border-white/15 flex flex-wrap items-center gap-3 text-xs md:text-sm">
+                    <span class="text-slate-300 font-bold"><i class="fas fa-bookmark text-accent mr-1.5"></i>目次ジャンプ:</span>
+                    <a href="#patent-concept" class="bg-white/10 hover:bg-white/20 px-3 py-1.5 rounded-lg text-white transition-all">特許のコア思想</a>
+                    <a href="#teacher-report" class="bg-white/10 hover:bg-white/20 px-3 py-1.5 rounded-lg text-white transition-all">教員向け 全体試験結果レポート</a>
+                    <a href="#student-report" class="bg-white/10 hover:bg-white/20 px-3 py-1.5 rounded-lg text-white transition-all">学生向け 個人成績表レポート</a>
+                    <a href="#summary-cta" class="bg-white/10 hover:bg-white/20 px-3 py-1.5 rounded-lg text-white transition-all">導入のご案内</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Main Content Area -->
+        <div class="container mx-auto px-6 max-w-6xl py-16 space-y-20">
+
+            <!-- Section 1: Patent Core Concept -->
+            <section id="patent-concept" class="scroll-mt-24 space-y-8">
+                <div class="text-center max-w-3xl mx-auto space-y-3">
+                    <span class="text-secondary font-bold tracking-widest uppercase text-xs">Innovation Concept</span>
+                    <h2 class="text-2xl md:text-3xl lg:text-4xl font-bold text-primary">
+                        なぜ従来の模試システムでは「真の実力」が見えないのか？
+                    </h2>
+                    <p class="text-slate-600 text-sm md:text-base leading-relaxed">
+                        国家試験の模擬試験では、「何点取れたか（得点率）」ばかりに注目が集まります。<br class="hidden md:inline">
+                        しかし、医療系国家試験において最も危険なのは、<strong class="text-rose-600 font-bold">「合格圏の点数を取っているのに、臨床上極めて危険な禁忌肢を選んでいる学生」</strong>や、<strong class="text-primary font-bold">「まぐれ当たりで点数を取り、基礎に重大な穴がある学生」</strong>です。
+                    </p>
+                </div>
+
+                <!-- 3 Pillars of Patent Technology -->
+                <div class="grid md:grid-cols-3 gap-6">
+                    <div class="bg-white rounded-2xl p-6 shadow-sm border border-slate-200 hover:shadow-md transition-all space-y-3">
+                        <div class="w-12 h-12 bg-blue-50 text-primary rounded-xl flex items-center justify-center text-xl font-bold">
+                            <i class="fas fa-chart-line text-secondary"></i>
+                        </div>
+                        <span class="text-xs font-bold text-secondary uppercase tracking-wider block">特許技術 1</span>
+                        <h3 class="text-lg font-bold text-primary">学習の「質」を評価<br><span class="text-sm text-slate-500 font-medium">S-P表 注意係数（C.S.）</span></h3>
+                        <p class="text-xs md:text-sm text-slate-600 leading-relaxed">
+                            易しい問題を落とし、難しい問題を正解する「ちぐはぐ解答」を数値化。点数の高さに隠れた基礎知識の穴やまぐれ当たりを検知します。
+                        </p>
+                    </div>
+
+                    <div class="bg-white rounded-2xl p-6 shadow-sm border border-slate-200 hover:shadow-md transition-all space-y-3">
+                        <div class="w-12 h-12 bg-rose-50 text-rose-600 rounded-xl flex items-center justify-center text-xl font-bold">
+                            <i class="fas fa-shield-virus"></i>
+                        </div>
+                        <span class="text-xs font-bold text-rose-600 uppercase tracking-wider block">特許技術 2</span>
+                        <h3 class="text-lg font-bold text-primary">臨床リスクを未然に防ぐ<br><span class="text-sm text-slate-500 font-medium">推奨選択肢リスク分析</span></h3>
+                        <p class="text-xs md:text-sm text-slate-600 leading-relaxed">
+                            「選ぶべき推奨選択肢」と「除外すべき禁忌選択肢」を設定。正答していても危険な思考回路を持つ「隠れリスク（ヒヤリハット）」を暴きます。
+                        </p>
+                    </div>
+
+                    <div class="bg-white rounded-2xl p-6 shadow-sm border border-slate-200 hover:shadow-md transition-all space-y-3">
+                        <div class="w-12 h-12 bg-amber-50 text-amber-600 rounded-xl flex items-center justify-center text-xl font-bold">
+                            <i class="fas fa-robot"></i>
+                        </div>
+                        <span class="text-xs font-bold text-amber-600 uppercase tracking-wider block">特許技術 3</span>
+                        <h3 class="text-lg font-bold text-primary">指導＆復習をAI言語化<br><span class="text-sm text-slate-500 font-medium">LLMパーソナライズ診断</span></h3>
+                        <p class="text-xs md:text-sm text-slate-600 leading-relaxed">
+                            教員には「クラス全体の講評と介入優先者リスト」、学生には「病態生理まで掘り下げた個別復習アクション」を自動生成します。
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Overview Banner -->
+                <div class="bg-gradient-to-r from-blue-900 to-primary text-white rounded-2xl p-6 md:p-8 flex flex-col md:flex-row items-center justify-between gap-6 shadow-lg">
+                    <div class="space-y-2">
+                        <span class="inline-block px-3 py-1 bg-white/20 text-cyan-200 text-xs rounded-full font-bold">特許出願中：特願2025-265873</span>
+                        <h3 class="text-xl md:text-2xl font-bold">教育現場のDXを具現化する、2大実例レポート</h3>
+                        <p class="text-cyan-100 text-xs md:text-sm max-w-2xl leading-relaxed">
+                            実際に医療系大学・専門学校の試験で出力された実物帳票をもとに、各分析グラフの見方と指導への活用法を以下に詳しく解説します。
+                        </p>
+                    </div>
+                    <div class="flex flex-col sm:flex-row gap-3 shrink-0">
+                        <a href="#teacher-report" class="px-5 py-2.5 bg-secondary text-primary font-bold rounded-xl text-xs md:text-sm hover:bg-cyan-300 transition-all text-center">
+                            教員向け全体分析を見る
+                        </a>
+                        <a href="#student-report" class="px-5 py-2.5 bg-accent text-white font-bold rounded-xl text-xs md:text-sm hover:bg-orange-600 transition-all text-center">
+                            学生向け個人表を見る
+                        </a>
+                    </div>
+                </div>
+            </section>
+
+
+            <!-- Section 2: Teacher Report Deep Dive -->
+            <section id="teacher-report" class="scroll-mt-24 space-y-12">
+                <div class="border-b-2 border-primary/20 pb-4 flex flex-col sm:flex-row sm:items-end justify-between gap-4">
+                    <div>
+                        <div class="inline-flex items-center gap-2 text-xs font-bold text-primary uppercase tracking-wider mb-1">
+                            <span class="w-2.5 h-2.5 rounded-full bg-secondary"></span>
+                            Report 01
+                        </div>
+                        <h2 class="text-2xl md:text-3xl font-bold text-primary flex items-center gap-3">
+                            <span>指導者向け【全体試験結果レポート】詳細解説</span>
+                        </h2>
+                        <p class="text-xs md:text-sm text-slate-500 mt-1">
+                            クラス全体の学力分布、潜在的リスク、問題の妥当性、要指導学生をAIがワンストップで可視化
+                        </p>
+                    </div>
+                    <div class="shrink-0 text-xs text-slate-500 bg-slate-100 px-3 py-1.5 rounded-lg border border-slate-200">
+                        <i class="fas fa-file-pdf text-rose-500 mr-1"></i> 全9ページ構成
+                    </div>
+                </div>
+
+                <!-- Item 1: 得点分布 ＆ 箱ひげ図 -->
+                <div class="bg-white rounded-2xl p-6 md:p-8 shadow-sm border border-slate-200 space-y-6">
+                    <div class="flex items-center justify-between border-b border-slate-100 pb-3">
+                        <div class="flex items-center space-x-3">
+                            <span class="w-8 h-8 rounded-lg bg-blue-100 text-primary font-bold flex items-center justify-center text-sm">1</span>
+                            <div>
+                                <h3 class="text-lg md:text-xl font-bold text-primary">得点分布（ヒストグラム） ＆ 項目別箱ひげ図</h3>
+                                <p class="text-xs text-slate-500">集団の実力分布と、分野ごとの「学力格差・ばらつき」を即座に把握</p>
+                            </div>
+                        </div>
+                        <span class="text-xs bg-slate-100 text-slate-600 font-semibold px-2.5 py-1 rounded-full">P.1 掲載</span>
+                    </div>
+
+                    <div class="grid lg:grid-cols-12 gap-8 items-center">
+                        <div class="lg:col-span-6 space-y-4 text-xs md:text-sm text-slate-600 leading-relaxed">
+                            <div class="bg-blue-50/70 p-4 rounded-xl border border-blue-100 space-y-2">
+                                <h4 class="font-bold text-primary flex items-center gap-1.5 text-sm">
+                                    <i class="fas fa-chart-bar text-secondary"></i> 得点分布（ヒストグラム）の見方
+                                </h4>
+                                <ul class="list-disc list-inside space-y-1 text-xs text-slate-700">
+                                    <li><strong class="text-primary">理想的な山型（中央60〜70%）:</strong> 試験の難易度が適正であることを示します。</li>
+                                    <li><strong class="text-rose-600">二極化（フタコブラクダ型）:</strong> 成績上位層と下位層の格差が拡大。下位層への早急なテコ入れが必要です。</li>
+                                    <li><strong class="text-slate-800">3層内訳（全体・専門・共通）:</strong> どの分野が全体の足を引っ張っているかを即座に特定します。</li>
+                                </ul>
+                            </div>
+
+                            <div class="bg-slate-50 p-4 rounded-xl border border-slate-200 space-y-2">
+                                <h4 class="font-bold text-primary flex items-center gap-1.5 text-sm">
+                                    <i class="fas fa-boxes text-secondary"></i> 項目別箱ひげ図の見方
+                                </h4>
+                                <ul class="list-disc list-inside space-y-1 text-xs text-slate-700">
+                                    <li><strong class="text-emerald-600">箱が短い（潰れている）:</strong> 全員の点数が揃っており、理解が均質（理想的）。</li>
+                                    <li><strong class="text-amber-600">箱が長い（伸びている）:</strong> 「できる学生」と「できない学生」の差が激しい状態。全体講義だけでなく下位層への補習が急務です。</li>
+                                </ul>
+                            </div>
+
+                            <div class="p-3 bg-amber-50 rounded-xl border border-amber-200 text-xs text-amber-900 flex items-start gap-2">
+                                <i class="fas fa-lightbulb text-amber-600 mt-0.5 shrink-0"></i>
+                                <span><strong>AI指導アクション自動提示:</strong> レポート下部には、全体の得点状況に応じた「症例ベースのグループワーク導入」など、具体的な授業改善アクションが自動出力されます。</span>
+                            </div>
+                        </div>
+
+                        <!-- Image Preview -->
+                        <div class="lg:col-span-6 flex flex-col items-center">
+                            <div class="rounded-xl overflow-hidden shadow-lg border border-slate-200 max-w-md w-full bg-slate-50 group relative">
+                                <img src="images/patent/teacher_report_p1.webp" alt="全体試験結果レポート P1 得点分布・箱ひげ図" class="w-full h-auto object-cover transform group-hover:scale-105 transition-transform duration-300">
+                                <div class="absolute inset-0 bg-primary/20 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                                    <span class="bg-white/90 text-primary font-bold text-xs px-3 py-1.5 rounded-full shadow"><i class="fas fa-search-plus mr-1"></i>実物レポート（P.1）</span>
+                                </div>
+                            </div>
+                            <span class="text-[11px] text-slate-400 mt-2">実際の全体試験結果レポート P.1（ヒストグラム ＆ 箱ひげ図）</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Item 2: S-P表分析（注意係数散布図） -->
+                <div class="bg-white rounded-2xl p-6 md:p-8 shadow-sm border border-slate-200 space-y-6">
+                    <div class="flex items-center justify-between border-b border-slate-100 pb-3">
+                        <div class="flex items-center space-x-3">
+                            <span class="w-8 h-8 rounded-lg bg-blue-100 text-primary font-bold flex items-center justify-center text-sm">2</span>
+                            <div>
+                                <h3 class="text-lg md:text-xl font-bold text-primary">S-P表分析（注意係数散布図：学習の質）</h3>
+                                <p class="text-xs text-slate-500">単なる点数ではなく、「解答パターンの安定性・ムラ」を科学的に評価</p>
+                            </div>
+                        </div>
+                        <span class="text-xs bg-slate-100 text-slate-600 font-semibold px-2.5 py-1 rounded-full">P.2 掲載</span>
+                    </div>
+
+                    <div class="grid lg:grid-cols-12 gap-8 items-center">
+                        <div class="lg:col-span-6 space-y-4 text-xs md:text-sm text-slate-600 leading-relaxed">
+                            <p>
+                                教育工学の理論「S-P表（Student-Problem Chart）」を応用し、学生一人ひとりの解答データから<strong class="text-primary font-bold">注意係数（Caution Index: C.S.）</strong>を自動算出します。
+                            </p>
+                            <div class="space-y-3">
+                                <div class="p-3.5 rounded-xl bg-slate-50 border border-slate-200">
+                                    <h4 class="font-bold text-slate-800 text-xs mb-1 flex items-center gap-1.5">
+                                        <i class="fas fa-arrows-alt text-secondary"></i> 軸の意味
+                                    </h4>
+                                    <p class="text-xs text-slate-600">
+                                        ・<strong>X軸（得点率）:</strong> 今回の実力（右に行くほど高得点）<br>
+                                        ・<strong>Y軸（注意係数 C.S.）:</strong> 解答のムラ（上に行くほど簡単な問題を落とし、難問を当てる不安定さ）
+                                    </p>
+                                </div>
+                                <div class="p-3.5 rounded-xl bg-rose-50 border border-rose-200">
+                                    <h4 class="font-bold text-rose-800 text-xs mb-1 flex items-center gap-1.5">
+                                        <i class="fas fa-exclamation-triangle text-rose-600"></i> 赤点エリア（C.S. > 0.5）：要注意学生の特定
+                                    </h4>
+                                    <p class="text-xs text-rose-900 leading-relaxed">
+                                        一見合格圏に見えても、基礎に重大な穴があり「まぐれ当たり」が多い学生です。本番で出題傾向が変わると点数が急落するリスクが極めて高いため、AIが自動で学生番号を抽出し、個別指導を促します。
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Image Preview -->
+                        <div class="lg:col-span-6 flex flex-col items-center">
+                            <div class="rounded-xl overflow-hidden shadow-lg border border-slate-200 max-w-md w-full bg-slate-50 group relative">
+                                <img src="images/patent/teacher_report_p2.webp" alt="全体試験結果レポート P2 S-P表分析" class="w-full h-auto object-cover transform group-hover:scale-105 transition-transform duration-300">
+                                <div class="absolute inset-0 bg-primary/20 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                                    <span class="bg-white/90 text-primary font-bold text-xs px-3 py-1.5 rounded-full shadow"><i class="fas fa-search-plus mr-1"></i>実物レポート（P.2）</span>
+                                </div>
+                            </div>
+                            <span class="text-[11px] text-slate-400 mt-2">実際の全体試験結果レポート P.2（S-P表 散布図と要指導者抽出）</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Item 3: 撹乱肢（誤答）分析 ＆ 項目分析散布図 -->
+                <div class="bg-white rounded-2xl p-6 md:p-8 shadow-sm border border-slate-200 space-y-6">
+                    <div class="flex items-center justify-between border-b border-slate-100 pb-3">
+                        <div class="flex items-center space-x-3">
+                            <span class="w-8 h-8 rounded-lg bg-blue-100 text-primary font-bold flex items-center justify-center text-sm">3</span>
+                            <div>
+                                <h3 class="text-lg md:text-xl font-bold text-primary">撹乱肢（誤答）分析 ＆ 項目分析散布図</h3>
+                                <p class="text-xs text-slate-500">「良問」「サービス問題」「悪問・没問」の判定と、クラス共通の誤解を発見</p>
+                            </div>
+                        </div>
+                        <span class="text-xs bg-slate-100 text-slate-600 font-semibold px-2.5 py-1 rounded-full">P.3〜P.5 掲載</span>
+                    </div>
+
+                    <div class="grid lg:grid-cols-12 gap-8 items-center">
+                        <div class="lg:col-span-6 space-y-4 text-xs md:text-sm text-slate-600 leading-relaxed">
+                            <div class="bg-slate-50 p-4 rounded-xl border border-slate-200 space-y-2">
+                                <h4 class="font-bold text-primary text-xs flex items-center gap-1.5">
+                                    <i class="fas fa-filter text-secondary"></i> 項目分析散布図（正答率 × 識別指数）
+                                </h4>
+                                <ul class="list-disc list-inside space-y-1 text-xs text-slate-700">
+                                    <li><strong class="text-emerald-700">良問エリア（上部）:</strong> 適度な難易度で、成績上位と下位の実力差がはっきり出ている問題。</li>
+                                    <li><strong class="text-blue-700">サービス問題（右中）:</strong> ほぼ全員が正解できている基礎定着確認問題。</li>
+                                    <li><strong class="text-rose-600 font-bold">要注意問題（識別指数 0以下）:</strong> 上位層よりも下位層の正答率が高い「逆転現象」が発生。問題文の不備・解答割れが疑われ、<strong>採点除外（没問）の検討</strong>を自動推奨します（P.4リスト化）。</li>
+                                </ul>
+                            </div>
+
+                            <div class="bg-amber-50/70 p-4 rounded-xl border border-amber-200 space-y-2">
+                                <h4 class="font-bold text-amber-900 text-xs flex items-center gap-1.5">
+                                    <i class="fas fa-bullseye text-accent"></i> 撹乱肢（誤答）の集中検知（P.5）
+                                </h4>
+                                <p class="text-xs text-slate-700 leading-relaxed">
+                                    正答率が低く、かつ特定の誤答選択肢に40%以上集中している場合、強力な撹乱要因（★警告マーク）として赤太字表示。「なぜ学生たちがその選択肢に引っ張られたのか」という思考の盲点を特定できます。
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- Image Preview -->
+                        <div class="lg:col-span-6 flex flex-col items-center">
+                            <div class="rounded-xl overflow-hidden shadow-lg border border-slate-200 max-w-md w-full bg-slate-50 group relative">
+                                <img src="images/patent/teacher_report_p3.webp" alt="全体試験結果レポート P3 撹乱肢分析・散布図" class="w-full h-auto object-cover transform group-hover:scale-105 transition-transform duration-300">
+                                <div class="absolute inset-0 bg-primary/20 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                                    <span class="bg-white/90 text-primary font-bold text-xs px-3 py-1.5 rounded-full shadow"><i class="fas fa-search-plus mr-1"></i>実物レポート（P.3）</span>
+                                </div>
+                            </div>
+                            <span class="text-[11px] text-slate-400 mt-2">実際の全体試験結果レポート P.3（撹乱肢分析と項目分析散布図）</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Item 4: 推奨選択肢リスク分析（問題別・分野別） -->
+                <div class="bg-white rounded-2xl p-6 md:p-8 shadow-sm border border-slate-200 space-y-6">
+                    <div class="flex items-center justify-between border-b border-slate-100 pb-3">
+                        <div class="flex items-center space-x-3">
+                            <span class="w-8 h-8 rounded-lg bg-blue-100 text-primary font-bold flex items-center justify-center text-sm">4</span>
+                            <div>
+                                <h3 class="text-lg md:text-xl font-bold text-primary">推奨選択肢リスク分析（問題別・分野別）</h3>
+                                <p class="text-xs text-slate-500">正解していても禁忌肢を踏んでいる「ヒヤリハット問題」と弱点分野を特定</p>
+                            </div>
+                        </div>
+                        <span class="text-xs bg-slate-100 text-slate-600 font-semibold px-2.5 py-1 rounded-full">P.6 掲載</span>
+                    </div>
+
+                    <div class="grid lg:grid-cols-12 gap-8 items-center">
+                        <div class="lg:col-span-6 space-y-4 text-xs md:text-sm text-slate-600 leading-relaxed">
+                            <p>
+                                「単一の〇×」では見えない、<strong class="text-rose-600 font-bold">必須選択肢の見落とし（必須抜け）</strong>や<strong class="text-rose-600 font-bold">選んではいけない禁忌肢の選択</strong>を各問題・各疾患分野ごとにマッピングします。
+                            </p>
+                            <div class="p-4 rounded-xl bg-rose-50/80 border border-rose-200 space-y-2">
+                                <h4 class="font-bold text-rose-800 text-xs flex items-center gap-1.5">
+                                    <i class="fas fa-exclamation-circle text-rose-600"></i> 「隠れリスク問題（ヒヤリハット）」の検知例
+                                </h4>
+                                <p class="text-xs text-slate-700 leading-relaxed">
+                                    例えば<strong>問3（正答率: 64%, ミスなし率: 4%）</strong>：正答率は6割を超えているにもかかわらず、96%の学生が推奨外の選択肢や禁忌肢を同時に選んでいます。
+                                    「知識はあるが安全管理が不注意」な状態を早期に察知し、医療事故を防止する指導につなげます。
+                                </p>
+                            </div>
+                            <div class="p-4 rounded-xl bg-blue-50/70 border border-blue-200 space-y-2">
+                                <h4 class="font-bold text-primary text-xs flex items-center gap-1.5">
+                                    <i class="fas fa-layer-group text-secondary"></i> 要注意分野のランキング化
+                                </h4>
+                                <p class="text-xs text-slate-700 leading-relaxed">
+                                    「重症筋無力症（ミス率40%）」「多発性筋炎（ミス率32%）」など、リスク管理能力が欠如している疾患を自動抽出し、解剖生理・病態生理からの再講義を提案します。
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- Image Preview -->
+                        <div class="lg:col-span-6 flex flex-col items-center">
+                            <div class="rounded-xl overflow-hidden shadow-lg border border-slate-200 max-w-md w-full bg-slate-50 group relative">
+                                <img src="images/patent/teacher_report_p6.webp" alt="全体試験結果レポート P6 推奨選択肢リスク分析" class="w-full h-auto object-cover transform group-hover:scale-105 transition-transform duration-300">
+                                <div class="absolute inset-0 bg-primary/20 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                                    <span class="bg-white/90 text-primary font-bold text-xs px-3 py-1.5 rounded-full shadow"><i class="fas fa-search-plus mr-1"></i>実物レポート（P.6）</span>
+                                </div>
+                            </div>
+                            <span class="text-[11px] text-slate-400 mt-2">実際の全体試験結果レポート P.6（推奨選択肢リスク分析 問題別・分野別）</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Item 5: 〔学生別〕S-P表 × 推奨選択肢ミス 4象限マトリクス -->
+                <div class="bg-white rounded-2xl p-6 md:p-8 shadow-sm border border-slate-200 space-y-6">
+                    <div class="flex items-center justify-between border-b border-slate-100 pb-3">
+                        <div class="flex items-center space-x-3">
+                            <span class="w-8 h-8 rounded-lg bg-blue-100 text-primary font-bold flex items-center justify-center text-sm">5</span>
+                            <div>
+                                <h3 class="text-lg md:text-xl font-bold text-primary">〔学生別〕S-P表（注意係数）× 推奨選択肢ミス</h3>
+                                <p class="text-xs text-slate-500">知識の安定性と臨床の安全性を掛け合わせた「4象限マトリクス」診断</p>
+                            </div>
+                        </div>
+                        <span class="text-xs bg-slate-100 text-slate-600 font-semibold px-2.5 py-1 rounded-full">P.7 掲載</span>
+                    </div>
+
+                    <div class="grid lg:grid-cols-12 gap-8 items-center">
+                        <div class="lg:col-span-6 space-y-4 text-xs md:text-sm text-slate-600 leading-relaxed">
+                            <p>
+                                縦軸に「推奨選択肢ミス数（臨床判断の危険度）」、横軸に「S-P表 注意係数（知識のムラ）」を配置し、学生を4つの思考タイプに分類。タイプに応じた指導アクションを自動決定します。
+                            </p>
+
+                            <div class="grid sm:grid-cols-2 gap-3">
+                                <div class="bg-rose-50 p-3.5 rounded-xl border border-rose-200 space-y-1">
+                                    <span class="font-bold text-rose-700 text-xs">【誤解（確信犯）】タイプ</span>
+                                    <p class="text-[11px] text-rose-900 leading-normal">
+                                        CS低・ミス多。知識はブレないが根本的に間違った解釈をしている。自分の誤答根拠を説明させる「アンラーニング」が必須。
+                                    </p>
+                                </div>
+                                <div class="bg-amber-50 p-3.5 rounded-xl border border-amber-200 space-y-1">
+                                    <span class="font-bold text-amber-700 text-xs">【危険（当てずっぽう）】タイプ</span>
+                                    <p class="text-[11px] text-amber-900 leading-normal">
+                                        CS高・ミス多。知識もムラだらけで判断も危険。一問一答や毎週の口頭試問による徹底的な基礎固めを実施。
+                                    </p>
+                                </div>
+                                <div class="bg-cyan-50 p-3.5 rounded-xl border border-cyan-200 space-y-1">
+                                    <span class="font-bold text-cyan-800 text-xs">【不注意】タイプ</span>
+                                    <p class="text-[11px] text-cyan-950 leading-normal">
+                                        CS高・ミス少。知識はあるがケアレスミスが多い。試験終了前の見直しルーティン指導で大幅得点UPが可能。
+                                    </p>
+                                </div>
+                                <div class="bg-emerald-50 p-3.5 rounded-xl border border-emerald-200 space-y-1">
+                                    <span class="font-bold text-emerald-800 text-xs">【安全・安定】タイプ</span>
+                                    <p class="text-[11px] text-emerald-950 leading-normal">
+                                        CS低・ミス少。知識が深く定着し臨床判断も正確。応用問題や他科目の発展学習へ進む。
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Image Preview -->
+                        <div class="lg:col-span-6 flex flex-col items-center">
+                            <div class="rounded-xl overflow-hidden shadow-lg border border-slate-200 max-w-md w-full bg-slate-50 group relative">
+                                <img src="images/patent/teacher_report_p7.webp" alt="全体試験結果レポート P7 学生別マトリクス" class="w-full h-auto object-cover transform group-hover:scale-105 transition-transform duration-300">
+                                <div class="absolute inset-0 bg-primary/20 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                                    <span class="bg-white/90 text-primary font-bold text-xs px-3 py-1.5 rounded-full shadow"><i class="fas fa-search-plus mr-1"></i>実物レポート（P.7）</span>
+                                </div>
+                            </div>
+                            <span class="text-[11px] text-slate-400 mt-2">実際の全体試験結果レポート P.7（学生別S-P表×推奨選択肢ミス）</span>
+                        </div>
+                    </div>
+                </div>
+
+            </section>
+
+
+            <!-- Section 3: Student Report Deep Dive -->
+            <section id="student-report" class="scroll-mt-24 space-y-12">
+                <div class="border-b-2 border-primary/20 pb-4 flex flex-col sm:flex-row sm:items-end justify-between gap-4">
+                    <div>
+                        <div class="inline-flex items-center gap-2 text-xs font-bold text-accent uppercase tracking-wider mb-1">
+                            <span class="w-2.5 h-2.5 rounded-full bg-accent"></span>
+                            Report 02
+                        </div>
+                        <h2 class="text-2xl md:text-3xl font-bold text-primary flex items-center gap-3">
+                            <span>学生向け【個人成績表レポート】詳細解説</span>
+                        </h2>
+                        <p class="text-xs md:text-sm text-slate-500 mt-1">
+                            学生が「自分の弱点」を納得し、自律的に復習できるパーソナライズ診断シート
+                        </p>
+                    </div>
+                    <div class="shrink-0 text-xs text-slate-500 bg-slate-100 px-3 py-1.5 rounded-lg border border-slate-200">
+                        <i class="fas fa-file-pdf text-rose-500 mr-1"></i> 全5ページ構成
+                    </div>
+                </div>
+
+                <!-- Student Item 1: スコア概要 ＆ レーダーチャート -->
+                <div class="bg-white rounded-2xl p-6 md:p-8 shadow-sm border border-slate-200 space-y-6">
+                    <div class="flex items-center justify-between border-b border-slate-100 pb-3">
+                        <div class="flex items-center space-x-3">
+                            <span class="w-8 h-8 rounded-lg bg-orange-100 text-accent font-bold flex items-center justify-center text-sm">1</span>
+                            <div>
+                                <h3 class="text-lg md:text-xl font-bold text-primary">多面的スコアカード ＆ 分野別レーダーチャート</h3>
+                                <p class="text-xs text-slate-500">点数・偏差値に加え、マークミス数・推奨選択肢ミス数まで可視化</p>
+                            </div>
+                        </div>
+                        <span class="text-xs bg-slate-100 text-slate-600 font-semibold px-2.5 py-1 rounded-full">P.1 掲載</span>
+                    </div>
+
+                    <div class="grid lg:grid-cols-12 gap-8 items-center">
+                        <div class="lg:col-span-6 space-y-4 text-xs md:text-sm text-slate-600 leading-relaxed">
+                            <p>
+                                総合得点や学内順位、偏差値だけでなく、<strong class="text-primary font-bold">「マークミス数」</strong>や<strong class="text-rose-600 font-bold">「推奨選択肢ミス数」</strong>をトップに大きく配置。
+                            </p>
+                            <div class="space-y-3">
+                                <div class="p-3.5 rounded-xl bg-slate-50 border border-slate-200">
+                                    <h4 class="font-bold text-slate-800 text-xs mb-1">
+                                        <i class="fas fa-chart-pie text-accent mr-1"></i> 分野別バランス（8角形レーダーチャート）
+                                    </h4>
+                                    <p class="text-xs text-slate-600">
+                                        専門（実地・一般）、共通（基礎・臨床）のバランスを一目で確認。特定の苦手科目が全体の足を引っ張っていないかを視覚的に把握できます。
+                                    </p>
+                                </div>
+                                <div class="p-3.5 rounded-xl bg-blue-50/70 border border-blue-200">
+                                    <h4 class="font-bold text-primary text-xs mb-1">
+                                        <i class="fas fa-eye text-secondary mr-1"></i> 60%未満強調バー表示
+                                    </h4>
+                                    <p class="text-xs text-slate-600">
+                                        国家試験合格のボーダーラインとなる「60%」を下回った項目は赤色で警告強調され、学生自身がどこを補強すべきか直感的に理解できます。
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Image Preview -->
+                        <div class="lg:col-span-6 flex flex-col items-center">
+                            <div class="rounded-xl overflow-hidden shadow-lg border border-slate-200 max-w-md w-full bg-slate-50 group relative">
+                                <img src="images/patent/student_report_p1.webp" alt="個人成績表 P1 スコア概要・レーダーチャート" class="w-full h-auto object-cover transform group-hover:scale-105 transition-transform duration-300">
+                                <div class="absolute inset-0 bg-primary/20 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                                    <span class="bg-white/90 text-primary font-bold text-xs px-3 py-1.5 rounded-full shadow"><i class="fas fa-search-plus mr-1"></i>実物個人成績表（P.1）</span>
+                                </div>
+                            </div>
+                            <span class="text-[11px] text-slate-400 mt-2">実際の個人成績表 P.1（多面的スコアカードとレーダーチャート）</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Student Item 2: LLMパーソナライズ・アドバイス -->
+                <div class="bg-white rounded-2xl p-6 md:p-8 shadow-sm border border-slate-200 space-y-6">
+                    <div class="flex items-center justify-between border-b border-slate-100 pb-3">
+                        <div class="flex items-center space-x-3">
+                            <span class="w-8 h-8 rounded-lg bg-orange-100 text-accent font-bold flex items-center justify-center text-sm">2</span>
+                            <div>
+                                <h3 class="text-lg md:text-xl font-bold text-primary">LLMパーソナライズ・アドバイス（AI個別診断）</h3>
+                                <p class="text-xs text-slate-500">AIが学生の解答傾向を読み取り、病態生理からの復習法と励ましを文章化</p>
+                            </div>
+                        </div>
+                        <span class="text-xs bg-slate-100 text-slate-600 font-semibold px-2.5 py-1 rounded-full">P.2〜P.3 掲載</span>
+                    </div>
+
+                    <div class="grid lg:grid-cols-12 gap-8 items-center">
+                        <div class="lg:col-span-6 space-y-4 text-xs md:text-sm text-slate-600 leading-relaxed">
+                            <p>
+                                教員が何十人もの学生に対して個別コメントを手書きする必要はありません。最新の生成AI（Gemini API）が、試験データから学生一人ひとりに最適化されたパーソナル指導文章を瞬時に生成します。
+                            </p>
+
+                            <div class="space-y-3">
+                                <div class="bg-blue-50/70 p-3.5 rounded-xl border border-blue-200">
+                                    <h4 class="font-bold text-primary text-xs mb-1">
+                                        <i class="fas fa-microscope text-secondary mr-1"></i> 病態生理レベルの復習指示（P.2）
+                                    </h4>
+                                    <p class="text-xs text-slate-700">
+                                        「パーキンソン病の黒質線条体路ドパミン減少」「多発性筋炎でのCK値の推移」など、なぜ間違えたのかを基礎医学レベルから言語化して解説。
+                                    </p>
+                                </div>
+                                <div class="bg-amber-50/80 p-3.5 rounded-xl border border-amber-200">
+                                    <h4 class="font-bold text-amber-900 text-xs mb-1">
+                                        <i class="fas fa-prescription-bottle-alt text-amber-600 mr-1"></i> 推奨選択肢・臨床リスクの学び直し（P.3）
+                                    </h4>
+                                    <p class="text-xs text-slate-700">
+                                        抗Parkinson薬の「オン-オフ現象」や、多発性筋炎でのリスク管理など、踏んではいけない臨床地雷の背景を振り返らせます。
+                                    </p>
+                                </div>
+                                <div class="bg-emerald-50/80 p-3.5 rounded-xl border border-emerald-200">
+                                    <h4 class="font-bold text-emerald-900 text-xs mb-1">
+                                        <i class="fas fa-heart text-rose-500 mr-1"></i> S-P表分析診断 ＆ 温かいエール
+                                    </h4>
+                                    <p class="text-xs text-slate-700">
+                                        「あなたは注意係数0.45のA型（安定・上位）です。今の学習法で間違いありません！」といった客観的診断と、学生を勇気づける温かいメッセージでモチベーションを向上させます。
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Image Preview -->
+                        <div class="lg:col-span-6 flex flex-col items-center">
+                            <div class="rounded-xl overflow-hidden shadow-lg border border-slate-200 max-w-md w-full bg-slate-50 group relative">
+                                <img src="images/patent/student_report_p3.webp" alt="個人成績表 P3 AIアドバイス" class="w-full h-auto object-cover transform group-hover:scale-105 transition-transform duration-300">
+                                <div class="absolute inset-0 bg-primary/20 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                                    <span class="bg-white/90 text-primary font-bold text-xs px-3 py-1.5 rounded-full shadow"><i class="fas fa-search-plus mr-1"></i>実物個人成績表（P.3）</span>
+                                </div>
+                            </div>
+                            <span class="text-[11px] text-slate-400 mt-2">実際の個人成績表 P.3（AIによる個別学習アドバイスとエール）</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Student Item 3: 個人解答明細 ＆ 活用ガイド -->
+                <div class="bg-white rounded-2xl p-6 md:p-8 shadow-sm border border-slate-200 space-y-6">
+                    <div class="flex items-center justify-between border-b border-slate-100 pb-3">
+                        <div class="flex items-center space-x-3">
+                            <span class="w-8 h-8 rounded-lg bg-orange-100 text-accent font-bold flex items-center justify-center text-sm">3</span>
+                            <div>
+                                <h3 class="text-lg md:text-xl font-bold text-primary">個人解答明細表 ＆ 活用ガイド（3つの学習ステップ）</h3>
+                                <p class="text-xs text-slate-500">全問題の選択状況、識別指数、推奨選択肢ミスを完全透明化</p>
+                            </div>
+                        </div>
+                        <span class="text-xs bg-slate-100 text-slate-600 font-semibold px-2.5 py-1 rounded-full">P.4〜P.5 掲載</span>
+                    </div>
+
+                    <div class="grid lg:grid-cols-12 gap-8 items-center">
+                        <div class="lg:col-span-6 space-y-4 text-xs md:text-sm text-slate-600 leading-relaxed">
+                            <div class="bg-slate-50 p-4 rounded-xl border border-slate-200 space-y-2">
+                                <h4 class="font-bold text-primary text-xs flex items-center gap-1.5">
+                                    <i class="fas fa-list-ol text-secondary"></i> 全問の解答プロセスを可視化（P.4）
+                                </h4>
+                                <p class="text-xs text-slate-700 leading-relaxed">
+                                    各問題の正解・不正解（青・赤）に加え、「誤答最多肢（多数派のひっかけ）」、学生自身の選択番号、識別指数、必須・選除の判定結果が一目でわかります。
+                                </p>
+                            </div>
+
+                            <div class="bg-blue-50/70 p-4 rounded-xl border border-blue-200 space-y-3">
+                                <h4 class="font-bold text-primary text-xs flex items-center gap-1.5">
+                                    <i class="fas fa-graduation-cap text-accent"></i> 学生のための今後の進め方 3ステップ（P.5）
+                                </h4>
+                                <ol class="list-decimal list-inside space-y-1.5 text-xs text-slate-800">
+                                    <li><strong>S-P表のCS（注意係数）を確認:</strong> 自分の解答傾向が「実力安定型」か「不注意・ムラ型」かを把握する。</li>
+                                    <li><strong>「推奨選択肢ミス」の多い分野を確認:</strong> ケアレスミスなのか、根本的な知識の誤解（アンラーニングが必要）かを振り返る。</li>
+                                    <li><strong>「高識別問題」の低得点分野を最優先復習:</strong> 合否の分かれ目となった重要問題を教科書・ノートに戻って徹底マスターする！</li>
+                                </ol>
+                            </div>
+                        </div>
+
+                        <!-- Image Preview -->
+                        <div class="lg:col-span-6 flex flex-col items-center">
+                            <div class="rounded-xl overflow-hidden shadow-lg border border-slate-200 max-w-md w-full bg-slate-50 group relative">
+                                <img src="images/patent/student_report_p5.webp" alt="個人成績表 P5 活用ガイド" class="w-full h-auto object-cover transform group-hover:scale-105 transition-transform duration-300">
+                                <div class="absolute inset-0 bg-primary/20 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                                    <span class="bg-white/90 text-primary font-bold text-xs px-3 py-1.5 rounded-full shadow"><i class="fas fa-search-plus mr-1"></i>実物個人成績表（P.5）</span>
+                                </div>
+                            </div>
+                            <span class="text-[11px] text-slate-400 mt-2">実際の個人成績表 P.5（成績表の読み方と学習進め方ガイド）</span>
+                        </div>
+                    </div>
+                </div>
+
+            </section>
+
+
+            <!-- Section 4: Comparison Table -->
+            <section class="bg-white rounded-2xl p-8 md:p-10 shadow-sm border border-slate-200 space-y-8">
+                <div class="text-center max-w-2xl mx-auto space-y-2">
+                    <span class="text-xs font-bold text-secondary uppercase tracking-widest">Comparison</span>
+                    <h2 class="text-2xl md:text-3xl font-bold text-primary">従来の模試集計と特許システムの決定的な違い</h2>
+                    <p class="text-xs md:text-sm text-slate-500">点数だけの表面的な対策から、本質的な臨床安全教育へ</p>
+                </div>
+
+                <div class="overflow-x-auto">
+                    <table class="w-full text-left border-collapse text-xs md:text-sm">
+                        <thead>
+                            <tr class="border-b-2 border-primary/20 bg-slate-50">
+                                <th class="p-4 font-bold text-slate-700 w-1/4">比較項目</th>
+                                <th class="p-4 font-bold text-slate-400 w-3/8">従来の一般的な模試システム</th>
+                                <th class="p-4 font-bold text-primary bg-blue-50/70 w-3/8 border-l border-r border-blue-200">
+                                    <span class="flex items-center gap-1.5 text-secondary">
+                                        <i class="fas fa-certificate text-accent"></i> INTEVE SCHOOL（特許出願システム）
+                                    </span>
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody class="divide-y divide-slate-100">
+                            <tr>
+                                <td class="p-4 font-bold text-slate-700">合否・実力判定</td>
+                                <td class="p-4 text-slate-500">点数・正答率・順位のみ</td>
+                                <td class="p-4 font-semibold text-primary bg-blue-50/40 border-l border-r border-blue-200">
+                                    点数に加え、<strong>S-P表注意係数（解答のムラ）</strong>と<strong>識別指数</strong>で学習の質を判定
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="p-4 font-bold text-slate-700">禁忌肢・臨床リスク</td>
+                                <td class="p-4 text-slate-500">判定不能（正解していれば〇）</td>
+                                <td class="p-4 font-semibold text-primary bg-blue-50/40 border-l border-r border-blue-200">
+                                    <strong>推奨選択肢リスク分析</strong>により、正解していても禁忌肢を踏む「隠れリスク」を検知
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="p-4 font-bold text-slate-700">要指導学生の抽出</td>
+                                <td class="p-4 text-slate-500">点数下位者を順番に並べるだけ</td>
+                                <td class="p-4 font-semibold text-primary bg-blue-50/40 border-l border-r border-blue-200">
+                                    <strong>4象限マトリクス</strong>により、「確信犯的誤解者」「当てずっぽう型」等をタイプ別に自動分類
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="p-4 font-bold text-slate-700">悪問・没問の発見</td>
+                                <td class="p-4 text-slate-500">教員の手動確認が必要</td>
+                                <td class="p-4 font-semibold text-primary bg-blue-50/40 border-l border-r border-blue-200">
+                                    <strong>識別指数マイナスの逆転問題</strong>を自動特定し、没問検討リストを出力
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="p-4 font-bold text-slate-700">指導講評・復習指示</td>
+                                <td class="p-4 text-slate-500">教員が手書き、または一般的な正答解説のみ</td>
+                                <td class="p-4 font-semibold text-primary bg-blue-50/40 border-l border-r border-blue-200">
+                                    <strong>LLMが全自動生成</strong>。教員には授業改善案、学生には病態レベルの復習法を提示
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+
+
+            <!-- Section 5: Summary & CTA -->
+            <section id="summary-cta" class="scroll-mt-24 bg-gradient-to-r from-primary to-blue-900 text-white rounded-3xl p-8 md:p-12 shadow-xl relative overflow-hidden text-center space-y-6">
+                <div class="absolute inset-0 opacity-10 bg-[radial-gradient(#fff_1px,transparent_1px)] [background-size:20px_20px]"></div>
+                
+                <div class="relative z-10 max-w-3xl mx-auto space-y-4">
+                    <span class="inline-block px-4 py-1.5 rounded-full bg-white/10 border border-white/20 text-xs font-bold tracking-widest text-secondary uppercase">
+                        Patented Technology
+                    </span>
+                    <h2 class="text-2xl md:text-4xl font-bold leading-tight">
+                        「全員合格」と「安全な医療人育成」を、<br>
+                        INTEVE SCHOOL の特許技術で実現しませんか？
+                    </h2>
+                    <p class="text-cyan-100 text-xs md:text-base leading-relaxed font-light">
+                        本システムは、医療系大学・専門学校の教員業務の劇的な効率化と、学生一人ひとりの潜在的リスクゼロ化を両立します。デモのご体験やプランのお見積もりなど、お気軽にお問い合わせください。
+                    </p>
+                    
+                    <div class="pt-4 flex flex-wrap items-center justify-center gap-4">
+                        <a href="exam.html" class="px-8 py-3.5 rounded-full bg-white/10 hover:bg-white/20 text-white font-bold text-sm border border-white/30 transition-all shadow-md">
+                            <i class="fas fa-file-alt mr-2"></i>国家試験対策システムの概要を見る
+                        </a>
+                        <a href="plan.html" class="px-8 py-3.5 rounded-full bg-accent hover:bg-orange-600 text-white font-bold text-sm transition-all shadow-lg hover:shadow-xl transform hover:-translate-y-0.5">
+                            <i class="fas fa-calculator mr-2"></i>プランを見積もる
+                        </a>
+                        <a href="contact.html" class="px-8 py-3.5 rounded-full bg-secondary hover:bg-cyan-300 text-primary font-bold text-sm transition-all shadow-lg hover:shadow-xl transform hover:-translate-y-0.5">
+                            <i class="fas fa-envelope mr-2"></i>資料請求・お問い合わせ
+                        </a>
+                    </div>
+                </div>
+            </section>
+
+        </div>
+    </main>
+
+    <div id="footer-placeholder"></div>
+
+    <script src="js/main.js?v=20260329" data-root="./"></script>
+</body>
+</html>

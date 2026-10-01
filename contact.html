@@ -99,6 +99,12 @@
                         <!-- Alert Box (Hidden by default) -->
                         <div id="form-message" class="hidden mb-8 p-4 rounded-xl text-center font-medium transition-all duration-300"></div>
 
+                        <!-- Honeypot Field (Spam prevention: hidden from real users) -->
+                        <div style="position: absolute; left: -9999px; top: -9999px; opacity: 0; pointer-events: none; height: 0; width: 0; overflow: hidden;" aria-hidden="true">
+                            <label for="website_url">WebサイトURL（入力不要）</label>
+                            <input type="text" id="website_url" name="website_url" tabindex="-1" autocomplete="off" value="">
+                        </div>
+
                         <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
                             <!-- Company -->
                             <div class="form-group">
@@ -332,6 +338,6 @@
 
     <div id="footer-placeholder"></div>
 
-    <script src="js/main.js?v=20260912_v3" data-root="./"></script>
+    <script src="js/main.js?v=20260928_v4" data-root="./"></script>
 </body>
 </html>
