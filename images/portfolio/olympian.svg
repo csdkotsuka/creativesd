@@ -1,0 +1,60 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" width="120" height="120">
+  <defs>
+    <linearGradient id="grad-olympian-bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#3b0764" />
+      <stop offset="50%" stop-color="#581c87" />
+      <stop offset="100%" stop-color="#7e22ce" />
+    </linearGradient>
+    <linearGradient id="grad-gold" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#fef08a" />
+      <stop offset="40%" stop-color="#facc15" />
+      <stop offset="100%" stop-color="#ca8a04" />
+    </linearGradient>
+    <linearGradient id="grad-ribbon" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ef4444" />
+      <stop offset="100%" stop-color="#b91c1c" />
+    </linearGradient>
+    <filter id="shadow-olympian" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="4" stdDeviation="5" flood-color="#000" flood-opacity="0.35" />
+    </filter>
+  </defs>
+
+  <!-- Background with rounded corners -->
+  <rect width="120" height="120" rx="28" fill="url(#grad-olympian-bg)" />
+  <rect x="1" y="1" width="118" height="118" rx="27" fill="none" stroke="#d8b4fe" stroke-width="1.5" stroke-opacity="0.3" />
+
+  <!-- Laurel Wreath (月桂冠) -->
+  <g fill="#fde047" opacity="0.85" transform="translate(60, 60)">
+    <!-- Left leaves -->
+    <path d="M -30 10 C -36 0 -36 -16 -24 -28 C -22 -24 -24 -16 -20 -10 C -26 0 -22 8 -30 10 Z" opacity="0.4" />
+    <path d="M -22 -20 C -28 -14 -28 -4 -22 2 C -20 -2 -20 -10 -16 -16 Z" />
+    <path d="M -26 -6 C -32 0 -30 10 -22 14 C -22 8 -24 0 -20 -4 Z" />
+    <path d="M -18 10 C -24 16 -20 24 -12 26 C -14 20 -16 14 -14 8 Z" />
+    
+    <!-- Right leaves -->
+    <path d="M 30 10 C 36 0 36 -16 24 -28 C 22 -24 24 -16 20 -10 C 26 0 22 8 30 10 Z" opacity="0.4" />
+    <path d="M 22 -20 C 28 -14 28 -4 22 2 C 20 -2 20 -10 16 -16 Z" />
+    <path d="M 26 -6 C 32 0 30 10 22 14 C 22 8 24 0 20 -4 Z" />
+    <path d="M 18 10 C 24 16 20 24 12 26 C 14 20 16 14 14 8 Z" />
+  </g>
+
+  <!-- Ribbon Top -->
+  <path d="M 48 30 L 60 48 L 40 48 Z" fill="url(#grad-ribbon)" filter="url(#shadow-olympian)" />
+  <path d="M 72 30 L 60 48 L 80 48 Z" fill="#991b1b" filter="url(#shadow-olympian)" />
+
+  <!-- Gold Medal with Shadow -->
+  <g transform="translate(60, 64)" filter="url(#shadow-olympian)">
+    <!-- Outer Medal Rim -->
+    <circle cx="0" cy="0" r="26" fill="url(#grad-gold)" stroke="#fef9c3" stroke-width="2" />
+    <circle cx="0" cy="0" r="21" fill="none" stroke="#a16207" stroke-width="1.2" stroke-dasharray="2 2" />
+    <circle cx="0" cy="0" r="19" fill="#eab308" />
+
+    <!-- Center Star / Number 26 -->
+    <text x="0" y="6" font-family="'Montserrat', 'Noto Sans JP', sans-serif" font-size="16" font-weight="900" fill="#713f12" text-anchor="middle">26</text>
+    <path d="M 0 -13 L 2 -8 L 7 -8 L 3 -5 L 5 0 L 0 -3 L -5 0 L -3 -5 L -7 -8 L -2 -8 Z" fill="#fef08a" />
+  </g>
+
+  <!-- Sparkles -->
+  <circle cx="86" cy="34" r="2" fill="#fef08a" />
+  <circle cx="34" cy="38" r="1.5" fill="#fef08a" />
+</svg>

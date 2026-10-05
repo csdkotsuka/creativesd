@@ -1,0 +1,64 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" width="120" height="120">
+  <defs>
+    <linearGradient id="grad-matsuyama-bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ea580c" />
+      <stop offset="50%" stop-color="#f97316" />
+      <stop offset="100%" stop-color="#fb923c" />
+    </linearGradient>
+    <linearGradient id="grad-mikan" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#fde047" />
+      <stop offset="40%" stop-color="#f97316" />
+      <stop offset="100%" stop-color="#c2410c" />
+    </linearGradient>
+    <filter id="shadow-matsuyama" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="4" stdDeviation="5" flood-color="#9a3412" flood-opacity="0.35" />
+    </filter>
+  </defs>
+
+  <!-- Background with rounded corners -->
+  <rect width="120" height="120" rx="28" fill="url(#grad-matsuyama-bg)" />
+  <rect x="1" y="1" width="118" height="118" rx="27" fill="none" stroke="#ffedd5" stroke-width="1.5" stroke-opacity="0.4" />
+
+  <!-- Soft Washi/Sun Ring in background -->
+  <circle cx="60" cy="58" r="38" fill="#ffffff" opacity="0.15" />
+
+  <!-- Castle & Cloud Graphic -->
+  <g transform="translate(60, 58)" filter="url(#shadow-matsuyama)">
+    <!-- Cloud (坂の上の雲) -->
+    <path d="M -34 16 C -34 8, -26 6, -20 8 C -18 0, -6 0, -2 4 C 4 -2, 18 -2, 22 6 C 28 6, 34 10, 34 18 C 34 24, 28 28, 20 28 L -24 28 C -30 28, -34 24, -34 16 Z" fill="#ffffff" opacity="0.95" />
+
+    <!-- Matsuyama Castle Silhouette in White/Gold -->
+    <!-- Base wall -->
+    <path d="M -22 14 L 22 14 L 18 24 L -18 24 Z" fill="#c2410c" opacity="0.15" />
+    
+    <!-- Castle Roof Levels -->
+    <!-- Tier 1 -->
+    <path d="M -24 14 C -18 10, 18 10, 24 14 L 18 8 L -18 8 Z" fill="#fff7ed" />
+    <!-- Wall 1 -->
+    <rect x="-14" y="2" width="28" height="6" fill="#fed7aa" />
+    <!-- Tier 2 Roof -->
+    <path d="M -18 3 C -12 0, 12 0, 18 3 L 13 -3 L -13 -3 Z" fill="#fff7ed" />
+    <!-- Wall 2 -->
+    <rect x="-10" y="-8" width="20" height="5" fill="#fed7aa" />
+    <!-- Top Roof (Tenshu) -->
+    <path d="M -14 -7 C -9 -11, 9 -11, 14 -7 L 0 -16 Z" fill="#fff7ed" />
+    <!-- Roof ornament (Shachihoko hint) -->
+    <circle cx="0" cy="-17" r="1.5" fill="#ea580c" />
+
+    <!-- Sweet Citrus (みかん) Icon floating at right bottom -->
+    <g transform="translate(20, 14)">
+      <!-- Citrus Body -->
+      <circle cx="0" cy="0" r="13" fill="url(#grad-mikan)" stroke="#ffffff" stroke-width="1.5" />
+      <!-- Leaf -->
+      <path d="M 0 -13 C 4 -18, 10 -15, 8 -11 C 5 -10, 2 -11, 0 -13 Z" fill="#15803d" />
+      <!-- Citrus Dimple -->
+      <circle cx="0" cy="-10" r="1" fill="#15803d" />
+    </g>
+
+    <!-- Dogo Onsen Steam / Yudama (湯玉) Waterdrop at top left -->
+    <g transform="translate(-20, -10) scale(0.7)">
+      <path d="M 0 -8 C 5 -2, 7 3, 4 7 C 1 11, -5 10, -7 6 C -9 2, -4 -3, 0 -8 Z" fill="#ffffff" opacity="0.9" />
+      <circle cx="-1" cy="4" r="2" fill="#ea580c" opacity="0.4" />
+    </g>
+  </g>
+</svg>
