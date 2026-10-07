@@ -25,6 +25,87 @@
       gtag('js', new Date());
       gtag('config', 'G-P8YSB8RZB2');
     </script>
+    <!-- Structured Data (JSON-LD) for Portfolio & AIO -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "ItemList",
+      "name": "Creative System Design 開発実績・Webアプリケーション群",
+      "description": "AI予約管理、代行マッチング、バイタル監視AI、観光DXなど現場実務に特化したWebアプリケーション一覧",
+      "itemListElement": [
+        {
+          "@type": "SoftwareApplication",
+          "position": 1,
+          "name": "CONNECT",
+          "description": "LINE・Web両対応の24時間AI即レス予約＆顧客・スタッフ管理システム",
+          "applicationCategory": "BusinessApplication",
+          "url": "https://connect.inteve-cloud.com/about/"
+        },
+        {
+          "@type": "SoftwareApplication",
+          "position": 2,
+          "name": "ココロモウ（Kokoromou）",
+          "description": "お墓参り・お掃除代行プラットフォーム＆Stripe Connect自動分配決済",
+          "applicationCategory": "BusinessApplication",
+          "url": "https://kokoromou.vercel.app"
+        },
+        {
+          "@type": "SoftwareApplication",
+          "position": 3,
+          "name": "CHEER",
+          "description": "専門職・セラピスト向け対話型パートナーUI＆習慣・体調記録管理",
+          "applicationCategory": "HealthApplication",
+          "url": "https://cheer.inteve-cloud.com/?page=pr-partner"
+        },
+        {
+          "@type": "SoftwareApplication",
+          "position": 4,
+          "name": "現場NOW（CraftSync）",
+          "description": "建設現場向けリアルタイム位置・ステータス共有＆最短スタッフ急募レスキューPWA",
+          "applicationCategory": "BusinessApplication"
+        },
+        {
+          "@type": "SoftwareApplication",
+          "position": 5,
+          "name": "チーム活動・スケジュール同期システム",
+          "description": "Googleカレンダー双方向自動同期＆スマホ最適化（.ics）登録システム",
+          "applicationCategory": "BusinessApplication"
+        },
+        {
+          "@type": "SoftwareApplication",
+          "position": 6,
+          "name": "Olympian（オリンピアン）",
+          "description": "愛知・名古屋2026 世界大会 日本代表選手名鑑ポータル＆ハイライト速報",
+          "applicationCategory": "SportsApplication",
+          "url": "https://olympian-bti3.vercel.app/"
+        },
+        {
+          "@type": "SoftwareApplication",
+          "position": 7,
+          "name": "MAMORU（マモル）",
+          "description": "在宅介護・施設向けIoTセンサー連携＆時系列Gemini AIバイタル監視Webアプリ",
+          "applicationCategory": "HealthApplication",
+          "url": "https://mamoru-lilac.vercel.app/about"
+        },
+        {
+          "@type": "SoftwareApplication",
+          "position": 8,
+          "name": "MATSUYAMA DISCOVERY",
+          "description": "愛媛・松山の歴史と魅力を世界へ届ける完全バイリンガル観光ポータル",
+          "applicationCategory": "TravelApplication",
+          "url": "https://matsuyama-ten.vercel.app/"
+        },
+        {
+          "@type": "SoftwareApplication",
+          "position": 9,
+          "name": "Grand Slam & World Tennis Tracker",
+          "description": "四大大会・世界ランキング追跡＆往年のテニスファン向け詳細解説ポータル",
+          "applicationCategory": "SportsApplication",
+          "url": "https://tennis-eta-seven.vercel.app/"
+        }
+      ]
+    }
+    </script>
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
     <!-- Google Fonts: Inter -->
@@ -837,9 +918,15 @@
                             <div class="text-xs text-slate-400 font-mono">
                                 Tech: HTML5 / JavaScript (ES6+) / Tailwind CSS / Firebase (Firestore)
                             </div>
-                            <div class="inline-flex items-center gap-2 text-xs text-slate-500 bg-slate-100 px-3.5 py-1.5 rounded-full font-medium">
-                                <i class="fas fa-trophy text-amber-500"></i>
-                                <span>グランドスラム・世界ランキング追跡（実証プロトタイプ・限定運用）</span>
+                            <div class="flex flex-wrap items-center gap-3">
+                                <a href="https://tennis-eta-seven.vercel.app/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 px-5 py-2.5 rounded-full text-xs sm:text-sm font-bold text-white bg-emerald-700 hover:bg-emerald-800 shadow-sm hover:shadow transition-all group">
+                                    <span>テニストラッカーを見る</span>
+                                    <i class="fas fa-external-link-alt text-[11px] transform group-hover:translate-x-0.5 transition-transform"></i>
+                                </a>
+                                <div class="inline-flex items-center gap-1.5 text-xs text-emerald-800 bg-emerald-50 border border-emerald-200 px-3.5 py-1.5 rounded-full font-medium">
+                                    <i class="fas fa-trophy text-amber-500"></i>
+                                    <span>四大大会・世界ランキング追跡ポータル</span>
+                                </div>
                             </div>
                         </div>
                     </div>

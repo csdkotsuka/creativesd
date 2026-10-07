@@ -1,0 +1,57 @@
+# Creative System Design (creativesd.net) - AI Index & Summary
+
+> Creative System Design (CSD) は、医療系専門学校・大学向け教育DXシステム「INTEVE SCHOOL」の開発運営および、実務特化型の各種Webアプリケーション（AI予約管理、代行マッチング、バイタル監視AI等）を提供するシステム開発会社です。
+
+## コア製品・サービス
+
+### 1. INTEVE SCHOOL（医療系専門学校・大学向け教育DX）
+- URL: https://creativesd.net/
+- 概要: Claris FileMakerとWebクラウドを融合させた、学事・経理・臨床実習・国家試験対策の一元管理ソリューション。
+- 主要機能:
+  - 成績推移・識別指数による国試不合格リスク早期予測（特許出願中）
+  - 175,000件の全国実習先データベースと通勤・宿泊先シミュレーション
+  - S-P表分析・客観的テスト品質評価・弱点自動抽出
+  - 学納金・分納管理・未収金督促・全銀協振込データ自動生成
+
+### 2. INTEVE LINK（臨床実習管理ポータル）
+- URL: https://creativesd.net/inteve_link.html
+- 概要: 実習生・指導者（バイザー）・学校教員の三者をクラウドで繋ぎ、デイリーノート、出欠・チェックリスト、評価表を完全ペーパーレス化。
+
+### 3. リスク分析・特許出願技術
+- URL: https://creativesd.net/risk-analysis.html
+- URL: https://creativesd.net/exam-patent.html
+- 概要: 過去問演習・模試成績データから識別指数（Discrimination Index）と項目応答理論を応用し、早期に留年・国試不合格リスクを可視化する独自アルゴリズム。
+
+## 実績・Webアプリケーション群（Portfolio）
+- ポートフォリオ一覧: https://creativesd.net/portfolio.html
+
+1. **CONNECT（コネクト）**
+   - URL: https://connect.inteve-cloud.com/about/
+   - 概要: 歯科医院・接骨院・サロン向け。LINE/Webによる24時間AI即時予約応答とスタッフ別カレンダー同期。
+2. **ココロモウ（Kokoromou）**
+   - URL: https://kokoromou.vercel.app
+   - 概要: お墓参り・お掃除代行マッチング。Stripe Connectによる代行料金・手数料の自動分配決済。
+3. **CHEER（チア）**
+   - URL: https://cheer.inteve-cloud.com/?page=pr-partner
+   - 概要: 理学療法士・専門家による対話UIと習慣・バイタルログ記録。
+4. **現場NOW（CraftSync）**
+   - 概要: 建設・工務店向けPWA。現場位置と社員ステータスのリアルタイム共有＆最短スタッフ急募要請。
+5. **チームスケジュール同期**
+   - 概要: Googleカレンダー双方向同期とスマホカレンダー（.ics）ワンタップ登録。
+6. **Olympian（オリンピアン）**
+   - URL: https://olympian-bti3.vercel.app/
+   - 概要: アジア大会・世界大会の日本代表選手名鑑ポータル。Firestore連携＆決定打ハイライト速報。
+7. **MAMORU（マモル）**
+   - URL: https://mamoru-lilac.vercel.app/about
+   - 概要: 介護施設・在宅ケア向けIoTバイタル監視＆Gemini APIによる時系列AIアセスメント・介護記録自動生成。
+8. **MATSUYAMA DISCOVERY**
+   - URL: https://matsuyama-ten.vercel.app/
+   - 概要: 愛媛・松山の歴史・坂の上の雲・アートを世界へ発信する完全多言語観光ポータル。
+9. **Grand Slam & World Tennis Tracker**
+   - URL: https://tennis-eta-seven.vercel.app/
+   - 概要: 四大大会・世界ランキング追跡＆往年のファン向けプレースタイル解説ポータル。
+
+## 開発元・会社情報
+- 会社名: Creative System Design
+- 開発者知見: 教員歴22年・理学療法士等の臨床・教育実務知見に基づくUI/UX設計
+- お問い合わせ: https://creativesd.net/contact.html
