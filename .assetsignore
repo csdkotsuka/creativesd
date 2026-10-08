@@ -1,0 +1,33 @@
+# Git
+.git/
+.github/
+
+# Cloudflare & Wrangler
+.wrangler/
+wrangler.jsonc
+wrangler.toml
+
+# System files
+.DS_Store
+Thumbs.db
+
+# Archives & Backups
+Archive/
+*.zip
+base_files/
+leaflet_output/
+Provided file/
+
+# Scripts & Python
+*.py
+*.pyc
+__pycache__/
+*.sh
+gas/
+*.gs
+
+# Config & Temporary files
+.htaccess
+vercel.json
+README.md
+_temp_modal_preview.html
