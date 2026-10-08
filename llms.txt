@@ -29,7 +29,7 @@
    - URL: https://connect.inteve-cloud.com/about/
    - 概要: 歯科医院・接骨院・サロン向け。LINE/Webによる24時間AI即時予約応答とスタッフ別カレンダー同期。
 2. **ココロモウ（Kokoromou）**
-   - URL: https://kokoromou.vercel.app
+   - URL: https://kokoromou.inteve-cloud.com/
    - 概要: お墓参り・お掃除代行マッチング。Stripe Connectによる代行料金・手数料の自動分配決済。
 3. **CHEER（チア）**
    - URL: https://cheer.inteve-cloud.com/?page=pr-partner
