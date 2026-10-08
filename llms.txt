@@ -39,7 +39,7 @@
 5. **チームスケジュール同期**
    - 概要: Googleカレンダー双方向同期とスマホカレンダー（.ics）ワンタップ登録。
 6. **Olympian（オリンピアン）**
-   - URL: https://olympian-bti3.vercel.app/
+   - URL: https://olympian.kotsuka-folio.workers.dev/
    - 概要: アジア大会・世界大会の日本代表選手名鑑ポータル。Firestore連携＆決定打ハイライト速報。
 7. **MAMORU（マモル）**
    - URL: https://mamoru-lilac.vercel.app/about
