@@ -45,11 +45,14 @@
    - URL: https://mamoru-lilac.vercel.app/about
    - 概要: 介護施設・在宅ケア向けIoTバイタル監視＆Gemini APIによる時系列AIアセスメント・介護記録自動生成。
 8. **MATSUYAMA DISCOVERY**
-   - URL: https://matsuyama-ten.vercel.app/
+   - URL: https://matsuyama.kotsuka-folio.workers.dev/
    - 概要: 愛媛・松山の歴史・坂の上の雲・アートを世界へ発信する完全多言語観光ポータル。
 9. **Grand Slam & World Tennis Tracker**
-   - URL: https://tennis-eta-seven.vercel.app/
+   - URL: https://tennis.kotsuka-folio.workers.dev/
    - 概要: 四大大会・世界ランキング追跡＆往年のファン向けプレースタイル解説ポータル。
+10. **学術エビデンス＆特許データ検証ポータル**
+   - 形態: 学術・ヘルスケア検証システム（特定クライアント案件につき非公開）
+   - 概要: PubMed論文・特許公報原本の客観突合と、リハビリ専門職知見に基づく臨床運動処方・ファクトチェックWebシステム。
 
 ## 開発元・会社情報
 - 会社名: Creative System Design

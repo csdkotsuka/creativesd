@@ -93,7 +93,7 @@
           "name": "MATSUYAMA DISCOVERY",
           "description": "愛媛・松山の歴史と魅力を世界へ届ける完全バイリンガル観光ポータル",
           "applicationCategory": "TravelApplication",
-          "url": "https://matsuyama-ten.vercel.app/"
+          "url": "https://matsuyama.kotsuka-folio.workers.dev/"
         },
         {
           "@type": "SoftwareApplication",
@@ -101,7 +101,14 @@
           "name": "Grand Slam & World Tennis Tracker",
           "description": "四大大会・世界ランキング追跡＆往年のテニスファン向け詳細解説ポータル",
           "applicationCategory": "SportsApplication",
-          "url": "https://tennis-eta-seven.vercel.app/"
+          "url": "https://tennis.kotsuka-folio.workers.dev/"
+        },
+        {
+          "@type": "SoftwareApplication",
+          "position": 10,
+          "name": "学術エビデンス＆特許データ検証ポータル",
+          "description": "PubMed・特許公報統合型 ヘルスケア情報ファクトチェック＆臨床運動処方Webシステム",
+          "applicationCategory": "HealthApplication"
         }
       ]
     }
@@ -832,7 +839,7 @@
                                 Tech: HTML5 / JavaScript (ES6+) / Tailwind CSS (モダン和紙テイスト)
                             </div>
                             <div class="flex flex-wrap items-center gap-3">
-                                <a href="https://matsuyama-ten.vercel.app/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 px-5 py-2.5 rounded-full text-xs sm:text-sm font-bold text-white bg-orange-600 hover:bg-orange-700 shadow-sm hover:shadow transition-all group">
+                                <a href="https://matsuyama.kotsuka-folio.workers.dev/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 px-5 py-2.5 rounded-full text-xs sm:text-sm font-bold text-white bg-orange-600 hover:bg-orange-700 shadow-sm hover:shadow transition-all group">
                                     <span>ポータルサイトを見る</span>
                                     <i class="fas fa-external-link-alt text-[11px] transform group-hover:translate-x-0.5 transition-transform"></i>
                                 </a>
@@ -919,13 +926,100 @@
                                 Tech: HTML5 / JavaScript (ES6+) / Tailwind CSS / Firebase (Firestore)
                             </div>
                             <div class="flex flex-wrap items-center gap-3">
-                                <a href="https://tennis-eta-seven.vercel.app/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 px-5 py-2.5 rounded-full text-xs sm:text-sm font-bold text-white bg-emerald-700 hover:bg-emerald-800 shadow-sm hover:shadow transition-all group">
+                                <a href="https://tennis.kotsuka-folio.workers.dev/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 px-5 py-2.5 rounded-full text-xs sm:text-sm font-bold text-white bg-emerald-700 hover:bg-emerald-800 shadow-sm hover:shadow transition-all group">
                                     <span>テニストラッカーを見る</span>
                                     <i class="fas fa-external-link-alt text-[11px] transform group-hover:translate-x-0.5 transition-transform"></i>
                                 </a>
                                 <div class="inline-flex items-center gap-1.5 text-xs text-emerald-800 bg-emerald-50 border border-emerald-200 px-3.5 py-1.5 rounded-full font-medium">
                                     <i class="fas fa-trophy text-amber-500"></i>
                                     <span>四大大会・世界ランキング追跡ポータル</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </article>
+
+            <!-- 10. 学術エビデンス＆特許データ検証ポータル -->
+            <article class="bg-white rounded-3xl p-6 sm:p-10 shadow-[0_8px_30px_rgb(0,0,0,0.04)] border border-slate-100 relative overflow-hidden transition-all duration-300 hover:shadow-xl hover:border-teal-300">
+                <div class="absolute top-0 left-0 w-2 h-full bg-gradient-to-b from-teal-600 via-cyan-600 to-sky-700"></div>
+                <div class="flex flex-col md:flex-row md:items-start gap-6 sm:gap-8">
+                    <!-- Icon / Visual -->
+                    <div class="shrink-0 flex items-center md:items-start justify-between md:justify-center">
+                        <div class="w-20 h-20 sm:w-24 sm:h-24 rounded-2xl bg-teal-50 border border-teal-100 p-2 shadow-sm flex items-center justify-center overflow-hidden">
+                            <img src="images/portfolio/evidence.svg" alt="学術エビデンス検証ポータル アイコン" class="w-full h-full object-contain">
+                        </div>
+                        <span class="md:hidden text-xs font-bold px-3 py-1 rounded-full bg-teal-50 text-teal-800 border border-teal-200">
+                            No. 10 / 学術リサーチ・ヘルスケア
+                        </span>
+                    </div>
+
+                    <!-- Details -->
+                    <div class="flex-1 space-y-4">
+                        <div class="flex flex-wrap items-center justify-between gap-2">
+                            <div class="flex flex-wrap items-center gap-2">
+                                <span class="hidden md:inline-block text-xs font-bold px-2.5 py-0.5 rounded-full bg-teal-50 text-teal-800 border border-teal-200">
+                                    No. 10
+                                </span>
+                                <span class="text-xs font-bold px-2.5 py-0.5 rounded-full bg-slate-100 text-slate-700">
+                                    学術リサーチ・ヘルスケアDX
+                                </span>
+                                <span class="text-xs font-bold px-2.5 py-0.5 rounded-full bg-teal-50 text-teal-800 border border-teal-200 flex items-center gap-1">
+                                    <span class="w-1.5 h-1.5 rounded-full bg-teal-600"></span> 特定研究検証プロジェクト
+                                </span>
+                            </div>
+                        </div>
+
+                        <div>
+                            <h2 class="text-2xl sm:text-3xl font-bold text-slate-900 tracking-tight">
+                                学術エビデンス＆特許データ検証ポータル
+                            </h2>
+                            <p class="text-sm sm:text-base font-semibold text-teal-700 mt-1">
+                                PubMed・特許公報統合型 ヘルスケア情報ファクトチェック ＆ 臨床運動処方Webシステム
+                            </p>
+                        </div>
+
+                        <p class="text-slate-600 text-sm sm:text-base leading-relaxed">
+                            過剰な健康言説や根拠の不透明さが社会問題となる中、リハビリテーション専門職（教員歴22年・理学療法士）の学術的視点に基づき、健康素材や生化学機序の科学的根拠を公正にファクトチェックするために開発された検証・情報整理ポータル。
+                            米国医学図書館（PubMed）収載の学術論文、Google Patents / J-PlatPat の特許公報原本、基礎生理学メカニズム（サルベージ経路やミトコンドリア代謝）を客観突合し、薬機法・健康増進法を厳格に遵守したエビデンス整理を実現。さらに、病態圧縮理論（PPK）やJAMA臨床運動学に基づく年代別運動処方・最大筋力（MVC）測定ガイドなど、学術研究と現場の臨床・健康指導をシームレスに結ぶ情報アーキテクチャを構築しました。
+                        </p>
+
+                        <!-- Key Features -->
+                        <div class="bg-slate-50 rounded-2xl p-4 sm:p-5 border border-slate-100">
+                            <h3 class="text-xs font-bold text-slate-500 uppercase tracking-wider mb-2.5">主な特長・機能</h3>
+                            <ul class="grid grid-cols-1 sm:grid-cols-2 gap-2 text-xs sm:text-sm text-slate-700">
+                                <li class="flex items-center gap-2">
+                                    <i class="fas fa-check-circle text-teal-600 text-sm"></i>
+                                    <span>PubMed査読論文・特許公報原本（Google Patents連携）の客観的突合</span>
+                                </li>
+                                <li class="flex items-center gap-2">
+                                    <i class="fas fa-check-circle text-teal-600 text-sm"></i>
+                                    <span>薬機法・景表法コンプライアンスに完全準拠した中立的ファクトチェック設計</span>
+                                </li>
+                                <li class="flex items-center gap-2">
+                                    <i class="fas fa-check-circle text-teal-600 text-sm"></i>
+                                    <span>病態圧縮理論（PPK）・MVC最大筋力評価に基づく年代別・臨床運動処方UI</span>
+                                </li>
+                                <li class="flex items-center gap-2">
+                                    <i class="fas fa-check-circle text-teal-600 text-sm"></i>
+                                    <span>複雑な生化学・解剖生理学データを一般層へ平易に届ける情報デザイン</span>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <!-- Tech Stack & Note -->
+                        <div class="pt-2 flex flex-col sm:flex-row sm:items-center justify-between gap-4 border-t border-slate-100">
+                            <div class="text-xs text-slate-400 font-mono">
+                                Tech: HTML5 / JavaScript (ES6+) / Tailwind CSS / Cloudflare Workers
+                            </div>
+                            <div class="flex flex-wrap items-center gap-3">
+                                <div class="inline-flex items-center gap-2 text-xs text-slate-500 bg-slate-100 px-3.5 py-1.5 rounded-full font-medium">
+                                    <i class="fas fa-shield-alt text-slate-400"></i>
+                                    <span>学術検証・特定クライアント研究案件（非公開システム / ブランド名非公開）</span>
+                                </div>
+                                <div class="inline-flex items-center gap-1.5 text-xs text-teal-800 bg-teal-50 border border-teal-200 px-3.5 py-1.5 rounded-full font-medium">
+                                    <i class="fas fa-dna text-teal-600"></i>
+                                    <span>医療・エビデンス検証アーキテクチャ</span>
                                 </div>
                             </div>
                         </div>
