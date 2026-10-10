@@ -1,15 +1,31 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
   <defs>
-    <linearGradient id="alignmentGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+    <linearGradient id="bgGrad3" x1="0%" y1="0%" x2="100%" y2="100%">
       <stop offset="0%" stop-color="#0ca585" />
       <stop offset="100%" stop-color="#047857" />
     </linearGradient>
   </defs>
-  <rect width="512" height="512" rx="140" fill="url(#alignmentGrad)" />
-  <path d="M 132 260 H 182 C 196 260 210 146 223 146 C 236 146 270 380 286 380 C 298 380 312 260 330 260 H 380" 
-        fill="none" 
-        stroke="#ffffff" 
-        stroke-width="38" 
-        stroke-linecap="round" 
-        stroke-linejoin="round" />
+  <rect width="512" height="512" rx="140" fill="url(#bgGrad3)" />
+  
+  <!-- Circular Target Reticle (姿勢測定ガイド枠・照準) -->
+  <circle cx="256" cy="270" r="160" fill="none" stroke="#6ee7b7" stroke-width="7" stroke-dasharray="14 12" opacity="0.65" />
+  <!-- Vertical Crosshair -->
+  <line x1="256" y1="75" x2="256" y2="445" stroke="#a7f3d0" stroke-width="5" opacity="0.85" />
+  
+  <!-- High-visibility human silhouette (Best for 16px/32px favicons) -->
+  <!-- Head -->
+  <circle cx="256" cy="130" r="44" fill="#ffffff" />
+  <!-- Torso -->
+  <rect x="210" y="188" width="92" height="135" rx="36" fill="#ffffff" />
+  <!-- Left Arm -->
+  <rect x="160" y="198" width="36" height="110" rx="18" fill="#ffffff" />
+  <!-- Right Arm -->
+  <rect x="316" y="198" width="36" height="110" rx="18" fill="#ffffff" />
+  <!-- Left Leg -->
+  <rect x="216" y="332" width="34" height="105" rx="17" fill="#ffffff" />
+  <!-- Right Leg -->
+  <rect x="262" y="332" width="34" height="105" rx="17" fill="#ffffff" />
+  
+  <!-- Center Core Alignment Point -->
+  <circle cx="256" cy="270" r="12" fill="#0ca585" stroke="#ffffff" stroke-width="3" />
 </svg>
