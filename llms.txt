@@ -56,6 +56,9 @@
 11. **Alignment（アライメント）**
    - URL: https://alignment.inteve-cloud.com/admin/manuals/client
    - 概要: スマホカメラ1台・マーカー不要のAI骨格・姿勢アライメント診断システム。4ポーズ撮影による左右差・重心・可動域の100点満点スコアリングおよび店舗カルテ連携・施術前後2件比較。
+12. **voicekarte（ボイスカルテ）**
+   - URL: https://voicekarte.inteve-cloud.com/docs/
+   - 概要: 医療従事者のための完全クライアントサイド動作ハンズフリー音声カルテ記録システム。外部サーバー送信ゼロ・メモリ保持のみで、歯科歯周ポケット検査（6点法）やリハビリROM/MMT検査を音声だけで記録。
 
 ## 開発元・会社情報
 - 会社名: Creative System Design
