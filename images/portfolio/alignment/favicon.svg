@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+  <defs>
+    <linearGradient id="alignmentGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0ca585" />
+      <stop offset="100%" stop-color="#047857" />
+    </linearGradient>
+  </defs>
+  <rect width="512" height="512" rx="140" fill="url(#alignmentGrad)" />
+  <path d="M 132 260 H 182 C 196 260 210 146 223 146 C 236 146 270 380 286 380 C 298 380 312 260 330 260 H 380" 
+        fill="none" 
+        stroke="#ffffff" 
+        stroke-width="38" 
+        stroke-linecap="round" 
+        stroke-linejoin="round" />
+</svg>
